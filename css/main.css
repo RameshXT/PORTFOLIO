@@ -49,6 +49,7 @@ header nav ul li {
 header nav ul li a {
     text-decoration: none;
     color: #ffffff; /* White text color */
+    padding-right: 40px;
     padding: 10px 20px; /* Adjust padding for better spacing */
     transition: color 0.3s, background-color 0.3s; /* Smooth transition */
 }
@@ -62,13 +63,26 @@ header nav ul li a.active {
 
 header .login-btn {
     padding: 10px 20px;
-    border: 1px solid #000;
     border-radius: 5px;
     background-color: #fff;
     color: #000;
     text-decoration: none;
     margin-left: 20px; /* Space between nav items and the login button */
-    margin-right: 20px; /* Space from the right edge */
+    margin-right: 50px; /* Space from the right edge */
+}
+header .login-btn {
+    background-image: linear-gradient(to right, #000000d8 0%, #ffffff 50%, #000000d8 100%);
+    text-align: center;
+    transition: 0.5s;
+    
+    background-size: 200% auto;
+    border-radius: 6px;
+    display: block;
+}
+
+header .login-btn:hover {
+    background-position: right center; /* change the direction of the change here */
+    text-decoration: none;
 }
 
 /* Hero Section */

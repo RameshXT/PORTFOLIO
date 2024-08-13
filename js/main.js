@@ -30,3 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
         featureObserver.observe(feature);
     });
 });
+
+    document.querySelector('.login-btn').addEventListener('mouseleave', function() {
+        this.classList.remove('active');
+    });
