@@ -1,4 +1,5 @@
 /* General Styles */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -121,7 +122,36 @@ header .login-btn:hover {
     margin-top: 20px;
     display: inline-block;
 }
+h1 {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 600;
+}
 
+h1 span {
+    color: #BD53ED;
+    position: relative;
+}
+
+h1 span::before {
+    content: "";
+    height: 30px;
+    width: 2px;
+    position: absolute;
+    top: 50%;
+    right: -8px;
+    background: #BD53ED;
+    transform: translateY(-45%);
+    animation: blink 0.7s infinite;
+}
+
+h1 span.stop-blinking::before {
+    animation: none;
+}
+
+@keyframes blink {
+    50% { opacity: 0 }
+}
 /* Features Section */
 .features {
     padding: 60px 20px;

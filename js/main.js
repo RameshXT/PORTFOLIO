@@ -34,3 +34,36 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('.login-btn').addEventListener('mouseleave', function() {
         this.classList.remove('active');
     });
+
+
+    // typing effect
+    const dynamicText = document.querySelector("#typing-effect");
+    const name = "Ramesh Kanna";
+    
+    // Variables to track the position and deletion status of the text
+    let charIndex = 0;
+    let isDeleting = false;
+    
+    const typeEffect = () => {
+        const currentChar = name.substring(0, charIndex);
+        dynamicText.textContent = currentChar;
+        dynamicText.classList.add("stop-blinking");
+    
+        if (!isDeleting && charIndex < name.length) {
+            // Type the next character
+            charIndex++;
+            setTimeout(typeEffect, 200); // Adjust typing speed here
+        } else if (isDeleting && charIndex > 0) {
+            // Remove the previous character
+            charIndex--;
+            setTimeout(typeEffect, 100); // Adjust deleting speed here
+        } else {
+            // Switch to deleting if the current text is fully typed or deleted
+            isDeleting = !isDeleting;
+            dynamicText.classList.remove("stop-blinking");
+            setTimeout(typeEffect, isDeleting ? 1200 : 1000); // Pause before deleting or next word
+        }
+    }
+    
+    typeEffect();
+    
