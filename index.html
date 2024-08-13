@@ -1,51 +1,110 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ramesh Portfolio</title>
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="/css/reset.css">
-</head>
-<body>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PortFolio Ramesh</title>
+        <link rel="stylesheet" href="/css/main.css">
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <img src="/assets/name logo.png" alt="Cloco Logo"> <!-- Add your logo image here -->
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="mailto:rameshkanna841@gmail.com" target="_blank">Email Me</a></li>
+                </ul>
+            </nav>
+            <a href="#login" class="login-btn">Login</a>
+        </header>
+        
+        <section class="hero">
+            <h1>Hey there! I'm Ramesh Kanna</h1>
+            <p>I'm a DevOps Engineer in the Making</p>
+            <p>Blending creativity and technical skills to enhance AWS DevOps</p>        
+            <a href="#" class="cta-btn">Get in Touch</a>
+        </section>
+        
+        <section class="features">
+            <div class="feature left">
+                <img src="" alt="Your Configuration">
+                <h2>Your Configuration</h2>
+                <p>Your environments are unique to you. Cloco gives you the tools to manage your application configuration life-cycle.</p>
+                <a href="#" class="learn-more">Learn More</a>
+            </div>
+            <div class="feature center">
+                <img src="path-to-code-icon.png" alt="Your Application">
+                <h2>Your Application</h2>
+                <p>We built Cloco because we needed to manage our applications better. Use Cloco with any REST client.</p>
+                <a href="#" class="learn-more">Learn More</a>
+            </div>
+            <div class="feature right">
+                <img src="path-to-platform-icon.png" alt="Your Platform">
+                <h2>Your Platform</h2>
+                <p>Cloco works with many different platforms and supports many configuration file formats.</p>
+                <a href="#" class="learn-more">Learn More</a>
+            </div>
+        </section>
+        
+        <section class="steps">
+            <h2>Cloco in 3 Steps</h2>
+            <div class="step">
+                <h3>Upload Your Config</h3>
+                <p>Cloco allows your architects, designers, and developers to build solutions that are ready for managing configuration across distributed estates.</p>
+                <a href="#" class="learn-more">Learn More</a>
+            </div>
+            <div class="step">
+                <h3>Manage Your Config</h3>
+                <p>Your Ops Team can centrally manage your environments, versions, and security using the Cloco Administration GUI or the API.</p>
+                <a href="#" class="learn-more">Learn More</a>
+            </div>
+            <div class="step">
+                <h3>Consume Your Config</h3>
+                <p>The web doesn’t sleep, your web sites and services shouldn’t either. Multiple sites can receive configuration updates at the push of a button.</p>
+                <a href="#" class="learn-more">Learn More</a>
+            </div>
+        </section>
+        
+        <section class="contact">
+            <h2>Questions? We’re here to help.</h2>
+            <form action="#">
+                <input type="text" name="name" placeholder="Name">
+                <input type="email" name="email" placeholder="Email Address">
+                <input type="text" name="phone" placeholder="Phone # or Skype ID">
+                <input type="text" name="website" placeholder="Website">
+                <textarea name="message" placeholder="Your message here..."></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+        
+        <footer>
+            <ul class="footer-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/ramesh-kanna-g-325042285/" target="_blank">
+                    <img src="/assets/linkedin.png" alt="LinkedIn Logo">
+                </a>
+                <a href="https://github.com/RameshXT" target="_blank">
+                    <img src="/assets/github.png" alt="GitHub Logo">
+                </a>
+                <a href="https://x.com/RameshK55373475" target="_blank">
+                    <img src="/assets/X-white.png" alt="X Logo">
+                </a>
+                <a href="https://www.instagram.com/ig.rameshxt/" target="_blank">
+                    <img src="/assets/instagram.png" alt="Instagram Logo">
+                </a>
+                <a href="https://wa.me/9442403868" target="_blank">
+                    <img src="/assets/whatsapp.png" alt="WhatsApp Logo">
+                </a>
+            </div>
+            
+            <p>&copy; 2024 Ramesh. All rights reserved.</p>
+        </footer>
 
-    <!-- Nav Bar -->
-    <nav class="navbar">
-        <div class="logo">
-            <a href="#">
-                <img src="/assets/logo.png" alt="Logo">
-            </a>
-        </div>
-        <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
-        <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
-
-    <!-- Hero Section -->
-    <div class="hero-section">
-        <div class="overlay"></div>
-        <div class="content">
-            <h1>Welcome to My Portfolio</h1>
-            <p>Explore my work and projects. Feel free to get in touch if you have any questions or opportunities.</p>
-            <a href="#contact" class="button">Get in Touch</a>
-        </div>
-    </div>
-
-    <div class="hero-section-1">
-        <div class="overlay-1"></div>
-        <div class="content-1">
-            <!-- Add content here -->
-        </div>
-    </div>
-
-    <script>
-        document.querySelector('.nav-toggle').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
-        });
-    </script>
-</body>
-</html>
+        <script src="/js/main.js"></script>
+    </body>
+    </html>

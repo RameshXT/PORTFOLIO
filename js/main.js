@@ -1,7 +1,32 @@
-<script>
-// JavaScript for toggling the navigation links on mobile
-document.getElementById('nav-toggle').addEventListener('click', function() {
-    const navLinks = document.getElementById('nav-links');
-    navLinks.classList.toggle('active');
+document.addEventListener('DOMContentLoaded', function() {
+    const hero = document.querySelector('.hero');
+    const features = document.querySelectorAll('.feature');
+
+    // Add class to hero section when it comes into view
+    const heroObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                hero.classList.add('visible');
+            } else {
+                hero.classList.remove('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    heroObserver.observe(hero);
+
+    // Add class to feature sections when they come into view
+    const featureObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            } else {
+                entry.target.classList.remove('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    features.forEach(feature => {
+        featureObserver.observe(feature);
+    });
 });
-</script>

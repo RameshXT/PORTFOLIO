@@ -1,265 +1,323 @@
+/* General Styles */
 body {
+    font-family: Arial, sans-serif;
     margin: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #ffffff96;
-    color: #000;
-    overflow-x: hidden;
+    padding: 0;
+    background: #f4f4f4;
+    color: #333;
 }
 
-/* Navbar styling - START */
-.navbar {
-    padding: 10px 20px;
+/* Header (Navbar) */
+header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: adds a slight shadow for separation */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for contrast */
+    z-index: 1000; /* Ensure it stays on top of other content */
+}
+
+header .logo {
+    flex: 1;
+}
+
+header .logo img {
+    height: 40px; /* Adjust the logo size */
+}
+
+header nav {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    margin-left: auto; /* Pushes the nav items to the right */
 }
 
-/* Navbar logo styling */
-.logo img {
-    height: 40px; /* Adjust the height as needed */
-    padding-left: 30px;
-}
-
-/* Navbar links styling */
-.nav-links {
-    display: flex;
+header nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
-}
-
-.nav-links li {
-    margin: 0 15px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-    font-size: 18px;
-    padding: 5px 10px;
-    display: inline-block;
-    border: 2px solid transparent; /* Default border to avoid shifting on hover */
-    transition: border-color 0.3s ease, color 0.3s ease; /* Smooth transition for border color and text color */
-}
-
-.nav-links a:hover {
-    border-color: black; /* Black border on hover */
-    color: black; /* Optional: change text color on hover */
-}
-
-/* Navbar toggle button for mobile view */
-.nav-toggle {
-    display: none;
-    font-size: 24px;
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-/* Navbar styling - END */
-
-/* Additional content styling */
-.content {
-    margin-top: 60px; /* Adjust to prevent content from being hidden behind the navbar */
-    padding: 20px;
-}
-
-/* Background with geometric pattern - START */
-.hero-section {
-    background-color: #f0f0f0;
-    background-image: url('../assets/images/your-pattern-image.png');
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    gap: 20px; /* Even space between navigation items */
+}
+
+header nav ul li {
+    margin: 0;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #ffffff; /* White text color */
+    padding: 10px 20px; /* Adjust padding for better spacing */
+    transition: color 0.3s, background-color 0.3s; /* Smooth transition */
+}
+
+header nav ul li a:hover,
+header nav ul li a.active {
+    background: #fff; /* White background on hover */
+    color: #000; /* Black text color on hover */
+    border-radius: 5px;
+}
+
+header .login-btn {
+    padding: 10px 20px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #000;
+    text-decoration: none;
+    margin-left: 20px; /* Space between nav items and the login button */
+    margin-right: 20px; /* Space from the right edge */
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    color: #fff;
+    background: linear-gradient(135deg, #000 50%, #333 50%);
     position: relative;
-    overflow: hidden; /* Ensure child elements are contained */
+    overflow: hidden;
 }
 
-.overlay {
-    background: linear-gradient(135deg, #000 50%, #9696968f 50%);
-    opacity: 0.9;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+.hero h1,
+.hero p {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease; /* Slower transition for smooth effect */
 }
 
-/* Adding geometric pattern and squares */
-.hero-section::before,
-.hero-section::after {
+.hero h1 {
+    font-size: 3em;
+}
+
+.hero.visible h1,
+.hero.visible p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hero .cta-btn {
+    padding: 15px 30px;
+    background: #fff;
+    color: #000;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+/* Features Section */
+.features {
+    padding: 60px 20px;
+    background: #000;
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.feature {
+    text-align: center;
+    max-width: 300px;
+    margin: 20px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease; /* Slower transition for smooth effect */
+}
+
+.feature.left {
+    transform: translateX(-173px); /* Start from the left */
+}
+
+.feature.right {
+    transform: translateX(173px); /* Start from the right */
+}
+
+.feature.center {
+    transform: translateY(150px); /* Start from below */
+}
+
+.feature.visible {
+    opacity: 1;
+    transform: translateY(0); /* Slide to original position */
+}
+
+/* Steps Section */
+.steps {
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #fff 50%, #000 50%);
+    color: #000;
+}
+
+.steps h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.steps .step {
+    text-align: center;
+    max-width: 300px;
+    margin: 0 auto 30px;
+}
+
+.steps .step h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.steps .step p {
+    font-size: 16px;
+}
+
+.steps .learn-more {
+    text-decoration: none;
+    color: #000;
+    border-bottom: 1px solid #000;
+    padding-bottom: 5px;
+}
+
+/* Contact Section */
+.contact {
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #000 50%, #fff 50%);
+    color: #000;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact::before {
     content: '';
     position: absolute;
-    background: rgba(0, 0, 0, 0.7);
-    border-radius: 3px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle, #fff 20%, transparent 20%), radial-gradient(circle, #000 20%, transparent 20%);
+    background-size: 40px 40px;
+    opacity: 0.1;
+    z-index: -1;
 }
 
-/* Pattern Elements */
-.hero-section::before {
-    width: 100px;
-    height: 100px;
-    top: 20%;
-    left: 15%;
-    background: url('../assets/images/your-pattern-image.png');
-    background-size: contain;
-}
-
-.hero-section::after {
-    width: 50px;
-    height: 50px;
-    bottom: 30%;
-    right: 10%;
-    background-color: #9696968f;
-    transform: rotate(45deg);
-}
-/* Background with geometric pattern - END */
-
-/* Content */
-.content {
-    z-index: 1;
+.contact h2 {
     text-align: center;
+    margin-bottom: 40px;
     color: #fff;
 }
 
-.content h1 {
-    font-size: 3em;
+.contact form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: grid;
+    gap: 20px;
+}
+
+.contact form input, 
+.contact form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #fff;
+    background: #000;
+    color: #fff;
+    border-radius: 5px;
+    resize: none; /* Disable resizing of the textarea */
+}
+
+.contact form input::placeholder, 
+.contact form textarea::placeholder {
+    color: #aaa;
+}
+
+.contact form button {
+    padding: 15px;
+    background: #fff;
+    color: #000;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.contact form button:hover {
+    background: #000;
+    color: #fff;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #000;
+    color: #fff;
+}
+
+.footer-links {
+    list-style: none;         /* Removes bullet points from the list */
+    display: flex;            /* Applies flexbox layout to the list */
+    justify-content: center;  /* Centers the list items horizontally */
+    gap: 20px;                /* Adds 20px of space between each list item */
+    padding: 0;               /* Removes default padding */
+    margin: 0 0 20px;         /* Removes default margin and adds 20px margin at the bottom */
+}
+
+.footer-links li {
+    margin: 0;                /* Ensures no extra margin is added to the list items */
+}
+
+.footer-links li a {
+    text-decoration: none;    /* Removes underline from the links */
+    color: #fff;              /* Sets the link color to white */
+}
+
+footer p {
+    margin: 0;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 33px;
     margin-bottom: 20px;
 }
 
-.content p {
-    font-size: 1.2em;
-    line-height: 1.6em;
-}
-
-.button {
-    display: inline-block;
-    padding: 10px 20px;
-    margin-top: 20px;
-    background-color: #000;
-    color: #fff;
+.social-icons a {
     text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    text-transform: uppercase;
-}
-
-/* Reverse hero section styling - START */
-.hero-section-1 {
-    background-color: #f0f0f0;
-    background-image: url('../assets/images/your-pattern-image.png');
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     position: relative;
-    overflow: hidden; /* Ensure child elements are contained */
+    width: 26px;
+    height: 26px;
 }
 
-.overlay-1 {
-    background: linear-gradient(135deg, #9696968f 50%, #000 50%);
-    opacity: 0.9;
+.social-icons img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.social-icons a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent; /* Adjust the size and position of the triangle */
+    border-right: 20px solid transparent;
+    border-bottom: 40px solid #fff; /* Color of the triangle */
+    transform: translate(-50%, -50%);
+    z-index: -1; /* Ensure the triangle is behind the logo */
+}
+
+/* Custom Geometric Background */
+.hero::before, .steps::before, .contact::before {
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    background-image: url('geometric-pattern.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
 }
-
-/* Pattern Elements */
-.hero-section-1::before {
-    width: 100px;
-    height: 100px;
-    top: 20%;
-    left: 15%;
-    background: url('../assets/images/your-pattern-image.png');
-    background-size: contain;
-}
-
-.hero-section-1::after {
-    width: 50px;
-    height: 50px;
-    bottom: 30%;
-    right: 10%;
-    background-color: #9696968f;
-    transform: rotate(45deg);
-}
-/* Reverse hero section styling - END */
-
-/* Content */
-.content-1 {
-    z-index: 1;
-    text-align: center;
-    color: #fff;
-}
-
-.content-1 h1 {
-    font-size: 3em;
-    margin-bottom: 20px;
-}
-
-.content-1 p {
-    font-size: 1.2em;
-    line-height: 1.6em;
-}
-
-.button-1 {
-    display: inline-block;
-    padding: 10px 20px;
-    margin-top: 20px;
-    background-color: #000;
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    text-transform: uppercase;
-}
-
-/* Responsive Design - START */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        background-color: white;
-        border-top: 1px solid #ddd; /* Optional: border at the top */
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .nav-links a {
-        margin: 10px 0;
-        text-align: center;
-    }
-
-    .nav-toggle {
-        display: block;
-    }
-
-    .navbar {
-        position: relative;
-    }
-
-    .content h1 {
-        font-size: 2em;
-    }
-
-    .content p {
-        font-size: 1em;
-    }
-}
-/* Responsive Design - END */
