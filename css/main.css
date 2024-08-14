@@ -105,8 +105,20 @@ header .login-btn:hover {
 
 .hero h1 {
     font-size: 3em;
+    line-height: 1.2; /* Adjust line height for better readability */
+
+}
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 1.9em; /* Reduce font size on smaller screens */
+    }
 }
 
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.5em; /* Further reduce font size on very small screens */
+    }
+}
 .hero.visible h1,
 .hero.visible p {
     opacity: 1;
@@ -121,7 +133,41 @@ header .login-btn:hover {
     border-radius: 5px;
     margin-top: 20px;
     display: inline-block;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden; /* Hide the overflow caused by padding changes */
+    transition: background-color 0.5s, color 0.5s; /* Smooth transitions for background and text color */
 }
+
+.hero .cta-btn:after {
+    content: '»';
+    position: absolute;
+    opacity: 0;
+    top: 50%;
+    right: -20px;
+    transform: translateY(-50%);
+    transition: opacity 0.5s, right 0.5s; /* Smooth transitions for opacity and position */
+}
+
+.hero .cta-btn:hover {
+    background-color: #000; /* Change background color on hover */
+    color: #fff; /* Change text color on hover */
+}
+
+.hero .cta-btn:hover:after {
+    opacity: 1;
+    right: 10px;
+}
+
+.hero .cta-btn span {
+    display: inline-block;
+    transition: transform 0.5s; /* Smooth transition for span element */
+}
+
+.hero .cta-btn:hover span {
+    transform: translateX(10px); /* Adjust if needed to simulate a move effect */
+}
+
 h1 {
     color: #fff;
     font-size: 2rem;
@@ -169,19 +215,58 @@ h1 span.stop-blinking::before {
     opacity: 0;
     transform: translateY(50px);
     transition: opacity 1s ease, transform 1s ease; /* Slower transition for smooth effect */
+
+    transition: opacity 1s, transform 1.6s;
+    opacity: 1; /* Start hidden */
+    transform: translateY(50px); /* Start from below */
 }
 
+/* Adjustments for mobile devices */
+@media (max-width: 768px) {
+    .feature.left {
+        transform: translateX(-60px) translateY(50px); /* Reduce offset for smaller screens */
+    }
+
+    .feature.right {
+        transform: translateX(60px) translateY(50px); /* Reduce offset for smaller screens */
+    }
+
+    .feature.center {
+        transform: translateY(30px); /* Adjust vertical start position for smaller screens */
+    }
+}
+
+/* Default positions for larger screens */
 .feature.left {
-    transform: translateX(-173px); /* Start from the left */
+    transform: translateX(-150px) translateY(50px); /* Start from the left and below */
 }
 
 .feature.right {
-    transform: translateX(173px); /* Start from the right */
+    transform: translateX(150px) translateY(50px); /* Start from the right and below */
 }
 
 .feature.center {
-    transform: translateY(150px); /* Start from below */
+    transform: translateY(100px); /* Start from below */
 }
+
+.feature.visible {
+    opacity: 1;
+    transform: translateY(0); /* Slide to original position */
+}
+
+@media (max-width: 768px) {
+    .feature {
+        transform: translateY(100px); /* All features start from below on mobile */
+    }
+
+    .feature.left,
+    .feature.right {
+        transform: translateY(100px); /* Override horizontal positions on mobile */
+    }
+}
+
+
+
 
 .feature.visible {
     opacity: 1;
@@ -364,4 +449,8 @@ footer p {
     background-repeat: no-repeat;
     background-size: cover;
     z-index: -1;
+}
+::selection {
+    background-color: #333; /* Dark grey background */
+    color: #aaa; /* Light grey text */
 }

@@ -8,8 +8,40 @@
 </head>
 <body>
     
-        <a href="#" class="cta-btn"><button><span>Hover me!</span></button></a>
+<a href="#" class="cta-btn"><button><span>Hover me!</span></button></a>
 
 
 </body>
 </html>
+
+.hero .cta-btn {
+    padding: 15px 30px;
+    background: #fff;
+    color: #000;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    display: inline-block;
+    cursor: pointer;
+}
+.herp .cta-btn {
+    transition: 0.5s;
+}
+.herp .cta-btn:after {
+    content: '»';
+    position: absolute;
+    opacity: 0;  
+    top: 14px;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .herp .cta-btn:hover {
+    padding-right: 24px;
+    padding-left:8px;
+  }
+  
+  .herp .cta-btn:after {
+    opacity: 1;
+    right: 10px;
+  }
