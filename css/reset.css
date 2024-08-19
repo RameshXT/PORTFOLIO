@@ -63,30 +63,36 @@ body {
 /* -------[ SCROLLBAR STYLES ]------- */
 
     ::-webkit-scrollbar {
-        width: 12px; /* Width of the scrollbar */
+        width: 12px;
     }
-    
+
+    ::-webkit-scrollbar-button {
+        display: none;
+    }
+
     ::-webkit-scrollbar-track {
-        background: #f1f1f1; /* Background color of the scrollbar track */
+        background: #333; 
     }
-    
+
     ::-webkit-scrollbar-thumb {
-        background: #333; /* Color of the scrollbar thumb */
-        border-radius: 6px; /* Optional: Rounded corners for the scrollbar thumb */
+        background: #666; 
+        border-radius: 6px;
     }
-    
+
     ::-webkit-scrollbar-thumb:hover {
-        background: #555; /* Darker color when hovering over the scrollbar thumb */
+        background: #888;
     }
-    
+
     * {
-        scrollbar-width: thin; /* Thin scrollbar */
-        scrollbar-color: #333 #f1f1f1; /* Thumb color and track color */
+        scrollbar-width: thin;
+        scrollbar-color: #666 #333;
     }
-    
+
     body {
-        -ms-overflow-style: -ms-autohiding-scrollbar; /* Automatically hide scrollbars in IE and Edge Legacy */
+        -ms-overflow-style: none;
     }
+
+
     
 
 

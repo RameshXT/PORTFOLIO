@@ -1,0 +1,215 @@
+/*
+======================================
+        [ TEMPLATE ]
+======================================
+
+    CSS File:   hero.css
+    Template:   Portfolio | Ramesh
+    Category:   Portfolio
+    Author:     Ramesh
+    Version:    1.0
+    
+    Design and Developed by: Ramesh
+
+======================================
+        [ END TEMPLATE ]
+======================================
+*/
+
+/*
+======================================
+        [ CSS TABLE OF CONTENTS ]
+======================================
+    
+    [ Table of Contents ]
+    [ HERO SECTION ]
+
+    1. Hero Styles
+    2. Content Wrapper Styles
+    3. Animated Text Styles
+    4. Static Text Styles
+    5. CTA Button Styles
+    6. Scroll Visibility Styles
+
+======================================
+    [ END CSS TABLE OF CONTENTS ]
+======================================
+*/
+
+
+/*
+======================================
+        [ CSS STYLES START ]
+======================================
+*/
+
+/* -------[ HERO STYLE ]------- */
+
+.hero {
+    height: 75vh; /* Full viewport height */
+    display: flex; /* Flexbox layout */
+    flex-direction: column; /* Stack vertically */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    text-align: center; /* Center-align text */
+    padding: 100px 20px; /* Padding around content */
+    color: #fff; /* White text color */
+    background: linear-gradient(135deg, #000 50%, #333 50%); /* Gradient background */
+    position: relative; /* Position for child elements */
+    overflow: hidden; /* Hide overflow content */
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: 60vh; /* Reduce height for smaller screens */
+        padding: 80px 15px; /* Adjust padding for smaller screens */
+    }
+
+    #typing-text {
+        font-size: 24px; /* Adjust font size for smaller screens */
+    }
+
+    .hero .cta-btn {
+        padding: 12px 24px; /* Adjust button padding for smaller screens */
+        font-size: 16px; /* Adjust font size for button */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        height: 50vh; /* Further reduce height for very small screens */
+        padding: 60px 10px; /* Further adjust padding */
+    }
+
+    #typing-text {
+        font-size: 20px; /* Further reduce font size */
+    }
+
+    .hero .cta-btn {
+        padding: 10px 20px; /* Further adjust button padding */
+        font-size: 14px; /* Further adjust font size */
+    }
+}
+
+/* -------[ CONTENT WRAPPER STYLE ]------- */
+
+.hero-content {
+    opacity: 0; /* Hide content initially */
+    transform: translateY(100px); /* Position below */
+    transition: opacity 2s ease-in-out, transform 2s ease-in-out; /* Smooth transition */
+}
+
+.hero-content.visible {
+    opacity: 1; /* Show content */
+    transform: translateY(0); /* Move to original position */
+}
+
+/* -------[ ANIMATED TEXT STYLE ]------- */
+
+.animated-text {
+    opacity: 0; /* Hide animated text initially */
+    transform: translateY(100px); /* Position below */
+    transition: opacity 2s ease-in-out, transform 2s ease-in-out; /* Smooth transition */
+}
+
+.animated-text.visible {
+    opacity: 1; /* Show animated text */
+    transform: translateY(0); /* Move to original position */
+}
+
+/* -------[ STATIC TEXT STYLE ]------- */
+
+#static-text {
+    display: inline; /* Inline display */
+}
+
+#typing-text {
+    display: inline; /* Inline display */
+    font-weight: bold; /* Bold text */
+    color: #00bdff; /* Typing text color */
+    border-right: 10px solid #b0ff95; /* Cursor effect */
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden; /* Hide overflow text */
+    font-size: 28px; /* Font size */
+    line-height: 1; /* Line height */
+    animation: typing 4s steps(30, end) 1s 1 normal both, /* Typing effect */
+               cursor-blink 800ms step-end infinite; /* Cursor blink effect */
+    margin-left: 10px; /* Space from static text */
+}
+
+@keyframes typing {
+    from { width: 0; } /* Start with width 0 */
+    to { width: 100%; } /* End with full width */
+}
+
+@keyframes cursor-blink {
+    0% { border-right-color: #00aeff; } /* Initial cursor color */
+    50% { border-right-color: transparent; } /* Hide cursor */
+    100% { border-right-color: #00aeff; } /* End with cursor color */
+}
+
+/* -------[ CTA BUTTON STYLE ]------- */
+
+.hero .cta-btn {
+    padding: 15px 30px; /* Button padding */
+    background: #fff; /* White background */
+    color: #000; /* Black text */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+    margin-top: 20px; /* Space above button */
+    display: inline-block; /* Inline-block display */
+    cursor: pointer; /* Pointer cursor on hover */
+    position: relative; /* Position for pseudo-element */
+    overflow: hidden; /* Hide overflow content */
+    transition: background-color 0.5s, color 0.5s, transform 0.3s; /* Smooth transition */
+}
+
+.hero .cta-btn:after {
+    content: '»'; /* Arrow symbol */
+    position: absolute; /* Absolute positioning */
+    opacity: 0; /* Hide arrow initially */
+    top: 50%; /* Center vertically */
+    right: -20px; /* Position off-screen */
+    transform: translateY(-50%); /* Center vertically */
+    transition: opacity 0.5s, right 0.5s; /* Smooth transition */
+}
+
+.hero .cta-btn:hover {
+    background-color: #000; /* Black background on hover */
+    color: #fff; /* White text on hover */
+    transform: scale(1.1); /* Zoom effect on hover */
+}
+
+.hero .cta-btn:hover:after {
+    opacity: 1; /* Show arrow on hover */
+    right: 10px; /* Move arrow to button edge */
+}
+
+.hero .cta-btn span {
+    display: inline-block; /* Inline-block display */
+    transition: transform 0.5s; /* Smooth transition */
+}
+
+.hero .cta-btn:hover span {
+    transform: translateX(10px); /* Move text on hover */
+}
+
+/* -------[ SCROLL VISIBILITY STYLES ]------- */
+
+.hidden-content {
+    opacity: 0; /* Hide content initially */
+    transform: translateY(100px); /* Position below */
+    transition: opacity 2s ease-in-out, transform 2s ease-in-out; /* Smooth transition */
+}
+
+.hidden-content.visible {
+    opacity: 1; /* Show content */
+    transform: translateY(0); /* Move to original position */
+}
+
+
+/*
+======================================
+        [ END HERO SECTION STYLES ]
+======================================
+*/

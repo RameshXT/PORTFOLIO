@@ -159,7 +159,8 @@ header nav ul li a.active {
         right: 0; /* Align with the right edge */
         width: 50%; /* Set width to 50% of the viewport */
         height: 100%; /* Full height */
-        background: linear-gradient(135deg, #000 50%, #333 50%);
+        backdrop-filter: blur(4px); /* Applies a blur effect to the area behind the element */
+        /* background: linear-gradient(135deg, #000 50%, #333 50%); */
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
         z-index: 10; /* Ensure menu is above other elements */
         transform: translateX(100%); /* Initially hide off-screen */
@@ -208,7 +209,6 @@ header nav ul li a.active {
 }
 
 /* -------[ HEADER STYLES END ]------- */
-
 
 
 /* 
