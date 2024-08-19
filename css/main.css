@@ -1,239 +1,256 @@
 /* General Styles */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+/* ----------------- */
+/* Global styles applied to the entire webpage. */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap'); /* Importing the Inter font from Google Fonts */
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #f4f4f4;
-    color: #333;
+    font-family: Arial, sans-serif; /* Sets the default font */
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
+    background: #f4f4f4; /* Light grey background color */
+    color: #333; /* Dark grey text color */
 }
 
 /* Header (Navbar) */
+/* ----------------- */
+/* Styles for the navigation bar at the top of the page. */
+
 header {
-    display: flex;
-    align-items: center;
-    padding: 20px;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for contrast */
-    z-index: 1000; /* Ensure it stays on top of other content */
-    /* background-image: url(/assets/images/nav.jpg); */
+    display: flex; /* Use flexbox layout */
+    align-items: center; /* Align items vertically */
+    padding: 20px; /* Padding around the header */
+    position: fixed; /* Fixes the header to the top of the viewport */
+    width: 100%; /* Full width */
+    top: 0; /* Position at the top */
+    left: 0; /* Position at the left */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for separation */
+    z-index: 1000; /* Ensure the header is on top */
+    /* background-image: url(/assets/images/nav.jpg); */ /* Optional background image */
 }
 
 header .logo {
-    flex: 1;
+    flex: 1; /* Flex-grow for the logo */
 }
 
 header .logo img {
-    height: 40px; /* Adjust the logo size */
+    height: 40px; /* Height of the logo image */
 }
 
 header nav {
-    display: flex;
-    align-items: center;
-    margin-left: auto; /* Pushes the nav items to the right */
+    display: flex; /* Use flexbox for navigation */
+    align-items: center; /* Align items vertically */
+    margin-left: auto; /* Pushes navigation items to the right */
 }
 
 header nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 20px; /* Even space between navigation items */
+    list-style: none; /* Removes bullet points */
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
+    display: flex; /* Use flexbox for the list */
+    gap: 20px; /* Space between list items */
 }
 
 header nav ul li {
-    margin: 0;
+    margin: 0; /* Removes default margin from list items */
 }
 
 header nav ul li a {
-    text-decoration: none;
+    text-decoration: none; /* Removes underline */
     color: #ffffff; /* White text color */
-    padding-right: 40px;
-    padding: 10px 20px; /* Adjust padding for better spacing */
-    transition: color 0.3s, background-color 0.3s; /* Smooth transition */
+    padding-right: 40px; /* Extra padding on the right */
+    padding: 10px 20px; /* Padding around the link */
+    transition: color 0.3s, background-color 0.3s; /* Smooth transition for hover effects */
 }
 
 header nav ul li a:hover,
 header nav ul li a.active {
     background: #fff; /* White background on hover */
     color: #000; /* Black text color on hover */
-    border-radius: 5px;
+    border-radius: 5px; /* Rounded corners for hover effect */
 }
 
 header .login-btn {
-    padding: 10px 20px;
-    border-radius: 5px;
-    background-color: #fff;
-    color: #000;
-    text-decoration: none;
-    margin-left: 20px; /* Space between nav items and the login button */
+    padding: 10px 20px; /* Padding for the login button */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #fff; /* White background color */
+    color: #000; /* Black text color */
+    text-decoration: none; /* Removes underline */
+    margin-left: 20px; /* Space between navigation items and the button */
     margin-right: 50px; /* Space from the right edge */
-}
-header .login-btn {
-    background-image: linear-gradient(to right, #000000d8 0%, #ffffff 50%, #000000d8 100%);
-    text-align: center;
-    transition: 0.5s;
-    
-    background-size: 200% auto;
-    border-radius: 6px;
-    display: block;
+    background-image: linear-gradient(to right, #000000d8 0%, #ffffff 50%, #000000d8 100%); /* Gradient background */
+    text-align: center; /* Center text inside the button */
+    transition: 0.5s; /* Smooth transition for background change */
+    background-size: 200% auto; /* Gradient size */
+    border-radius: 6px; /* Rounded corners */
+    display: block; /* Display as a block element */
 }
 
 header .login-btn:hover {
-    background-position: right center; /* change the direction of the change here */
-    text-decoration: none;
+    background-position: right center; /* Change background position on hover */
+    text-decoration: none; /* Removes underline on hover */
 }
 
 /* Hero Section */
+/* ----------------- */
+/* Styles for the main hero section with a prominent call-to-action. */
+
+/* Hero Section */
 .hero {
-    text-align: center;
-    padding: 100px 20px;
-    color: #fff;
-    background: linear-gradient(135deg, #000 50%, #333 50%);
-    position: relative;
-    overflow: hidden;
+    display: flex; /* Enable Flexbox */
+    flex-direction: column; /* Arrange children in a column */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    text-align: center; /* Center text */
+    height: 70vh; /* Set the height of the hero section */
+    padding: 100px 20px; /* Padding around the hero section */
+    color: #fff; /* White text color */
+    background: linear-gradient(135deg, #000 50%, #333 50%); /* Gradient background */
+    position: relative; /* Position relative for pseudo-elements */
+    overflow: hidden; /* Hide overflow content */
 }
 
 .hero h1,
 .hero p {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 1s ease, transform 1s ease; /* Slower transition for smooth effect */
+    opacity: 0; /* Start hidden */
+    transform: translateY(50px); /* Start from below */
+    transition: opacity 1s ease, transform 1s ease; /* Smooth transition for visibility and position */
 }
 
 .hero h1 {
-    font-size: 3em;
-    line-height: 1.2; /* Adjust line height for better readability */
-
+    font-size: 3em; /* Large font size for heading */
+    line-height: 1.2; /* Adjust line height */
 }
+
 @media (max-width: 768px) {
     .hero h1 {
-        font-size: 1.9em; /* Reduce font size on smaller screens */
+        font-size: 1.9em; /* Smaller font size for medium screens */
     }
 }
 
 @media (max-width: 480px) {
     .hero h1 {
-        font-size: 1.5em; /* Further reduce font size on very small screens */
+        font-size: 1.5em; /* Further smaller font size for small screens */
     }
 }
+
 .hero.visible h1,
 .hero.visible p {
-    opacity: 1;
-    transform: translateY(0);
+    opacity: 1; /* Make visible */
+    transform: translateY(0); /* Move to original position */
+    padding-top: 100;
 }
 
 .hero .cta-btn {
-    padding: 15px 30px;
-    background: #fff;
-    color: #000;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 20px;
-    display: inline-block;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden; /* Hide the overflow caused by padding changes */
-    transition: background-color 0.5s, color 0.5s; /* Smooth transitions for background and text color */
+    padding: 15px 30px; /* Padding for the call-to-action button */
+    background: #fff; /* White background color */
+    color: #000; /* Black text color */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+    margin-top: 20px; /* Space above the button */
+    display: inline-block; /* Inline-block display */
+    cursor: pointer; /* Pointer cursor on hover */
+    position: relative; /* Position relative for pseudo-elements */
+    overflow: hidden; /* Hide overflow content */
+    transition: background-color 0.5s, color 0.5s; /* Smooth transition for background and text color */
 }
 
 .hero .cta-btn:after {
-    content: '»';
-    position: absolute;
-    opacity: 0;
-    top: 50%;
-    right: -20px;
-    transform: translateY(-50%);
-    transition: opacity 0.5s, right 0.5s; /* Smooth transitions for opacity and position */
+    content: '»'; /* Arrow character */
+    position: absolute; /* Absolute positioning for the arrow */
+    opacity: 0; /* Start hidden */
+    top: 50%; /* Center vertically */
+    right: -20px; /* Position to the right of the button */
+    transform: translateY(-50%); /* Center vertically */
+    transition: opacity 0.5s, right 0.5s; /* Smooth transition for opacity and position */
 }
 
 .hero .cta-btn:hover {
-    background-color: #000; /* Change background color on hover */
-    color: #fff; /* Change text color on hover */
+    background-color: #000; /* Black background on hover */
+    color: #fff; /* White text color on hover */
 }
 
 .hero .cta-btn:hover:after {
-    opacity: 1;
-    right: 10px;
+    opacity: 1; /* Show the arrow on hover */
+    right: 10px; /* Move the arrow inside the button */
 }
 
 .hero .cta-btn span {
-    display: inline-block;
-    transition: transform 0.5s; /* Smooth transition for span element */
+    display: inline-block; /* Display span as inline-block */
+    transition: transform 0.5s; /* Smooth transition for the move effect */
 }
 
 .hero .cta-btn:hover span {
-    transform: translateX(10px); /* Adjust if needed to simulate a move effect */
+    transform: translateX(10px); /* Simulate a move effect on hover */
 }
 
 h1 {
-    color: #fff;
-    font-size: 2rem;
-    font-weight: 600;
+    color: #fff; /* White text color for h1 */
+    font-size: 2rem; /* Font size for h1 */
+    font-weight: 600; /* Font weight for h1 */
 }
 
 h1 span {
-    color: #BD53ED;
-    position: relative;
+    color: #62a388; /* Color for span inside h1 */
+    position: relative; /* Position relative for pseudo-elements */
 }
 
 h1 span::before {
-    content: "";
-    height: 30px;
-    width: 2px;
-    position: absolute;
-    top: 50%;
-    right: -8px;
-    background: #BD53ED;
-    transform: translateY(-45%);
-    animation: blink 0.7s infinite;
+    content: ""; /* Empty content for the blinking line */
+    height: 30px; /* Height of the line */
+    width: 2px; /* Width of the line */
+    position: absolute; /* Absolute positioning for the line */
+    top: 50%; /* Center vertically */
+    right: -8px; /* Position to the right of the span */
+    background: #BD53ED; /* Color of the line */
+    transform: translateY(-45%); /* Adjust vertical position */
+    animation: blink 0.7s infinite; /* Blinking animation */
 }
 
 h1 span.stop-blinking::before {
-    animation: none;
+    animation: none; /* Stop blinking when class is added */
 }
 
 @keyframes blink {
-    50% { opacity: 0 }
+    50% { opacity: 0 } /* Blink effect */
 }
+
 /* Features Section */
+/* ----------------- */
+/* Styles for the section displaying features or highlights. */
+
 .features {
-    padding: 60px 20px;
-    background: #000;
-    color: #fff;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    padding: 60px 20px; /* Padding around the features section */
+    background: #000; /* Black background color */
+    color: #fff; /* White text color */
+    display: flex; /* Flexbox layout */
+    justify-content: space-around; /* Even space between features */
+    flex-wrap: wrap; /* Wrap features to next line if needed */
 }
 
 .feature {
-    text-align: center;
-    max-width: 300px;
-    margin: 20px;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 1s ease, transform 1s ease; /* Slower transition for smooth effect */
-
-    transition: opacity 1s, transform 1.6s;
-    opacity: 1; /* Start hidden */
+    text-align: center; /* Center align text */
+    max-width: 300px; /* Maximum width of feature blocks */
+    margin: 20px; /* Margin around feature blocks */
+    opacity: 0; /* Start hidden */
     transform: translateY(50px); /* Start from below */
+    transition: opacity 1s ease, transform 1s ease; /* Smooth transition for visibility and position */
 }
 
 /* Adjustments for mobile devices */
 @media (max-width: 768px) {
     .feature.left {
-        transform: translateX(-60px) translateY(50px); /* Reduce offset for smaller screens */
+        transform: translateX(-60px) translateY(50px);
+
+ /* Reduce horizontal offset for smaller screens */
     }
 
     .feature.right {
-        transform: translateX(60px) translateY(50px); /* Reduce offset for smaller screens */
+        transform: translateX(60px) translateY(50px); /* Reduce horizontal offset for smaller screens */
     }
 
     .feature.center {
-        transform: translateY(30px); /* Adjust vertical start position for smaller screens */
+        transform: translateY(30px); /* Adjust vertical position for smaller screens */
     }
 }
 
@@ -251,8 +268,8 @@ h1 span.stop-blinking::before {
 }
 
 .feature.visible {
-    opacity: 1;
-    transform: translateY(0); /* Slide to original position */
+    opacity: 1; /* Make visible */
+    transform: translateY(0); /* Move to original position */
 }
 
 @media (max-width: 768px) {
@@ -266,192 +283,202 @@ h1 span.stop-blinking::before {
     }
 }
 
-
-
-
 .feature.visible {
-    opacity: 1;
-    transform: translateY(0); /* Slide to original position */
+    opacity: 1; /* Make visible */
+    transform: translateY(0); /* Move to original position */
 }
 
 /* Steps Section */
+/* ----------------- */
+/* Styles for the section describing steps or processes. */
+
 .steps {
-    padding: 60px 20px;
-    background: linear-gradient(135deg, #fff 50%, #000 50%);
-    color: #000;
+    padding: 60px 20px; /* Padding around the steps section */
+    background: linear-gradient(135deg, #fff 50%, #000 50%); /* Gradient background */
+    color: #000; /* Black text color */
 }
 
 .steps h2 {
-    text-align: center;
-    font-size: 36px;
-    margin-bottom: 40px;
+    text-align: center; /* Center align heading */
+    font-size: 36px; /* Font size for the heading */
+    margin-bottom: 40px; /* Space below the heading */
 }
 
 .steps .step {
-    text-align: center;
-    max-width: 300px;
-    margin: 0 auto 30px;
+    text-align: center; /* Center align text */
+    max-width: 300px; /* Maximum width of step blocks */
+    margin: 0 auto 30px; /* Center and margin around step blocks */
 }
 
 .steps .step h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
+    font-size: 24px; /* Font size for step headings */
+    margin-bottom: 10px; /* Space below step headings */
 }
 
 .steps .step p {
-    font-size: 16px;
+    font-size: 16px; /* Font size for step descriptions */
 }
 
 .steps .learn-more {
-    text-decoration: none;
-    color: #000;
-    border-bottom: 1px solid #000;
-    padding-bottom: 5px;
+    text-decoration: none; /* Remove underline */
+    color: #000; /* Black text color */
+    border-bottom: 1px solid #000; /* Black underline */
+    padding-bottom: 5px; /* Space below text */
 }
 
 /* Contact Section */
+/* ----------------- */
+/* Styles for the contact section with a form. */
+
 .contact {
-    padding: 60px 20px;
-    background: linear-gradient(135deg, #000 50%, #fff 50%);
-    color: #000;
-    position: relative;
-    overflow: hidden;
+    padding: 60px 20px; /* Padding around the contact section */
+    background: linear-gradient(135deg, #000 50%, #fff 50%); /* Gradient background */
+    color: #000; /* Black text color */
+    position: relative; /* Position relative for pseudo-elements */
+    overflow: hidden; /* Hide overflow content */
 }
 
 .contact::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: radial-gradient(circle, #fff 20%, transparent 20%), radial-gradient(circle, #000 20%, transparent 20%);
-    background-size: 40px 40px;
-    opacity: 0.1;
-    z-index: -1;
+    content: ''; /* Empty content for background pattern */
+    position: absolute; /* Absolute positioning for the pattern */
+    top: 0; /* Position at the top */
+    left: 0; /* Position at the left */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-image: radial-gradient(circle, #fff 20%, transparent 20%), radial-gradient(circle, #000 20%, transparent 20%); /* Radial gradient pattern */
+    background-size: 40px 40px; /* Size of the pattern */
+    opacity: 0.1; /* Light opacity for the pattern */
+    z-index: -1; /* Ensure pattern is behind the content */
 }
 
 .contact h2 {
-    text-align: center;
-    margin-bottom: 40px;
-    color: #fff;
+    text-align: center; /* Center align heading */
+    margin-bottom: 40px; /* Space below heading */
+    color: #fff; /* White text color */
 }
 
 .contact form {
-    max-width: 600px;
-    margin: 0 auto;
-    display: grid;
-    gap: 20px;
+    max-width: 600px; /* Maximum width of the form */
+    margin: 0 auto; /* Center the form horizontally */
+    display: grid; /* Use grid layout */
+    gap: 20px; /* Space between form elements */
 }
 
 .contact form input, 
 .contact form textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #fff;
-    background: #000;
-    color: #fff;
-    border-radius: 5px;
-    resize: none; /* Disable resizing of the textarea */
+    width: 100%; /* Full width */
+    padding: 10px; /* Padding inside form elements */
+    border: 1px solid #fff; /* White border */
+    background: #000; /* Black background */
+    color: #fff; /* White text color */
+    border-radius: 5px; /* Rounded corners */
+    resize: none; /* Disable textarea resizing */
 }
 
 .contact form input::placeholder, 
 .contact form textarea::placeholder {
-    color: #aaa;
+    color: #aaa; /* Light grey placeholder text */
 }
 
 .contact form button {
-    padding: 15px;
-    background: #fff;
-    color: #000;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
+    padding: 15px; /* Padding inside the button */
+    background: #fff; /* White background */
+    color: #000; /* Black text color */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for background and text color */
 }
 
 .contact form button:hover {
-    background: #000;
-    color: #fff;
+    background: #000; /* Black background on hover */
+    color: #fff; /* White text color on hover */
 }
 
 /* Footer Styles */
+/* ----------------- */
+/* Styles for the footer at the bottom of the page. */
+
 footer {
-    text-align: center;
-    padding: 20px;
-    background: #000;
-    color: #fff;
+    text-align: center; /* Center align text */
+    padding: 20px; /* Padding around the footer */
+    background: #000; /* Black background color */
+    color: #fff; /* White text color */
 }
 
 .footer-links {
-    list-style: none;         /* Removes bullet points from the list */
-    display: flex;            /* Applies flexbox layout to the list */
-    justify-content: center;  /* Centers the list items horizontally */
-    gap: 20px;                /* Adds 20px of space between each list item */
-    padding: 0;               /* Removes default padding */
-    margin: 0 0 20px;         /* Removes default margin and adds 20px margin at the bottom */
+    list-style: none; /* Removes bullet points */
+    display: flex; /* Flexbox layout */
+    justify-content: center; /* Center list items */
+    gap: 20px; /* Space between list items */
+    padding: 0; /* Removes default padding */
+    margin: 0 0 20px; /* Margin around the footer links */
 }
 
 .footer-links li {
-    margin: 0;                /* Ensures no extra margin is added to the list items */
+    margin: 0; /* Removes default margin */
 }
 
 .footer-links li a {
-    text-decoration: none;    /* Removes underline from the links */
-    color: #fff;              /* Sets the link color to white */
+    text-decoration: none; /* Removes underline */
+    color: #fff; /* White text color */
 }
 
 footer p {
-    margin: 0;
+    margin: 0; /* Removes default margin */
 }
 
 .social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 33px;
-    margin-bottom: 20px;
+    display: flex; /* Flexbox layout */
+    justify-content: center; /* Center social icons */
+    gap: 33px; /* Space between icons */
+    margin-bottom: 20px; /* Space below icons */
 }
 
 .social-icons a {
-    text-decoration: none;
-    position: relative;
-    width: 26px;
-    height: 26px;
+    text-decoration: none; /* Removes underline */
+    position: relative; /* Position relative for pseudo-elements */
+    width: 26px; /* Width of social icons */
+    height: 26px; /* Height of social icons */
 }
 
 .social-icons img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    object-fit: contain; /* Maintain aspect ratio */
 }
 
 .social-icons a::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    border-left: 20px solid transparent; /* Adjust the size and position of the triangle */
-    border-right: 20px solid transparent;
-    border-bottom: 40px solid #fff; /* Color of the triangle */
-    transform: translate(-50%, -50%);
-    z-index: -1; /* Ensure the triangle is behind the logo */
+    content: ''; /* Empty content for the background triangle */
+    position: absolute; /* Absolute positioning for the triangle */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    width: 0; /* Initial width */
+    height: 0; /* Initial height */
+    border-left: 20px solid transparent; /* Left side of the triangle */
+    border-right: 20px solid transparent; /* Right side of the triangle */
+    border-bottom: 40px solid #fff; /* Bottom side of the triangle */
+    transform: translate(-50%, -50%); /* Center the triangle */
+    z-index: -1; /* Ensure triangle is behind the logo */
 }
 
 /* Custom Geometric Background */
+/* ----------------- */
+/* Custom background pattern for certain sections. */
+
 .hero::before, .steps::before, .contact::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('geometric-pattern.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index: -1;
+    content: ''; /* Empty content for background pattern */
+    position: absolute; /* Absolute positioning for the pattern */
+    top: 0; /* Position at the top */
+    left: 0; /* Position at the left */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-image: url('geometric-pattern.svg'); /* Geometric pattern background */
+    background-repeat: no-repeat; /* No repeat */
+    background-size: cover; /* Cover the section */
+    z-index: -1; /* Ensure pattern is behind the content */
 }
+
 ::selection {
-    background-color: #333; /* Dark grey background */
-    color: #aaa; /* Light grey text */
+    background-color: #333; /* Dark grey background for text selection */
+    color: #aaa; /* Light grey text color for selection */
 }
