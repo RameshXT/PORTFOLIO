@@ -1,5 +1,106 @@
-* {
+/*
+======================================
+        [ TEMPLATE ]
+======================================
+
+    CSS     :   reset.css
+    Template:   Portfolio | Ramesh
+    Category:   Portfolio
+    Author  :   Ramesh
+    Version :   1.0
+
+    Design and Developed by: Ramesh
+
+======================================
+        [ END TEMPLATE ]
+======================================
+*/
+
+/*
+======================================
+        [ CSS TABLE OF CONTENTS ]
+======================================
+
+    [ Table of Contents ]
+
+    1. General Styles
+    2. Selection Style
+    3. Scrollbar Style         
+
+======================================
+      [ END CSS TABLE OF CONTENTS ]
+======================================
+*/
+
+/*
+======================================
+        [ CSS STYLES START ]
+======================================
+*/
+
+
+/* -------[ GENERAL STYLES ]------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap'); /* Importing the Inter font from Google Fonts */
+
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    background: #f4f4f4;
+    color: #333;
 }
+
+
+/* -------[ SELECTION STYLE ]------- */
+
+    ::selection {
+        background: #333; /* Dark gray background for selected text */
+        color: #fff; /* White text color for contrast */
+    }
+
+
+/* -------[ SCROLLBAR STYLES ]------- */
+
+    ::-webkit-scrollbar {
+        width: 12px; /* Width of the scrollbar */
+    }
+    
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1; /* Background color of the scrollbar track */
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        background: #333; /* Color of the scrollbar thumb */
+        border-radius: 6px; /* Optional: Rounded corners for the scrollbar thumb */
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555; /* Darker color when hovering over the scrollbar thumb */
+    }
+    
+    * {
+        scrollbar-width: thin; /* Thin scrollbar */
+        scrollbar-color: #333 #f1f1f1; /* Thumb color and track color */
+    }
+    
+    body {
+        -ms-overflow-style: -ms-autohiding-scrollbar; /* Automatically hide scrollbars in IE and Edge Legacy */
+    }
+    
+
+
+/* -------[  ]------- */
+
+
+
+/* -------[  ]------- */
+
+
+/* -------[  ]------- */
+
+/*
+======================================
+        [ CSS STYLES END ]
+======================================
+*/
