@@ -1,17 +1,19 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const text = "Ramesh Kanna";
-    const typingEffect = document.getElementById('typing-effect');
-    let index = 0;
+    const lottiePlayerContainer = document.querySelector('.lottie-player-container');
+    
+    function checkVisibility() {
+        const rect = lottiePlayerContainer.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
 
-    function typeWriter() {
-        if (index < text.length) {
-            typingEffect.textContent += text.charAt(index);
-            index++;
-            setTimeout(typeWriter, 150); // Adjust typing speed here
+        if (rect.top <= windowHeight && rect.bottom >= 0) {
+            lottiePlayerContainer.style.opacity = '1'; // Make visible
+            lottiePlayerContainer.style.transform = 'translateY(0)'; // Slide into view
         } else {
-            typingEffect.style.borderRight = 'none'; // Optionally remove cursor after typing
+            lottiePlayerContainer.style.opacity = '0'; // Hide
+            lottiePlayerContainer.style.transform = 'translateY(20px)'; // Slide out of view
         }
     }
 
-    typeWriter();
+    window.addEventListener('scroll', checkVisibility);
+    checkVisibility(); // Check visibility on page load
 });

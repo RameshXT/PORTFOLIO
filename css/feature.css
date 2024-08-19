@@ -1,0 +1,100 @@
+/* Features Section Styles */
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+    color: #ffffffdb; /* Adjusted for readability */
+    background: linear-gradient(45deg, black 59%, #ffffff 41%);
+}
+
+.feature {
+    flex: 1 1 45%;
+    box-sizing: border-box;
+    color: #e0e0e0; /* Light grey text color */
+}
+
+.feature.left {
+    text-align: center; /* Center text on the left side */
+}
+
+.feature-img {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto; /* Center the image */
+    display: block;
+}
+
+.learn-more {
+    display: inline-block;
+    margin-top: 10px;
+    color: #007bff; /* Keep the blue color */
+    text-decoration: none;
+}
+
+.learn-more:hover {
+    text-decoration: underline;
+}
+
+/* Skill Section Styles */
+.feature ul {
+    list-style-type: none; /* Remove default list bullets */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    display: flex;
+    justify-content: space-between; /* Space between the skill columns */
+    gap: 20px; /* Space between skill items */
+}
+
+.feature ul:nth-of-type(2) {
+    margin-top: 20px; /* Space between the two skill lists */
+}
+
+.feature li {
+    flex: 1; /* Distribute items evenly within the list */
+    margin-bottom: 10px; /* Space between list items */
+    font-size: 16px; /* Font size for list items */
+    color: #e0e0e0; /* Text color for list items */
+}
+
+.feature li i {
+    margin-right: 10px; /* Space between the icon and the text */
+    color: #007bff; /* Icon color */
+}
+
+
+
+/* Lottie Player Container Styles */
+.lottie-player-container {
+    display: flex;
+    justify-content: flex-end; /* Aligns the lottie-player to the right */
+    padding: 20px; /* Optional padding for spacing */
+    box-sizing: border-box; /* Ensures padding is included in the total width/height */
+    opacity: 0; /* Initially hidden */
+    transform: translateY(20px); /* Initially off-screen */
+    transition: opacity 2s ease-in-out, transform 1s ease-in-out; /* Smooth transition */
+}
+
+.lottie-player {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
