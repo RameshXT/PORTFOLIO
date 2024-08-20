@@ -54,9 +54,10 @@ header {
     left: 0; /* Position at the left */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for separation */
     z-index: 1000; /* Ensure the header is on top */
-    background: #000;
+    /* background: #000; */
     box-sizing: border-box; /* Ensure padding is included in the width */
     justify-content: space-between; /* Space between logo and navigation */
+    font-size: 12px;
 }
 
 /* -------[ LOGO STYLES ]------- */

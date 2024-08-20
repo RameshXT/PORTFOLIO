@@ -126,7 +126,9 @@
 #typing-text {
     display: inline; /* Inline display */
     font-weight: bold; /* Bold text */
-    color: #00bdff; /* Typing text color */
+    background: linear-gradient(135deg, #ff77a9, #8b57ff, #3a45d1);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     border-right: 10px solid #b0ff95; /* Cursor effect */
     white-space: nowrap; /* Prevent text wrapping */
     overflow: hidden; /* Hide overflow text */
@@ -135,7 +137,10 @@
     animation: typing 4s steps(30, end) 1s 1 normal both, /* Typing effect */
                cursor-blink 800ms step-end infinite; /* Cursor blink effect */
     margin-left: 10px; /* Space from static text */
-}
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4), /* Main shadow */
+                 0px 4px 6px rgba(0, 0, 0, 0.2); /* Floor effect */
+  }
+  
 
 @keyframes typing {
     from { width: 0; } /* Start with width 0 */
@@ -177,7 +182,6 @@
 .hero .cta-btn:hover {
     background-color: #000; /* Black background on hover */
     color: #fff; /* White text on hover */
-    transform: scale(1.1); /* Zoom effect on hover */
 }
 
 .hero .cta-btn:hover:after {
