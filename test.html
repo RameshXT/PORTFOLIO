@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWS Card Flip Design</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #fff; /* Light grey background */
+        }
+
+        .card-container {
+            perspective: 1200px; /* Adjust perspective for better depth */
+            width: 55%; /* Adjust width as needed */
+            height: 60%; /* Adjust height as needed */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.8s ease-in-out;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3); /* Pronounced border shade */
+            border-radius: 10px; /* Rounded corners */
+        }
+
+        .card:hover .card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .card-inner {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s ease-in-out;
+            transform-style: preserve-3d;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-side {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 10px; /* Rounded corners for the flip effect */
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            padding: 10px; /* Adjust padding for better spacing */
+        }
+
+        .card-front {
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center vertically */
+            align-items: center; /* Center horizontally */
+            text-align: center;
+            color: white;
+            background: url('/assets/background/cloud-background.jpg') no-repeat center center/cover; /* Use your cloud-themed background */
+            background-color: #232f3e; /* AWS dark blue fallback */
+            border-radius: 10px; /* Consistent rounded corners */
+            padding: 20px; /* Padding to ensure space around content */
+            padding-top: 175px;
+            box-sizing: border-box; /* Ensure padding does not affect width/height */
+        }
+
+        .card-back {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Distribute space between elements */
+            align-items: flex-start; /* Align content to the start */
+            text-align: left; /* Align text to the left */
+            color: #232f3e; /* AWS dark blue for text */
+            transform: rotateY(180deg);
+            border: 1px solid #d0d0d0; /* Light grey border for premium look */
+            border-radius: 10px; /* Rounded corners for the back side */
+        }
+
+        .card-description, .key-services, .use-cases, .resources {
+            margin-bottom: 10px; /* Adjust space between sections */
+            font-size: 14px; /* Adjust font size for readability */
+        }
+
+        .key-services h4 {
+            margin-bottom: 5px; /* Space below the heading */
+            color: #ff9900; /* AWS orange for heading */
+            font-size: 16px; /* Size for the heading */
+        }
+
+        .service-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px; /* Space between service items */
+        }
+
+        .service-item img {
+            width: 20px; /* Adjust icon size as needed */
+            margin-right: 5px; /* Space between icon and text */
+        }
+
+        .resources a {
+            color: #ff9900; /* AWS orange for links */
+            text-decoration: none; /* Remove underline from link */
+            font-weight: bold; /* Make the link text bold */
+        }
+
+        .aws-logo {
+            width: 120px; /* Adjust logo size */
+            margin-bottom: 10px;
+        }
+
+        .card-title {
+            font-size: 28px; /* Adjust title size for fitting */
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .card-tagline {
+            font-size: 32px; /* Adjust tagline size for fitting */
+            color: #ff9900; /* AWS orange */
+        }
+
+        .learning-progress {
+            margin-top: auto; /* Push to bottom of front side */
+            width: 100%;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .learning-progress-label {
+            font-size: 14px; /* Adjust font size for fitting */
+            margin-bottom: 5px;
+            color: #ffffff;
+        }
+
+        .star-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .star {
+            font-size: 20px; /* Adjust star size */
+            color: #ff9900; /* AWS orange */
+            margin-right: 3px;
+        }
+
+        .star.empty {
+            color: #d3d3d3; /* Light grey for empty stars */
+        }
+        
+        .star.half {
+            position: relative;
+            color: #fff;
+        }
+        
+        .star.half::before {
+            content: "★";
+            position: absolute;
+            left: 0;
+            color: #ff9900; /* Color of the filled half */
+            width: 50%; /* Half the width of the star */
+            overflow: hidden;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="card-container">
+        <div class="card">
+            <div class="card-inner">
+                <!-- Front Side -->
+                <div class="card-side card-front">
+                    <img src="/assets/icons/aws.png" alt="AWS Logo" class="aws-logo">
+                    <div class="card-title">Amazon Web Services</div>
+                    <div class="card-tagline">The Cloud Platform of Choice</div>
+                    <!-- Learning Progress -->
+                    <div class="learning-progress">
+                        <div class="learning-progress-label">My AWS Knowledge Level</div>
+                        <div class="star-container">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star half">★</span>
+                            <span class="star empty">★</span>
+                            <span class="star empty">★</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Back Side -->
+                <div class="card-side card-back">
+                    <div class="card-description">
+                        Amazon Web Services (AWS) offers reliable, scalable, and inexpensive cloud computing services. It's the backbone of modern cloud infrastructure.
+                    </div>
+                    <div class="key-services">
+                        <h4>Key Services:</h4>
+                        <div class="service-item">
+                            <img src="/assets/icons/aws-card/ec2.png" alt="EC2 Icon"> <!-- Replace with the path to the EC2 icon -->
+                            <p>EC2: Scalable compute capacity in the cloud.</p>
+                        </div>
+                        <div class="service-item">
+                            <img src="/assets/icons/aws-card/s3.png" alt="S3 Icon"> <!-- Replace with the path to the S3 icon -->
+                            <p>S3: Secure, durable, and scalable storage.</p>
+                        </div>
+                        <div class="service-item">
+                            <img src="/assets/icons/aws-card/vpc.png" alt="VPC Icon"> <!-- Replace with the path to the VPC icon -->
+                            <p>VPC: Isolated network environment for your AWS resources.</p>
+                        </div>
+                        <div class="service-item">
+                            <img src="/assets/icons/aws-card/iam.png" alt="IAM Icon"> <!-- Replace with the path to the IAM icon -->
+                            <p>IAM: Manage access to AWS services and resources securely.</p>
+                        </div>
+                        <div class="service-item">
+                            <img src="/assets/icons/aws-card/lambda.png" alt="Lambda Icon"> <!-- Replace with the path to the Lambda icon -->
+                            <p>Lambda: Run code without provisioning servers.</p>
+                        </div>
+                        <div class="service-item">
+                            <img src="/assets/icons/aws-card/cloud watch.png" alt="CloudWatch Icon"> <!-- Replace with the path to the CloudWatch icon -->
+                            <p>CloudWatch: Monitor and manage cloud resources and applications.</p>
+                        </div>
+                    </div>
+                    <div class="use-cases">
+                        <h4>Popular Use Cases:</h4>
+                        <p>Hosting scalable websites, Big data processing, Disaster recovery</p>
+                    </div>
+                    <div class="resources">
+                        <a href="https://aws.amazon.com" target="_blank">Explore AWS</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
