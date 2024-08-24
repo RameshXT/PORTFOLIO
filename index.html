@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- -------[ NAME ]------- -->
+    <!-- -------[ PROJECT NAME ]------- -->
     <title>PortFolio | Ramesh</title>
 
     <!-- -------[ CSS LINKS ]------- -->
@@ -12,6 +13,7 @@
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/hero.css">
     <link rel="stylesheet" href="/css/feature.css">
+    <link rel="stylesheet" href="/css/skillset.css">
 
     <!-- -------[ FAVICON LINK ]------- -->
     <link rel="icon" href="/assets/favicon/favicon.png">
@@ -38,6 +40,7 @@
             <span class="line-toggle"></span>
         </div>
         <nav>
+            <!-- [ NAV BAR LIST ] -->
             <ul>
                 <li><a href="#">HOME</a></li>
                 <li><a href="#">ABOUT ME</a></li>
@@ -49,7 +52,6 @@
         </nav>
     </header>
     <!-- -------[ HEADER END ]------- -->
-    
 
     <!-- -------[ HERO START ]------- -->
     <section class="hero">
@@ -59,7 +61,7 @@
                 <span id="typing-text"></span>
             </h1>
             <!-- [ INTRODUCTION TEXT ] -->
-            <div class="hidden-content animated-text"> <!-- Modified class -->
+            <div class="hidden-content animated-text">
                 <p>I'm a DevOps Engineer in the Making</p>
                 <p>Blending creativity and technical skills to enhance AWS DevOps</p>
             </div>
@@ -67,54 +69,50 @@
             <a href="#" class="cta-btn">Get in Touch</a>
         </div>
     </section>
-   <!-- -------[ HERO END ]------- -->
+    <!-- -------[ HERO END ]------- -->
 
+    <!-- -------[ FEATURE START ]------- -->
+    <section class="features">
+        <div class="feature left scroll-trigger">
+            <!-- [ BRIEF HISTORY ] -->
+            <h5 class="brief-history">Brief History</h5>
+            <h1 class="intro-heading">
+                A non-IT student turned DevOps Engineer with a passion for automating everything
+            </h1>
+            <p class="intro-text">
+                I am excited to start my professional journey and build my skills in the software industry. While I don't have work experience yet, I am eager to learn. Here are some of the key skills and knowledge I have gained from my studies and personal projects:
+            </p>
+            <!-- [ LISTED TOOLS ] -->
+            <ul class="skills-list">
+                <li class="skill-item"><i>&#x2714; DevOps Lifestyle</i></li>
+                <li class="skill-item"><i>&#x2714; Cloud Computing</i></li>
+                <li class="skill-item"><i>&#x2714; Source Code Management</i></li>
+            </ul>
+            <ul class="additional-skills-list">
+                <li class="additional-skill-item"><i>&#x2714; Adaptability</i></li>
+                <li class="additional-skill-item"><i>&#x2714; Time Management</i></li>
+                <li class="additional-skill-item"><i>&#x2714; Thinking Out-of-the-box</i></li>
+            </ul>
+            <a href="#" class="learn-more">Learn More</a>
+        </div>
+        <!-- [ LOTTIE PLAYER ] -->
+        <div class="lottie-player-container scroll-trigger">
+            <lottie-player 
+                class="lottie-player"
+                data-anim-type="fade-in-left" 
+                data-anim-delay="100"
+                src="https://assets5.lottiefiles.com/packages/lf20_w51pcehl.json" 
+                background="transparent"
+                speed="1"  
+                loop
+                autoplay>
+            </lottie-player>
+        </div>
+    </section>
+    <!-- -------[ FEATURE END ]------- -->
 
-<!-- -------[ FEATURE START ]------- -->
-<section class="features">
-    <div class="feature left scroll-trigger">
-        <!-- <img src="" alt="Your Configuration" class="feature-img"> -->
-        <h5 class="brief-history">Brief History</h5>
-        <br>
-        <h1 class="intro-heading">
-            A non-IT student turned DevOps Engineer with a passion for automating everything
-        </h1>
-        <p class="intro-text">
-            I am excited to start my professional journey and build my skills in the software industry. While I don't have work experience yet, I am eager to learn. Here are some of the key skills and knowledge I have gained from my studies and personal projects:
-        </p>
-        <br><br>
-        <ul class="skills-list">
-            <li class="skill-item"><i>&#x2714; DevOps Lifestyle</i></li>
-            <li class="skill-item"><i>&#x2714; Cloud Computing</i></li>
-            <li class="skill-item"><i>&#x2714; Source Code Management</i></li>
-        </ul>
-        <ul class="additional-skills-list">
-            <li class="additional-skill-item"><i>&#x2714; Adaptability</i></li>
-            <li class="additional-skill-item"><i>&#x2714; Time Management</i></li>
-            <li class="additional-skill-item"><i>&#x2714; Thinking Out-of-the-box</i></li>
-        </ul>
-        <br><br>
-        <a href="#" class="learn-more">Learn More</a>
-    </div>
-    
-    <div class="lottie-player-container scroll-trigger">
-        <lottie-player 
-            class="lottie-player"
-            data-anim-type="fade-in-left" 
-            data-anim-delay="100"
-            src="https://assets5.lottiefiles.com/packages/lf20_w51pcehl.json" 
-            background="transparent"
-            speed="1"  
-            loop
-            autoplay>
-        </lottie-player>
-    </div>
-</section>
-<!-- -------[ FEATURE END ]------- -->
-
-
-
-
+    <!-- -------[ SKILLSET START ]------- -->
+    <!-- -------[ SKILLSET END ]------- -->
 
 
 
@@ -124,5 +122,3 @@
 
 </body>
 </html>
-
-

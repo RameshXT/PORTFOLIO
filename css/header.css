@@ -1,11 +1,11 @@
 /*
 ======================================
-        [ TEMPLATE ]
+         [ TEMPLATE ]
 ======================================
 
     CSS File:   header.css
-    Template:   Portfolio | Ramesh
-    Category:   Portfolio
+    Template:   PortFolio | Ramesh
+    Category:   PortFolio
     Author:     Ramesh
     Version:    1.0
     
@@ -21,14 +21,16 @@
         [ CSS TABLE OF CONTENTS ]
 ======================================
     
-    [ Table of Contents ]
-    [ HEADER ]
-
+    [ Table of Contents ] [ HEADER ]
+    
+    [ BASE STYLE ]
     1. Header Styles
     2. Logo Styles
     3. Navigation Styles
-    4. Responsive Styles moblie
-    5. Mobile Menu Toggle Styles
+    4. Mobile Menu Toggle Styles
+
+    [ RESPONSIVE STYLES ]
+    1. Mobile
 
 ======================================
     [ END CSS TABLE OF CONTENTS ]
@@ -38,182 +40,178 @@
 
 /*
 ======================================
-        [ CSS STYLES START ]
+        [ BASE STYLES START ]
 ======================================
 */
 
 /* -------[ HEADER STYLES ]------- */
-
 header {
-    display: flex; /* Use flexbox layout */
-    align-items: center; /* Align items vertically */
-    padding: 20px; /* Uniform padding around the header */
-    position: fixed; /* Fixes the header to the top of the viewport */
-    width: 100%; /* Full width */
-    top: 0; /* Position at the top */
-    left: 0; /* Position at the left */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for separation */
-    z-index: 1000; /* Ensure the header is on top */
-    /* background: #000; */
-    box-sizing: border-box; /* Ensure padding is included in the width */
-    justify-content: space-between; /* Space between logo and navigation */
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    box-sizing: border-box;
+    justify-content: space-between;
     font-size: 12px;
 }
 
 /* -------[ LOGO STYLES ]------- */
-
 header .logo {
-    flex: 1; /* Flex-grow for the logo */
+    flex: 1;
     display: flex;
     align-items: center;
 }
 
 header .logo img {
-    height: 40px; /* Set height of the logo image */
+    height: 40px;
 }
 
 /* -------[ NAVIGATION STYLES ]------- */
-
 header nav {
-    display: flex; /* Use flexbox for navigation */
-    align-items: flex-start; /* Align items vertically */
-    margin-left: auto; /* Pushes navigation items to the right */
+    display: flex;
+    align-items: flex-start;
+    margin-left: auto;
 }
 
 header nav ul {
-    list-style: none; /* Removes bullet points */
-    margin: 0; /* Removes default margin */
-    padding: 0; /* Removes default padding */
-    display: flex; /* Use flexbox for the list */
-    gap: 20px; /* Space between list items */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
 }
 
 header nav ul li {
-    margin: 0; /* Removes default margin from list items */
+    margin: 0;
 }
 
 header nav ul li a {
-    text-decoration: none; /* Removes underline */
-    color: #ffffff; /* White text color */
-    padding: 10px 20px; /* Padding around the link */
-    transition: color 0.4s, background-color 0.4s; /* Smooth transition for hover effects */
+    text-decoration: none;
+    color: #ffffff;
+    padding: 10px 20px;
+    transition: color 0.4s, background-color 0.4s;
 }
 
 header nav ul li a:hover,
 header nav ul li a.active {
-    background: #fff; /* White background on hover */
-    color: #000; /* Black text color on hover */
-    border-radius: 5px; /* Rounded corners for hover effect */
+    background: #fff;
+    color: #000;
+    border-radius: 5px;
 }
 
-/* -------[ RESPONSIVE STYLES ]------- */
 
+/*
+======================================
+        [ RESPONSIVE STYLES ]
+======================================
+*/
+
+/* -------[ RESPONSIVE STYLES ]------- */
 @media (max-width: 1024px) {
     header {
-        padding: 15px; /* Adjust padding for smaller screens */
+        padding: 15px;
     }
     
     header .logo img {
-        height: 35px; /* Adjust logo size */
+        height: 35px;
     }
     
     header nav ul {
-        gap: 15px; /* Adjust gap between navigation items */
+        gap: 15px;
     }
 }
 
-/* -------[ RESPONSIVE STYLE MOBILE ]------- */
-
+/* -------[ MOBILE ]------- */
 @media (max-width: 768px) {
     header {
-        flex-direction: row; /* Align items in a row */
-        padding: 10px; /* Further reduced padding */
-        justify-content: space-between; /* Space between logo and menu toggle */
-        align-items: flex-end; /* Align items to the end of the header */
-        background-color: #000; /* Black background for header */
+        flex-direction: row;
+        padding: 10px;
+        justify-content: space-between;
+        align-items: flex-end;
+        background-color: #000;
     }
 
     header .menu-toggle {
-        display: flex; /* Show menu toggle button */
+        display: flex;
         flex-direction: column;
         justify-content: space-around;
         width: 30px;
         height: 20px;
         cursor: pointer;
-        background-color: #000000; /* Black background for toggle */
-        margin-left: auto; /* Align toggle to the right edge */
-        margin-right: 10px; /* Add space on the right edge */
-        z-index: 11; /* Ensure it’s above the menu */
+        background-color: #000000;
+        margin-left: auto;
+        margin-right: 10px;
+        z-index: 11;
     }
 
     header .menu-toggle span {
         display: block;
         width: 100%;
         height: 3px;
-        background: #ffffff; /* White lines for contrast against black background */
-        transition: all 0.7s ease; /* Smooth transition */
+        background: #ffffff;
+        transition: all 0.7s ease;
     }
 
     header nav {
-        position: fixed; /* Fix position to the viewport */
-        top: 0; /* Align to the top of the viewport */
-        right: 0; /* Align with the right edge */
-        width: 50%; /* Set width to 50% of the viewport */
-        height: 100%; /* Full height */
-        backdrop-filter: blur(4px); /* Applies a blur effect to the area behind the element */
-        /* background: linear-gradient(135deg, #000 50%, #333 50%); */
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-        z-index: 10; /* Ensure menu is above other elements */
-        transform: translateX(100%); /* Initially hide off-screen */
-        opacity: 0; /* Initially invisible */
-        visibility: hidden; /* Hide the element */
-        transition: transform 0.9s ease, opacity 0.9s ease, visibility 0.9s ease; /* Smooth sliding and fading transition */
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 100%;
+        backdrop-filter: blur(4px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        z-index: 10;
+        transform: translateX(100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: transform 0.9s ease, opacity 0.9s ease, visibility 0.9s ease;
     }
 
     header nav.active {
-        transform: translateX(0); /* Slide in to align with the right edge */
-        opacity: 1; /* Fully visible */
-        visibility: visible; /* Make the element visible */
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
     }
 
     header nav ul {
-        flex-direction: column; /* Stack list items vertically */
-        gap: 35px; /* Reduce gap for smaller screens */
-        padding: 40px; /* Add padding for better spacing */
+        flex-direction: column;
+        gap: 35px;
+        padding: 40px;
         padding-top: 65px;
-        margin: 0; /* Reset margin */
+        margin: 0;
     }
 
     header nav ul li {
-        margin: 0; /* Ensure no margin on list items */
+        margin: 0;
     }
 
     header .logo img {
-        height: 30px; /* Further adjust logo size for mobile */
+        height: 30px;
     }
 }
 
 /* -------[ MOBILE MENU TOGGLE STYLE ]------- */
-
 .menu-toggle.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px); /* Rotate top line */
-    background: #ffffff; /* Change color */
+    transform: rotate(45deg) translate(5px, 5px);
+    background: #ffffff;
 }
 
 .menu-toggle.active span:nth-child(2) {
-    opacity: 0; /* Hide middle line */
+    opacity: 0;
 }
 
 .menu-toggle.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px); /* Rotate bottom line */
-    background: #333; /* Change color */
+    transform: rotate(-45deg) translate(5px, -5px);
+    background: #333;
 }
 
-/* -------[ HEADER STYLES END ]------- */
-
-
-/* 
+/*
 ======================================
-          [ CSS STYLES END ]
+          [ BASE STYLES END ]
 ======================================
 */
