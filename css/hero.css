@@ -94,15 +94,18 @@
     font-weight: bold;
     background: linear-gradient(135deg, #ff77a9, #8b57ff, #3a45d1);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     border-right: 10px solid #b0ff95;
     white-space: nowrap;
     overflow: hidden;
     font-size: 28px;
     line-height: 1;
-    animation: typing 4s steps(30, end) 1s 1 normal both, cursor-blink 800ms step-end infinite;
+    animation: typing 4s steps(30, end) 1s 1 normal both,
+               cursor-blink 800ms step-end infinite;
     margin-left: 10px;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4), 0px 4px 6px rgba(0, 0, 0, 0.2);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4),
+                 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 @keyframes typing {
