@@ -1,6 +1,6 @@
 /*
 ======================================
-        [ TEMPLATE ]
+    [ TEMPLATE ]
 ======================================
 
     CSS     :   reset.css
@@ -12,35 +12,34 @@
     Design and Developed by: Ramesh
 
 ======================================
-        [ END TEMPLATE ]
+    [ END TEMPLATE ]
 ======================================
 */
 
 /*
 ======================================
-        [ CSS TABLE OF CONTENTS ]
+    [ CSS TABLE OF CONTENTS ]
 ======================================
 
-    [ Table of Contents ]
+    [ Table of Contents ] [ RESET ]
 
+    [ BASE STYLE ]
     1. General Styles
     2. Selection Style
     3. Scrollbar Style         
 
 ======================================
-      [ END CSS TABLE OF CONTENTS ]
+    [ END CSS TABLE OF CONTENTS ]
 ======================================
 */
 
 /*
 ======================================
-        [ CSS STYLES START ]
+    [ BASE STYLES START ]
 ======================================
 */
 
-
 /* -------[ GENERAL STYLES ]------- */
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap'); /* Importing the Inter font from Google Fonts */
 
 body {
@@ -53,7 +52,6 @@ body {
 
 
 /* -------[ SELECTION STYLE ]------- */
-
     ::selection {
         background: #333; /* Dark gray background for selected text */
         color: #fff; /* White text color for contrast */
@@ -61,7 +59,6 @@ body {
 
 
 /* -------[ SCROLLBAR STYLES ]------- */
-
     ::-webkit-scrollbar {
         width: 12px;
     }
@@ -92,12 +89,7 @@ body {
         -ms-overflow-style: none;
     }
 
-
-    
-
-
 /* -------[  ]------- */
-
 
 
 /* -------[  ]------- */
@@ -107,6 +99,6 @@ body {
 
 /*
 ======================================
-        [ CSS STYLES END ]
+    [ BASE STYLES END ]
 ======================================
 */
