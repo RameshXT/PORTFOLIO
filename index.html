@@ -13,8 +13,20 @@
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/hero.css">
     <link rel="stylesheet" href="/css/feature.css">
-    <link rel="stylesheet" href="/css/skillset.css">
+    <!-- <link rel="stylesheet" href="/css/skillset.css"> -->
 
+    <!-- -------[ SKILS LINKS ]------- -->
+    <link rel="stylesheet" href="/css/skill/git.css">
+    <link rel="stylesheet" href="/css/skill/github.css">
+    <link rel="stylesheet" href="/css/skill/docker.css">
+    <link rel="stylesheet" href="/css/skill/jenkins.css">
+    <link rel="stylesheet" href="/css/skill/k8s.css">
+    <link rel="stylesheet" href="/css/skill/terraform.css">
+    <link rel="stylesheet" href="/css/skill/aws.css">
+    <link rel="stylesheet" href="/css/skill/linux.css">
+    <link rel="stylesheet" href="/css/skill/nginx.css">
+    <link rel="stylesheet" href="/css/skill/tomcat.css">
+    
     <!-- -------[ FAVICON LINK ]------- -->
     <link rel="icon" href="/assets/favicon/favicon.png">
 
@@ -123,77 +135,6 @@
 
     <!-- -------[ ALL CARD START ]------- -->
 
-    <!-- -------[ AWS CARD START ]------- -->
-    <div class="aws-card-container">
-        <div class="card-container">
-            <div class="card">
-                <div class="card-inner">
-                    
-                    <!-- [ FRONT SIDE ] -->
-                    <div class="card-side card-front">
-                        <img src="/assets/icons/aws/aws.png" alt="AWS Logo" class="aws-logo">
-                        <div class="card-title">Amazon Web Services</div>
-                        <div class="card-tagline">The Cloud Platform of Choice</div>
-
-                        <!-- [ LEARNING PROGRESS ] -->
-                        <div class="learning-progress">
-                            <div class="learning-progress-label">My AWS Knowledge Level</div>
-                            <div class="star-container">
-                                <span class="star">★</span>
-                                <span class="star">★</span>
-                                <span class="star half">★</span>
-                                <span class="star empty">★</span>
-                                <span class="star empty">★</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- [ BACK SIDE ] -->
-                    <div class="card-side card-back">
-                        <div class="card-description">
-                            Amazon Web Services (AWS) offers reliable, scalable, and inexpensive cloud computing services. It's the backbone of modern cloud infrastructure.
-                        </div>
-                        <div class="key-services">
-                            <h4>Key Services:</h4>
-                            <div class="service-item">
-                                <img src="/assets/icons/aws/ec2.png" alt="EC2 Icon">
-                                <p>EC2: Scalable compute capacity in the cloud.</p>
-                            </div>
-                            <div class="service-item">
-                                <img src="/assets/icons/aws/s3.png" alt="S3 Icon">
-                                <p>S3: Secure, durable, and scalable storage.</p>
-                            </div>
-                            <div class="service-item">
-                                <img src="/assets/icons/aws/vpc.png" alt="VPC Icon">
-                                <p>VPC: Isolated network environment for your AWS resources.</p>
-                            </div>
-                            <div class="service-item">
-                                <img src="/assets/icons/aws/iam.png" alt="IAM Icon">
-                                <p>IAM: Manage access to AWS services and resources securely.</p>
-                            </div>
-                            <div class="service-item">
-                                <img src="/assets/icons/aws/lambda.png" alt="Lambda Icon">
-                                <p>Lambda: Run code without provisioning servers.</p>
-                            </div>
-                            <div class="service-item">
-                                <img src="/assets/icons/aws/cloud watch.png" alt="CloudWatch Icon">
-                                <p>CloudWatch: Monitor and manage cloud resources and applications.</p>
-                            </div>
-                        </div>
-                        <div class="use-cases">
-                            <h4>Popular Use Cases:</h4>
-                            <p>Hosting scalable websites, Big data processing, Disaster recovery</p>
-                        </div>
-                        <div class="resources">
-                            <a href="https://aws.amazon.com" target="_blank">Explore AWS</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- -------[ AWS CARD END ]------- -->
-
     <!-- -------[ GIT CARD START ]------- -->
     <div class="git-card-container">
         <div class="card-container">
@@ -265,21 +206,590 @@
     </div>
     <!-- -------[ GIT CARD END ]------- -->
 
-    <!-- -------[ TERRAFORM START ]------- -->
-    <div class="terraform-card-container">
+    <!-- -------[ GITHUB START ]------- -->
+    <div class="github-card-container">
+        <div class="card-container">
+            <div class="card">
+                <div class="card-inner">
+
+                    <!-- [ FRONT SIDE ] -->
+                    <div class="card-side card-front">
+                        <img src="/assets/icons/github/github.png" alt="GitHub Logo" class="github-logo">
+                        <div class="card-title">GitHub</div>
+                        <div class="card-tagline">Where the World Builds Software</div>
+
+                        <!-- [ LEARNING PROGRESS ] -->
+                        <div class="learning-progress">
+                            <div class="learning-progress-label">My GitHub Knowledge Level</div>
+                            <div class="star-container">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star half">★</span>
+                                <span class="star empty">★</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- [ BACK SIDE ] -->
+                    <div class="card-side card-back">
+                        <div class="card-description">
+                            GitHub is a development platform inspired by the way you work. From open source to business, you can host and review code, manage projects, and build software alongside millions of developers.
+                        </div>
+                        <div class="key-services">
+                            <h4>Key Features:</h4>
+                            <div class="service-item">
+                                <img src="/assets/icons/github/repo.png" alt="Repo Icon">
+                                <p>Repositories: Host and review code, manage projects, and build software.</p>
+                            </div>
+                            <div class="service-item">
+                                <img src="/assets/icons/github/action.png" alt="Actions Icon">
+                                <p>Actions: Automate workflows directly from your repository.</p>
+                            </div>
+                            <div class="service-item">
+                                <img src="/assets/icons/github/issue.png" alt="Issues Icon">
+                                <p>Issues: Track your work with GitHub Issues.</p>
+                            </div>
+                            <div class="service-item">
+                                <img src="/assets/icons/github/pull req.png" alt="Pull Requests Icon">
+                                <p>Pull Requests: Collaborate with others and manage changes easily.</p>
+                            </div>
+                            <div class="service-item">
+                                <img src="/assets/icons/github/security.png" alt="Security Icon">
+                                <p>Security: Secure your code with GitHub's advanced security features.</p>
+                            </div>
+                            <div class="service-item">
+                                <img src="/assets/icons/github/fork.png" alt="Fork Icon">
+                                <p>Fork: Create your own copy of a repository to modify and experiment with.</p>
+                            </div>
+                        </div>
+                        <div class="use-cases">
+                            <h4>Popular Use Cases:</h4>
+                            <p>Version Control, Collaboration, DevOps Automation</p>
+                        </div>
+                        <div class="resources">
+                            <a href="https://www.github.com" target="_blank">Explore GitHub</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- -------[ GITHUB END ]------- -->
+
+    <!-- [ DOCKER START ] -->
+<div class="docker-card-container">
+    <div class="card-container">
+        <div class="card">
+            <div class="card-inner">
+                
+                <!-- [ FRONT SIDE ] -->
+                <div class="card-side card-front">
+                    <img src="/assets/icons/docker/docker.png" alt="Docker Logo" class="docker-logo">
+                    <div class="card-title">Docker</div>
+                    <div class="card-tagline">Containerization Platform</div>
+
+                    <!-- [ LEARNING PROGRESS ] -->
+                    <div class="learning-progress">
+                        <div class="learning-progress-label">My Docker Knowledge Level</div>
+                        <div class="star-container">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star half">★</span>
+                            <span class="star empty">★</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- [ BACK SIDE ] -->
+                <div class="card-side card-back">
+                    <div class="card-description">
+                        Docker is a platform that allows developers to automate the deployment of applications inside lightweight, portable containers.
+                    </div>
+                    <div class="key-services">
+                        <h4>Key Services:</h4>
+                        <div class="service-item">
+                            <img src="/assets/icons/docker/registry.png" alt="Registry Icon">
+                            <p>Registry: Store and distribute Docker images.</p>
+                        </div>
+                        <div class="service-item">
+                            <img src="/assets/icons/docker/volume.png" alt="Volume Icon">
+                            <p>Volumes: Manage persistent data storage for containers.</p>
+                        </div>
+                        <div class="service-item">
+                            <img src="/assets/icons/docker/dockerfile.png" alt="Dockerfile Icon">
+                            <p>Dockerfile: Define and build Docker images using a text file with instructions.</p>
+                        </div>
+                        <div class="service-item">
+                            <img src="/assets/icons/docker/container.png" alt="Container Icon">
+                            <p>Containers: Lightweight and portable software units.</p>
+                        </div>
+                        <div class="service-item">
+                            <img src="/assets/icons/docker/image.png" alt="Image Icon">
+                            <p>Docker Image: Build and create reusable container images.</p>
+                        </div>
+                        <div class="service-item">
+                            <img src="/assets/icons/docker/compose.png" alt="Compose Icon">
+                            <p>Docker Compose: Define and run multi-container Docker applications.</p>
+                        </div>
+                    </div>
+                    <div class="use-cases">
+                        <h4>Popular Use Cases:</h4>
+                        <p>Microservices, CI/CD Pipelines, Development Environments</p>
+                    </div>
+                    <div class="resources">
+                        <a href="https://www.docker.com" target="_blank">Explore Docker</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- [ DOCKER END ] -->
+
+ <!-- -------[ JENKINS START ]------- -->
+ <div class="jenkins-card-container">
+    <div class="card-container">
+        <div class="card">
+            <div class="card-inner">
+                
+                <!-- [ FRONT SIDE ] -->
+                <div class="card-side card-front">
+                    <img src="/assets/icons/jenkins/jenkins.png" alt="Jenkins Logo" class="jenkins-logo">
+                    <div class="card-title">Jenkins</div>
+                    <div class="card-tagline">Automation Server CI/CD</div>
+
+                    <!-- [ LEARNING PROGRESS ] -->
+                    <div class="learning-progress">
+                        <div class="learning-progress-label">My Jenkins Knowledge Level</div>
+                        <div class="star-container">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star empty">★</span>
+                            <span class="star empty">★</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- [ BACK SIDE ] -->
+                <div class="card-side card-back">
+                    <div class="card-description">
+                        Jenkins is an open-source automation server that helps automate the parts of software development related to building, testing, and deploying, facilitating continuous integration and continuous delivery.
+                    </div>
+                    <div class="key-services">
+                        <h4>Key Features:</h4>
+                        <div class="service-item">
+                            <img src="/assets/icons/jenkins/pipeline.png" alt="Pipeline Icon">
+                            <p>Pipeline: Automate your build and deployment processes.</p>
+                        </div>
+                        <div class="service-item">
+                            <img src="/assets/icons/jenkins/plugin.png" alt="Plugins Icon">
+                            <p>Plugins: Enhance Jenkins with additional features.</p>
+                        </div>
+                        <div class="service-item">
+                            <img src="/assets/icons/jenkins/scm.png" alt="SCM Icon">
+                            <p>SCM Integration: Link Jenkins with source code repositories.</p>
+                        </div>
+                        <div class="service-item">
+                            <img src="/assets/icons/jenkins/authorization.png" alt="Authorization Icon">
+                            <p>Authorization: Manage who can access and modify Jenkins.</p>
+                        </div>
+                        <div class="service-item">
+                            <img src="/assets/icons/jenkins/backup.png" alt="Backup Icon">
+                            <p>Backup: Create and manage backups of Jenkins configurations.</p>
+                        </div>
+                        <div class="service-item">
+                            <img src="/assets/icons/jenkins/monitoring.png" alt="Monitoring Icon">
+                            <p>Monitoring: Keep track of Jenkins performance and health.</p>
+                        </div>
+                    </div>
+                    <div class="use-cases">
+                        <h4>Popular Use Cases:</h4>
+                        <p>Continuous Integration, Continuous Delivery, Build Automation</p>
+                    </div>
+                    <div class="resources">
+                        <a href="https://www.jenkins.io" target="_blank">Explore Jenkins</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- -------[ JENKINS END ]------- -->
+
+<!-- -------[ K8S START ]------- -->
+<div class="kubernetes-card-container">
+    <div class="card-container">
+        <div class="card">
+            <div class="card-inner">
+                
+                <!-- [ FRONT SIDE ] -->
+                <div class="card-side card-front">
+                    <img src="/assets/icons/k8s/k8s.png" alt="Kubernetes Logo" class="kubernetes-logo">
+                    <div class="card-title">Kubernetes</div>
+                    <div class="card-tagline">Automating Deployment, Scaling, and Management</div>
+                    
+                    <!-- [ LEARNING PROGRESS ] -->
+                    <div class="learning-progress">
+                        <div class="learning-progress-label">My Kubernetes Knowledge Level</div>
+                        <div class="star-container">
+                            <span class="star half">★</span>
+                            <span class="star empty">★</span>
+                            <span class="star empty">★</span>
+                            <span class="star empty">★</span>
+                            <span class="star empty">★</span>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- [ BACK SIDE ] -->
+                <div class="card-side card-back">
+                    <div class="card-description">
+                        Kubernetes is an open-source system for automating the deployment, scaling, and management of containerized applications. It helps manage containerized workloads and services, facilitating declarative configuration and automation.
+                    </div>
+                    <div class="key-services">
+                        <h4>Key Features:</h4>
+                        <div class="service-item">
+                            <img src="/assets/icons/k8s/Container Orchestration.png" alt="Container Orchestration Icon">
+                            <p>Container Orchestration: Automates deployment, scaling, and operations of containers.</p>
+                        </div>
+                        <div class="service-item">
+                            <img src="/assets/icons/k8s/pod.png" alt="Pods Icon">
+                            <p>Pods: The smallest deployable units in Kubernetes, containing one or more containers.</p>
+                        </div>
+                        <div class="service-item">
+                            <img src="/assets/icons/k8s/Auto-Scaling.png" alt="Auto-Scaling Icon">
+                            <p>Auto-Scaling: Dynamically adjusts the number of running containers based on load.</p>
+                        </div>
+                        <div class="service-item">
+                            <img src="/assets/icons/k8s/Service Discovery.png" alt="Service Discovery Icon">
+                            <p>Service Discovery: Automatically detects services and ensures high availability.</p>
+                        </div>
+                        <div class="service-item">
+                            <img src="/assets/icons/k8s/config-map.png" alt="ConfigMaps Icon">
+                            <p>ConfigMaps: Manages configuration data separately from application code.</p>
+                        </div>
+                        <div class="service-item">
+                            <img src="/assets/icons/k8s/secret.png" alt="Secrets Icon">
+                            <p>Secrets: Securely stores sensitive information like passwords and tokens.</p>
+                        </div>
+                    </div>
+                    <div class="use-cases">
+                        <h4>Popular Use Cases:</h4>
+                        <p>Managing microservices, automated deployments, and container orchestration.</p>
+                    </div>
+                    <div class="resources">
+                        <a href="https://kubernetes.io" target="_blank">Explore Kubernetes</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- -------[ K8S END ]------- -->
+
+ <!-- -------[ TERRAFORM START ]------- -->
+ <div class="terraform-card-container">
+    <div class="card-container">
+        <div class="card">
+            <div class="card-inner">
+                
+                <!-- [ FRONT SIDE ] -->
+                <div class="card-side card-front">
+                    <img src="/assets/icons/terraform/Terraform.png" alt="Terraform Logo" class="terraform-logo">
+                    <div class="card-title">Terraform</div>
+                    <div class="card-tagline">Infrastructure as Code</div>
+
+                    <!-- [ LEARNING PROGRESS ] -->
+                    <div class="learning-progress">
+                        <div class="learning-progress-label">My Terraform Knowledge Level</div>
+                        <div class="star-container">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star empty">★</span>
+                            <span class="star empty">★</span>
+                            <span class="star empty">★</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- [ BACK SIDE ] -->
+                <div class="card-side card-back">
+                    <div class="card-description">
+                        Terraform is an open-source tool that allows you to define and provision infrastructure using a high-level configuration language.
+                    </div>
+                    <div class="key-services">
+                        <h4>Key Features:</h4>
+                        <div class="service-item">
+                            <img src="/assets/icons/terraform/plan.png" alt="Plan Icon">
+                            <p>Plan: Preview changes before applying them to your infrastructure.</p>
+                        </div>
+                        <div class="service-item">
+                            <img src="/assets/icons/terraform/HashiCorp Terraform.png" alt="Apply Icon">
+                            <p>Apply: Execute the changes and update your infrastructure.</p>
+                        </div>
+                        <div class="service-item">
+                            <img src="/assets/icons/terraform/HashiCorp Terraform.png" alt="Validate Icon">
+                            <p>Validate: Ensure configuration files are error-free.</p>
+                        </div>
+                        <div class="service-item">
+                            <img src="/assets/icons/terraform/state.png" alt="State Icon">
+                            <p>State: Manage and track the state of your infrastructure.</p>
+                        </div>
+                        <div class="service-item">
+                            <img src="/assets/icons/terraform/HashiCorp Terraform.png" alt="Module Icon">
+                            <p>Modules: Create reusable configurations to manage resources.</p>
+                        </div>
+                        <div class="service-item">
+                            <img src="/assets/icons/terraform/HashiCorp Terraform.png" alt="Output Icon">
+                            <p>Output: Capture and display key information from your configurations.</p>
+                        </div>
+                    </div>
+                    <div class="use-cases">
+                        <h4>Popular Use Cases:</h4>
+                        <p>Provisioning cloud infrastructure, Managing multi-cloud environments, Automating infrastructure deployment</p>
+                    </div>
+                    <div class="resources">
+                        <a href="https://www.terraform.io" target="_blank">Explore Terraform</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- -------[ TERRAFORM END ]------- -->
+
+<!-- -------[ AWS CARD START ]------- -->
+<div class="aws-card-container">
+    <div class="card-container">
+        <div class="card">
+            <div class="card-inner">
+                
+                <!-- [ FRONT SIDE ] -->
+                <div class="card-side card-front">
+                    <img src="/assets/icons/aws.png" alt="AWS Logo" class="aws-logo">
+                    <div class="card-title">Amazon Web Services</div>
+                    <div class="card-tagline">The Cloud Platform of Choice</div>
+
+                    <!-- [ LEARNING PROGRESS ] -->
+                    <div class="learning-progress">
+                        <div class="learning-progress-label">My AWS Knowledge Level</div>
+                        <div class="star-container">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star half">★</span>
+                            <span class="star empty">★</span>
+                            <span class="star empty">★</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- [ BACK SIDE ] -->
+                <div class="card-side card-back">
+                    <div class="card-description">
+                        Amazon Web Services (AWS) offers reliable, scalable, and inexpensive cloud computing services. It's the backbone of modern cloud infrastructure.
+                    </div>
+                    <div class="key-services">
+                        <h4>Key Services:</h4>
+                        <div class="service-item">
+                            <img src="/assets/icons/aws-card/ec2.png" alt="EC2 Icon">
+                            <p>EC2: Scalable compute capacity in the cloud.</p>
+                        </div>
+                        <div class="service-item">
+                            <img src="/assets/icons/aws-card/s3.png" alt="S3 Icon">
+                            <p>S3: Secure, durable, and scalable storage.</p>
+                        </div>
+                        <div class="service-item">
+                            <img src="/assets/icons/aws-card/vpc.png" alt="VPC Icon">
+                            <p>VPC: Isolated network environment for your AWS resources.</p>
+                        </div>
+                        <div class="service-item">
+                            <img src="/assets/icons/aws-card/iam.png" alt="IAM Icon">
+                            <p>IAM: Manage access to AWS services and resources securely.</p>
+                        </div>
+                        <div class="service-item">
+                            <img src="/assets/icons/aws-card/lambda.png" alt="Lambda Icon">
+                            <p>Lambda: Run code without provisioning servers.</p>
+                        </div>
+                        <div class="service-item">
+                            <img src="/assets/icons/aws-card/cloud watch.png" alt="CloudWatch Icon">
+                            <p>CloudWatch: Monitor and manage cloud resources and applications.</p>
+                        </div>
+                    </div>
+                    <div class="use-cases">
+                        <h4>Popular Use Cases:</h4>
+                        <p>Hosting scalable websites, Big data processing, Disaster recovery</p>
+                    </div>
+                    <div class="resources">
+                        <a href="https://aws.amazon.com" target="_blank">Explore AWS</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- -------[ AWS CARD END ]------- -->
+
+    <!-- -------[ LINUX START ]------- -->
+    <div class="linux-card-container">
         <div class="card-container">
             <div class="card">
                 <div class="card-inner">
                     
                     <!-- [ FRONT SIDE ] -->
                     <div class="card-side card-front">
-                        <img src="/assets/icons/terraform/Terraform.png" alt="Terraform Logo" class="terraform-logo">
-                        <div class="card-title">Terraform</div>
-                        <div class="card-tagline">Infrastructure as Code</div>
+                        <img src="/assets/icons/linux/linux.png" alt="Linux Logo" class="linux-logo">
+                        <div class="card-title">Linux</div>
+                        <div class="card-tagline">Open Source Operating System</div>
 
                         <!-- [ LEARNING PROGRESS ] -->
                         <div class="learning-progress">
-                            <div class="learning-progress-label">My Terraform Knowledge Level</div>
+                            <div class="learning-progress-label">My Linux Knowledge Level</div>
+                            <div class="star-container">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star empty">★</span>
+                                <span class="star empty">★</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- [ BACK SIDE ] -->
+                    <div class="card-side card-back">
+                        <div class="card-description">
+                            Linux is a family of open-source Unix-like operating systems based on the Linux kernel. It is widely used for its stability and flexibility.
+                        </div>
+                        <div class="key-services">
+                            <h4>Key Features:</h4>
+                            <div class="service-item">
+                                <img src="/assets/icons/linux/kernal.png" alt="Kernel Icon">
+                                <p>Kernel: The core component of the operating system.</p>
+                            </div>
+                            <div class="service-item">
+                                <img src="/assets/icons/linux/shell.png" alt="Shell Icon">
+                                <p>Shell: Command-line interface for interacting with the system.</p>
+                            </div>
+                            <div class="service-item">
+                                <img src="/assets/icons/linux/package.png" alt="Package Icon">
+                                <p>Package Management: Tools for installing and managing software packages.</p>
+                            </div>
+                            <div class="service-item">
+                                <img src="/assets/icons/linux/linux.png" alt="Filesystem Icon">
+                                <p>Filesystem: Organization and management of data on storage devices.</p>
+                            </div>
+                            <div class="service-item">
+                                <img src="/assets/icons/linux/permission.png" alt="Permissions Icon">
+                                <p>Permissions: Manage user access and permissions for files and directories.</p>
+                            </div>
+                            <div class="service-item">
+                                <img src="/assets/icons/linux/network.png" alt="Network Icon">
+                                <p>Networking: Configuration and management of network interfaces and services.</p>
+                            </div>
+                        </div>
+                        <div class="use-cases">
+                            <h4>Popular Use Cases:</h4>
+                            <p>Web servers, Development environments, Desktop computing</p>
+                        </div>
+                        <div class="resources">
+                            <a href="https://www.linux.org" target="_blank">Explore Linux</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- -------[ LINUX END ]------- -->
+
+    <!-- -------[ NGINX START ]------- -->
+    <div class="nginx-card-container">
+        <div class="card-container">
+            <div class="card">
+                <div class="card-inner">
+                    
+                    <!-- [ FRONT SIDE ] -->
+                    <div class="card-side card-front">
+                        <img src="/assets/icons/nginx/nginx.png" alt="NGINX Logo" class="nginx-logo">
+                        <div class="card-title">NGINX</div>
+                        <div class="card-tagline">The Engine X of the Internet</div>
+                        
+                        <!-- [ LEARNING PROGRESS ] -->
+                        <div class="learning-progress">
+                            <div class="learning-progress-label">My NGINX Knowledge Level</div>
+                            <div class="star-container">
+                                <span class="star">★</span>
+                                <span class="star half">★</span>
+                                <span class="star empty">★</span>
+                                <span class="star empty">★</span>
+                                <span class="star empty">★</span>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- [ BACK SIDE ] -->
+                    <div class="card-side card-back">
+                        <div class="card-description">
+                            NGINX is a high-performance HTTP server and reverse proxy, as well as an IMAP/POP3 proxy server. It powers many of the world's most popular websites.
+                        </div>
+                        <div class="key-services">
+                            <h4>Key Features:</h4>
+                            <div class="service-item">
+                                <img src="/assets/icons/nginx/http.png" alt="HTTP Server Icon">
+                                <p>HTTP Server: Handles web requests with efficiency.</p>
+                            </div>
+                            <div class="service-item">
+                                <img src="/assets/icons/nginx/Load Balancing.png" alt="Load Balancer Icon">
+                                <p>Load Balancer: Distributes traffic to different servers.</p>
+                            </div>
+                            <div class="service-item">
+                                <img src="/assets/icons/nginx/reverse procy.png" alt="Reverse Proxy Icon">
+                                <p>Reverse Proxy: Directs client requests to the appropriate server.</p>
+                            </div>
+                            <div class="service-item">
+                                <img src="/assets/icons/nginx/ssl.png" alt="SSL Icon">
+                                <p>SSL Termination: Offloads SSL decryption to improve performance.</p>
+                            </div>
+                            <div class="service-item">
+                                <img src="/assets/icons/nginx/cacheing.png" alt="Caching Icon">
+                                <p>Caching: Speeds up web content delivery by storing responses.</p>
+                            </div>
+                            <div class="service-item">
+                                <img src="/assets/icons/nginx/static-file.png" alt="Static Files Icon">
+                                <p>Static Files: Efficiently serves static content like HTML, CSS, and images.</p>
+                            </div>
+                        </div>
+                        <div class="use-cases">
+                            <h4>Popular Use Cases:</h4>
+                            <p>Web server, Load balancing, API gateway</p>
+                        </div>
+                        <div class="resources">
+                            <a href="https://nginx.org" target="_blank">Explore NGINX</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- -------[ NGINX END ]------- -->
+
+    <!-- -------[ TOMCAT START ]------- -->
+    <div class="apache-tomcat-card-container">
+        <div class="card-container">
+            <div class="card">
+                <div class="card-inner">
+
+                    <!-- [ FRONT SIDE ] -->
+                    <div class="card-side card-front">
+                        <img src="/assets/icons/apache tomcat/tomcat.png" alt="Apache Tomcat Logo" class="apache-tomcat-logo">
+                        <div class="card-title">Apache Tomcat</div>
+                        <div class="card-tagline">The Web Application Server</div>
+
+                        <!-- [ LEARNING PROGRESS ] -->
+                        <div class="learning-progress">
+                            <div class="learning-progress-label">My Apache Tomcat Knowledge Level</div>
                             <div class="star-container">
                                 <span class="star">★</span>
                                 <span class="star">★</span>
@@ -293,49 +803,49 @@
                     <!-- [ BACK SIDE ] -->
                     <div class="card-side card-back">
                         <div class="card-description">
-                            Terraform is an open-source tool that allows you to define and provision infrastructure using a high-level configuration language.
+                            Apache Tomcat is an open-source implementation of the Java Servlet, JavaServer Pages, and Java Expression Language technologies. It powers numerous large-scale, mission-critical web applications across various industries and sectors.
                         </div>
                         <div class="key-services">
                             <h4>Key Features:</h4>
                             <div class="service-item">
-                                <img src="/assets/icons/terraform/plan.png" alt="Plan Icon">
-                                <p>Plan: Preview changes before applying them to your infrastructure.</p>
+                                <img src="/assets/icons/apache tomcat/servelet.png" alt="Servlet Icon">
+                                <p>Servlets: Java-based server-side technology for handling requests.</p>
                             </div>
                             <div class="service-item">
-                                <img src="/assets/icons/terraform/HashiCorp Terraform.png" alt="Apply Icon">
-                                <p>Apply: Execute the changes and update your infrastructure.</p>
+                                <img src="/assets/icons/apache tomcat/jsp.png" alt="JSP Icon">
+                                <p>JSP: JavaServer Pages for creating dynamic web content.</p>
                             </div>
                             <div class="service-item">
-                                <img src="/assets/icons/terraform/HashiCorp Terraform.png" alt="Validate Icon">
-                                <p>Validate: Ensure configuration files are error-free.</p>
+                                <img src="/assets/icons/apache tomcat/deployment.png" alt="Deployment Icon">
+                                <p>Deployment: Deploy Java applications in a web server environment.</p>
                             </div>
                             <div class="service-item">
-                                <img src="/assets/icons/terraform/state.png" alt="State Icon">
-                                <p>State: Manage and track the state of your infrastructure.</p>
+                                <img src="/assets/icons/apache tomcat/configuration.png" alt="Configuration Icon">
+                                <p>Configuration: Manage server settings through configuration files.</p>
                             </div>
                             <div class="service-item">
-                                <img src="/assets/icons/terraform/HashiCorp Terraform.png" alt="Module Icon">
-                                <p>Modules: Create reusable configurations to manage resources.</p>
+                                <img src="/assets/icons/apache tomcat/monitor.png" alt="Monitoring Icon">
+                                <p>Monitoring: Keep track of server performance and health.</p>
                             </div>
                             <div class="service-item">
-                                <img src="/assets/icons/terraform/HashiCorp Terraform.png" alt="Output Icon">
-                                <p>Output: Capture and display key information from your configurations.</p>
+                                <img src="/assets/icons/apache tomcat/security.png" alt="Security Icon">
+                                <p>Security: Secure Java applications with authentication and encryption.</p>
                             </div>
                         </div>
                         <div class="use-cases">
                             <h4>Popular Use Cases:</h4>
-                            <p>Provisioning cloud infrastructure, Managing multi-cloud environments, Automating infrastructure deployment</p>
+                            <p>Running Java-based web applications, Servlet container, JSP engine</p>
                         </div>
                         <div class="resources">
-                            <a href="https://www.terraform.io" target="_blank">Explore Terraform</a>
+                            <a href="https://tomcat.apache.org" target="_blank">Explore Apache Tomcat</a>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
     </div>
-    <!-- -------[ TERRAFORM END ]------- -->
-
+    <!-- -------[ TOMCAT END ]------- -->
 
     <!-- -------[ ALL CARD END ]------- -->
     <!-- TODO -------[ SKILLSET END ]------- -->

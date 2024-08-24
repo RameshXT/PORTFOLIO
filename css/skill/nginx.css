@@ -1,0 +1,471 @@
+/* -------[ NGINX CARD STYLE START ]------- */
+/* Scoped NGINX Card Styles */
+.nginx-card-container {
+    font-family: inherit; /* Inherit the portfolio font */
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
+    align-items: center;
+    height: 70vh;
+    background: linear-gradient(135deg, #000000 50%, #ffffff 50%);
+}
+
+.nginx-card-container .card-container {
+    perspective: 1200px; /* Adjust perspective for better depth */
+    width: 55%; /* Adjust width as needed */
+    height: 61vh; /* Adjust height as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.nginx-card-container .card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s ease-in-out;
+    border-radius: 10px; /* Rounded corners */
+}
+
+.nginx-card-container .card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.nginx-card-container .card-inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s ease-in-out;
+    transform-style: preserve-3d;
+    display: flex;
+    flex-direction: column;
+}
+
+.nginx-card-container .card-side {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px; /* Rounded corners for the flip effect */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding: 10px; /* Adjust padding for better spacing */
+}
+
+.nginx-card-container .card-front {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    text-align: center;
+    color: #ffffff; /* White text */
+    background-color: #4A4A4A ; /* NGINX Green background */
+    border-radius: 10px; /* Consistent rounded corners */
+    padding: 20px; /* Padding to ensure space around content */
+    padding-top: 175px;
+    box-sizing: border-box; /* Ensure padding does not affect width/height */
+}
+
+.nginx-card-container .card-back {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start; 
+    text-align: left; 
+    color: #4A4A4A; /* Dark Gray text */
+    transform: rotateY(180deg);
+    border: 1px solid #ffffff41;
+    border-radius: 10px;
+    background-color: #FFFFFF; /* White background */
+}
+
+.nginx-card-container .card-description, 
+.nginx-card-container .key-services, 
+.nginx-card-container .use-cases, 
+.nginx-card-container .resources {
+    margin-bottom: 10px; /* Adjust space between sections */
+    font-size: 14px; /* Adjust font size for readability */
+}
+
+.nginx-card-container .key-services h4 {
+    margin-bottom: 5px; /* Space below the heading */
+    color: #009639; /* NGINX Green for heading */
+    font-size: 16px; /* Size for the heading */
+}
+
+.nginx-card-container .service-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px; /* Space between service items */
+}
+
+.nginx-card-container .service-item img {
+    width: 20px; /* Adjust icon size as needed */
+    margin-right: 5px; /* Space between icon and text */
+}
+
+.nginx-card-container .resources a {
+    color: #009639; /* NGINX Green for links */
+    text-decoration: none; /* Remove underline from link */
+    font-weight: bold; /* Make the link text bold */
+}
+
+.nginx-card-container .nginx-logo {
+    width: 120px; /* Adjust logo size */
+    margin-bottom: 10px;
+}
+
+.nginx-card-container .card-title {
+    font-size: 28px; /* Adjust title size for fitting */
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.nginx-card-container .card-tagline {
+    font-size: 32px; /* Adjust tagline size for fitting */
+    color: #009639; /* NGINX Green */
+}
+
+.nginx-card-container .learning-progress {
+    margin-top: auto; /* Push to bottom of front side */
+    width: 100%;
+    text-align: center;
+    color: #ffffff; /* White text */
+}
+
+.nginx-card-container .learning-progress-label {
+    font-size: 14px; /* Adjust font size for fitting */
+    margin-bottom: 5px;
+    color: #ffffff; /* White text */
+}
+
+.nginx-card-container .star-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nginx-card-container .star {
+    font-size: 20px; /* Adjust star size */
+    color: #009639; /* NGINX Green for stars */
+    margin-right: 3px;
+}
+
+.nginx-card-container .star.empty {
+    color: #d3d3d3; /* Light grey for empty stars */
+}
+
+.nginx-card-container .star.half {
+    position: relative;
+    color: #fff;
+}
+
+.nginx-card-container .star.half::before {
+    content: "★";
+    position: absolute;
+    left: 0;
+    color: #009639; /* Color of the filled half */
+    width: 50%; /* Half the width of the star */
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/* -------[ RESPONSIVE STYLES ]------- */
+
+/* For 320px to 479px */
+@media (max-width: 479px) {
+    .nginx-card-container .card-container {
+        width: 95%;
+        max-width: 100%;
+        height: 70vh;
+    }
+
+    .nginx-card-container .card-front {
+        padding-top: 100px;
+    }
+
+    .nginx-card-container .card-title {
+        font-size: 16px;
+    }
+
+    .nginx-card-container .card-tagline {
+        font-size: 18px;
+    }
+
+    .nginx-card-container .learning-progress {
+        font-size: 12px;
+    }
+
+    .nginx-card-container .learning-progress-label {
+        font-size: 10px;
+    }
+
+    .nginx-card-container .star {
+        font-size: 14px;
+    }
+
+    .nginx-card-container .service-item img {
+        width: 18px;
+    }
+
+    .nginx-card-container .key-services h4 {
+        font-size: 14px;
+    }
+
+    .nginx-card-container .resources a {
+        font-size: 12px;
+    }
+
+    .nginx-card-container .card-back {
+        padding: 10px;
+        box-sizing: border-box;
+        overflow: auto;
+    }
+}
+
+/* For 480px to 767px */
+@media (min-width: 480px) and (max-width: 767px) {
+    .nginx-card-container .card-container {
+        width: 90%;
+        max-width: 100%;
+    }
+
+    .nginx-card-container .card-front {
+        padding-top: 120px;
+    }
+
+    .nginx-card-container .card-title {
+        font-size: 18px;
+    }
+
+    .nginx-card-container .card-tagline {
+        font-size: 20px;
+    }
+
+    .nginx-card-container .learning-progress {
+        font-size: 14px;
+    }
+
+    .nginx-card-container .learning-progress-label {
+        font-size: 12px;
+    }
+
+    .nginx-card-container .star {
+        font-size: 16px;
+    }
+
+    .nginx-card-container .service-item img {
+        width: 20px;
+    }
+
+    .nginx-card-container .key-services h4 {
+        font-size: 16px;
+    }
+
+    .nginx-card-container .resources a {
+        font-size: 14px;
+    }
+
+    .nginx-card-container .card-back {
+        padding: 12px;
+    }
+}
+
+/* For 768px to 1023px */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .nginx-card-container .card-container {
+        width: 85%;
+        max-width: 100%;
+    }
+
+    .nginx-card-container .card-front {
+        padding-top: 140px;
+    }
+
+    .nginx-card-container .card-title {
+        font-size: 20px;
+    }
+
+    .nginx-card-container .card-tagline {
+        font-size: 22px;
+    }
+
+    .nginx-card-container .learning-progress {
+        font-size: 16px;
+    }
+
+    .nginx-card-container .learning-progress-label {
+        font-size: 14px;
+    }
+
+    .nginx-card-container .star {
+        font-size: 18px;
+    }
+
+    .nginx-card-container .service-item img {
+        width: 22px;
+    }
+
+    .nginx-card-container .key-services h4 {
+        font-size: 18px;
+    }
+
+    .nginx-card-container .resources a {
+        font-size: 16px;
+    }
+
+    .nginx-card-container .card-back {
+        padding: 
+
+14px;
+    }
+}
+
+/* For 1024px to 1279px */
+@media (min-width: 1024px) and (max-width: 1279px) {
+    .nginx-card-container .card-container {
+        width: 75%;
+        max-width: 100%;
+    }
+
+    .nginx-card-container .card-front {
+        padding-top: 160px;
+    }
+
+    .nginx-card-container .card-title {
+        font-size: 22px;
+    }
+
+    .nginx-card-container .card-tagline {
+        font-size: 24px;
+    }
+
+    .nginx-card-container .learning-progress {
+        font-size: 18px;
+    }
+
+    .nginx-card-container .learning-progress-label {
+        font-size: 16px;
+    }
+
+    .nginx-card-container .star {
+        font-size: 20px;
+    }
+
+    .nginx-card-container .service-item img {
+        width: 24px;
+    }
+
+    .nginx-card-container .key-services h4 {
+        font-size: 20px;
+    }
+
+    .nginx-card-container .resources a {
+        font-size: 18px;
+    }
+
+    .nginx-card-container .card-back {
+        padding: 16px;
+    }
+}
+
+/* For 1280px to 1439px */
+@media (min-width: 1280px) and (max-width: 1439px) {
+    .nginx-card-container .card-container {
+        width: 65%;
+        max-width: 100%;
+    }
+
+    .nginx-card-container .card-front {
+        padding-top: 180px;
+    }
+
+    .nginx-card-container .card-title {
+        font-size: 24px;
+    }
+
+    .nginx-card-container .card-tagline {
+        font-size: 26px;
+    }
+
+    .nginx-card-container .learning-progress {
+        font-size: 20px;
+    }
+
+    .nginx-card-container .learning-progress-label {
+        font-size: 18px;
+    }
+
+    .nginx-card-container .star {
+        font-size: 22px;
+    }
+
+    .nginx-card-container .service-item img {
+        width: 26px;
+    }
+
+    .nginx-card-container .key-services h4 {
+        font-size: 22px;
+    }
+
+    .nginx-card-container .resources a {
+        font-size: 20px;
+    }
+
+    .nginx-card-container .card-back {
+        padding: 18px;
+    }
+}
+
+/* For 1440px and above */
+@media (min-width: 1440px) {
+    .nginx-card-container .card-container {
+        width: 55%;
+        max-width: 100%;
+    }
+
+    .nginx-card-container .card-front {
+        padding-top: 200px;
+    }
+
+    .nginx-card-container .card-title {
+        font-size: 26px;
+    }
+
+    .nginx-card-container .card-tagline {
+        font-size: 28px;
+    }
+
+    .nginx-card-container .learning-progress {
+        font-size: 22px;
+    }
+
+    .nginx-card-container .learning-progress-label {
+        font-size: 20px;
+    }
+
+    .nginx-card-container .star {
+        font-size: 24px;
+    }
+
+    .nginx-card-container .service-item img {
+        width: 28px;
+    }
+
+    .nginx-card-container .key-services h4 {
+        font-size: 24px;
+    }
+
+    .nginx-card-container .resources a {
+        font-size: 22px;
+    }
+
+    .nginx-card-container .card-back {
+        padding: 20px;
+    }
+}
+
+/* -------[ NGINX CARD STYLE END ]------- */

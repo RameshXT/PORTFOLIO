@@ -1,0 +1,482 @@
+/*! -------[ AWS CARD STYLE START ]------- !*/
+/* -------[ CONTAINER ]------- */
+.aws-card-container {
+    font-family: inherit; 
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    padding-bottom: 30px;
+    align-items: center;
+    height: 70vh;
+    background: linear-gradient(135deg, white 50%, black 50%);
+}
+
+/* -------[ CARD CONTAINER ]------- */
+.aws-card-container .card-container {
+    perspective: 1200px;
+    width: 55%;
+    height: 61vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+/* -------[ CARD ]------- */
+.aws-card-container .card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s ease-in-out;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added shadow for better visibility */
+}
+
+/* -------[ CARD HOVER EFFECT ]------- */
+.aws-card-container .card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+/* -------[ CARD INNER ]------- */
+.aws-card-container .card-inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s ease-in-out;
+    transform-style: preserve-3d;
+    display: flex;
+    flex-direction: column;
+}
+
+/* -------[ CARD SIDE ]------- */
+.aws-card-container .card-side {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+/* -------[ FRONT SIDE ]------- */
+.aws-card-container .card-front {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    background-color: #232f3e;
+    border-radius: 10px;
+    padding: 20px;
+    padding-top: 175px;
+    box-sizing: border-box;
+}
+
+/* -------[ LEARNING PROGRESS ]------- */
+.aws-card-container .learning-progress {
+    margin-top: auto;
+    width: 100%;
+    text-align: center;
+    color: #ffffff;
+}
+
+.aws-card-container .learning-progress-label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #ffffff;
+}
+
+.aws-card-container .star-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.aws-card-container .star {
+    font-size: 20px;
+    color: #ff9900;
+    margin-right: 3px;
+}
+
+.aws-card-container .star.empty {
+    color: #d3d3d3;
+}
+
+.aws-card-container .star.half {
+    position: relative;
+    color: #fff;
+}
+
+.aws-card-container .star.half::before {
+    content: "★";
+    position: absolute;
+    left: 0;
+    color: #ff9900;
+    width: 50%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/* -------[ BACK SIDE ]------- */
+.aws-card-container .card-back {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: left;
+    color: #232f3e;
+    transform: rotateY(180deg);
+    border: 1px solid #ffffff41;
+    border-radius: 10px;
+    background-color: #eecfa7;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added shadow for consistency */
+}
+
+.aws-card-container .card-description, 
+.aws-card-container .key-services, 
+.aws-card-container .use-cases, 
+.aws-card-container .resources {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.aws-card-container .key-services h4 {
+    margin-bottom: 5px;
+    color: #ff9900;
+    font-size: 16px;
+}
+
+.aws-card-container .service-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.aws-card-container .service-item img {
+    width: 20px;
+    margin-right: 5px;
+}
+
+.aws-card-container .resources a {
+    color: #ff9900;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.aws-card-container .aws-logo {
+    width: 120px;
+    margin-bottom: 10px;
+}
+
+.aws-card-container .card-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.aws-card-container .card-tagline {
+    font-size: 32px;
+    color: #ff9900;
+}
+
+/* -------[ RESPONSIVE STYLES ]------- */
+
+/* For 320px to 779px */
+@media (max-width: 779px) and (min-width: 320px) {
+    .aws-card-container .card-container {
+        width: 95%;
+        max-width: 100%;
+        height: 70vh;
+    }
+
+    .aws-card-container .card-front {
+        padding-top: 100px;
+    }
+
+    .aws-card-container .card-title {
+        font-size: 16px;
+    }
+
+    .aws-card-container .card-tagline {
+        font-size: 18px;
+    }
+
+    .aws-card-container .learning-progress {
+        font-size: 12px;
+    }
+
+    .aws-card-container .learning-progress-label {
+        font-size: 10px;
+    }
+
+    .aws-card-container .star {
+        font-size: 14px;
+    }
+
+    .aws-card-container .service-item img {
+        width: 18px;
+    }
+
+    .aws-card-container .key-services h4 {
+        font-size: 14px;
+    }
+
+    .aws-card-container .resources a {
+        font-size: 12px;
+    }
+
+    .aws-card-container .card-back {
+        padding: 10px;
+        box-sizing: border-box;
+        overflow: auto;
+    }
+}
+
+/* For 425px to 779px */
+@media (max-width: 779px) and (min-width: 425px) {
+    .aws-card-container .card-container {
+        width: 90%;
+        max-width: 100%;
+    }
+
+    .aws-card-container .card-front {
+        padding-top: 120px;
+    }
+
+    .aws-card-container .card-title {
+        font-size: 18px;
+    }
+
+    .aws-card-container .card-tagline {
+        font-size: 20px;
+    }
+
+    .aws-card-container .learning-progress {
+        font-size: 14px;
+    }
+
+    .aws-card-container .learning-progress-label {
+        font-size: 12px;
+    }
+
+    .aws-card-container .star {
+        font-size: 16px;
+    }
+
+    .aws-card-container .service-item img {
+        width: 20px;
+    }
+
+    .aws-card-container .key-services h4 {
+        font-size: 16px;
+
+
+    }
+
+    .aws-card-container .resources a {
+        font-size: 14px;
+    }
+
+    .aws-card-container .card-back {
+        padding: 12px;
+    }
+}
+
+/* For 768px to 779px */
+@media (max-width: 779px) and (min-width: 768px) {
+    .aws-card-container .card-container {
+        width: 85%;
+        max-width: 100%;
+    }
+
+    .aws-card-container .card-front {
+        padding-top: 140px;
+    }
+
+    .aws-card-container .card-title {
+        font-size: 20px;
+    }
+
+    .aws-card-container .card-tagline {
+        font-size: 22px;
+    }
+
+    .aws-card-container .learning-progress {
+        font-size: 16px;
+    }
+
+    .aws-card-container .learning-progress-label {
+        font-size: 14px;
+    }
+
+    .aws-card-container .star {
+        font-size: 18px;
+    }
+
+    .aws-card-container .service-item img {
+        width: 22px;
+    }
+
+    .aws-card-container .key-services h4 {
+        font-size: 18px;
+    }
+
+    .aws-card-container .resources a {
+        font-size: 16px;
+    }
+
+    .aws-card-container .card-back {
+        padding: 14px;
+    }
+}
+
+/* For 1024px to 779px */
+@media (max-width: 779px) and (min-width: 1024px) {
+    .aws-card-container .card-container {
+        width: 80%;
+        max-width: 100%;
+    }
+
+    .aws-card-container .card-front {
+        padding-top: 160px;
+    }
+
+    .aws-card-container .card-title {
+        font-size: 22px;
+    }
+
+    .aws-card-container .card-tagline {
+        font-size: 24px;
+    }
+
+    .aws-card-container .learning-progress {
+        font-size: 18px;
+    }
+
+    .aws-card-container .learning-progress-label {
+        font-size: 16px;
+    }
+
+    .aws-card-container .star {
+        font-size: 20px;
+    }
+
+    .aws-card-container .service-item img {
+        width: 24px;
+    }
+
+    .aws-card-container .key-services h4 {
+        font-size: 20px;
+    }
+
+    .aws-card-container .resources a {
+        font-size: 18px;
+    }
+
+    .aws-card-container .card-back {
+        padding: 16px;
+    }
+}
+
+/* For 1440px to 779px */
+@media (max-width: 779px) and (min-width: 1440px) {
+    .aws-card-container .card-container {
+        width: 75%;
+        max-width: 100%;
+    }
+
+    .aws-card-container .card-front {
+        padding-top: 180px;
+    }
+
+    .aws-card-container .card-title {
+        font-size: 24px;
+    }
+
+    .aws-card-container .card-tagline {
+        font-size: 26px;
+    }
+
+    .aws-card-container .learning-progress {
+        font-size: 20px;
+    }
+
+    .aws-card-container .learning-progress-label {
+        font-size: 18px;
+    }
+
+    .aws-card-container .star {
+        font-size: 22px;
+    }
+
+    .aws-card-container .service-item img {
+        width: 26px;
+    }
+
+    .aws-card-container .key-services h4 {
+        font-size: 22px;
+    }
+
+    .aws-card-container .resources a {
+        font-size: 20px;
+    }
+
+    .aws-card-container .card-back {
+        padding: 18px;
+    }
+}
+
+/* For 2560px to 779px */
+@media (max-width: 779px) and (min-width: 2560px) {
+    .aws-card-container .card-container {
+        width: 70%;
+        max-width: 100%;
+    }
+
+    .aws-card-container .card-front {
+        padding-top: 200px;
+    }
+
+    .aws-card-container .card-title {
+        font-size: 26px;
+    }
+
+    .aws-card-container .card-tagline {
+        font-size: 28px;
+    }
+
+    .aws-card-container .learning-progress {
+        font-size: 22px;
+    }
+
+    .aws-card-container .learning-progress-label {
+        font-size: 20px;
+    }
+
+    .aws-card-container .star {
+        font-size: 24px;
+    }
+
+    .aws-card-container .service-item img {
+        width: 28px;
+    }
+
+    .aws-card-container .key-services h4 {
+        font-size: 24px;
+    }
+
+    .aws-card-container .resources a {
+        font-size: 22px;
+    }
+
+    .aws-card-container .card-back {
+        padding: 20px;
+    }
+}
+
+/*! -------[ AWS CARD STYLE END ]------- !*/
