@@ -57,7 +57,7 @@ header {
     z-index: 1000;
     box-sizing: border-box;
     justify-content: space-between;
-    font-size: 12px;
+    font-size: 13.5px;
 }
 
 /* -------[ LOGO STYLES ]------- */
@@ -68,7 +68,7 @@ header .logo {
 }
 
 header .logo img {
-    height: 40px;
+    height: 35px;
 }
 
 /* -------[ NAVIGATION STYLES ]------- */
@@ -95,6 +95,8 @@ header nav ul li a {
     color: #ffffff;
     padding: 10px 20px;
     transition: color 0.4s, background-color 0.4s;
+    /* mix-blend-mode: difference; */
+
 }
 
 header nav ul li a:hover,

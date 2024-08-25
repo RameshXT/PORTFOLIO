@@ -223,11 +223,11 @@
 
 .learn-more span {
     display: inline-block;
-    transition: transform 2s;
+    transition: transform 0.5s;
 }
 
 .learn-more:hover span {
-    transform: translateX(10px);
+    transform: translateX(-10px);
 }
 
 /* -------[ LOTTIE PLAYER ]------- */

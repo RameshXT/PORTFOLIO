@@ -2,10 +2,10 @@
 .tools-section {
     text-align: center;
     font-family: Arial, sans-serif;
-    margin: 0;
     padding-top: 30px;
-    border-radius: 10px;
     box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #000000;
+    padding-bottom: 20px;
 }
 
 .tools-section .subtitle {
@@ -21,7 +21,7 @@
 }
 
 .tools-section .underline {
-    width: 60px;
+    width: 90px;
     height: 2px;
     background-color: #c9c9c9b4;
     margin: 0 auto;

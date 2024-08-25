@@ -1,0 +1,219 @@
+#header-title {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+#subheading {
+        color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: center; /* Centers the heading horizontally */
+}
+
+#header-title {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+}
+#subheading {
+    color: #444;
+    font-size: 20px;
+    margin-bottom: 30px;
+    position: relative;
+    width: 100%;
+}
+#subheading::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    width: 100px;
+    border-bottom: 1px solid #ff0000b6;
+    transform: translateX(-50%);
+}
+.card-wrapper {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.education-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 500px; /* Fixed width */
+    height: 250px; /* Fixed height to accommodate content */
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers content vertically */
+    align-items: center; /* Centers content horizontally */
+    overflow: hidden; /* Ensures content does not overflow */
+}
+.education-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.education-card h3 {
+    margin-top: 0;
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+.education-card p {
+    margin: 10px 0;
+    line-height: 1.5;
+    color: #555;
+    font-size: 14px;
+}
+.education-icon {
+    font-size: 30px;
+    color: #0073e6;
+    margin-bottom: 15px;
+    transition: transform 0.3s, opacity 0.3s;
+}
+.education-icon {
+    color: #333;
+}
+.education-card:hover .pencil-icon {
+    animation: pencilAnimation 0.6s ease forwards;
+}
+.education-card:hover .note-icon {
+    animation: noteAnimation 0.6s ease forwards;
+}
+.education-card:hover .job-icon {
+    animation: jobAnimation 0.6s ease forwards;
+}
+@keyframes pencilAnimation {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(10deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+@keyframes noteAnimation {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.8;
+    }
+    60% {
+        transform: scale(1.1);
+        opacity: 0.9;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+@keyframes jobAnimation {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-8px);
+    }
+    50% {
+        transform: translateX(8px);
+    }
+    75% {
+        transform: translateX(-4px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+@media (max-width: 768px) {
+    .card-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+    .education-card {
+        width: 90%;
+        max-width: none;
+        height: auto;
+    }
+}
+/* Base styles - your existing code */
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+    #header-title {
+        font-size: 22px;
+    }
+
+    #subheading {
+        font-size: 18px;
+    }
+
+    .education-card {
+        width: 80%;
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    #header-title {
+        font-size: 20px;
+    }
+
+    #subheading {
+        font-size: 16px;
+    }
+
+    .education-card {
+        width: 90%;
+        height: auto;
+        padding: 15px;
+    }
+
+    .education-card h3 {
+        font-size: 16px;
+    }
+
+    .education-card p {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    #header-title {
+        font-size: 18px;
+    }
+
+    #subheading {
+        font-size: 14px;
+    }
+
+    .education-card {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+    }
+
+    .education-card h3 {
+        font-size: 14px;
+    }
+
+    .education-card p {
+        font-size: 12px;
+    }
+}

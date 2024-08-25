@@ -28,6 +28,7 @@
     1. Menu Toggle
     2. Typing Effect
     3. Scroll Visibility Styles
+    4. Nav bar smooth naviagte
 
 ======================================
     [ END JAVASCRIPT TABLE OF CONTENTS ]
@@ -138,14 +139,77 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+/* -------[ SCROLL VISIBILITY STYLES & LOTTIE PLAYER VISIBILITY ]------- */
+
+document.addEventListener('DOMContentLoaded', function() {
+    const lottiePlayerContainer = document.querySelector('.lottie-player-container');
+    
+    function checkVisibility() {
+        const rect = lottiePlayerContainer.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+
+        if (rect.top <= windowHeight && rect.bottom >= 0) {
+            lottiePlayerContainer.style.opacity = '1'; // Make visible
+            lottiePlayerContainer.style.transform = 'translateY(0)'; // Slide into view
+        } else {
+            lottiePlayerContainer.style.opacity = '0'; // Hide
+            lottiePlayerContainer.style.transform = 'translateY(20px)'; // Slide out of view
+        }
+    }
+
+    window.addEventListener('scroll', checkVisibility);
+    checkVisibility(); // Check visibility on page load
+});
 
 
 
-/* -------[  ]------- */
+/* -------[ NAV BAR SMOOTH NAVIGATE ]------- */
 
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('nav ul li a');
 
-/* -------[  ]------- */
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault(); // Prevent default anchor click behavior
 
+            const targetId = this.getAttribute('href'); // Get the target section ID
+            const targetSection = document.querySelector(targetId);
+
+            if (targetSection) {
+                const startPosition = window.pageYOffset;
+                const targetPosition = targetSection.getBoundingClientRect().top + window.pageYOffset;
+                const distance = targetPosition - startPosition;
+                const duration = 1000; // Duration in milliseconds
+                let start = null;
+
+                function smoothScroll(timestamp) {
+                    if (!start) start = timestamp;
+                    const progress = timestamp - start;
+                    const scrollProgress = Math.min(progress / duration, 1);
+                    window.scrollTo(0, startPosition + distance * easeInOutQuad(scrollProgress));
+
+                    if (progress < duration) {
+                        requestAnimationFrame(smoothScroll);
+                    }
+                }
+
+                function easeInOutQuad(t) {
+                    return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+                }
+
+                requestAnimationFrame(smoothScroll);
+            }
+        });
+    });
+});
+
+/* -------[ FOOTER ]------- */
+const currentYear = new Date().getFullYear();
+          
+            const startYear = 2024;
+            const copyrightText = (currentYear > startYear) ? `${startYear} - ${currentYear}` : startYear;
+          
+            document.getElementById('copyright').textContent = copyrightText;
 
 /* -------[  ]------- */
 

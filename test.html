@@ -3,244 +3,227 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AWS Card Flip Design</title>
+    <title>Document</title>
+
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #fff; /* Light grey background */
-        }
-
-        .card-container {
-            perspective: 1200px; /* Adjust perspective for better depth */
-            width: 55%; /* Adjust width as needed */
-            height: 60%; /* Adjust height as needed */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .card {
-            width: 100%;
-            height: 100%;
+        footer {
             position: relative;
-            transform-style: preserve-3d;
-            transition: transform 0.8s ease-in-out;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3); /* Pronounced border shade */
-            border-radius: 10px; /* Rounded corners */
-        }
-
-        .card:hover .card-inner {
-            transform: rotateY(180deg);
-        }
-
-        .card-inner {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            transition: transform 0.8s ease-in-out;
-            transform-style: preserve-3d;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .card-side {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            border-radius: 10px; /* Rounded corners for the flip effect */
-            box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
-            padding: 10px; /* Adjust padding for better spacing */
-        }
-
-        .card-front {
-            display: flex;
-            flex-direction: column;
-            justify-content: center; /* Center vertically */
-            align-items: center; /* Center horizontally */
             text-align: center;
-            color: white;
-            background: url('/assets/background/cloud-background.jpg') no-repeat center center/cover; /* Use your cloud-themed background */
-            background-color: #232f3e; /* AWS dark blue fallback */
-            border-radius: 10px; /* Consistent rounded corners */
-            padding: 20px; /* Padding to ensure space around content */
-            padding-top: 175px;
-            box-sizing: border-box; /* Ensure padding does not affect width/height */
-        }
-
-        .card-back {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between; /* Distribute space between elements */
-            align-items: flex-start; /* Align content to the start */
-            text-align: left; /* Align text to the left */
-            color: #232f3e; /* AWS dark blue for text */
-            transform: rotateY(180deg);
-            border: 1px solid #d0d0d0; /* Light grey border for premium look */
-            border-radius: 10px; /* Rounded corners for the back side */
-        }
-
-        .card-description, .key-services, .use-cases, .resources {
-            margin-bottom: 10px; /* Adjust space between sections */
-            font-size: 14px; /* Adjust font size for readability */
-        }
-
-        .key-services h4 {
-            margin-bottom: 5px; /* Space below the heading */
-            color: #ff9900; /* AWS orange for heading */
-            font-size: 16px; /* Size for the heading */
-        }
-
-        .service-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 5px; /* Space between service items */
-        }
-
-        .service-item img {
-            width: 20px; /* Adjust icon size as needed */
-            margin-right: 5px; /* Space between icon and text */
-        }
-
-        .resources a {
-            color: #ff9900; /* AWS orange for links */
-            text-decoration: none; /* Remove underline from link */
-            font-weight: bold; /* Make the link text bold */
-        }
-
-        .aws-logo {
-            width: 120px; /* Adjust logo size */
-            margin-bottom: 10px;
-        }
-
-        .card-title {
-            font-size: 28px; /* Adjust title size for fitting */
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .card-tagline {
-            font-size: 32px; /* Adjust tagline size for fitting */
-            color: #ff9900; /* AWS orange */
-        }
-
-        .learning-progress {
-            margin-top: auto; /* Push to bottom of front side */
-            width: 100%;
-            text-align: center;
+            padding: 20px;
+            background: #000000;
             color: #ffffff;
-        }
-
-        .learning-progress-label {
-            font-size: 14px; /* Adjust font size for fitting */
-            margin-bottom: 5px;
-            color: #ffffff;
-        }
-
-        .star-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .star {
-            font-size: 20px; /* Adjust star size */
-            color: #ff9900; /* AWS orange */
-            margin-right: 3px;
-        }
-
-        .star.empty {
-            color: #d3d3d3; /* Light grey for empty stars */
-        }
-        
-        .star.half {
-            position: relative;
-            color: #fff;
-        }
-        
-        .star.half::before {
-            content: "★";
-            position: absolute;
-            left: 0;
-            color: #ff9900; /* Color of the filled half */
-            width: 50%; /* Half the width of the star */
             overflow: hidden;
-            white-space: nowrap;
+        }
+
+        #boxWrap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1; 
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .box {
+            position: fixed;
+            background-color: #57575787;
+            border-radius: 8px;
+            opacity: 0;
+            animation: floatBox linear infinite;
+        }
+
+        @keyframes moveBox {
+            0% { transform: translate(0%, 0%); }
+            5% { transform: translate(90%, 10%); }
+            10% { transform: translate(10%, 20%); }
+            15% { transform: translate(80%, 30%); }
+            20% { transform: translate(20%, 40%); }
+            25% { transform: translate(70%, 50%); }
+            30% { transform: translate(30%, 60%); }
+            35% { transform: translate(90%, 70%); }
+            40% { transform: translate(20%, 80%); }
+            45% { transform: translate(80%, 90%); }
+            50% { transform: translate(0%, 100%); }
+            55% { transform: translate(90%, 90%); }
+            60% { transform: translate(10%, 80%); }
+            65% { transform: translate(80%, 70%); }
+            70% { transform: translate(20%, 60%); }
+            75% { transform: translate(70%, 50%); }
+            80% { transform: translate(30%, 40%); }
+            85% { transform: translate(90%, 30%); }
+            90% { transform: translate(20%, 20%); }
+            95% { transform: translate(80%, 10%); }
+            100% { transform: translate(0%, 0%); }
+        }
+        
+
+        @keyframes floatBox {
+            0% {
+                transform: translateY(150vh) translateX(-50%) rotate(0deg);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-150vh) translateX(-50%) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .box:nth-child(1) { width: 20px; height: 20px; bottom: 0; left: 10%; animation-duration: 12s; animation-delay: 0s; }
+        .box:nth-child(2) { width: 30px; height: 30px; bottom: 0; left: 25%; animation-duration: 15s; animation-delay: 2s; }
+        .box:nth-child(3) { width: 40px; height: 40px; bottom: 0; left: 40%; animation-duration: 14s; animation-delay: 4s; }
+        .box:nth-child(4) { width: 50px; height: 50px; bottom: 0; left: 55%; animation-duration: 18s; animation-delay: 1s; }
+        .box:nth-child(5) { width: 60px; height: 60px; bottom: 0; left: 70%; animation-duration: 13s; animation-delay: 3s; }
+        .box:nth-child(6) { width: 25px; height: 25px; bottom: 0; left: 85%; animation-duration: 20s; animation-delay: 5s; }
+        .box:nth-child(7) { width: 35px; height: 35px; bottom: 0; left: 30%; animation-duration: 14s; animation-delay: 6s; }
+        .box:nth-child(8) { width: 45px; height: 45px; bottom: 0; left: 70%; animation-duration: 16s; animation-delay: 8s; }
+        .box:nth-child(9) { width: 55px; height: 55px; bottom: 0; left: 15%; animation-duration: 18s; animation-delay: 3s; }
+        .box:nth-child(10) { width: 25px; height: 25px; bottom: 0; left: 85%; animation-duration: 14s; animation-delay: 7s; }
+        .box:nth-child(11) { width: 30px; height: 30px; bottom: 0; left: 10%; animation-duration: 12s; animation-delay: 1s; }
+        .box:nth-child(12) { width: 40px; height: 40px; bottom: 0; left: 25%; animation-duration: 15s; animation-delay: 3s; }
+        .box:nth-child(13) { width: 50px; height: 50px; bottom: 0; left: 40%; animation-duration: 14s; animation-delay: 5s; }
+        .box:nth-child(14) { width: 60px; height: 60px; bottom: 0; left: 55%; animation-duration: 18s; animation-delay: 2s; }
+        .box:nth-child(15) { width: 25px; height: 25px; bottom: 0; left: 70%; animation-duration: 13s; animation-delay: 4s; }
+        .box:nth-child(16) { width: 35px; height: 35px; bottom: 0; left: 85%; animation-duration: 20s; animation-delay: 6s; }
+        .box:nth-child(17) { width: 45px; height: 45px; bottom: 0; left: 30%; animation-duration: 14s; animation-delay: 8s; }
+        .box:nth-child(18) { width: 55px; height: 55px; bottom: 0; left: 70%; animation-duration: 16s; animation-delay: 10s; }
+        .box:nth-child(19) { width: 20px; height: 20px; bottom: 0; left: 50%; animation-duration: 18s; animation-delay: 4s; }
+        .box:nth-child(20) { width: 30px; height: 30px; bottom: 0; left: 80%; animation-duration: 12s; animation-delay: 6s; }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 0;
+            margin: 0 0 20px;
+            z-index: 1; /* Ensure the text is above the boxes */
+            position: relative;
+        }
+
+        .footer-links li {
+            margin: 0;
+        }
+
+        .footer-links li a {
+            text-decoration: none;
+            color: #B0B0B0;
+            letter-spacing: 2px;
+            font-size: 12px;
+        }
+
+        footer p {
+            margin: 0;
+            z-index: 1; /* Ensure the text is above the boxes */
+            position: relative;
+        }
+
+        .footer-links li a:hover {
+            color: #ffffff;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 33px;
+            margin-bottom: 20px;
+            z-index: 1; /* Ensure the icons are above the boxes */
+            position: relative;
+        }
+
+        .social-icons a {
+            text-decoration: none;
+            position: relative;
+            width: 26px;
+            height: 26px;
+        }
+
+        .social-icons img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .social-icons img {
+            filter: grayscale(100%) brightness(0.7) contrast(1);
+        }
+
+        .social-icons a:hover img {
+            filter: grayscale(0%) brightness(1) contrast(1);
+        }
+        .summa {
+            height: 100vh;
+            width: 100%;
+            background-color: #fba3a3;
         }
     </style>
 </head>
 <body>
-    <div class="card-container">
-        <div class="card">
-            <div class="card-inner">
-                <!-- Front Side -->
-                <div class="card-side card-front">
-                    <img src="/assets/icons/aws.png" alt="AWS Logo" class="aws-logo">
-                    <div class="card-title">Amazon Web Services</div>
-                    <div class="card-tagline">The Cloud Platform of Choice</div>
-                    <!-- Learning Progress -->
-                    <div class="learning-progress">
-                        <div class="learning-progress-label">My AWS Knowledge Level</div>
-                        <div class="star-container">
-                            <span class="star">★</span>
-                            <span class="star">★</span>
-                            <span class="star half">★</span>
-                            <span class="star empty">★</span>
-                            <span class="star empty">★</span>
-                        </div>
-                    </div>
-                </div>
+    <div class="summa">
 
-                <!-- Back Side -->
-                <div class="card-side card-back">
-                    <div class="card-description">
-                        Amazon Web Services (AWS) offers reliable, scalable, and inexpensive cloud computing services. It's the backbone of modern cloud infrastructure.
-                    </div>
-                    <div class="key-services">
-                        <h4>Key Services:</h4>
-                        <div class="service-item">
-                            <img src="/assets/icons/aws-card/ec2.png" alt="EC2 Icon"> <!-- Replace with the path to the EC2 icon -->
-                            <p>EC2: Scalable compute capacity in the cloud.</p>
-                        </div>
-                        <div class="service-item">
-                            <img src="/assets/icons/aws-card/s3.png" alt="S3 Icon"> <!-- Replace with the path to the S3 icon -->
-                            <p>S3: Secure, durable, and scalable storage.</p>
-                        </div>
-                        <div class="service-item">
-                            <img src="/assets/icons/aws-card/vpc.png" alt="VPC Icon"> <!-- Replace with the path to the VPC icon -->
-                            <p>VPC: Isolated network environment for your AWS resources.</p>
-                        </div>
-                        <div class="service-item">
-                            <img src="/assets/icons/aws-card/iam.png" alt="IAM Icon"> <!-- Replace with the path to the IAM icon -->
-                            <p>IAM: Manage access to AWS services and resources securely.</p>
-                        </div>
-                        <div class="service-item">
-                            <img src="/assets/icons/aws-card/lambda.png" alt="Lambda Icon"> <!-- Replace with the path to the Lambda icon -->
-                            <p>Lambda: Run code without provisioning servers.</p>
-                        </div>
-                        <div class="service-item">
-                            <img src="/assets/icons/aws-card/cloud watch.png" alt="CloudWatch Icon"> <!-- Replace with the path to the CloudWatch icon -->
-                            <p>CloudWatch: Monitor and manage cloud resources and applications.</p>
-                        </div>
-                    </div>
-                    <div class="use-cases">
-                        <h4>Popular Use Cases:</h4>
-                        <p>Hosting scalable websites, Big data processing, Disaster recovery</p>
-                    </div>
-                    <div class="resources">
-                        <a href="https://aws.amazon.com" target="_blank">Explore AWS</a>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
+            <div id="boxWrap">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+            </div> 
+        <footer>
+
+           
+            <ul class="footer-links">
+                <li><a href="#home">HOME</a></li>
+            </ul>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/ramesh-kanna-g-325042285/" target="_blank">
+                    <img src="/assets/icons/linkedin.png" alt="LinkedIn Logo">
+                </a>
+                <a href="https://github.com/RameshXT" target="_blank">
+                    <img src="/assets/icons/github/github.png" alt="GitHub Logo">
+                </a>
+                <a href="https://x.com/RameshK55373475" target="_blank">
+                    <img src="/assets/icons/x.png" alt="X Logo">
+                </a>
+                <a href="https://www.instagram.com/ig.rameshxt/" target="_blank">
+                    <img src="/assets/icons/instagram.png" alt="Instagram Logo">
+                </a>
+                <a href="https://wa.me/9442403868" target="_blank">
+                    <img src="/assets/icons/whatsapp.png" alt="WhatsApp Logo">
+                </a>
+            </div>
+            <p>&copy; <span id="copyright"></span> Ramesh. All rights reserved.</p>
+        </footer>
+
+        <script>
+            const currentYear = new Date().getFullYear();
+          
+            const startYear = 2024;
+            const copyrightText = (currentYear > startYear) ? `${startYear} - ${currentYear}` : startYear;
+          
+            document.getElementById('copyright').textContent = copyrightText;
+          </script>
 </body>
 </html>
