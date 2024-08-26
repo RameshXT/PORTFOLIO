@@ -1,0 +1,32 @@
+# Ignore specific files
+map.txt
+test.js
+tool.txt
+test.html
+
+# Ignore the 'test' folder
+test/
+
+# Ignore build output directories
+dist/
+build/
+
+# Ignore environment configuration files
+.env
+
+# Ignore IDE/editor-specific files
+.vscode/
+
+# Ignore operating system-generated files
+.DS_Store
+Thumbs.db
+
+# Ignore log files
+*.log
+
+# Ignore temporary files
+*.tmp
+*.swp
+
+# Ignore source maps
+*.map
