@@ -4,8 +4,8 @@
 ======================================
 
     CSS File:   header.css
-    Template:   PortFolio | Ramesh
-    Category:   PortFolio
+    Template:   Portfolio | Ramesh
+    Category:   Portfolio
     Author:     Ramesh
     Version:    1.0
     
@@ -58,6 +58,7 @@ header {
     box-sizing: border-box;
     justify-content: space-between;
     font-size: 13.5px;
+    mix-blend-mode: difference; /* Added */
 }
 
 /* -------[ LOGO STYLES ]------- */
@@ -65,10 +66,12 @@ header .logo {
     flex: 1;
     display: flex;
     align-items: center;
+    mix-blend-mode: difference; /* Added */
 }
 
 header .logo img {
     height: 35px;
+    mix-blend-mode: difference; /* Added */
 }
 
 /* -------[ NAVIGATION STYLES ]------- */
@@ -95,8 +98,7 @@ header nav ul li a {
     color: #ffffff;
     padding: 10px 20px;
     transition: color 0.4s, background-color 0.4s;
-    /* mix-blend-mode: difference; */
-
+    mix-blend-mode: difference; /* Added */
 }
 
 header nav ul li a:hover,
@@ -104,6 +106,7 @@ header nav ul li a.active {
     background: #fff;
     color: #000;
     border-radius: 5px;
+    mix-blend-mode: normal; /* Reset on hover */
 }
 
 
@@ -135,7 +138,6 @@ header nav ul li a.active {
         padding: 10px;
         justify-content: space-between;
         align-items: flex-end;
-        background-color: #000;
     }
 
     header .menu-toggle {
@@ -145,10 +147,10 @@ header nav ul li a.active {
         width: 30px;
         height: 20px;
         cursor: pointer;
-        background-color: #000000;
         margin-left: auto;
         margin-right: 10px;
         z-index: 11;
+        mix-blend-mode: difference; /* Added */
     }
 
     header .menu-toggle span {
@@ -157,6 +159,7 @@ header nav ul li a.active {
         height: 3px;
         background: #ffffff;
         transition: all 0.7s ease;
+        mix-blend-mode: difference; /* Added */
     }
 
     header nav {
@@ -216,4 +219,3 @@ header nav ul li a.active {
 ======================================
     [ BASE STYLES END ]
 ======================================
-*/
