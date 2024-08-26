@@ -54,8 +54,9 @@
     align-items: center;
     text-align: center;
     padding: 100px 20px;
-    color: #fff;
-    background: linear-gradient(135deg, #000 50%, #333 50%);
+    color: #ffffff;
+    background: linear-gradient(135deg, #000000 90.6%, #ffffff 8%);
+    /* background-color: #000000; */
     position: relative;
     overflow: hidden;
 }
@@ -92,7 +93,7 @@
 #typing-text {
     display: inline;
     font-weight: bold;
-    background: linear-gradient(135deg, #ff77a9, #8b57ff, #3a45d1);
+    background: #005FA1; /* Replace with your desired color */
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -104,9 +105,9 @@
     animation: typing 4s steps(30, end) 1s 1 normal both,
                cursor-blink 800ms step-end infinite;
     margin-left: 10px;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4),
-                 0px 4px 6px rgba(0, 0, 0, 0.2);
+
 }
+
 
 @keyframes typing {
     from { width: 0; }

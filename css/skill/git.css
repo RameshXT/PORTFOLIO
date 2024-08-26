@@ -6,18 +6,24 @@
     box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
     background-color: #000000;
     padding-bottom: 20px;
+    letter-spacing: 0.15rem;
+
 }
 
 .tools-section .subtitle {
     color: #B0B0B0;
     font-size: 16px;
     margin-bottom: 8px;
+    letter-spacing: 0.15rem;
+
 }
 
 .tools-section h2 {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 10px;
+    letter-spacing: 0.15rem;
+
 }
 
 .tools-section .underline {

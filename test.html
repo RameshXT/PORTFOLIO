@@ -3,75 +3,323 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Logo Color Test</title>
+    <title>Responsive Design</title>
     <style>
         body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
+            background: #ffffff;
+            color: #333;
         }
 
-        .container {
+        .contact-section {
+            background: #f0f0f0;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .contact-section form {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            height: 100vh;
-            background-color: #ffffff;
-            transition: background-color 0.3s ease-in-out;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
-        .logo {
-            transition: all 0.3s ease-in-out;
-        }
-
-        .logo img {
-            width: 150px;
-            mix-blend-mode: difference;
-        }
-
-        .dark-mode {
-            background-color: black;
-        }
-
-        .light-mode {
-            background-color: white;
-        }
-
-        .toggle-button {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            padding: 10px 20px;
-            background-color: #005FA1;
-            color: white;
-            border: none;
-            cursor: pointer;
+        .contact-section input,
+        .contact-section textarea {
+            width: 100%;
+            max-width: 500px;
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
             border-radius: 5px;
+            font-size: 1em;
+            box-sizing: border-box;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .contact-section textarea {
+            resize: none;
+        }
+
+        .contact-section input:focus,
+        .contact-section textarea:focus {
+            border-color: #B0B0B0;
+            box-shadow: 0 0 5px #575757;
+            outline: none;
+        }
+
+        .contact-section button {
+            padding: 15px 30px;
+            background: #fff;
+            color: #000;
+            border: 2px solid #000;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            transition: background-color 0.5s, color 0.5s, transform 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 10px;
+            max-width: 200px;
+        }
+
+        .contact-section button:after {
+            content: '»';
+            position: absolute;
+            opacity: 0;
+            top: 50%;
+            right: -20px;
+            transform: translateY(-50%);
+            transition: opacity 0.5s, right 0.5s;
+        }
+
+        .contact-section button:hover {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .contact-section button:hover:after {
+            opacity: 1;
+            right: 10px;
+        }
+
+        .contact-section button span {
+            display: inline-block;
+            transition: transform 0.5s;
+        }
+
+        .contact-section button:hover span {
+            transform: translateX(-10px);
+        }
+
+        .cta-section {
+            background: radial-gradient(circle, #000000 50%, #ffffff 50%);
+            padding: 40px 20px;
+            text-align: center;
+            color: #fff;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+
+        .cta-section .button-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .cta-section button,
+        .cta-section a.button {
+            padding: 15px 30px;
+            background: #fff;
+            color: #000000;
+            border: 2px solid #fff;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            transition: background-color 0.5s, color 0.5s, transform 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 200px;
+        }
+
+        .cta-section button:after,
+        .cta-section a.button:after {
+            content: '»';
+            position: absolute;
+            opacity: 0;
+            top: 50%;
+            right: -20px;
+            transform: translateY(-50%);
+            transition: opacity 0.5s, right 0.5s;
+        }
+
+        .cta-section button:hover,
+        .cta-section a.button:hover {
+            background-color: rgb(0, 0, 0);
+            color: #fff;
+        }
+
+        .cta-section button:hover:after,
+        .cta-section a.button:hover:after {
+            opacity: 1;
+            right: 10px;
+        }
+
+        .cta-section button span,
+        .cta-section a.button span {
+            display: inline-block;
+            transition: transform 0.5s;
+        }
+
+        .cta-section button:hover span,
+        .cta-section a.button:hover span {
+            transform: translateX(-10px);
+        }
+
+        @media (max-width: 575.98px) {
+            .contact-section h2 {
+                font-size: 1.5em;
+            }
+
+            .contact-section input,
+            .contact-section textarea,
+            .contact-section button {
+                width: 90%;
+                max-width: none;
+                font-size: 0.9em;
+            }
+
+            .contact-section button {
+                max-width: 100%;
+            }
+
+            .cta-section h2 {
+                font-size: 2em;
+            }
+
+            .cta-section .button-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .cta-section button,
+            .cta-section a.button {
+                width: 100%;
+                max-width: 300px;
+                margin-bottom: 10px;
+            }
+        }
+
+        @media (min-width: 576px) and (max-width: 767.98px) {
+            .contact-section h2 {
+                font-size: 1.75em;
+            }
+
+            .contact-section input,
+            .contact-section textarea,
+            .contact-section button {
+                width: 90%;
+                max-width: none;
+                font-size: 0.95em;
+            }
+
+            .contact-section button {
+                max-width: 100%;
+            }
+
+            .cta-section h2 {
+                font-size: 2.25em;
+            }
+
+            .cta-section .button-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .cta-section button,
+            .cta-section a.button {
+                width: 100%;
+                max-width: 300px;
+                margin-bottom: 10px;
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 991.98px) {
+            .contact-section h2 {
+                font-size: 2em;
+            }
+
+            .contact-section input,
+            .contact-section textarea,
+            .contact-section button {
+                width: 90%;
+                max-width: none;
+                font-size: 1em;
+            }
+
+            .contact-section button {
+                max-width: 100%;
+            }
+
+            .cta-section h2 {
+                font-size: 2.5em;
+            }
+
+            .cta-section .button-container {
+                flex-direction: row;
+                justify-content: center;
+                gap: 20px;
+            }
+
+            .cta-section button,
+            .cta-section a.button {
+                width: auto;
+                max-width: 200px;
+                margin-bottom: 0;
+            }
+        }
+
+        @media (min-width: 992px) and (max-width: 1199.98px) {
+            .contact-section h2 {
+                font-size: 2.25em;
+            }
+
+            .cta-section h2 {
+                font-size: 2.75em;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .contact-section h2 {
+                font-size: 2.5em;
+            }
+
+            .cta-section h2 {
+                font-size: 3em;
+            }
         }
     </style>
 </head>
 <body>
+    <section class="contact-section">
+        <h2>Questions? I'm here.</h2>
+        <form action="#">
+            <input type="text" name="name" placeholder="Name">
+            <input type="email" name="email" placeholder="Email Address">
+            <input type="text" name="phone" placeholder="Phone # or Skype ID">
+            <input type="text" name="website" placeholder="Website">
+            <textarea name="message" placeholder="Your message here..."></textarea>
+            <button type="submit"><span>Send Message</span></button>
+        </form>
+    </section>
 
-    <button class="toggle-button" onclick="toggleMode()">Toggle Background</button>
-
-    <div class="container light-mode">
-        <div class="logo">
-            <!-- Replace with your actual logo path -->
-            <img src="/assets/icons/logo.png" alt="Logo">
+    <section class="cta-section">
+        <h2 style="mix-blend-mode: difference;">Interested in Working Together?</h2>
+        <div class="button-container">
+            <a class="button" href="/assets/file/RameshKannaG-DevOps.Resume.pdf" download><span>GET RESUME</span></a>
+            <button><span>HIRE ME NOW</span></button>
         </div>
-    </div>
-
-    <script>
-        function toggleMode() {
-            const container = document.querySelector('.container');
-            if (container.classList.contains('light-mode')) {
-                container.classList.remove('light-mode');
-                container.classList.add('dark-mode');
-            } else {
-                container.classList.remove('dark-mode');
-                container.classList.add('light-mode');
-            }
-        }
-    </script>
+    </section>
 </body>
 </html>

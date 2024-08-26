@@ -9,6 +9,7 @@
     font-size: 24px;
     margin-bottom: 10px;
     text-align: center; /* Centers the heading horizontally */
+    letter-spacing: 0.15rem;
 }
 
 #header-title {
@@ -17,7 +18,7 @@
     margin-bottom: 10px;
     font-weight: 500;
     font-size: 15px;
-    letter-spacing: 1.5px;
+    letter-spacing: 0.15rem;
 }
 #subheading {
     color: #444;
@@ -32,7 +33,7 @@
     left: 50%;
     bottom: -10px;
     width: 100px;
-    border-bottom: 1px solid #ff0000b6;
+    border-bottom: 1px solid #005FA1;
     transform: translateX(-50%);
 }
 .card-wrapper {
