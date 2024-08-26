@@ -1,3 +1,11 @@
+#education-background {
+    background-color: #0073e6;
+    background-image: url(/assets/images/wave-down.png);
+    background-size: cover; /* Ensures the image covers the entire div */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+}
+
 #header-title {
     color: #333;
     font-size: 24px;

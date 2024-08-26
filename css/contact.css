@@ -1,22 +1,19 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #ffffff;
-    color: #333;
-    overflow-x: hidden;
-}
 
 .contact-section {
-    background: #f0f0f0;
+    /* background: #f0f0f0; */
     padding: 40px 20px;
     text-align: center;
+        background-image: url(/assets/images/wave-up.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
 }
 
 .contact-section h2 {
     font-size: 2em;
     margin-bottom: 20px;
-    color: #333;
+    color: #B0B0B0;
+    mix-blend-mode: difference;
 }
 
 .contact-section form {
@@ -42,6 +39,7 @@ body {
 
 .contact-section textarea {
     resize: none;
+    mix-blend-mode: difference;
 }
 
 .contact-section input:focus,
@@ -98,12 +96,14 @@ body {
 }
 
 .cta-section {
-    background: radial-gradient(circle, #000000 50%, #ffffff 50%);
+    /* background: radial-gradient(circle, #000000 50%, #ffffff 50%); */
+    background-image: url(/assets/images/curve1.png);
     padding: 40px 20px;
     text-align: center;
     color: #fff;
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
 }
 
 .cta-section h2 {
