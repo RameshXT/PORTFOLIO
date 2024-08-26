@@ -1,0 +1,2699 @@
+<!-- -------[ TOOLS START ]------- -->
+
+<!-- [ TITLE ] -->
+<div class="tools-section">
+    <div class="subtitle">Tricks of the trade</div>
+    <h2>Tools I am comfortable using</h2>
+    <div class="underline"></div>
+</div>
+
+<!-- -------[ ALL CARD START ]------- -->
+
+<!-- -------[ AWS CARD START ]------- -->
+<div class="aws-card-container">
+    <div class="card-container">
+        <div class="card">
+            <div class="card-inner">
+                
+                <!-- [ FRONT SIDE ] -->
+                <div class="card-side card-front">
+                    <img src="/assets/icons/aws.png" alt="AWS Logo" class="aws-logo">
+                    <div class="card-title">Amazon Web Services</div>
+                    <div class="card-tagline">The Cloud Platform of Choice</div>
+
+                    <!-- [ LEARNING PROGRESS ] -->
+                    <div class="learning-progress">
+                        <div class="learning-progress-label">My AWS Knowledge Level</div>
+                        <div class="star-container">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star half">★</span>
+                            <span class="star empty">★</span>
+                            <span class="star empty">★</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- [ BACK SIDE ] -->
+                <div class="card-side card-back">
+                    <div class="card-description">
+                        Amazon Web Services (AWS) offers reliable, scalable, and inexpensive cloud computing services. It's the backbone of modern cloud infrastructure.
+                    </div>
+                    <div class="key-services">
+                        <h4>Key Services:</h4>
+                        <div class="service-item">
+                            <img src="/assets/icons/aws-card/ec2.png" alt="EC2 Icon">
+                            <p>EC2: Scalable compute capacity in the cloud.</p>
+                        </div>
+                        <div class="service-item">
+                            <img src="/assets/icons/aws-card/s3.png" alt="S3 Icon">
+                            <p>S3: Secure, durable, and scalable storage.</p>
+                        </div>
+                        <div class="service-item">
+                            <img src="/assets/icons/aws-card/vpc.png" alt="VPC Icon">
+                            <p>VPC: Isolated network environment for your AWS resources.</p>
+                        </div>
+                        <div class="service-item">
+                            <img src="/assets/icons/aws-card/iam.png" alt="IAM Icon">
+                            <p>IAM: Manage access to AWS services and resources securely.</p>
+                        </div>
+                        <div class="service-item">
+                            <img src="/assets/icons/aws-card/lambda.png" alt="Lambda Icon">
+                            <p>Lambda: Run code without provisioning servers.</p>
+                        </div>
+                        <div class="service-item">
+                            <img src="/assets/icons/aws-card/cloud watch.png" alt="CloudWatch Icon">
+                            <p>CloudWatch: Monitor and manage cloud resources and applications.</p>
+                        </div>
+                    </div>
+                    <div class="use-cases">
+                        <h4>Popular Use Cases:</h4>
+                        <p>Hosting scalable websites, Big data processing, Disaster recovery</p>
+                    </div>
+                    <div class="resources">
+                        <a href="https://aws.amazon.com" target="_blank">Explore AWS</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- -------[ AWS CARD END ]------- -->
+
+   
+    <!-- -------[ GIT CARD START ]------- -->
+    <div class="git-card-container">
+        <div class="card-container">
+            <div class="card">
+                <div class="card-inner">
+                    
+                    <!-- [ FRONT SIDE ] -->
+                    <div class="card-side card-front">
+                        <img src="/assets/icons/git/git.png" alt="Git Logo" class="git-logo">
+                        <div class="card-title">Git</div>
+                        <div class="card-tagline">The Version Control System</div>
+
+                        <!-- [ LEARNING PROGRESS ] -->
+                        <div class="learning-progress">
+                            <div class="learning-progress-label">My Git Knowledge Level</div>
+                            <div class="star-container">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star half">★</span>
+                                <span class="star empty">★</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- [ BACK SIDE ] -->
+                    <div class="card-side card-back">
+                        <div class="card-description">
+                            Git is a distributed version control system for tracking changes in source code during software development.
+                        </div>
+                        <div class="key-services">
+                            <h4>Key Features:</h4>
+                            <div class="service-item">
+                                <img src="/assets/icons/git/commit.png" alt="Commit Icon">
+                                <p>Commit: Record changes to the repository.</p>
+                            </div>
+                            <div class="service-item">
+                                <img src="/assets/icons/git/branch.png" alt="Branch Icon">
+                                <p>Branch: Create separate lines of development.</p>
+                            </div>
+                            <div class="service-item">
+                                <img src="/assets/icons/git/merge.png" alt="Merge Icon">
+                                <p>Merge: Combine changes from different branches.</p>
+                            </div>
+                            <div class="service-item">
+                                <img src="/assets/icons/git/pull request.png" alt="Pull Request Icon">
+                                <p>Pull Request: Propose changes to a repository.</p>
+                            </div>
+                            <div class="service-item">
+                                <img src="/assets/icons/git/rebase.png" alt="Rebase Icon">
+                                <p>Rebase: Reapply commits on top of another base tip.</p>
+                            </div>
+                            <div class="service-item">
+                                <img src="/assets/icons/git/stash.png" alt="Stash Icon">
+                                <p>Stash: Temporarily save changes without committing.</p>
+                            </div>
+                        </div>
+                        <div class="use-cases">
+                            <h4>Popular Use Cases:</h4>
+                            <p>Version control, Collaborative development, Code review</p>
+                        </div>
+                        <div class="resources">
+                            <a href="https://git-scm.com" target="_blank">Explore Git</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- -------[ GIT CARD END ]------- -->
+
+
+    <!-- -------[ TERRAFORM START ]------- -->
+    <div class="terraform-card-container">
+        <div class="card-container">
+            <div class="card">
+                <div class="card-inner">
+                    
+                    <!-- [ FRONT SIDE ] -->
+                    <div class="card-side card-front">
+                        <img src="/assets/icons/terraform/Terraform.png" alt="Terraform Logo" class="terraform-logo">
+                        <div class="card-title">Terraform</div>
+                        <div class="card-tagline">Infrastructure as Code</div>
+
+                        <!-- [ LEARNING PROGRESS ] -->
+                        <div class="learning-progress">
+                            <div class="learning-progress-label">My Terraform Knowledge Level</div>
+                            <div class="star-container">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star empty">★</span>
+                                <span class="star empty">★</span>
+                                <span class="star empty">★</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- [ BACK SIDE ] -->
+                    <div class="card-side card-back">
+                        <div class="card-description">
+                            Terraform is an open-source tool that allows you to define and provision infrastructure using a high-level configuration language.
+                        </div>
+                        <div class="key-services">
+                            <h4>Key Features:</h4>
+                            <div class="service-item">
+                                <img src="/assets/icons/terraform/plan.png" alt="Plan Icon">
+                                <p>Plan: Preview changes before applying them to your infrastructure.</p>
+                            </div>
+                            <div class="service-item">
+                                <img src="/assets/icons/terraform/HashiCorp Terraform.png" alt="Apply Icon">
+                                <p>Apply: Execute the changes and update your infrastructure.</p>
+                            </div>
+                            <div class="service-item">
+                                <img src="/assets/icons/terraform/HashiCorp Terraform.png" alt="Validate Icon">
+                                <p>Validate: Ensure configuration files are error-free.</p>
+                            </div>
+                            <div class="service-item">
+                                <img src="/assets/icons/terraform/state.png" alt="State Icon">
+                                <p>State: Manage and track the state of your infrastructure.</p>
+                            </div>
+                            <div class="service-item">
+                                <img src="/assets/icons/terraform/HashiCorp Terraform.png" alt="Module Icon">
+                                <p>Modules: Create reusable configurations to manage resources.</p>
+                            </div>
+                            <div class="service-item">
+                                <img src="/assets/icons/terraform/HashiCorp Terraform.png" alt="Output Icon">
+                                <p>Output: Capture and display key information from your configurations.</p>
+                            </div>
+                        </div>
+                        <div class="use-cases">
+                            <h4>Popular Use Cases:</h4>
+                            <p>Provisioning cloud infrastructure, Managing multi-cloud environments, Automating infrastructure deployment</p>
+                        </div>
+                        <div class="resources">
+                            <a href="https://www.terraform.io" target="_blank">Explore Terraform</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- -------[ TERRAFORM END ]------- -->
+
+
+    <!-- -------[ LINUX START ]------- -->
+    <div class="linux-card-container">
+        <div class="card-container">
+            <div class="card">
+                <div class="card-inner">
+                    
+                    <!-- [ FRONT SIDE ] -->
+                    <div class="card-side card-front">
+                        <img src="/assets/icons/linux/linux.png" alt="Linux Logo" class="linux-logo">
+                        <div class="card-title">Linux</div>
+                        <div class="card-tagline">Open Source Operating System</div>
+
+                        <!-- [ LEARNING PROGRESS ] -->
+                        <div class="learning-progress">
+                            <div class="learning-progress-label">My Linux Knowledge Level</div>
+                            <div class="star-container">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star empty">★</span>
+                                <span class="star empty">★</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- [ BACK SIDE ] -->
+                    <div class="card-side card-back">
+                        <div class="card-description">
+                            Linux is a family of open-source Unix-like operating systems based on the Linux kernel. It is widely used for its stability and flexibility.
+                        </div>
+                        <div class="key-services">
+                            <h4>Key Features:</h4>
+                            <div class="service-item">
+                                <img src="/assets/icons/linux/kernal.png" alt="Kernel Icon">
+                                <p>Kernel: The core component of the operating system.</p>
+                            </div>
+                            <div class="service-item">
+                                <img src="/assets/icons/linux/shell.png" alt="Shell Icon">
+                                <p>Shell: Command-line interface for interacting with the system.</p>
+                            </div>
+                            <div class="service-item">
+                                <img src="/assets/icons/linux/package.png" alt="Package Icon">
+                                <p>Package Management: Tools for installing and managing software packages.</p>
+                            </div>
+                            <div class="service-item">
+                                <img src="/assets/icons/linux/linux.png" alt="Filesystem Icon">
+                                <p>Filesystem: Organization and management of data on storage devices.</p>
+                            </div>
+                            <div class="service-item">
+                                <img src="/assets/icons/linux/permission.png" alt="Permissions Icon">
+                                <p>Permissions: Manage user access and permissions for files and directories.</p>
+                            </div>
+                            <div class="service-item">
+                                <img src="/assets/icons/linux/network.png" alt="Network Icon">
+                                <p>Networking: Configuration and management of network interfaces and services.</p>
+                            </div>
+                        </div>
+                        <div class="use-cases">
+                            <h4>Popular Use Cases:</h4>
+                            <p>Web servers, Development environments, Desktop computing</p>
+                        </div>
+                        <div class="resources">
+                            <a href="https://www.linux.org" target="_blank">Explore Linux</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- -------[ LINUX END ]------- -->
+
+    <!-- -------[ JENKINS START ]------- -->
+    <div class="jenkins-card-container">
+        <div class="card-container">
+            <div class="card">
+                <div class="card-inner">
+                    
+                    <!-- [ FRONT SIDE ] -->
+                    <div class="card-side card-front">
+                        <img src="/assets/icons/jenkins/jenkins.png" alt="Jenkins Logo" class="jenkins-logo">
+                        <div class="card-title">Jenkins</div>
+                        <div class="card-tagline">Automation Server CI/CD</div>
+
+                        <!-- [ LEARNING PROGRESS ] -->
+                        <div class="learning-progress">
+                            <div class="learning-progress-label">My Jenkins Knowledge Level</div>
+                            <div class="star-container">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star empty">★</span>
+                                <span class="star empty">★</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- [ BACK SIDE ] -->
+                    <div class="card-side card-back">
+                        <div class="card-description">
+                            Jenkins is an open-source automation server that helps automate the parts of software development related to building, testing, and deploying, facilitating continuous integration and continuous delivery.
+                        </div>
+                        <div class="key-services">
+                            <h4>Key Features:</h4>
+                            <div class="service-item">
+                                <img src="/assets/icons/jenkins/pipeline.png" alt="Pipeline Icon">
+                                <p>Pipeline: Automate your build and deployment processes.</p>
+                            </div>
+                            <div class="service-item">
+                                <img src="/assets/icons/jenkins/plugin.png" alt="Plugins Icon">
+                                <p>Plugins: Enhance Jenkins with additional features.</p>
+                            </div>
+                            <div class="service-item">
+                                <img src="/assets/icons/jenkins/scm.png" alt="SCM Icon">
+                                <p>SCM Integration: Link Jenkins with source code repositories.</p>
+                            </div>
+                            <div class="service-item">
+                                <img src="/assets/icons/jenkins/authorization.png" alt="Authorization Icon">
+                                <p>Authorization: Manage who can access and modify Jenkins.</p>
+                            </div>
+                            <div class="service-item">
+                                <img src="/assets/icons/jenkins/backup.png" alt="Backup Icon">
+                                <p>Backup: Create and manage backups of Jenkins configurations.</p>
+                            </div>
+                            <div class="service-item">
+                                <img src="/assets/icons/jenkins/monitoring.png" alt="Monitoring Icon">
+                                <p>Monitoring: Keep track of Jenkins performance and health.</p>
+                            </div>
+                        </div>
+                        <div class="use-cases">
+                            <h4>Popular Use Cases:</h4>
+                            <p>Continuous Integration, Continuous Delivery, Build Automation</p>
+                        </div>
+                        <div class="resources">
+                            <a href="https://www.jenkins.io" target="_blank">Explore Jenkins</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- -------[ JENKINS END ]------- -->
+
+<!-- [ DOCKER START ] -->
+<div class="docker-card-container">
+    <div class="card-container">
+        <div class="card">
+            <div class="card-inner">
+                
+                <!-- [ FRONT SIDE ] -->
+                <div class="card-side card-front">
+                    <img src="/assets/icons/docker/docker.png" alt="Docker Logo" class="docker-logo">
+                    <div class="card-title">Docker</div>
+                    <div class="card-tagline">Containerization Platform</div>
+
+                    <!-- [ LEARNING PROGRESS ] -->
+                    <div class="learning-progress">
+                        <div class="learning-progress-label">My Docker Knowledge Level</div>
+                        <div class="star-container">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star half">★</span>
+                            <span class="star empty">★</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- [ BACK SIDE ] -->
+                <div class="card-side card-back">
+                    <div class="card-description">
+                        Docker is a platform that allows developers to automate the deployment of applications inside lightweight, portable containers.
+                    </div>
+                    <div class="key-services">
+                        <h4>Key Services:</h4>
+                        <div class="service-item">
+                            <img src="/assets/icons/docker/registry.png" alt="Registry Icon">
+                            <p>Registry: Store and distribute Docker images.</p>
+                        </div>
+                        <div class="service-item">
+                            <img src="/assets/icons/docker/volume.png" alt="Volume Icon">
+                            <p>Volumes: Manage persistent data storage for containers.</p>
+                        </div>
+                        <div class="service-item">
+                            <img src="/assets/icons/docker/dockerfile.png" alt="Dockerfile Icon">
+                            <p>Dockerfile: Define and build Docker images using a text file with instructions.</p>
+                        </div>
+                        <div class="service-item">
+                            <img src="/assets/icons/docker/container.png" alt="Container Icon">
+                            <p>Containers: Lightweight and portable software units.</p>
+                        </div>
+                        <div class="service-item">
+                            <img src="/assets/icons/docker/image.png" alt="Image Icon">
+                            <p>Docker Image: Build and create reusable container images.</p>
+                        </div>
+                        <div class="service-item">
+                            <img src="/assets/icons/docker/compose.png" alt="Compose Icon">
+                            <p>Docker Compose: Define and run multi-container Docker applications.</p>
+                        </div>
+                    </div>
+                    <div class="use-cases">
+                        <h4>Popular Use Cases:</h4>
+                        <p>Microservices, CI/CD Pipelines, Development Environments</p>
+                    </div>
+                    <div class="resources">
+                        <a href="https://www.docker.com" target="_blank">Explore Docker</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- [ DOCKER END ] -->
+
+
+
+    <!-- -------[ GITHUB START ]------- -->
+    <div class="github-card-container">
+        <div class="card-container">
+            <div class="card">
+                <div class="card-inner">
+
+                    <!-- [ FRONT SIDE ] -->
+                    <div class="card-side card-front">
+                        <img src="/assets/icons/github/github.png" alt="GitHub Logo" class="github-logo">
+                        <div class="card-title">GitHub</div>
+                        <div class="card-tagline">Where the World Builds Software</div>
+
+                        <!-- [ LEARNING PROGRESS ] -->
+                        <div class="learning-progress">
+                            <div class="learning-progress-label">My GitHub Knowledge Level</div>
+                            <div class="star-container">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star half">★</span>
+                                <span class="star empty">★</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- [ BACK SIDE ] -->
+                    <div class="card-side card-back">
+                        <div class="card-description">
+                            GitHub is a development platform inspired by the way you work. From open source to business, you can host and review code, manage projects, and build software alongside millions of developers.
+                        </div>
+                        <div class="key-services">
+                            <h4>Key Features:</h4>
+                            <div class="service-item">
+                                <img src="/assets/icons/github/repo.png" alt="Repo Icon">
+                                <p>Repositories: Host and review code, manage projects, and build software.</p>
+                            </div>
+                            <div class="service-item">
+                                <img src="/assets/icons/github/action.png" alt="Actions Icon">
+                                <p>Actions: Automate workflows directly from your repository.</p>
+                            </div>
+                            <div class="service-item">
+                                <img src="/assets/icons/github/issue.png" alt="Issues Icon">
+                                <p>Issues: Track your work with GitHub Issues.</p>
+                            </div>
+                            <div class="service-item">
+                                <img src="/assets/icons/github/pull req.png" alt="Pull Requests Icon">
+                                <p>Pull Requests: Collaborate with others and manage changes easily.</p>
+                            </div>
+                            <div class="service-item">
+                                <img src="/assets/icons/github/security.png" alt="Security Icon">
+                                <p>Security: Secure your code with GitHub's advanced security features.</p>
+                            </div>
+                            <div class="service-item">
+                                <img src="/assets/icons/github/fork.png" alt="Fork Icon">
+                                <p>Fork: Create your own copy of a repository to modify and experiment with.</p>
+                            </div>
+                        </div>
+                        <div class="use-cases">
+                            <h4>Popular Use Cases:</h4>
+                            <p>Version Control, Collaboration, DevOps Automation</p>
+                        </div>
+                        <div class="resources">
+                            <a href="https://www.github.com" target="_blank">Explore GitHub</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- -------[ GITHUB END ]------- -->
+
+
+    <!-- -------[ NGINX START ]------- -->
+    <div class="nginx-card-container">
+        <div class="card-container">
+            <div class="card">
+                <div class="card-inner">
+                    
+                    <!-- [ FRONT SIDE ] -->
+                    <div class="card-side card-front">
+                        <img src="/assets/icons/nginx/nginx.png" alt="NGINX Logo" class="nginx-logo">
+                        <div class="card-title">NGINX</div>
+                        <div class="card-tagline">The Engine X of the Internet</div>
+                        
+                        <!-- [ LEARNING PROGRESS ] -->
+                        <div class="learning-progress">
+                            <div class="learning-progress-label">My NGINX Knowledge Level</div>
+                            <div class="star-container">
+                                <span class="star">★</span>
+                                <span class="star half">★</span>
+                                <span class="star empty">★</span>
+                                <span class="star empty">★</span>
+                                <span class="star empty">★</span>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- [ BACK SIDE ] -->
+                    <div class="card-side card-back">
+                        <div class="card-description">
+                            NGINX is a high-performance HTTP server and reverse proxy, as well as an IMAP/POP3 proxy server. It powers many of the world's most popular websites.
+                        </div>
+                        <div class="key-services">
+                            <h4>Key Features:</h4>
+                            <div class="service-item">
+                                <img src="/assets/icons/nginx/http.png" alt="HTTP Server Icon">
+                                <p>HTTP Server: Handles web requests with efficiency.</p>
+                            </div>
+                            <div class="service-item">
+                                <img src="/assets/icons/nginx/Load Balancing.png" alt="Load Balancer Icon">
+                                <p>Load Balancer: Distributes traffic to different servers.</p>
+                            </div>
+                            <div class="service-item">
+                                <img src="/assets/icons/nginx/reverse procy.png" alt="Reverse Proxy Icon">
+                                <p>Reverse Proxy: Directs client requests to the appropriate server.</p>
+                            </div>
+                            <div class="service-item">
+                                <img src="/assets/icons/nginx/ssl.png" alt="SSL Icon">
+                                <p>SSL Termination: Offloads SSL decryption to improve performance.</p>
+                            </div>
+                            <div class="service-item">
+                                <img src="/assets/icons/nginx/cacheing.png" alt="Caching Icon">
+                                <p>Caching: Speeds up web content delivery by storing responses.</p>
+                            </div>
+                            <div class="service-item">
+                                <img src="/assets/icons/nginx/static-file.png" alt="Static Files Icon">
+                                <p>Static Files: Efficiently serves static content like HTML, CSS, and images.</p>
+                            </div>
+                        </div>
+                        <div class="use-cases">
+                            <h4>Popular Use Cases:</h4>
+                            <p>Web server, Load balancing, API gateway</p>
+                        </div>
+                        <div class="resources">
+                            <a href="https://nginx.org" target="_blank">Explore NGINX</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- -------[ NGINX END ]------- -->
+
+    <!-- -------[ TOMCAT START ]------- -->
+    <div class="apache-tomcat-card-container">
+        <div class="card-container">
+            <div class="card">
+                <div class="card-inner">
+
+                    <!-- [ FRONT SIDE ] -->
+                    <div class="card-side card-front">
+                        <img src="/assets/icons/apache tomcat/tomcat.png" alt="Apache Tomcat Logo" class="apache-tomcat-logo">
+                        <div class="card-title">Apache Tomcat</div>
+                        <div class="card-tagline">The Web Application Server</div>
+
+                        <!-- [ LEARNING PROGRESS ] -->
+                        <div class="learning-progress">
+                            <div class="learning-progress-label">My Apache Tomcat Knowledge Level</div>
+                            <div class="star-container">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star empty">★</span>
+                                <span class="star empty">★</span>
+                                <span class="star empty">★</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- [ BACK SIDE ] -->
+                    <div class="card-side card-back">
+                        <div class="card-description">
+                            Apache Tomcat is an open-source implementation of the Java Servlet, JavaServer Pages, and Java Expression Language technologies. It powers numerous large-scale, mission-critical web applications across various industries and sectors.
+                        </div>
+                        <div class="key-services">
+                            <h4>Key Features:</h4>
+                            <div class="service-item">
+                                <img src="/assets/icons/apache tomcat/servelet.png" alt="Servlet Icon">
+                                <p>Servlets: Java-based server-side technology for handling requests.</p>
+                            </div>
+                            <div class="service-item">
+                                <img src="/assets/icons/apache tomcat/jsp.png" alt="JSP Icon">
+                                <p>JSP: JavaServer Pages for creating dynamic web content.</p>
+                            </div>
+                            <div class="service-item">
+                                <img src="/assets/icons/apache tomcat/deployment.png" alt="Deployment Icon">
+                                <p>Deployment: Deploy Java applications in a web server environment.</p>
+                            </div>
+                            <div class="service-item">
+                                <img src="/assets/icons/apache tomcat/configuration.png" alt="Configuration Icon">
+                                <p>Configuration: Manage server settings through configuration files.</p>
+                            </div>
+                            <div class="service-item">
+                                <img src="/assets/icons/apache tomcat/monitor.png" alt="Monitoring Icon">
+                                <p>Monitoring: Keep track of server performance and health.</p>
+                            </div>
+                            <div class="service-item">
+                                <img src="/assets/icons/apache tomcat/security.png" alt="Security Icon">
+                                <p>Security: Secure Java applications with authentication and encryption.</p>
+                            </div>
+                        </div>
+                        <div class="use-cases">
+                            <h4>Popular Use Cases:</h4>
+                            <p>Running Java-based web applications, Servlet container, JSP engine</p>
+                        </div>
+                        <div class="resources">
+                            <a href="https://tomcat.apache.org" target="_blank">Explore Apache Tomcat</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- -------[ TOMCAT END ]------- -->
+    
+
+    <!-- -------[ K8S START ]------- -->
+    <div class="kubernetes-card-container">
+        <div class="card-container">
+            <div class="card">
+                <div class="card-inner">
+                    
+                    <!-- [ FRONT SIDE ] -->
+                    <div class="card-side card-front">
+                        <img src="/assets/icons/k8s/k8s.png" alt="Kubernetes Logo" class="kubernetes-logo">
+                        <div class="card-title">Kubernetes</div>
+                        <div class="card-tagline">Automating Deployment, Scaling, and Management</div>
+                        
+                        <!-- [ LEARNING PROGRESS ] -->
+                        <div class="learning-progress">
+                            <div class="learning-progress-label">My Kubernetes Knowledge Level</div>
+                            <div class="star-container">
+                                <span class="star half">★</span>
+                                <span class="star empty">★</span>
+                                <span class="star empty">★</span>
+                                <span class="star empty">★</span>
+                                <span class="star empty">★</span>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- [ BACK SIDE ] -->
+                    <div class="card-side card-back">
+                        <div class="card-description">
+                            Kubernetes is an open-source system for automating the deployment, scaling, and management of containerized applications. It helps manage containerized workloads and services, facilitating declarative configuration and automation.
+                        </div>
+                        <div class="key-services">
+                            <h4>Key Features:</h4>
+                            <div class="service-item">
+                                <img src="/assets/icons/k8s/Container Orchestration.png" alt="Container Orchestration Icon">
+                                <p>Container Orchestration: Automates deployment, scaling, and operations of containers.</p>
+                            </div>
+                            <div class="service-item">
+                                <img src="/assets/icons/k8s/pod.png" alt="Pods Icon">
+                                <p>Pods: The smallest deployable units in Kubernetes, containing one or more containers.</p>
+                            </div>
+                            <div class="service-item">
+                                <img src="/assets/icons/k8s/Auto-Scaling.png" alt="Auto-Scaling Icon">
+                                <p>Auto-Scaling: Dynamically adjusts the number of running containers based on load.</p>
+                            </div>
+                            <div class="service-item">
+                                <img src="/assets/icons/k8s/Service Discovery.png" alt="Service Discovery Icon">
+                                <p>Service Discovery: Automatically detects services and ensures high availability.</p>
+                            </div>
+                            <div class="service-item">
+                                <img src="/assets/icons/k8s/config-map.png" alt="ConfigMaps Icon">
+                                <p>ConfigMaps: Manages configuration data separately from application code.</p>
+                            </div>
+                            <div class="service-item">
+                                <img src="/assets/icons/k8s/secret.png" alt="Secrets Icon">
+                                <p>Secrets: Securely stores sensitive information like passwords and tokens.</p>
+                            </div>
+                        </div>
+                        <div class="use-cases">
+                            <h4>Popular Use Cases:</h4>
+                            <p>Managing microservices, automated deployments, and container orchestration.</p>
+                        </div>
+                        <div class="resources">
+                            <a href="https://kubernetes.io" target="_blank">Explore Kubernetes</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- -------[ K8S END ]------- -->
+
+
+    
+    <!-- [ APACHE START ] -->
+    <!-- [ APACHE END ] -->
+
+
+
+
+<!-- -------[ ALL CARD END ]------- -->
+
+<!-- -------[ TOOLS END ]------- -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -------[ TITLE STYLE START ]------- */
+.tools-section {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin: 0 0;
+    padding-top: 30px;
+    border-radius: 10px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tools-section .subtitle {
+    color: #B0B0B0;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.tools-section h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.tools-section .underline {
+    width: 60px;
+    height: 2px;
+    background-color: #c9c9c9b4;
+    margin: 0 auto;
+}
+/* -------[ TITLE STYLE END ]------- */
+
+
+/*! -------[ AWS CARD STYLE START ]------- !*/
+.aws-card-container {
+    font-family: inherit; 
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    padding-bottom: 30px;
+    align-items: center;
+    height: 70vh;
+    background: linear-gradient(135deg, white 50%, black 50%);
+}
+
+.aws-card-container .card-container {
+    perspective: 1200px;
+    width: 55%;
+    height: 61vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.aws-card-container .card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s ease-in-out;
+    border-radius: 10px;
+}
+
+.aws-card-container .card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.aws-card-container .card-inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s ease-in-out;
+    transform-style: preserve-3d;
+    display: flex;
+    flex-direction: column;
+}
+
+.aws-card-container .card-side {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+/* -------[ FRONT SIDE ]------- */
+.aws-card-container .card-front {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    /* background: url('/assets/background/cloud-background.jpg') no-repeat center center/cover; */
+    background-color: #232f3e;
+    border-radius: 10px;
+    padding: 20px;
+    padding-top: 175px;
+    box-sizing: border-box;
+}
+
+/* -------[ LEARNING PROGRESS ]------- */
+.aws-card-container .learning-progress {
+    margin-top: auto;
+    width: 100%;
+    text-align: center;
+    color: #ffffff;
+}
+
+.aws-card-container .learning-progress-label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #ffffff;
+}
+
+.aws-card-container .star-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.aws-card-container .star {
+    font-size: 20px;
+    color: #ff9900;
+    margin-right: 3px;
+}
+
+.aws-card-container .star.empty {
+    color: #d3d3d3;
+}
+
+.aws-card-container .star.half {
+    position: relative;
+    color: #fff;
+}
+
+.aws-card-container .star.half::before {
+    content: "★";
+    position: absolute;
+    left: 0;
+    color: #ff9900;
+    width: 50%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/* -------[ BACK SIDE ]------- */
+.aws-card-container .card-back {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: left;
+    color: #232f3e;
+    transform: rotateY(180deg);
+    border: 1px solid #ffffff41;
+    border-radius: 10px;
+    background-color: #eecfa7;
+}
+
+.aws-card-container .card-description, 
+.aws-card-container .key-services, 
+.aws-card-container .use-cases, 
+.aws-card-container .resources {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.aws-card-container .key-services h4 {
+    margin-bottom: 5px;
+    color: #ff9900;
+    font-size: 16px;
+}
+
+.aws-card-container .service-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.aws-card-container .service-item img {
+    width: 20px;
+    margin-right: 5px;
+}
+
+.aws-card-container .resources a {
+    color: #ff9900;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.aws-card-container .aws-logo {
+    width: 120px;
+    margin-bottom: 10px;
+}
+
+.aws-card-container .card-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.aws-card-container .card-tagline {
+    font-size: 32px;
+    color: #ff9900;
+}
+
+
+/* -------[ RESPONSIVE STYLES ]------- */
+
+@media (max-width: 1600px) {
+    .aws-card-container .card-container {
+        width: 85%;
+        max-width: 900px;
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 1400px) {
+    .aws-card-container .card-container {
+        width: 90%;
+        max-width: 800px;
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 1280px) {
+    .aws-card-container .card-container {
+        width: 95%;
+        max-width: 700px;
+        padding: 0 25px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .aws-card-container .card-container {
+        width: 95%;
+        max-width: 650px;
+        padding: 0 30px;
+    }
+
+    .aws-card-container .card-front {
+        padding-top: 150px;
+    }
+}
+
+@media (max-width: 768px) {
+    .aws-card-container .card-container {
+        width: 100%;
+        max-width: 600px;
+        padding: 0 20px;
+    }
+
+    .aws-card-container .card-front {
+        padding-top: 125px;
+    }
+
+    .aws-card-container .learning-progress {
+        font-size: 12px;
+    }
+
+    .aws-card-container .learning-progress-label {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .aws-card-container .card-container {
+        width: 100%;
+        max-width: 100%;
+        padding: 0 15px;
+    }
+
+    .aws-card-container .card-front {
+        padding-top: 100px;
+    }
+
+    .aws-card-container .card-title {
+        font-size: 16px;
+    }
+
+    .aws-card-container .card-tagline {
+        font-size: 18px;
+    }
+
+    .aws-card-container .learning-progress-label {
+        font-size: 9px;
+    }
+
+    .aws-card-container .star {
+        font-size: 14px;
+    }
+}
+/*! -------[ AWS CARD STYLE END ]------- !*/
+
+
+/*! -------[ GIT CARD STYLE START ]------- !*/
+
+.git-card-container {
+    font-family: inherit; /* Inherit the portfolio font */
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
+    align-items: center;
+    height: 70vh;
+    background: linear-gradient(135deg, #000000 50%, #ffffff 50%);
+}
+  
+  .git-card-container .card-container {
+    perspective: 1200px; /* Adjust perspective for better depth */
+    width: 55%; /* Adjust width as needed */
+    height: 61vh; /* Adjust height as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+  }
+  
+  .git-card-container .card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s ease-in-out;
+    border-radius: 10px; /* Rounded corners */
+  }
+  
+  .git-card-container .card:hover .card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .git-card-container .card-inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s ease-in-out;
+    transform-style: preserve-3d;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .git-card-container .card-side {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px; /* Rounded corners for the flip effect */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding: 10px; /* Adjust padding for better spacing */
+  }
+  
+  .git-card-container .card-front {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    text-align: center;
+    color: #ffffff;
+    background: url('/assets/background/git-background.jpg') no-repeat center center/cover; /* Use your Git-themed background */
+    background-color: #f14e32; /* Git orange fallback */
+    border-radius: 10px; /* Consistent rounded corners */
+    padding: 20px; /* Padding to ensure space around content */
+    padding-top: 175px;
+    box-sizing: border-box; /* Ensure padding does not affect width/height */
+  }
+  
+  .git-card-container .card-back {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start; 
+    text-align: left; 
+    color: #000000; /* Text color black */
+    transform: rotateY(180deg);
+    border: 1px solid #eeeeee; /* Border with light grey */
+    border-radius: 10px;
+    background-color: #f0efe7; /* Back side card background color */
+  }
+  
+  .git-card-container .card-description, 
+  .git-card-container .key-services, 
+  .git-card-container .use-cases, 
+  .git-card-container .resources {
+    margin-bottom: 10px; /* Adjust space between sections */
+    font-size: 14px; /* Adjust font size for readability */
+  }
+  
+  .git-card-container .key-services h4 {
+    margin-bottom: 5px; /* Space below the heading */
+    color: #0388a6; /* Git blue for heading */
+    font-size: 16px; /* Size for the heading */
+  }
+  
+  .git-card-container .service-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px; /* Space between service items */
+  }
+  
+  .git-card-container .service-item img {
+    width: 20px; /* Adjust icon size as needed */
+    margin-right: 5px; /* Space between icon and text */
+  }
+  
+  .git-card-container .resources a {
+    color: #0388a6; /* Git blue for links */
+    text-decoration: none; /* Remove underline from link */
+    font-weight: bold; /* Make the link text bold */
+  }
+  
+  .git-card-container .git-logo {
+    width: 120px; /* Adjust logo size */
+    margin-bottom: 10px;
+  }
+  
+  .git-card-container .card-title {
+    font-size: 28px; /* Adjust title size for fitting */
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .git-card-container .card-tagline {
+    font-size: 32px; /* Adjust tagline size for fitting */
+    color: #0388a6; /* Git blue */
+  }
+  
+  .git-card-container .learning-progress {
+    margin-top: auto; /* Push to bottom of front side */
+    width: 100%;
+    text-align: center;
+    color: #ffffff;
+  }
+  
+  .git-card-container .learning-progress-label {
+    font-size: 14px; /* Adjust font size for fitting */
+    margin-bottom: 5px;
+    color: #ffffff;
+  }
+  
+  .git-card-container .star-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .git-card-container .star {
+    font-size: 20px; /* Adjust star size */
+    color: #0388a6; /* Git blue */
+    margin-right: 3px;
+  }
+  
+  .git-card-container .star.empty {
+    color: #ffffff; /* Light grey for empty stars */
+  }
+        
+  .git-card-container .star.half {
+    position: relative;
+    color: #fff;
+  }
+        
+  .git-card-container .star.half::before {
+    content: "★";
+    position: absolute;
+    left: 0;
+    color: #0388a6; /* Color of the filled half */
+    width: 50%; /* Half the width of the star */
+    overflow: hidden;
+    white-space: nowrap;
+  }
+/*! -------[ GIT CARD STYLE END ]------- */
+
+
+/*! -------[ TERRAFORM CARD STYLE START ]------- */
+.terraform-card-container {
+    font-family: inherit; /* Inherit the portfolio font */
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    padding-bottom: 30px;
+    align-items: center;
+    height: 70vh;
+    background: linear-gradient(135deg, white 50%, black 50%); /* Background colors */
+  }
+  
+  .terraform-card-container .card-container {
+    perspective: 1200px; /* Adjust perspective for better depth */
+    width: 55%; /* Adjust width as needed */
+    height: 61vh; /* Adjust height as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+  }
+  
+  .terraform-card-container .card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s ease-in-out;
+    border-radius: 10px; /* Rounded corners */
+  }
+  
+  .terraform-card-container .card:hover .card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .terraform-card-container .card-inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s ease-in-out;
+    transform-style: preserve-3d;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .terraform-card-container .card-side {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px; /* Rounded corners for the flip effect */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding: 10px; /* Adjust padding for better spacing */
+  }
+  
+  .terraform-card-container .card-front {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    text-align: center;
+    color: #ffffff;
+    background: linear-gradient(47deg, #63D0FF, #657FF4, #8040C9); /* Gradient for the front side */
+    border-radius: 10px; /* Consistent rounded corners */
+    padding: 20px; /* Padding to ensure space around content */
+    padding-top: 175px;
+    box-sizing: border-box; /* Ensure padding does not affect width/height */
+  }
+  
+  .terraform-card-container .card-back {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start; 
+    text-align: left; 
+    color: #000000; /* Text color black */
+    transform: rotateY(180deg);
+    border: 1px solid #ffffff; /* Border with white color */
+    border-radius: 10px;
+    background-color: #F2F2F3; /* Back side card background color */
+  }
+  
+  .terraform-card-container .card-description, 
+  .terraform-card-container .key-services, 
+  .terraform-card-container .use-cases, 
+  .terraform-card-container .resources {
+    margin-bottom: 10px; /* Adjust space between sections */
+    font-size: 14px; /* Adjust font size for readability */
+  }
+  
+  .terraform-card-container .key-services h4 {
+    margin-bottom: 5px; /* Space below the heading */
+    color: #7b42bc; /* Terraform purple for heading */
+    font-size: 16px; /* Size for the heading */
+  }
+  
+  .terraform-card-container .service-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px; /* Space between service items */
+  }
+  
+  .terraform-card-container .service-item img {
+    width: 20px; /* Adjust icon size as needed */
+    margin-right: 5px; /* Space between icon and text */
+  }
+  
+  .terraform-card-container .resources a {
+    color: #7b42bc; /* Terraform purple for links */
+    text-decoration: none; /* Remove underline from link */
+    font-weight: bold; /* Make the link text bold */
+  }
+  
+  .terraform-card-container .terraform-logo {
+    width: 120px; /* Adjust logo size */
+    margin-bottom: 10px;
+  }
+  
+  .terraform-card-container .card-title {
+    font-size: 28px; /* Adjust title size for fitting */
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .terraform-card-container .card-tagline {
+    font-size: 32px; /* Adjust tagline size for fitting */
+    color: #7b42bc; /* Terraform purple */
+  }
+  
+  .terraform-card-container .learning-progress {
+    margin-top: auto; /* Push to bottom of front side */
+    width: 100%;
+    text-align: center;
+    color: #ffffff;
+  }
+  
+  .terraform-card-container .learning-progress-label {
+    font-size: 14px; /* Adjust font size for fitting */
+    margin-bottom: 5px;
+    color: #ffffff;
+  }
+  
+  .terraform-card-container .star-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .terraform-card-container .star {
+    font-size: 20px; /* Adjust star size */
+    color: #7b42bc; /* Terraform purple */
+    margin-right: 3px;
+  }
+  
+  .terraform-card-container .star.empty {
+    color: #d3d3d3; /* Light grey for empty stars */
+  }
+        
+  .terraform-card-container .star.half {
+    position: relative;
+    color: #fff;
+  }
+        
+  .terraform-card-container .star.half::before {
+    content: "★";
+    position: absolute;
+    left: 0;
+    color: #7b42bc; /* Color of the filled half */
+    width: 50%; /* Half the width of the star */
+    overflow: hidden;
+    white-space: nowrap;
+  }
+/* -------[ TERRAFORM CARD STYLE END ]------- */
+
+
+/* -------[ LINUX CARD STYLE START ]------- */
+/* Scoped Linux Card Styles */
+.linux-card-container {
+  font-family: inherit; /* Inherit the portfolio font */
+  display: flex;
+  justify-content: center;
+  padding-bottom: 30px;
+  align-items: center;
+  height: 70vh;
+  background: linear-gradient(135deg, #000000 50%, #ffffff 50%);
+}
+
+.linux-card-container .card-container {
+  perspective: 1200px; /* Adjust perspective for better depth */
+  width: 55%; /* Adjust width as needed */
+  height: 61vh; /* Adjust height as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.linux-card-container .card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease-in-out;
+  border-radius: 10px; /* Rounded corners */
+}
+
+.linux-card-container .card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.linux-card-container .card-inner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s ease-in-out;
+  transform-style: preserve-3d;
+  display: flex;
+  flex-direction: column;
+}
+
+.linux-card-container .card-side {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px; /* Rounded corners for the flip effect */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: 10px; /* Adjust padding for better spacing */
+}
+
+.linux-card-container .card-front {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+  text-align: center;
+  color: #ffffff;
+  background-color: #000000; /* Solid black background for the front side */
+  border-radius: 10px; /* Consistent rounded corners */
+  padding: 20px; /* Padding to ensure space around content */
+  padding-top: 175px;
+  box-sizing: border-box; /* Ensure padding does not affect width/height */
+}
+
+.linux-card-container .card-back {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start; 
+  text-align: left; 
+  color: #000000; /* Text color black */
+  transform: rotateY(180deg);
+  border: 1px solid #b3dbf8; /* Border with white color */
+  border-radius: 10px;
+  background-color: #b3dbf8; /* Back side card background color */
+}
+
+.linux-card-container .card-description, 
+.linux-card-container .key-services, 
+.linux-card-container .use-cases, 
+.linux-card-container .resources {
+  margin-bottom: 10px; /* Adjust space between sections */
+  font-size: 14px; /* Adjust font size for readability */
+}
+
+.linux-card-container .key-services h4 {
+  margin-bottom: 5px; /* Space below the heading */
+  color: #ffcc33; /* Linux yellow for heading */
+  font-size: 16px; /* Size for the heading */
+}
+
+.linux-card-container .service-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px; /* Space between service items */
+}
+
+.linux-card-container .service-item img {
+  width: 20px; /* Adjust icon size as needed */
+  margin-right: 5px; /* Space between icon and text */
+}
+
+.linux-card-container .resources a {
+  color: #ffcc33; /* Linux yellow for links */
+  text-decoration: none; /* Remove underline from link */
+  font-weight: bold; /* Make the link text bold */
+}
+
+.linux-card-container .linux-logo {
+  width: 120px; /* Adjust logo size */
+  margin-bottom: 10px;
+}
+
+.linux-card-container .card-title {
+  font-size: 28px; /* Adjust title size for fitting */
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.linux-card-container .card-tagline {
+  font-size: 32px; /* Adjust tagline size for fitting */
+  color: #ffcc33; /* Linux yellow */
+}
+
+.linux-card-container .learning-progress {
+  margin-top: auto; /* Push to bottom of front side */
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+}
+
+.linux-card-container .learning-progress-label {
+  font-size: 14px; /* Adjust font size for fitting */
+  margin-bottom: 5px;
+  color: #ffffff;
+}
+
+.linux-card-container .star-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.linux-card-container .star {
+  font-size: 20px; /* Adjust star size */
+  color: #ffcc33; /* Linux yellow */
+  margin-right: 3px;
+}
+
+.linux-card-container .star.empty {
+  color: #d3d3d3; /* Light grey for empty stars */
+}
+      
+.linux-card-container .star.half {
+  position: relative;
+  color: #fff;
+}
+      
+.linux-card-container .star.half::before {
+  content: "★";
+  position: absolute;
+  left: 0;
+  color: #ffcc33; /* Color of the filled half */
+  width: 50%; /* Half the width of the star */
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* -------[ LINUX CARD STYLE END ]------- */
+
+
+/* -------[ JENKINS CARD STYLE START ]------- */
+/* Scoped Jenkins Card Styles */
+.jenkins-card-container {
+    font-family: inherit; /* Inherit the portfolio font */
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    padding-bottom: 30px;
+    align-items: center;
+    height: 70vh;
+    background: linear-gradient(135deg, #ffffff 50%, #000000 50%); /* Gradient with white and Dim Gray */
+  }
+  
+  .jenkins-card-container .card-container {
+    perspective: 1200px; /* Adjust perspective for better depth */
+    width: 55%; /* Adjust width as needed */
+    height: 61vh; /* Adjust height as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+  }
+  
+  .jenkins-card-container .card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s ease-in-out;
+    border-radius: 10px; /* Rounded corners */
+  }
+  
+  .jenkins-card-container .card:hover .card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .jenkins-card-container .card-inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s ease-in-out;
+    transform-style: preserve-3d;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .jenkins-card-container .card-side {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px; /* Rounded corners for the flip effect */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding: 10px; /* Adjust padding for better spacing */
+  }
+  
+  .jenkins-card-container .card-front {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    text-align: center;
+    color: #ff0000;
+    background-color: #335061; /* Police Blue for the front side */
+    border-radius: 10px; /* Consistent rounded corners */
+    padding: 20px; /* Padding to ensure space around content */
+    padding-top: 175px;
+    box-sizing: border-box; /* Ensure padding does not affect width/height */
+  }
+  
+  .jenkins-card-container .card-back {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start; 
+    text-align: left; 
+    color: #335061; /* Police Blue text color */
+    transform: rotateY(180deg);
+    border: 1px solid #f0d6b7; /* Border with Persian Red color */
+    border-radius: 10px;
+    background-color: #f0d6b7; /* Back side card background color */
+  }
+  
+  .jenkins-card-container .card-description, 
+  .jenkins-card-container .key-services, 
+  .jenkins-card-container .use-cases, 
+  .jenkins-card-container .resources {
+    margin-bottom: 10px; /* Adjust space between sections */
+    font-size: 14px; /* Adjust font size for readability */
+  }
+  
+  .jenkins-card-container .key-services h4 {
+    margin-bottom: 5px; /* Space below the heading */
+    color: #d33834; /* Persian Red for heading */
+    font-size: 16px; /* Size for the heading */
+  }
+  
+  .jenkins-card-container .service-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px; /* Space between service items */
+  }
+  
+  .jenkins-card-container .service-item img {
+    width: 20px; /* Adjust icon size as needed */
+    margin-right: 5px; /* Space between icon and text */
+  }
+  
+  .jenkins-card-container .resources a {
+    color: #d33834; /* Persian Red for links */
+    text-decoration: none; /* Remove underline from link */
+    font-weight: bold; /* Make the link text bold */
+  }
+  
+  .jenkins-card-container .jenkins-logo {
+    width: 120px; /* Adjust logo size */
+    margin-bottom: 10px;
+  }
+  
+  .jenkins-card-container .card-title {
+    font-size: 28px; /* Adjust title size for fitting */
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .jenkins-card-container .card-tagline {
+    font-size: 32px; /* Adjust tagline size for fitting */
+    color: #d33834; /* Persian Red */
+  }
+  
+  .jenkins-card-container .learning-progress {
+    margin-top: auto; /* Push to bottom of front side */
+    width: 100%;
+    text-align: center;
+    color: #ffffff;
+  }
+  
+  .jenkins-card-container .learning-progress-label {
+    font-size: 14px; /* Adjust font size for fitting */
+    margin-bottom: 5px;
+    color: #ffffff;
+  }
+  
+  .jenkins-card-container .star-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .jenkins-card-container .star {
+    font-size: 20px; /* Adjust star size */
+    color: #d33834; /* Persian Red */
+    margin-right: 3px;
+  }
+  
+  .jenkins-card-container .star.empty {
+    color: #d3d3d3; /* Light grey for empty stars */
+  }
+        
+  .jenkins-card-container .star.half {
+    position: relative;
+    color: #fff;
+  }
+        
+  .jenkins-card-container .star.half::before {
+    content: "★";
+    position: absolute;
+    left: 0;
+    color: #d33834; /* Color of the filled half */
+    width: 50%; /* Half the width of the star */
+    overflow: hidden;
+    white-space: nowrap;
+  }
+/* -------[ JENKINS CARD STYLE END ]------- */
+
+
+/* -------[ DOCKER CARD STYLE START ]------- */
+/* Scoped Docker Card Styles */
+.docker-card-container {
+    font-family: inherit; /* Inherit the portfolio font */
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
+    align-items: center;
+    height: 70vh;
+    background: linear-gradient(-45deg, #ffffff 50%, #000000 50%);
+}
+  
+  .docker-card-container .card-container {
+    perspective: 1200px; /* Adjust perspective for better depth */
+    width: 55%; /* Adjust width as needed */
+    height: 61vh; /* Adjust height as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+  }
+  
+  .docker-card-container .card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s ease-in-out;
+    border-radius: 10px; /* Rounded corners */
+  }
+  
+  .docker-card-container .card:hover .card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .docker-card-container .card-inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s ease-in-out;
+    transform-style: preserve-3d;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .docker-card-container .card-side {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px; /* Rounded corners for the flip effect */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding: 10px; /* Adjust padding for better spacing */
+  }
+  
+  .docker-card-container .card-front {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    text-align: center;
+    color: #ffffff; /* White text color */
+    background-color: #0db7ed; /* Docker Blue for the front side */
+    border-radius: 10px; /* Consistent rounded corners */
+    padding: 20px; /* Padding to ensure space around content */
+    padding-top: 175px;
+    box-sizing: border-box; /* Ensure padding does not affect width/height */
+  }
+  
+  .docker-card-container .card-back {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start; 
+    text-align: left; 
+    color: #fff; /* Dark Gray text color */
+    transform: rotateY(180deg);
+    border: 1px solid #384d54; /* Border with Docker Blue color */
+    border-radius: 10px;
+    background-color: #384d54; /* Back side card background color */
+  }
+  
+  .docker-card-container .card-description, 
+  .docker-card-container .key-services, 
+  .docker-card-container .use-cases, 
+  .docker-card-container .resources {
+    margin-bottom: 10px; /* Adjust space between sections */
+    font-size: 14px; /* Adjust font size for readability */
+  }
+  
+  .docker-card-container .key-services h4 {
+    margin-bottom: 5px; /* Space below the heading */
+    color: #0db7ed; /* Docker Blue for heading */
+    font-size: 16px; /* Size for the heading */
+  }
+  
+  .docker-card-container .service-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px; /* Space between service items */
+  }
+  
+  .docker-card-container .service-item img {
+    width: 20px; /* Adjust icon size as needed */
+    margin-right: 5px; /* Space between icon and text */
+  }
+  
+  .docker-card-container .resources a {
+    color: #0db7ed; /* Docker Blue for links */
+    text-decoration: none; /* Remove underline from link */
+    font-weight: bold; /* Make the link text bold */
+  }
+  
+  .docker-card-container .docker-logo {
+    width: 120px; /* Adjust logo size */
+    margin-bottom: 10px;
+  }
+  
+  .docker-card-container .card-title {
+    font-size: 28px; /* Adjust title size for fitting */
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .docker-card-container .card-tagline {
+    font-size: 32px; /* Adjust tagline size for fitting */
+    color: #384d54; /* White color */
+  }
+  
+  .docker-card-container .learning-progress {
+    margin-top: auto; /* Push to bottom of front side */
+    width: 100%;
+    text-align: center;
+    color: #ffffff;
+  }
+  
+  .docker-card-container .learning-progress-label {
+    font-size: 14px; /* Adjust font size for fitting */
+    margin-bottom: 5px;
+    color: #ffffff;
+  }
+  
+  .docker-card-container .star-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .docker-card-container .star {
+    font-size: 20px; /* Adjust star size */
+    color: #384d54; /* Docker Blue */
+    margin-right: 3px;
+  }
+  
+  .docker-card-container .star.empty {
+    color: #ffffff; /* Light grey for empty stars */
+  }
+        
+  .docker-card-container .star.half {
+    position: relative;
+    color: #fff;
+  }
+        
+  .docker-card-container .star.half::before {
+    content: "★";
+    position: absolute;
+    left: 0;
+    color: #384d54; /* Color of the filled half */
+    width: 50%; /* Half the width of the star */
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  
+/* -------[ DOCKER CARD STYLE END ]------- */
+
+
+/* -------[ GITHUB CARD STYLE START ]------- */
+/* Scoped GitHub Card Styles */
+.github-card-container {
+    font-family: inherit; /* Inherit the portfolio font */
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    padding-bottom: 30px;
+    align-items: center;
+    height: 70vh;
+    background: linear-gradient(135deg, #ffffff 50%, #000000 50%); /* Gradient with GitHub dark grey colors */
+  }
+  
+  .github-card-container .card-container {
+    perspective: 1200px; /* Adjust perspective for better depth */
+    width: 55%; /* Adjust width as needed */
+    height: 61vh; /* Adjust height as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+  }
+  
+  .github-card-container .card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s ease-in-out;
+    border-radius: 10px; /* Rounded corners */
+  }
+  
+  .github-card-container .card:hover .card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .github-card-container .card-inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s ease-in-out;
+    transform-style: preserve-3d;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .github-card-container .card-side {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px; /* Rounded corners for the flip effect */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding: 10px; /* Adjust padding for better spacing */
+  }
+  
+  .github-card-container .card-front {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    text-align: center;
+    color: #ffffff; /* White text color */
+    background-color: #24292e; /* GitHub dark grey for the front side */
+    border-radius: 10px; /* Consistent rounded corners */
+    padding: 20px; /* Padding to ensure space around content */
+    padding-top: 175px;
+    box-sizing: border-box; /* Ensure padding does not affect width/height */
+  }
+  
+  .github-card-container .card-back {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start; 
+    text-align: left; 
+    color: #2b3137; /* Slightly lighter dark grey for text */
+    transform: rotateY(180deg);
+    border: 1px solid #f1f1f1; /* Border with GitHub green color */
+    border-radius: 10px;
+    background-color: #fafbfc; /* Back side card background color */
+  }
+  
+  .github-card-container .card-description, 
+  .github-card-container .key-services, 
+  .github-card-container .use-cases, 
+  .github-card-container .resources {
+    margin-bottom: 10px; /* Adjust space between sections */
+    font-size: 14px; /* Adjust font size for readability */
+  }
+  
+  .github-card-container .key-services h4 {
+    margin-bottom: 5px; /* Space below the heading */
+    color: #2dba4e; /* GitHub green for heading */
+    font-size: 16px; /* Size for the heading */
+  }
+  
+  .github-card-container .service-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px; /* Space between service items */
+  }
+  
+  .github-card-container .service-item img {
+    width: 20px; /* Adjust icon size as needed */
+    margin-right: 5px; /* Space between icon and text */
+  }
+  
+  .github-card-container .resources a {
+    color: #2dba4e; /* GitHub green for links */
+    text-decoration: none; /* Remove underline from link */
+    font-weight: bold; /* Make the link text bold */
+  }
+  
+  .github-card-container .github-logo {
+    width: 120px; /* Adjust logo size */
+    margin-bottom: 10px;
+  }
+  
+  .github-card-container .card-title {
+    font-size: 28px; /* Adjust title size for fitting */
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .github-card-container .card-tagline {
+    font-size: 32px; /* Adjust tagline size for fitting */
+    color: #2dba4e; /* GitHub off-white color */
+  }
+  
+  .github-card-container .learning-progress {
+    margin-top: auto; /* Push to bottom of front side */
+    width: 100%;
+    text-align: center;
+    color: #fafbfc; /* GitHub off-white color */
+  }
+  
+  .github-card-container .learning-progress-label {
+    font-size: 14px; /* Adjust font size for fitting */
+    margin-bottom: 5px;
+    color: #fafbfc; /* GitHub off-white color */
+  }
+  
+  .github-card-container .star-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .github-card-container .star {
+    font-size: 20px; /* Adjust star size */
+    color: #2dba4e; /* GitHub green */
+    margin-right: 3px;
+  }
+  
+  .github-card-container .star.empty {
+    color: #d3d3d3; /* Light grey for empty stars */
+  }
+        
+  .github-card-container .star.half {
+    position: relative;
+    color: #fff;
+  }
+        
+  .github-card-container .star.half::before {
+    content: "★";
+    position: absolute;
+    left: 0;
+    color: #2dba4e; /* Color of the filled half */
+    width: 50%; /* Half the width of the star */
+    overflow: hidden;
+    white-space: nowrap;
+  }
+/* -------[ GITHUB CARD STYLE END ]------- */
+
+
+/* -------[ NGINX CARD STYLE START ]------- */
+/* Scoped NGINX Card Styles */
+.nginx-card-container {
+    font-family: inherit; /* Inherit the portfolio font */
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
+    align-items: center;
+    height: 70vh;
+    background: linear-gradient(135deg, #000000 50%, #ffffff 50%);
+  }
+  
+  .nginx-card-container .card-container {
+    perspective: 1200px; /* Adjust perspective for better depth */
+    width: 55%; /* Adjust width as needed */
+    height: 61vh; /* Adjust height as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+  }
+  
+  .nginx-card-container .card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s ease-in-out;
+    border-radius: 10px; /* Rounded corners */
+  }
+  
+  .nginx-card-container .card:hover .card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .nginx-card-container .card-inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s ease-in-out;
+    transform-style: preserve-3d;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .nginx-card-container .card-side {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px; /* Rounded corners for the flip effect */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding: 10px; /* Adjust padding for better spacing */
+  }
+  
+  .nginx-card-container .card-front {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    text-align: center;
+    color: #ffffff; /* White text */
+    background-color: #4A4A4A ; /* NGINX Green background */
+    border-radius: 10px; /* Consistent rounded corners */
+    padding: 20px; /* Padding to ensure space around content */
+    padding-top: 175px;
+    box-sizing: border-box; /* Ensure padding does not affect width/height */
+  }
+  
+  .nginx-card-container .card-back {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start; 
+    text-align: left; 
+    color: #4A4A4A; /* Dark Gray text */
+    transform: rotateY(180deg);
+    border: 1px solid #ffffff41;
+    border-radius: 10px;
+    background-color: #FFFFFF; /* White background */
+  }
+  
+  .nginx-card-container .card-description, 
+  .nginx-card-container .key-services, 
+  .nginx-card-container .use-cases, 
+  .nginx-card-container .resources {
+    margin-bottom: 10px; /* Adjust space between sections */
+    font-size: 14px; /* Adjust font size for readability */
+  }
+  
+  .nginx-card-container .key-services h4 {
+    margin-bottom: 5px; /* Space below the heading */
+    color: #009639; /* NGINX Green for heading */
+    font-size: 16px; /* Size for the heading */
+  }
+  
+  .nginx-card-container .service-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px; /* Space between service items */
+  }
+  
+  .nginx-card-container .service-item img {
+    width: 20px; /* Adjust icon size as needed */
+    margin-right: 5px; /* Space between icon and text */
+  }
+  
+  .nginx-card-container .resources a {
+    color: #009639; /* NGINX Green for links */
+    text-decoration: none; /* Remove underline from link */
+    font-weight: bold; /* Make the link text bold */
+  }
+  
+  .nginx-card-container .nginx-logo {
+    width: 120px; /* Adjust logo size */
+    margin-bottom: 10px;
+  }
+  
+  .nginx-card-container .card-title {
+    font-size: 28px; /* Adjust title size for fitting */
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .nginx-card-container .card-tagline {
+    font-size: 32px; /* Adjust tagline size for fitting */
+    color: #009639; /* White text */
+  }
+  
+  .nginx-card-container .learning-progress {
+    margin-top: auto; /* Push to bottom of front side */
+    width: 100%;
+    text-align: center;
+    color: #ffffff; /* White text */
+  }
+  
+  .nginx-card-container .learning-progress-label {
+    font-size: 14px; /* Adjust font size for fitting */
+    margin-bottom: 5px;
+    color: #ffffff; /* White text */
+  }
+  
+  .nginx-card-container .star-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .nginx-card-container .star {
+    font-size: 20px; /* Adjust star size */
+    color: #009639; /* NGINX Green for stars */
+    margin-right: 3px;
+  }
+  
+  .nginx-card-container .star.empty {
+    color: #d3d3d3; /* Light grey for empty stars */
+  }
+        
+  .nginx-card-container .star.half {
+    position: relative;
+    color: #fff;
+  }
+        
+  .nginx-card-container .star.half::before {
+    content: "★";
+    position: absolute;
+    left: 0;
+    color: #009639; /* Color of the filled half */
+    width: 50%; /* Half the width of the star */
+    overflow: hidden;
+    white-space: nowrap;
+  }  
+/* -------[ NGINX CARD STYLE END ]------- */
+
+
+/* -------[ TOMCAT CARD STYLE START ]------- */
+/* Scoped Apache Tomcat Card Styles */
+.apache-tomcat-card-container {
+  font-family: inherit; /* Inherit the portfolio font */
+  display: flex;
+  justify-content: center;
+  padding-bottom: 30px;
+  align-items: center;
+  height: 70vh;
+  background-color: #F2F2F2; /* Light Gray background */
+}
+
+.apache-tomcat-card-container .card-container {
+  perspective: 1200px; /* Adjust perspective for better depth */
+  width: 55%; /* Adjust width as needed */
+  height: 61vh; /* Adjust height as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.apache-tomcat-card-container .card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease-in-out;
+  border-radius: 10px; /* Rounded corners */
+}
+
+.apache-tomcat-card-container .card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.apache-tomcat-card-container .card-inner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s ease-in-out;
+  transform-style: preserve-3d;
+  display: flex;
+  flex-direction: column;
+}
+
+.apache-tomcat-card-container .card-side {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px; /* Rounded corners for the flip effect */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: 10px; /* Adjust padding for better spacing */
+}
+
+.apache-tomcat-card-container .card-front {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+  text-align: center;
+  color: #ffffff; /* Black text */
+  background-color: #666666; /* Yellow background */
+  border-radius: 10px; /* Consistent rounded corners */
+  padding: 20px; /* Padding to ensure space around content */
+  padding-top: 175px;
+  box-sizing: border-box; /* Ensure padding does not affect width/height */
+}
+
+.apache-tomcat-card-container .card-back {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start; 
+  text-align: left; 
+  color: #666666; /* Gray text */
+  transform: rotateY(180deg);
+  border: 1px solid #ffffff41;
+  border-radius: 10px;
+  background-color: #F8DC75; /* White background */
+}
+
+.apache-tomcat-card-container .card-description, 
+.apache-tomcat-card-container .key-services, 
+.apache-tomcat-card-container .use-cases, 
+.apache-tomcat-card-container .resources {
+  margin-bottom: 10px; /* Adjust space between sections */
+  font-size: 14px; /* Adjust font size for readability */
+}
+
+.apache-tomcat-card-container .key-services h4 {
+  margin-bottom: 5px; /* Space below the heading */
+  color: #000000; /* Yellow for heading */
+  font-size: 16px; /* Size for the heading */
+}
+
+.apache-tomcat-card-container .service-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px; /* Space between service items */
+}
+
+.apache-tomcat-card-container .service-item img {
+  width: 20px; /* Adjust icon size as needed */
+  margin-right: 5px; /* Space between icon and text */
+}
+
+.apache-tomcat-card-container .resources a {
+  color: #000000; /* Yellow for links */
+  text-decoration: none; /* Remove underline from link */
+  font-weight: bold; /* Make the link text bold */
+}
+
+.apache-tomcat-card-container .apache-tomcat-logo {
+  width: 120px; /* Adjust logo size */
+  margin-bottom: 10px;
+}
+
+.apache-tomcat-card-container .card-title {
+  font-size: 28px; /* Adjust title size for fitting */
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.apache-tomcat-card-container .card-tagline {
+  font-size: 32px; /* Adjust tagline size for fitting */
+  color: #F8DC75; /* Black text */
+}
+
+.apache-tomcat-card-container .learning-progress {
+  margin-top: auto; /* Push to bottom of front side */
+  width: 100%;
+  text-align: center;
+  color: #000000; /* Black text */
+}
+
+.apache-tomcat-card-container .learning-progress-label {
+  font-size: 14px; /* Adjust font size for fitting */
+  margin-bottom: 5px;
+  color: #ffffff; /* Black text */
+}
+
+.apache-tomcat-card-container .star-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.apache-tomcat-card-container .star {
+  font-size: 20px; /* Adjust star size */
+  color: #F8DC75; /* Yellow for stars */
+  margin-right: 3px;
+}
+
+.apache-tomcat-card-container .star.empty {
+  color: #ffffff; /* Light grey for empty stars */
+}
+      
+.apache-tomcat-card-container .star.half {
+  position: relative;
+  color: #fff;
+}
+      
+.apache-tomcat-card-container .star.half::before {
+  content: "★";
+  position: absolute;
+  left: 0;
+  color: #F8DC75; /* Color of the filled half */
+  width: 50%; /* Half the width of the star */
+  overflow: hidden;
+  white-space: nowrap;
+}
+/* -------[ TOMCAT CARD STYLE END ]------- */
+
+
+/* -------[ K8S CARD STYLE START ]------- */
+.kubernetes-card-container {
+  font-family: inherit; /* Inherit the portfolio font */
+  display: flex;
+  justify-content: center;
+  padding-bottom: 30px;
+  align-items: center;
+  height: 70vh;
+  background-color: #f2f2f2; /* Light Gray background */
+}
+
+.kubernetes-card-container .card-container {
+  perspective: 1200px; /* Adjust perspective for better depth */
+  width: 55%; /* Adjust width as needed */
+  height: 61vh; /* Adjust height as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.kubernetes-card-container .card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease-in-out;
+  border-radius: 10px; /* Rounded corners */
+}
+
+.kubernetes-card-container .card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.kubernetes-card-container .card-inner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s ease-in-out;
+  transform-style: preserve-3d;
+  display: flex;
+  flex-direction: column;
+}
+
+.kubernetes-card-container .card-side {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px; /* Rounded corners for the flip effect */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: 10px; /* Adjust padding for better spacing */
+}
+
+.kubernetes-card-container .card-front {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+  text-align: center;
+  color: #ffffff; /* White text */
+  background-color: #3970e4; /* Kubernetes Blue background */
+  border-radius: 10px; /* Consistent rounded corners */
+  padding: 20px; /* Padding to ensure space around content */
+  padding-top: 175px;
+  box-sizing: border-box; /* Ensure padding does not affect width/height */
+}
+
+.kubernetes-card-container .card-back {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start; 
+  text-align: left; 
+  color: #0c0c0c; /* Dark text */
+  transform: rotateY(180deg);
+  border: 1px solid #ffffff41;
+  border-radius: 10px;
+  background-color: #9db8e9; /* Lighter Blue background */
+}
+
+.kubernetes-card-container .card-description, 
+.kubernetes-card-container .key-services, 
+.kubernetes-card-container .use-cases, 
+.kubernetes-card-container .resources {
+  margin-bottom: 10px; /* Adjust space between sections */
+  font-size: 14px; /* Adjust font size for readability */
+}
+
+.kubernetes-card-container .key-services h4 {
+  margin-bottom: 5px; /* Space below the heading */
+  color: #0f3074; /* Darker Blue for heading */
+  font-size: 16px; /* Size for the heading */
+}
+
+.kubernetes-card-container .service-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px; /* Space between service items */
+}
+
+.kubernetes-card-container .service-item img {
+  width: 20px; /* Adjust icon size as needed */
+  margin-right: 5px; /* Space between icon and text */
+}
+
+.kubernetes-card-container .resources a {
+  color: #0f3074; /* Darker Blue for links */
+  text-decoration: none; /* Remove underline from link */
+  font-weight: bold; /* Make the link text bold */
+}
+
+.kubernetes-card-container .kubernetes-logo {
+  width: 120px; /* Adjust logo size */
+  margin-bottom: 10px;
+}
+
+.kubernetes-card-container .card-title {
+  font-size: 28px; /* Adjust title size for fitting */
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.kubernetes-card-container .card-tagline {
+  font-size: 32px; /* Adjust tagline size for fitting */
+  color: #0c0c0c; /* Lighter Blue for tagline */
+}
+
+.kubernetes-card-container .learning-progress {
+  margin-top: auto; /* Push to bottom of front side */
+  width: 100%;
+  text-align: center;
+  color: #ffffff; /* White text */
+}
+
+.kubernetes-card-container .learning-progress-label {
+  font-size: 14px; /* Adjust font size for fitting */
+  margin-bottom: 5px;
+  color: #ffffff; /* White text */
+}
+
+.kubernetes-card-container .star-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kubernetes-card-container .star {
+  font-size: 20px; /* Adjust star size */
+  color: #0c0c0c; /* Lighter Blue for stars */
+  margin-right: 3px;
+}
+
+.kubernetes-card-container .star.empty {
+  color: #ffffff; /* Light grey for empty stars */
+}
+      
+.kubernetes-card-container .star.half {
+  position: relative;
+  color: #fff;
+}
+      
+.kubernetes-card-container .star.half::before {
+  content: "★";
+  position: absolute;
+  left: 0;
+  color: #0c0c0c; /* Color of the filled half */
+  width: 50%; /* Half the width of the star */
+  overflow: hidden;
+  white-space: nowrap;
+}
+/* -------[ K8S CARD STYLE END ]------- */
+
+
+/* -------[ APACHE CARD STYLE END ]------- */
+
+/* -------[ APACHE CARD STYLE END ]------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

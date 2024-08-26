@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer Animation</title>
+
+    <style>
+        footer {
+            position: relative;
+            text-align: center;
+            padding: 20px;
+            background: #000000;
+            color: #ffffff;
+            overflow: hidden; /* Ensures the boxes stay within the footer */
+        }
+
+        #boxWrap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0; /* Ensure the boxes are behind the text and icons */
+            pointer-events: none; /* Prevent boxes from blocking interaction with the footer links and icons */
+        }
+
+        .box {
+            position: fixed;
+            background-color: rgb(255, 0, 0);
+            border-radius: 8px;
+            opacity: 0;
+            animation: floatBox linear infinite;
+        }
+
+        @keyframes moveBox {
+            0% { transform: translate(0%, 0%); }
+            5% { transform: translate(90%, 10%); }
+            10% { transform: translate(10%, 20%); }
+            15% { transform: translate(80%, 30%); }
+            20% { transform: translate(20%, 40%); }
+            25% { transform: translate(70%, 50%); }
+            30% { transform: translate(30%, 60%); }
+            35% { transform: translate(90%, 70%); }
+            40% { transform: translate(20%, 80%); }
+            45% { transform: translate(80%, 90%); }
+            50% { transform: translate(0%, 100%); }
+            55% { transform: translate(90%, 90%); }
+            60% { transform: translate(10%, 80%); }
+            65% { transform: translate(80%, 70%); }
+            70% { transform: translate(20%, 60%); }
+            75% { transform: translate(70%, 50%); }
+            80% { transform: translate(30%, 40%); }
+            85% { transform: translate(90%, 30%); }
+            90% { transform: translate(20%, 20%); }
+            95% { transform: translate(80%, 10%); }
+            100% { transform: translate(0%, 0%); }
+        }
+
+        @keyframes floatBox {
+            0% {
+                transform: translateY(150vh) translateX(-50%) rotate(0deg);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-150vh) translateX(-50%) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .box:nth-child(1) { width: 20px; height: 20px; bottom: 0; left: 10%; animation-duration: 12s; animation-delay: 0s; }
+        .box:nth-child(2) { width: 30px; height: 30px; bottom: 0; left: 25%; animation-duration: 15s; animation-delay: 2s; }
+        .box:nth-child(3) { width: 40px; height: 40px; bottom: 0; left: 40%; animation-duration: 14s; animation-delay: 4s; }
+        .box:nth-child(4) { width: 50px; height: 50px; bottom: 0; left: 55%; animation-duration: 18s; animation-delay: 1s; }
+        .box:nth-child(5) { width: 60px; height: 60px; bottom: 0; left: 70%; animation-duration: 13s; animation-delay: 3s; }
+        .box:nth-child(6) { width: 25px; height: 25px; bottom: 0; left: 85%; animation-duration: 20s; animation-delay: 5s; }
+        .box:nth-child(7) { width: 35px; height: 35px; bottom: 0; left: 30%; animation-duration: 14s; animation-delay: 6s; }
+        .box:nth-child(8) { width: 45px; height: 45px; bottom: 0; left: 70%; animation-duration: 16s; animation-delay: 8s; }
+        .box:nth-child(9) { width: 55px; height: 55px; bottom: 0; left: 15%; animation-duration: 18s; animation-delay: 3s; }
+        .box:nth-child(10) { width: 25px; height: 25px; bottom: 0; left: 85%; animation-duration: 14s; animation-delay: 7s; }
+        .box:nth-child(11) { width: 30px; height: 30px; bottom: 0; left: 10%; animation-duration: 12s; animation-delay: 1s; }
+        .box:nth-child(12) { width: 40px; height: 40px; bottom: 0; left: 25%; animation-duration: 15s; animation-delay: 3s; }
+        .box:nth-child(13) { width: 50px; height: 50px; bottom: 0; left: 40%; animation-duration: 14s; animation-delay: 5s; }
+        .box:nth-child(14) { width: 60px; height: 60px; bottom: 0; left: 55%; animation-duration: 18s; animation-delay: 2s; }
+        .box:nth-child(15) { width: 25px; height: 25px; bottom: 0; left: 70%; animation-duration: 13s; animation-delay: 4s; }
+        .box:nth-child(16) { width: 35px; height: 35px; bottom: 0; left: 85%; animation-duration: 20s; animation-delay: 6s; }
+        .box:nth-child(17) { width: 45px; height: 45px; bottom: 0; left: 30%; animation-duration: 14s; animation-delay: 8s; }
+        .box:nth-child(18) { width: 55px; height: 55px; bottom: 0; left: 70%; animation-duration: 16s; animation-delay: 10s; }
+        .box:nth-child(19) { width: 20px; height: 20px; bottom: 0; left: 50%; animation-duration: 18s; animation-delay: 4s; }
+        .box:nth-child(20) { width: 30px; height: 30px; bottom: 0; left: 80%; animation-duration: 12s; animation-delay: 6s; }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 0;
+            margin: 0 0 20px;
+            z-index: 1; /* Ensure the text is above the boxes */
+            position: relative;
+        }
+
+        .footer-links li {
+            margin: 0;
+        }
+
+        .footer-links li a {
+            text-decoration: none;
+            color: #B0B0B0;
+            letter-spacing: 2px;
+            font-size: 12px;
+        }
+
+        footer p {
+            margin: 0;
+            z-index: 1; /* Ensure the text is above the boxes */
+            position: relative;
+        }
+
+        .footer-links li a:hover {
+            color: #ffffff;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 33px;
+            margin-bottom: 20px;
+            z-index: 1; /* Ensure the icons are above the boxes */
+            position: relative;
+        }
+
+        .social-icons a {
+            text-decoration: none;
+            position: relative;
+            width: 26px;
+            height: 26px;
+        }
+
+        .social-icons img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .social-icons img {
+            filter: grayscale(100%) brightness(0.7) contrast(1);
+        }
+
+        .social-icons a:hover img {
+            filter: grayscale(0%) brightness(1) contrast(1);
+        }
+    </style>
+</head>
+<body>
+    <footer>
+        <div id="boxWrap">
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+        <ul class="footer-links">
+            <li><a href="#">HOME</a></li>
+        </ul>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/ramesh-kanna-g-325042285/" target="_blank">
+                <img src="/assets/icons/linkedin.png" alt="LinkedIn Logo">
+            </a>
+            <a href="https://github.com/RameshXT" target="_blank">
+                <img src="/assets/icons/github/github.png" alt="GitHub Logo">
+            </a>
+            <a href="https://x.com/RameshK55373475" target="_blank">
+                <img src="/assets/icons/x.png" alt="X Logo">
+            </a>
+            <a href="https://www.instagram.com/ig.rameshxt/" target="_blank">
+                <img src="/assets/icons/instagram.png" alt="Instagram Logo">
+            </a>
+            <a href="https://wa.me/9442403868" target="_blank">
+                <img src="/assets/icons/whatsapp.png" alt="WhatsApp Logo">
+            </a>
+        </div>
+        <p>&copy; 2024 Ramesh. All rights reserved.</p>
+    </footer>
+</body>
+</html>
