@@ -3,55 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wave Background</title>
+    <title>Document</title>
     <style>
-       header {
+html, body {
+  margin: 0;
+  padding: 0;
+  transform-style: preserve-3d;
+  transform: perspective(800px);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: arial, sans-serif;
+}
+#container {
+  .card {
+    width: 640px;
+    height: 920px;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    transition: all .2s ease-out;
+    box-shadow: 0 5px 30px rgba(14,21,47,0.4);
+    background-image: url(/assets/images/space.jpg);
     position: relative;
-    background: radial-gradient(circle at 50% 50%, #000000 30%, transparent 70%),
-                radial-gradient(circle at 50% 50%, #ffffff 30%, transparent 70%);
-    background-size: 100% 100%, 100% 100%;
-    background-repeat: no-repeat;
-    padding: 100px 0 164px 0;
-}
-
-header.wave-bottom::before,
-header.wave-top::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100px; /* Height of the wave effect */
-    background: inherit;
-    top: 0;
-    left: 0;
-}
-
-header.wave-bottom::before {
-    bottom: 0;
-    background: radial-gradient(circle at bottom, #ffffff 20%, transparent 80%);
-}
-
-header.wave-top::before {
-    top: 0;
-    background: radial-gradient(circle at top, #000000 20%, transparent 80%);
-}
-
-@media (max-width: 768px) {
-    header.wave-bottom::before,
-    header.wave-top::before {
-        height: 50px; /* Adjust height for smaller screens */
+    .shine {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,.1) 0%,rgba(255,255,255,0) 60%);
+      z-index: 100;
     }
-}
-
-@media (max-width: 349px) {
-    header.wave-bottom::before,
-    header.wave-top::before {
-        height: 25px; /* Adjust height for very small screens */
+    .layer {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-image: url(/assets/images/resume.png);
+      background-size: cover;
     }
+    }
+  p {
+      text-align: center;
+      margin-top: 30px;
+      color: #333;
+    font-size: .9rem;
+      a {
+        color:  #0000FF;
+      }
+  }
 }
-
     </style>
 </head>
 <body>
-    <header class="wave-bottom"></header>
+    <div id="container">
+    <div class="card" data-offset="20">
+      <div class="shine"></div>
+      <div data-offset="-10" class="layer"></div>
+    </div>
+  </div>
+
+  <script>
+    var w = $(window).width();
+var h = $(window).height();
+
+$('.card').on('mousemove', function(e) {
+  var offsetX = 0.5 - e.pageX / w;
+  var offsetY = 0.5 - e.pageY / h; 
+  var dy = e.pageY - h / 2; 
+  var dx = e.pageX - w / 2;
+  var theta = Math.atan2(dy, dx); 
+  var angle = theta * 180 / Math.PI - 90;
+  var offsetPoster = $(this).data('offset');
+  var transformPoster = 'translateY(' + -offsetX * offsetPoster + 'px) rotateX(' + (-offsetY * offsetPoster) + 'deg) rotateY(' + (offsetX * (offsetPoster * 3)) + 'deg) scale(1.07)'; // poster transform
+  if (angle < 0) {
+    angle = angle + 360;
+  }
+  $(this).children('.shine').css('background', 'linear-gradient(' + angle + 'deg, rgba(255,255,255,' + e.pageY / h * .15 + ') 0%,rgba(255,255,255,0) 80%)');
+  $(this).css({
+    'transform': transformPoster,
+    'box-shadow': '0 45px 60px rgba(14,21,47,0.2), 0 16px 40px rgba(14,21,47,0.2)',
+  });
+});
+
+$('.card').on('mouseout', function(){
+  $(this).css({
+    'transform': 'translate(0px)',
+    'box-shadow': '0 8px 30px rgba(14,21,47,0.4)'
+  });
+   $(this).children('.shine').css('background', 'linear-gradient(135deg, rgba(255,255,255,.1) 0%,rgba(255,255,255,0) 60%)');
+});
+
+  </script>
 </body>
 </html>

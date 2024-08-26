@@ -55,10 +55,15 @@
     text-align: center;
     padding: 100px 20px;
     color: #ffffff;
-    background: linear-gradient(135deg, #000000 90.6%, #ffffff 8%);
-    /* background-color: #000000; */
     position: relative;
     overflow: hidden;
+    
+
+    /* background: linear-gradient(135deg, #000000 90.6%, #ffffff 8%); */
+    background-image: url(/assets/images/curve-up.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 /* -------[ CONTENT WRAPPER STYLE ]------- */
@@ -93,7 +98,7 @@
 #typing-text {
     display: inline;
     font-weight: bold;
-    background: #005FA1; /* Replace with your desired color */
+    background: #005FA1;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -108,23 +113,22 @@
 
 }
 
-
 @keyframes typing {
     from { width: 0; }
     to { width: 100%; }
 }
 
 @keyframes cursor-blink {
-    0% { border-right-color: #00aeff; }
+    0% { border-right-color: #005FA1; }
     50% { border-right-color: transparent; }
-    100% { border-right-color: #00aeff; }
+    100% { border-right-color: #005FA1; }
 }
 
 /* -------[ CTA BUTTON STYLE ]------- */
 .hero .cta-btn {
     padding: 15px 30px;
-    background: #fff;
-    color: #000;
+    background: #ffffff;
+    color: #000000;
     text-decoration: none;
     border-radius: 5px;
     margin-top: 20px;
@@ -166,13 +170,24 @@
 
 
 /* -------[ SCROLL VISIBILITY STYLES ]------- */
-.hidden-content {
+.hero-content {
     opacity: 0;
     transform: translateY(100px);
-    transition: opacity 2s ease-in-out, transform 2s ease-in-out;
+    transition: opacity 2s ease-out, transform 2s ease-out;
 }
 
-.hidden-content.visible {
+.hero-content.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hidden-content.animated-text {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 2s ease-out, transform 2s ease-out;
+}
+
+.hidden-content.animated-text.visible {
     opacity: 1;
     transform: translateY(0);
 }

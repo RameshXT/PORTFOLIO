@@ -61,15 +61,15 @@ document.addEventListener('DOMContentLoaded', function() {
 const typedElement = document.getElementById("typing-text");
 
 const textsToType = [
-    "Ramesh Kanna",
+    "Ramesh Kanna G",
     "A DevOps Engineer",
     "A Creative Technologist",
     "A Newcomer to the IT Industry from a non-IT Background"
 ];
 
 const typingDelay = 100;
-const erasingDelay = 75;
-const newTextDelay = 300;
+const erasingDelay = 40;
+const newTextDelay = 800;
 const initialDelay = 2000;
 
 let textIndex = 0; 
@@ -102,6 +102,30 @@ window.onload = function() {
         setTimeout(typeText, initialDelay);
     }
 };
+
+/* -------[ SCROLL VISIBILITY STYLES FOR HERO ]------- */
+
+document.addEventListener('DOMContentLoaded', function () {
+    const heroContent = document.querySelector('.hero-content');
+    const hiddenContent = document.querySelector('.hidden-content');
+
+    function handleScroll() {
+        const heroPosition = heroContent.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 1.2;
+        const screenBottom = window.innerHeight;
+
+        if (heroPosition < screenPosition && heroPosition > -screenBottom) {
+            heroContent.classList.add('visible');
+            hiddenContent.classList.add('visible');
+        } else {
+            heroContent.classList.remove('visible');
+            hiddenContent.classList.remove('visible');
+        }
+    }
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial check
+});
 
 /* -------[ SCROLL VISIBILITY STYLES ]------- */
 
