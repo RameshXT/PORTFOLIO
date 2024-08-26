@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const startPosition = window.pageYOffset;
                 const targetPosition = targetSection.getBoundingClientRect().top + window.pageYOffset;
                 const distance = targetPosition - startPosition;
-                const duration = 1000; // Duration in milliseconds
+                const duration = 1200; // Duration in milliseconds
                 let start = null;
 
                 function smoothScroll(timestamp) {
