@@ -1,208 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Footer Animation</title>
+    
+    <!-- -------[ PROJECT NAME ]------- -->
+    <title>PortFolio | Ramesh</title>
 
-    <style>
-        footer {
-            position: relative;
-            text-align: center;
-            padding: 20px;
-            background: #000000;
-            color: #ffffff;
-            overflow: hidden; /* Ensures the boxes stay within the footer */
-        }
+    <!-- -------[ CSS LINKS ]------- -->
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/hero.css">
+    <link rel="stylesheet" href="/css/feature.css">
+    <!-- <link rel="stylesheet" href="/css/skillset.css"> -->
+    <link rel="stylesheet" href="/css/education.css">
+    <link rel="stylesheet" href="/css/contact.css">
+    <link rel="stylesheet" href="/css/footer.css">
 
-        #boxWrap {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0; /* Ensure the boxes are behind the text and icons */
-            pointer-events: none; /* Prevent boxes from blocking interaction with the footer links and icons */
-        }
+    <!-- -------[ SKILS LINKS ]------- -->
+    <link rel="stylesheet" href="/css/skill/git.css">
+    <link rel="stylesheet" href="/css/skill/github.css">
+    <link rel="stylesheet" href="/css/skill/docker.css">
+    <link rel="stylesheet" href="/css/skill/jenkins.css">
+    <link rel="stylesheet" href="/css/skill/k8s.css">
+    <link rel="stylesheet" href="/css/skill/terraform.css">
+    <link rel="stylesheet" href="/css/skill/aws.css">
+    <link rel="stylesheet" href="/css/skill/linux.css">
+    <link rel="stylesheet" href="/css/skill/nginx.css">
+    <link rel="stylesheet" href="/css/skill/tomcat.css">
+    
+    <!-- -------[ FAVICON LINK ]------- -->
+    <link rel="icon" href="/assets/favicon/favicon.png">
 
-        .box {
-            position: fixed;
-            background-color: rgb(255, 0, 0);
-            border-radius: 8px;
-            opacity: 0;
-            animation: floatBox linear infinite;
-        }
+    <!-- -------[ LOTTIE PLAYER LINK ]------- -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162535367-1"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
-        @keyframes moveBox {
-            0% { transform: translate(0%, 0%); }
-            5% { transform: translate(90%, 10%); }
-            10% { transform: translate(10%, 20%); }
-            15% { transform: translate(80%, 30%); }
-            20% { transform: translate(20%, 40%); }
-            25% { transform: translate(70%, 50%); }
-            30% { transform: translate(30%, 60%); }
-            35% { transform: translate(90%, 70%); }
-            40% { transform: translate(20%, 80%); }
-            45% { transform: translate(80%, 90%); }
-            50% { transform: translate(0%, 100%); }
-            55% { transform: translate(90%, 90%); }
-            60% { transform: translate(10%, 80%); }
-            65% { transform: translate(80%, 70%); }
-            70% { transform: translate(20%, 60%); }
-            75% { transform: translate(70%, 50%); }
-            80% { transform: translate(30%, 40%); }
-            85% { transform: translate(90%, 30%); }
-            90% { transform: translate(20%, 20%); }
-            95% { transform: translate(80%, 10%); }
-            100% { transform: translate(0%, 0%); }
-        }
-
-        @keyframes floatBox {
-            0% {
-                transform: translateY(150vh) translateX(-50%) rotate(0deg);
-                opacity: 0;
-            }
-            50% {
-                opacity: 1;
-            }
-            90% {
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-150vh) translateX(-50%) rotate(360deg);
-                opacity: 0;
-            }
-        }
-
-        .box:nth-child(1) { width: 20px; height: 20px; bottom: 0; left: 10%; animation-duration: 12s; animation-delay: 0s; }
-        .box:nth-child(2) { width: 30px; height: 30px; bottom: 0; left: 25%; animation-duration: 15s; animation-delay: 2s; }
-        .box:nth-child(3) { width: 40px; height: 40px; bottom: 0; left: 40%; animation-duration: 14s; animation-delay: 4s; }
-        .box:nth-child(4) { width: 50px; height: 50px; bottom: 0; left: 55%; animation-duration: 18s; animation-delay: 1s; }
-        .box:nth-child(5) { width: 60px; height: 60px; bottom: 0; left: 70%; animation-duration: 13s; animation-delay: 3s; }
-        .box:nth-child(6) { width: 25px; height: 25px; bottom: 0; left: 85%; animation-duration: 20s; animation-delay: 5s; }
-        .box:nth-child(7) { width: 35px; height: 35px; bottom: 0; left: 30%; animation-duration: 14s; animation-delay: 6s; }
-        .box:nth-child(8) { width: 45px; height: 45px; bottom: 0; left: 70%; animation-duration: 16s; animation-delay: 8s; }
-        .box:nth-child(9) { width: 55px; height: 55px; bottom: 0; left: 15%; animation-duration: 18s; animation-delay: 3s; }
-        .box:nth-child(10) { width: 25px; height: 25px; bottom: 0; left: 85%; animation-duration: 14s; animation-delay: 7s; }
-        .box:nth-child(11) { width: 30px; height: 30px; bottom: 0; left: 10%; animation-duration: 12s; animation-delay: 1s; }
-        .box:nth-child(12) { width: 40px; height: 40px; bottom: 0; left: 25%; animation-duration: 15s; animation-delay: 3s; }
-        .box:nth-child(13) { width: 50px; height: 50px; bottom: 0; left: 40%; animation-duration: 14s; animation-delay: 5s; }
-        .box:nth-child(14) { width: 60px; height: 60px; bottom: 0; left: 55%; animation-duration: 18s; animation-delay: 2s; }
-        .box:nth-child(15) { width: 25px; height: 25px; bottom: 0; left: 70%; animation-duration: 13s; animation-delay: 4s; }
-        .box:nth-child(16) { width: 35px; height: 35px; bottom: 0; left: 85%; animation-duration: 20s; animation-delay: 6s; }
-        .box:nth-child(17) { width: 45px; height: 45px; bottom: 0; left: 30%; animation-duration: 14s; animation-delay: 8s; }
-        .box:nth-child(18) { width: 55px; height: 55px; bottom: 0; left: 70%; animation-duration: 16s; animation-delay: 10s; }
-        .box:nth-child(19) { width: 20px; height: 20px; bottom: 0; left: 50%; animation-duration: 18s; animation-delay: 4s; }
-        .box:nth-child(20) { width: 30px; height: 30px; bottom: 0; left: 80%; animation-duration: 12s; animation-delay: 6s; }
-
-        .footer-links {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            padding: 0;
-            margin: 0 0 20px;
-            z-index: 1; /* Ensure the text is above the boxes */
-            position: relative;
-        }
-
-        .footer-links li {
-            margin: 0;
-        }
-
-        .footer-links li a {
-            text-decoration: none;
-            color: #B0B0B0;
-            letter-spacing: 2px;
-            font-size: 12px;
-        }
-
-        footer p {
-            margin: 0;
-            z-index: 1; /* Ensure the text is above the boxes */
-            position: relative;
-        }
-
-        .footer-links li a:hover {
-            color: #ffffff;
-        }
-
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 33px;
-            margin-bottom: 20px;
-            z-index: 1; /* Ensure the icons are above the boxes */
-            position: relative;
-        }
-
-        .social-icons a {
-            text-decoration: none;
-            position: relative;
-            width: 26px;
-            height: 26px;
-        }
-
-        .social-icons img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        .social-icons img {
-            filter: grayscale(100%) brightness(0.7) contrast(1);
-        }
-
-        .social-icons a:hover img {
-            filter: grayscale(0%) brightness(1) contrast(1);
-        }
-    </style>
+    <!-- -------[ ICON LINK ]------- -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body>
-    <footer>
-        <div id="boxWrap">
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
+
+    
+<!-- TODO TOOLS START -->
+
+
+    <div style="border: 2px solid rebeccapurple; height: 99vh; width: 100%;">
+        <div>
+            <!-- [ TITLE ] -->
+            <div id="skills" class="tools-section">
+                <div class="subtitle">MY WORKBENCH</div>
+                <h2>TOOLS THAT MAKE IT HAPPEN</h2> 
+                <div class="underline"></div>
+            </div>
         </div>
-        <ul class="footer-links">
-            <li><a href="#">HOME</a></li>
-        </ul>
-        <div class="social-icons">
-            <a href="https://www.linkedin.com/in/ramesh-kanna-g-325042285/" target="_blank">
-                <img src="/assets/icons/linkedin.png" alt="LinkedIn Logo">
-            </a>
-            <a href="https://github.com/RameshXT" target="_blank">
-                <img src="/assets/icons/github/github.png" alt="GitHub Logo">
-            </a>
-            <a href="https://x.com/RameshK55373475" target="_blank">
-                <img src="/assets/icons/x.png" alt="X Logo">
-            </a>
-            <a href="https://www.instagram.com/ig.rameshxt/" target="_blank">
-                <img src="/assets/icons/instagram.png" alt="Instagram Logo">
-            </a>
-            <a href="https://wa.me/9442403868" target="_blank">
-                <img src="/assets/icons/whatsapp.png" alt="WhatsApp Logo">
-            </a>
+        <!-- -------[ GIT CARD START ]------- -->
+    <div class="git-card-container">
+        <div class="card-container">
+            <div class="card">
+                <div class="card-inner">
+                    
+                    <!-- [ FRONT SIDE ] -->
+                    <div class="card-side card-front">
+                        <img src="/assets/icons/git/git.png" alt="Git Logo" class="git-logo">
+                        <div class="card-title">Git</div>
+                        <div class="card-tagline">The Version Control System</div>
+
+                        <!-- [ LEARNING PROGRESS ] -->
+                        <div class="learning-progress">
+                            <div class="learning-progress-label">My Git Knowledge Level</div>
+                            <div class="star-container">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star half">★</span>
+                                <span class="star empty">★</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- [ BACK SIDE ] -->
+                    <div class="card-side card-back">
+                        <div class="card-description">
+                            Git is a distributed version control system for tracking changes in source code during software development.
+                        </div>
+                        <div class="key-services">
+                            <h4>Key Features:</h4>
+                            <div class="service-item">
+                                <img src="/assets/icons/git/commit.png" alt="Commit Icon">
+                                <p>Commit: Record changes to the repository.</p>
+                            </div>
+                            <div class="service-item">
+                                <img src="/assets/icons/git/branch.png" alt="Branch Icon">
+                                <p>Branch: Create separate lines of development.</p>
+                            </div>
+                            <div class="service-item">
+                                <img src="/assets/icons/git/merge.png" alt="Merge Icon">
+                                <p>Merge: Combine changes from different branches.</p>
+                            </div>
+                            <div class="service-item">
+                                <img src="/assets/icons/git/pull request.png" alt="Pull Request Icon">
+                                <p>Pull Request: Propose changes to a repository.</p>
+                            </div>
+                            <div class="service-item">
+                                <img src="/assets/icons/git/rebase.png" alt="Rebase Icon">
+                                <p>Rebase: Reapply commits on top of another base tip.</p>
+                            </div>
+                            <div class="service-item">
+                                <img src="/assets/icons/git/stash.png" alt="Stash Icon">
+                                <p>Stash: Temporarily save changes without committing.</p>
+                            </div>
+                        </div>
+                        <div class="use-cases">
+                            <h4>Popular Use Cases:</h4>
+                            <p>Version control, Collaborative development, Code review</p>
+                        </div>
+                        <div class="resources">
+                            <a href="https://git-scm.com" target="_blank">Explore Git</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <p>&copy; 2024 Ramesh. All rights reserved.</p>
-    </footer>
+    </div>
+    <!-- -------[ GIT CARD END ]------- -->
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- TODO TOOLS END -->
+ 
+
+
+
+
+
+
+
+    
+    
+    <!-- -------[ JS LINKS ]------- -->
+    <script src="/js/main.js"></script>
+    <script src="/test.js"></script>
+
 </body>
 </html>
