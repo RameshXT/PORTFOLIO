@@ -1,471 +1,125 @@
-/* -------[ DOCKER CARD STYLE START ]------- */
-/* Scoped Docker Card Styles */
-.docker-card-container {
-    font-family: inherit; /* Inherit the portfolio font */
+/* -------[ DOCKER CARD START ]------- */
+.card-docker .card-front {
+    background-color: #0db7ed;
+    color: #fff;
     display: flex;
-    justify-content: center;
-    padding-bottom: 30px;
+    flex-direction: column;
     align-items: center;
-    height: 70vh;
-    background: linear-gradient(-45deg, #ffffff 50%, #000000 50%);
-}
-
-.docker-card-container .card-container {
-    perspective: 1200px; /* Adjust perspective for better depth */
-    width: 55%; /* Adjust width as needed */
-    height: 61vh; /* Adjust height as needed */
-    display: flex;
     justify-content: center;
-    align-items: center;
-    margin-top: 30px;
-}
-
-.docker-card-container .card {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    transform-style: preserve-3d;
-    transition: transform 0.8s ease-in-out;
-    border-radius: 10px; /* Rounded corners */
-}
-
-.docker-card-container .card:hover .card-inner {
-    transform: rotateY(180deg);
-}
-
-.docker-card-container .card-inner {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.8s ease-in-out;
-    transform-style: preserve-3d;
-    display: flex;
-    flex-direction: column;
-}
-
-.docker-card-container .card-side {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    border-radius: 10px; /* Rounded corners for the flip effect */
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    padding: 10px; /* Adjust padding for better spacing */
-}
-
-.docker-card-container .card-front {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Center vertically */
-    align-items: center; /* Center horizontally */
     text-align: center;
-    color: #ffffff; /* White text color */
-    background-color: #0db7ed; /* Docker Blue for the front side */
-    border-radius: 10px; /* Consistent rounded corners */
-    padding: 20px; /* Padding to ensure space around content */
-    padding-top: 175px;
-    box-sizing: border-box; /* Ensure padding does not affect width/height */
+    padding-top: 90px;
 }
 
-.docker-card-container .card-back {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start; 
-    text-align: left; 
-    color: #fff; /* Dark Gray text color */
-    transform: rotateY(180deg);
-    border: 1px solid #384d54; /* Border with Docker Blue color */
-    border-radius: 10px;
-    background-color: #384d54; /* Back side card background color */
+.card-docker .docker-logo {
+    width: 120px;
+    height: auto;
 }
 
-.docker-card-container .card-description, 
-.docker-card-container .key-services, 
-.docker-card-container .use-cases, 
-.docker-card-container .resources {
-    margin-bottom: 10px; /* Adjust space between sections */
-    font-size: 14px; /* Adjust font size for readability */
-}
-
-.docker-card-container .key-services h4 {
-    margin-bottom: 5px; /* Space below the heading */
-    color: #0db7ed; /* Docker Blue for heading */
-    font-size: 16px; /* Size for the heading */
-}
-
-.docker-card-container .service-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 5px; /* Space between service items */
-}
-
-.docker-card-container .service-item img {
-    width: 20px; /* Adjust icon size as needed */
-    margin-right: 5px; /* Space between icon and text */
-}
-
-.docker-card-container .resources a {
-    color: #0db7ed; /* Docker Blue for links */
-    text-decoration: none; /* Remove underline from link */
-    font-weight: bold; /* Make the link text bold */
-}
-
-.docker-card-container .docker-logo {
-    width: 120px; /* Adjust logo size */
-    margin-bottom: 10px;
-}
-
-.docker-card-container .card-title {
-    font-size: 28px; /* Adjust title size for fitting */
+.card-docker .card-title {
+    font-size: 28px;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-top: 15px;
 }
 
-.docker-card-container .card-tagline {
-    font-size: 32px; /* Adjust tagline size for fitting */
-    color: #384d54; /* White color */
+.card-docker .card-tagline {
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: #384d54;
 }
 
-.docker-card-container .learning-progress {
-    margin-top: auto; /* Push to bottom of front side */
+.card-docker .learning-progress {
+    margin-top: auto;
     width: 100%;
     text-align: center;
-    color: #ffffff;
 }
 
-.docker-card-container .learning-progress-label {
-    font-size: 14px; /* Adjust font size for fitting */
+.card-docker .learning-progress-label {
+    font-size: 14px;
     margin-bottom: 5px;
-    color: #ffffff;
 }
 
-.docker-card-container .star-container {
+.card-docker .star-container {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.docker-card-container .star {
-    font-size: 20px; /* Adjust star size */
-    color: #384d54; /* Docker Blue */
+.card-docker .star {
+    font-size: 20px;
+    color: #384d54;
     margin-right: 3px;
 }
 
-.docker-card-container .star.empty {
-    color: #ffffff; /* Light grey for empty stars */
+.card-docker .star.empty {
+    color: #ffffff;
 }
 
-.docker-card-container .star.half {
+.card-docker .star.half {
     position: relative;
     color: #fff;
 }
 
-.docker-card-container .star.half::before {
+.card-docker .star.half::before {
     content: "★";
     position: absolute;
     left: 0;
-    color: #384d54; /* Color of the filled half */
-    width: 50%; /* Half the width of the star */
+    color: #384d54;
+    width: 50%;
     overflow: hidden;
-    white-space: nowrap;
 }
 
-/* -------[ RESPONSIVE STYLES ]------- */
-
-/* For 320px to 479px */
-@media (max-width: 479px) {
-    .docker-card-container .card-container {
-        width: 95%;
-        max-width: 100%;
-        height: 70vh;
-    }
-
-    .docker-card-container .card-front {
-        padding-top: 100px;
-    }
-
-    .docker-card-container .card-title {
-        font-size: 16px;
-    }
-
-    .docker-card-container .card-tagline {
-        font-size: 18px;
-    }
-
-    .docker-card-container .learning-progress {
-        font-size: 12px;
-    }
-
-    .docker-card-container .learning-progress-label {
-        font-size: 10px;
-    }
-
-    .docker-card-container .star {
-        font-size: 14px;
-    }
-
-    .docker-card-container .service-item img {
-        width: 18px;
-    }
-
-    .docker-card-container .key-services h4 {
-        font-size: 14px;
-    }
-
-    .docker-card-container .resources a {
-        font-size: 12px;
-    }
-
-    .docker-card-container .card-back {
-        padding: 10px;
-        box-sizing: border-box;
-        overflow: auto;
-    }
+/* -------[ DOCKER BACK SIDE ]------- */
+.card-docker .card-back {
+    background-color: #384d54;
+    color: #ffffff;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow: auto;
+    text-align: left;
+    max-height: 100%;
 }
 
-/* For 480px to 767px */
-@media (min-width: 480px) and (max-width: 767px) {
-    .docker-card-container .card-container {
-        width: 90%;
-        max-width: 100%;
-    }
-
-    .docker-card-container .card-front {
-        padding-top: 120px;
-    }
-
-    .docker-card-container .card-title {
-        font-size: 18px;
-    }
-
-    .docker-card-container .card-tagline {
-        font-size: 20px;
-    }
-
-    .docker-card-container .learning-progress {
-        font-size: 14px;
-    }
-
-    .docker-card-container .learning-progress-label {
-        font-size: 12px;
-    }
-
-    .docker-card-container .star {
-        font-size: 16px;
-    }
-
-    .docker-card-container .service-item img {
-        width: 20px;
-    }
-
-    .docker-card-container .key-services h4 {
-        font-size: 16px;
-    }
-
-    .docker-card-container .resources a {
-        font-size: 14px;
-    }
-
-    .docker-card-container .card-back {
-        padding: 12px;
-    }
+.card-docker .card-description {
+    margin-bottom: 10px;
 }
 
-/* For 768px to 1023px */
-@media (min-width: 768px) and (max-width: 1023px) {
-    .docker-card-container .card-container {
-        width: 85%;
-        max-width: 100%;
-    }
-
-    .docker-card-container .card-front {
-        padding-top: 140px;
-    }
-
-    .docker-card-container .card-title {
-        font-size: 20px;
-    }
-
-    .docker-card-container .card-tagline {
-        font-size: 22px;
-    }
-
-    .docker-card-container .learning-progress {
-        font-size: 16px;
-    }
-
-    .docker-card-container .learning-progress-label {
-        font-size: 14px;
-    }
-
-    .docker-card-container .star {
-        font-size: 18px;
-    }
-
-    .docker-card-container .service-item img {
-        width: 22px;
-    }
-
-    .docker-card-container .key-services h4 {
-        font-size: 18px;
-    }
-
-    .docker-card-container .resources a {
-        font-size: 16px;
-    }
-
-    .docker-card-container .card-back {
-        padding: 14px;
-    }
+.card-docker .key-services {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 10px;
 }
 
-/* For 1024px to 1279px */
-@media (min-width: 1024px) and (max-width: 1279px) {
-    .docker-card
-
--container .card-container {
-        width: 75%;
-        max-width: 100%;
-    }
-
-    .docker-card-container .card-front {
-        padding-top: 160px;
-    }
-
-    .docker-card-container .card-title {
-        font-size: 22px;
-    }
-
-    .docker-card-container .card-tagline {
-        font-size: 24px;
-    }
-
-    .docker-card-container .learning-progress {
-        font-size: 18px;
-    }
-
-    .docker-card-container .learning-progress-label {
-        font-size: 16px;
-    }
-
-    .docker-card-container .star {
-        font-size: 20px;
-    }
-
-    .docker-card-container .service-item img {
-        width: 24px;
-    }
-
-    .docker-card-container .key-services h4 {
-        font-size: 20px;
-    }
-
-    .docker-card-container .resources a {
-        font-size: 18px;
-    }
-
-    .docker-card-container .card-back {
-        padding: 16px;
-    }
+.card-docker .key-services h4 {
+    grid-column: span 2;
+    margin-bottom: 10px;
+    color: #1e90ff;
+    font-size: 16px;
 }
 
-/* For 1280px to 1439px */
-@media (min-width: 1280px) and (max-width: 1439px) {
-    .docker-card-container .card-container {
-        width: 65%;
-        max-width: 100%;
-    }
-
-    .docker-card-container .card-front {
-        padding-top: 180px;
-    }
-
-    .docker-card-container .card-title {
-        font-size: 24px;
-    }
-
-    .docker-card-container .card-tagline {
-        font-size: 26px;
-    }
-
-    .docker-card-container .learning-progress {
-        font-size: 20px;
-    }
-
-    .docker-card-container .learning-progress-label {
-        font-size: 18px;
-    }
-
-    .docker-card-container .star {
-        font-size: 22px;
-    }
-
-    .docker-card-container .service-item img {
-        width: 26px;
-    }
-
-    .docker-card-container .key-services h4 {
-        font-size: 22px;
-    }
-
-    .docker-card-container .resources a {
-        font-size: 20px;
-    }
-
-    .docker-card-container .card-back {
-        padding: 18px;
-    }
+.card-docker .service-item {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
 }
 
-/* For 1440px and above */
-@media (min-width: 1440px) {
-    .docker-card-container .card-container {
-        width: 55%;
-        max-width: 100%;
-    }
-
-    .docker-card-container .card-front {
-        padding-top: 200px;
-    }
-
-    .docker-card-container .card-title {
-        font-size: 26px;
-    }
-
-    .docker-card-container .card-tagline {
-        font-size: 28px;
-    }
-
-    .docker-card-container .learning-progress {
-        font-size: 22px;
-    }
-
-    .docker-card-container .learning-progress-label {
-        font-size: 20px;
-    }
-
-    .docker-card-container .star {
-        font-size: 24px;
-    }
-
-    .docker-card-container .service-item img {
-        width: 28px;
-    }
-
-    .docker-card-container .key-services h4 {
-        font-size: 24px;
-    }
-
-    .docker-card-container .resources a {
-        font-size: 22px;
-    }
-
-    .docker-card-container .card-back {
-        padding: 20px;
-    }
+.card-docker .service-item img {
+    width: 20px;
+    margin-right: 8px;
 }
 
-/* -------[ DOCKER CARD STYLE END ]------- */
+.card-docker .use-cases {
+    margin-bottom: 10px;
+}
+
+.card-docker .resources a {
+    color: #1e90ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* -------[ DOCKER CARD END ]------- */

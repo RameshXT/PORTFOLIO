@@ -235,7 +235,31 @@ const currentYear = new Date().getFullYear();
           
             document.getElementById('copyright').textContent = copyrightText;
 
-/* -------[  ]------- */
+/* -------[ TOOLS SCROLL EFFECT ]------- */
+// -------[ DOM CONTENT LOADED EVENT ]-------
+document.addEventListener('DOMContentLoaded', function() {
+    const cards = document.querySelectorAll('.card');
+
+    function checkVisibility() {
+        const windowHeight = window.innerHeight;
+
+        cards.forEach(card => {
+            const cardTop = card.getBoundingClientRect().top;
+            const cardHeight = card.offsetHeight;
+
+            // -------[ CHECK IF THE CARD IS AT LEAST 20% VISIBLE ]-------
+            if (cardTop + cardHeight * 0.2 < windowHeight && cardTop > -cardHeight * 0.2) {
+                card.classList.add('visible');
+            } else {
+                card.classList.remove('visible');
+            }
+        });
+    }
+
+    // -------[ CHECK VISIBILITY ON SCROLL AND LOAD ]-------
+    window.addEventListener('scroll', checkVisibility);
+    checkVisibility(); // Initial check in case cards are already in view on page load
+});
 
 
 /* -------[  ]------- */

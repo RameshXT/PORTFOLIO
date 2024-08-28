@@ -1,472 +1,125 @@
-/* -------[ GITHUB CARD STYLE START ]------- */
-/* Scoped GitHub Card Styles */
-.github-card-container {
-    font-family: inherit; /* Inherit the portfolio font */
+/* -------[ GITHUB CARD START ]------- */
+.card-github .card-front {
+    background-color: #24292e;
+    color: #fff;
     display: flex;
-    justify-content: center;
-    margin-top: 10px;
-    padding-bottom: 30px;
+    flex-direction: column;
     align-items: center;
-    height: 70vh;
-    background: linear-gradient(135deg, #ffffff 50%, #000000 50%); /* Gradient with GitHub dark grey colors */
-}
-
-.github-card-container .card-container {
-    perspective: 1200px; /* Adjust perspective for better depth */
-    width: 55%; /* Adjust width as needed */
-    height: 61vh; /* Adjust height as needed */
-    display: flex;
     justify-content: center;
-    align-items: center;
-    margin-top: 30px;
-}
-
-.github-card-container .card {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    transform-style: preserve-3d;
-    transition: transform 0.8s ease-in-out;
-    border-radius: 10px; /* Rounded corners */
-}
-
-.github-card-container .card:hover .card-inner {
-    transform: rotateY(180deg);
-}
-
-.github-card-container .card-inner {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.8s ease-in-out;
-    transform-style: preserve-3d;
-    display: flex;
-    flex-direction: column;
-}
-
-.github-card-container .card-side {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    border-radius: 10px; /* Rounded corners for the flip effect */
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    padding: 10px; /* Adjust padding for better spacing */
-}
-
-.github-card-container .card-front {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Center vertically */
-    align-items: center; /* Center horizontally */
     text-align: center;
-    color: #ffffff; /* White text color */
-    background-color: #24292e; /* GitHub dark grey for the front side */
-    border-radius: 10px; /* Consistent rounded corners */
-    padding: 20px; /* Padding to ensure space around content */
-    padding-top: 175px;
-    box-sizing: border-box; /* Ensure padding does not affect width/height */
+    padding-top: 90px; /* Same alignment as Card 1 */
 }
 
-.github-card-container .card-back {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start; 
-    text-align: left; 
-    color: #2b3137; /* Slightly lighter dark grey for text */
-    transform: rotateY(180deg);
-    border: 1px solid #f1f1f1; /* Border with GitHub green color */
-    border-radius: 10px;
-    background-color: #fafbfc; /* Back side card background color */
+.card-github .logo-github {
+    width: 120px; /* Adjusted to match Card 1 */
+    height: auto;
 }
 
-.github-card-container .card-description, 
-.github-card-container .key-services, 
-.github-card-container .use-cases, 
-.github-card-container .resources {
-    margin-bottom: 10px; /* Adjust space between sections */
-    font-size: 14px; /* Adjust font size for readability */
-}
-
-.github-card-container .key-services h4 {
-    margin-bottom: 5px; /* Space below the heading */
-    color: #2dba4e; /* GitHub green for heading */
-    font-size: 16px; /* Size for the heading */
-}
-
-.github-card-container .service-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 5px; /* Space between service items */
-}
-
-.github-card-container .service-item img {
-    width: 20px; /* Adjust icon size as needed */
-    margin-right: 5px; /* Space between icon and text */
-}
-
-.github-card-container .resources a {
-    color: #2dba4e; /* GitHub green for links */
-    text-decoration: none; /* Remove underline from link */
-    font-weight: bold; /* Make the link text bold */
-}
-
-.github-card-container .github-logo {
-    width: 120px; /* Adjust logo size */
-    margin-bottom: 10px;
-}
-
-.github-card-container .card-title {
-    font-size: 28px; /* Adjust title size for fitting */
+.card-github .card-title {
+    font-size: 28px; /* Adjusted to match Card 1 */
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-top: 15px;
 }
 
-.github-card-container .card-tagline {
-    font-size: 32px; /* Adjust tagline size for fitting */
-    color: #2dba4e; /* GitHub green */
+.card-github .card-tagline {
+    font-size: 18px; /* Adjusted to match Card 1 */
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: #2dba4e;
 }
 
-.github-card-container .learning-progress {
-    margin-top: auto; /* Push to bottom of front side */
+.card-github .learning-progress {
+    margin-top: auto;
     width: 100%;
     text-align: center;
-    color: #fafbfc; /* GitHub off-white color */
 }
 
-.github-card-container .learning-progress-label {
-    font-size: 14px; /* Adjust font size for fitting */
+.card-github .learning-progress-label {
+    font-size: 14px;
     margin-bottom: 5px;
-    color: #fafbfc; /* GitHub off-white color */
 }
 
-.github-card-container .star-container {
+.card-github .star-container {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.github-card-container .star {
-    font-size: 20px; /* Adjust star size */
-    color: #2dba4e; /* GitHub green */
+.card-github .star {
+    font-size: 20px;
+    color: #2dba4e;
     margin-right: 3px;
 }
 
-.github-card-container .star.empty {
-    color: #d3d3d3; /* Light grey for empty stars */
+.card-github .star.empty {
+    color: #ffffff;
 }
 
-.github-card-container .star.half {
+.card-github .star.half {
     position: relative;
     color: #fff;
 }
 
-.github-card-container .star.half::before {
+.card-github .star.half::before {
     content: "★";
     position: absolute;
     left: 0;
-    color: #2dba4e; /* Color of the filled half */
-    width: 50%; /* Half the width of the star */
+    color: #2dba4e;
+    width: 50%;
     overflow: hidden;
-    white-space: nowrap;
 }
 
-/* -------[ RESPONSIVE STYLES ]------- */
-
-/* For 320px to 479px */
-@media (max-width: 479px) {
-    .github-card-container .card-container {
-        width: 95%;
-        max-width: 100%;
-        height: 70vh;
-    }
-
-    .github-card-container .card-front {
-        padding-top: 100px;
-    }
-
-    .github-card-container .card-title {
-        font-size: 16px;
-    }
-
-    .github-card-container .card-tagline {
-        font-size: 18px;
-    }
-
-    .github-card-container .learning-progress {
-        font-size: 12px;
-    }
-
-    .github-card-container .learning-progress-label {
-        font-size: 10px;
-    }
-
-    .github-card-container .star {
-        font-size: 14px;
-    }
-
-    .github-card-container .service-item img {
-        width: 18px;
-    }
-
-    .github-card-container .key-services h4 {
-        font-size: 14px;
-    }
-
-    .github-card-container .resources a {
-        font-size: 12px;
-    }
-
-    .github-card-container .card-back {
-        padding: 10px;
-        box-sizing: border-box;
-        overflow: auto;
-    }
+/* -------[ GITHUB BACK SIDE ]------- */
+.card-github .card-back {
+    background-color: #ffffff;
+    color: #333;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow: auto; /* Ensure scroll bars appear if content exceeds size */
+    text-align: left;
+    max-height: 100%; /* Ensure that the content doesn't exceed the card height */
 }
 
-/* For 480px to 767px */
-@media (min-width: 480px) and (max-width: 767px) {
-    .github-card-container .card-container {
-        width: 90%;
-        max-width: 100%;
-    }
-
-    .github-card-container .card-front {
-        padding-top: 120px;
-    }
-
-    .github-card-container .card-title {
-        font-size: 18px;
-    }
-
-    .github-card-container .card-tagline {
-        font-size: 20px;
-    }
-
-    .github-card-container .learning-progress {
-        font-size: 14px;
-    }
-
-    .github-card-container .learning-progress-label {
-        font-size: 12px;
-    }
-
-    .github-card-container .star {
-        font-size: 16px;
-    }
-
-    .github-card-container .service-item img {
-        width: 20px;
-    }
-
-    .github-card-container .key-services h4 {
-        font-size: 16px;
-    }
-
-    .github-card-container .resources a {
-        font-size: 14px;
-    }
-
-    .github-card-container .card-back {
-        padding: 12px;
-    }
+.card-github .card-description {
+    margin-bottom: 10px;
 }
 
-/* For 768px to 1023px */
-@media (min-width: 768px) and (max-width: 1023px) {
-    .github-card-container .card-container {
-        width: 85%;
-        max-width: 100%;
-    }
-
-    .github-card-container .card-front {
-        padding-top: 140px;
-    }
-
-    .github-card-container .card-title {
-        font-size: 20px;
-    }
-
-    .github-card-container .card-tagline {
-        font-size: 22px;
-    }
-
-    .github-card-container .learning-progress {
-        font-size: 16px;
-    }
-
-    .github-card-container .learning-progress-label {
-        font-size: 14px;
-    }
-
-    .github-card-container .star {
-        font-size: 18px;
-    }
-
-    .github-card-container .service-item img {
-        width: 22px;
-    }
-
-    .github-card-container .key-services h4 {
-        font-size: 18px;
-    }
-
-    .github-card-container .resources a {
-        font-size: 16px;
-    }
-
-    .github-card-container .card-back {
-        padding: 14px
-
-;
-    }
+.card-github .key-services {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 10px;
 }
 
-/* For 1024px to 1279px */
-@media (min-width: 1024px) and (max-width: 1279px) {
-    .github-card-container .card-container {
-        width: 75%;
-        max-width: 100%;
-    }
-
-    .github-card-container .card-front {
-        padding-top: 160px;
-    }
-
-    .github-card-container .card-title {
-        font-size: 22px;
-    }
-
-    .github-card-container .card-tagline {
-        font-size: 24px;
-    }
-
-    .github-card-container .learning-progress {
-        font-size: 18px;
-    }
-
-    .github-card-container .learning-progress-label {
-        font-size: 16px;
-    }
-
-    .github-card-container .star {
-        font-size: 20px;
-    }
-
-    .github-card-container .service-item img {
-        width: 24px;
-    }
-
-    .github-card-container .key-services h4 {
-        font-size: 20px;
-    }
-
-    .github-card-container .resources a {
-        font-size: 18px;
-    }
-
-    .github-card-container .card-back {
-        padding: 16px;
-    }
+.card-github .key-services h4 {
+    grid-column: span 2;
+    margin-bottom: 10px;
+    color: #2dba4e;
+    font-size: 16px;
 }
 
-/* For 1280px to 1439px */
-@media (min-width: 1280px) and (max-width: 1439px) {
-    .github-card-container .card-container {
-        width: 65%;
-        max-width: 100%;
-    }
-
-    .github-card-container .card-front {
-        padding-top: 180px;
-    }
-
-    .github-card-container .card-title {
-        font-size: 24px;
-    }
-
-    .github-card-container .card-tagline {
-        font-size: 26px;
-    }
-
-    .github-card-container .learning-progress {
-        font-size: 20px;
-    }
-
-    .github-card-container .learning-progress-label {
-        font-size: 18px;
-    }
-
-    .github-card-container .star {
-        font-size: 22px;
-    }
-
-    .github-card-container .service-item img {
-        width: 26px;
-    }
-
-    .github-card-container .key-services h4 {
-        font-size: 22px;
-    }
-
-    .github-card-container .resources a {
-        font-size: 20px;
-    }
-
-    .github-card-container .card-back {
-        padding: 18px;
-    }
+.card-github .service-item {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
 }
 
-/* For 1440px and above */
-@media (min-width: 1440px) {
-    .github-card-container .card-container {
-        width: 55%;
-        max-width: 100%;
-    }
-
-    .github-card-container .card-front {
-        padding-top: 200px;
-    }
-
-    .github-card-container .card-title {
-        font-size: 26px;
-    }
-
-    .github-card-container .card-tagline {
-        font-size: 28px;
-    }
-
-    .github-card-container .learning-progress {
-        font-size: 22px;
-    }
-
-    .github-card-container .learning-progress-label {
-        font-size: 20px;
-    }
-
-    .github-card-container .star {
-        font-size: 24px;
-    }
-
-    .github-card-container .service-item img {
-        width: 28px;
-    }
-
-    .github-card-container .key-services h4 {
-        font-size: 24px;
-    }
-
-    .github-card-container .resources a {
-        font-size: 22px;
-    }
-
-    .github-card-container .card-back {
-        padding: 20px;
-    }
+.card-github .service-item img {
+    width: 20px;
+    margin-right: 8px;
 }
 
-/*! -------[ GITHUB CARD STYLE END ]------- */
+.card-github .use-cases {
+    margin-bottom: 10px;
+}
+
+.card-github .resources a {
+    color: #2dba4e;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* -------[ GITHUB CARD END ]------- */
