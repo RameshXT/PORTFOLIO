@@ -185,6 +185,29 @@ document.addEventListener('DOMContentLoaded', function() {
     checkVisibility(); // Check visibility on page load
 });
 
+// BRIEF HISTORY
+document.addEventListener("DOMContentLoaded", function() {
+    const elements = document.querySelectorAll('.scroll-trigger');
+
+    if (!('IntersectionObserver' in window)) {
+        console.warn('IntersectionObserver not supported');
+        return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            } else {
+                entry.target.classList.remove('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    elements.forEach(element => {
+        observer.observe(element);
+    });
+});
 
 
 /* -------[ NAV BAR SMOOTH NAVIGATE ]------- */
@@ -235,8 +258,8 @@ const currentYear = new Date().getFullYear();
           
             document.getElementById('copyright').textContent = copyrightText;
 
+
 /* -------[ TOOLS SCROLL EFFECT ]------- */
-// -------[ DOM CONTENT LOADED EVENT ]-------
 document.addEventListener('DOMContentLoaded', function() {
     const cards = document.querySelectorAll('.card');
 
