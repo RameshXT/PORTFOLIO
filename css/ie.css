@@ -1,0 +1,67 @@
+/* -------[ Box Model Issues ]------- */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* -------[ Flexbox Issues (IE 10) ]------- */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .flex-container {
+        display: -ms-flexbox;
+        display: flex;
+    }
+    .flex-item {
+        -ms-flex: 1;
+        flex: 1;
+    }
+}
+
+/* -------[ Double Margin on Floated Elements (IE 6) ]------- */
+* html .float-element {
+    display: inline;
+}
+
+/* -------[ PNG Transparency (IE 6) ]------- */
+* html img {
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='path/to/image.png', sizingMethod='scale');
+    background: none !important;
+}
+
+/* -------[ Text Alignment Issues ]------- */
+.text-block {
+    text-align: justify;
+}
+
+/* -------[ Clearing Floats ]------- */
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* -------[ Positioning Issues (z-index) ]------- */
+.stacked-element {
+    position: relative;
+    z-index: 10;
+}
+
+/* -------[ Placeholder Text in Forms (IE 9 and below) ]------- */
+input[placeholder], textarea[placeholder] {
+    color: #999;
+}
+
+/* -------[ Button Styling ]------- */
+button, input[type="button"], input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* -------[ SVG Scaling Issues (IE 9) ]------- */
+svg {
+    width: 100%;
+    height: auto;
+}
