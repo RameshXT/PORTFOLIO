@@ -1,0 +1,343 @@
+/* -------[ HEADER STYLES ]------- */
+.main-header {
+    background-image: url(/assets/images/curve1.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Original shadow */
+    z-index: 1000;
+    box-sizing: border-box;
+    justify-content: space-between;
+    font-size: 13px;
+    mix-blend-mode: difference; /* Black and white blend effect */
+    letter-spacing: 0.15rem;
+    font-weight: 100;
+}
+
+/* -------[ LOGO STYLES ]------- */
+header .site-logo {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    mix-blend-mode: difference; /* Black and white blend effect */
+}
+
+header .site-logo img {
+    height: 35px;
+    mix-blend-mode: difference; /* Black and white blend effect */
+}
+
+/* -------[ NAVIGATION STYLES ]------- */
+header nav {
+    display: flex;
+    align-items: flex-start;
+    margin-left: auto;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+header nav ul li {
+    margin: 0;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #ffffff; /* White color */
+    padding: 10px 20px;
+    transition: color 0.4s, background-color 0.4s;
+    mix-blend-mode: difference; /* Black and white blend effect */
+}
+
+header nav ul li a:hover,
+header nav ul li a.active {
+    background: #ffffff; /* White background on hover */
+    color: #000000; /* Black text on hover */
+    border-radius: 5px;
+    mix-blend-mode: normal; /* Reset blend mode on hover */
+}
+
+/*
+======================================
+    [ RESPONSIVE STYLES ]
+======================================
+*/
+
+/* -------[ RESPONSIVE STYLES ]------- */
+@media (max-width: 1024px) {
+    header {
+        padding: 15px;
+    }
+    
+    header .site-logo img {
+        height: 35px;
+    }
+    
+    header nav ul {
+        gap: 15px;
+    }
+}
+
+/* -------[ MOBILE ]------- */
+@media (max-width: 768px) {
+    header {
+        flex-direction: row;
+        padding: 10px;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+
+    header .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30px;
+        height: 20px;
+        cursor: pointer;
+        margin-left: auto;
+        margin-right: 10px;
+        z-index: 11;
+        mix-blend-mode: difference; /* Black and white blend effect */
+    }
+
+    header .menu-toggle span {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background: #ffffff; /* White color */
+        transition: all 0.7s ease;
+        mix-blend-mode: difference; /* Black and white blend effect */
+    }
+
+    header nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 100%;
+        backdrop-filter: blur(4px);
+        box-shadow: 0 8px 16px rgba(87, 87, 87, 0.2); /* Adjusted shadow color */
+        z-index: 10;
+        transform: translateX(100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: transform 0.9s ease, opacity 0.9s ease, visibility 0.9s ease;
+    }
+
+    header nav.active {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+        backdrop-filter: blur(110px);
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 35px;
+        padding: 40px;
+        padding-top: 65px;
+        margin: 0;
+    }
+
+    header nav ul li {
+        margin: 0;
+    }
+
+    header .site-logo img {
+        height: 30px;
+    }
+}
+
+
+
+/* -------[ MOBILE MENU TOGGLE STYLE ]------- */
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+    background: #ffffff; /* White color for the active line */
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+    background: #575757; /* Dark gray color for the active line */
+}
+
+
+
+
+
+
+/* resume */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.resume {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 30px;
+    background: #FFFFFF; /* White background */
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+    padding: 20px;
+    background: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.header .top-left {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header .top-left .title {
+    font-size: 16px;
+    color: #575757; /* Dark Gray text */
+    margin-right: 20px;
+}
+
+.header .top-left .name {
+    font-size: 22px; /* Adjusted font size for name */
+    font-weight: 600;
+    color: #000000; /* Black text */
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+.header .bottom-right {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 14px; /* Slightly smaller font size */
+    color: #575757; /* Dark Gray text */
+}
+
+.header .bottom-right .contact-info a {
+    color: #005FA1; /* Blue links */
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 10px; /* Spacing between items */
+}
+
+.header .bottom-right .contact-info a:hover {
+    text-decoration: underline;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-size: 24px;
+    color: #000000; /* Black text */
+    border-bottom: 2px solid #005FA1; /* Blue border */
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+ul {
+    list-style: disc; /* Bullet points */
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+    font-size: 14px; /* Smaller font size */
+    color: #000000; /* Black text */
+}
+
+.project-summary {
+    list-style: disc; /* Bullet points for project summary */
+    padding-left: 20px;
+}
+
+.project-link {
+    color: #005FA1; /* Blue links */
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.project-link:hover {
+    text-decoration: underline;
+}
+
+.github-icon {
+    width: 24px; /* Smaller icon size */
+    height: 24px;
+    margin-left: 8px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.github-icon:hover {
+    opacity: 0.7;
+}
+
+.tool-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+}
+
+.tool-grid div {
+    background: #F0F0F0;
+    padding: 10px;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 14px; /* Smaller font size */
+    color: #000000; /* Black text */
+}
+
+.academic table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.academic th, .academic td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.academic th {
+    background-color: #f2f2f2;
+    color: #000000; /* Black text */
+}
+
+.academic td {
+    color: #575757; /* Dark Gray text */
+}
+
