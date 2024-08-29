@@ -149,8 +149,8 @@
         <!-- [ TOOLS TITLE END ] -->
 
         <!-- [ CARDS START ] -->
-        <div>
 
+<div class="tools-bg">
             <!-- [ GIT & GITHUB START ] -->
 <!-- [ MAIN CONTAINER START ] -->
 <div class="main-container">
@@ -830,7 +830,7 @@
 
                 <!-- -------[ FRONT SIDE START ]------- -->
                 <div class="card-side card-front">
-                    <img src="/assets/icons/apache-tomcat/tomcat.png" alt="Tomcat Logo" class="tomcat-logo">
+                    <img src="/assets/icons/tomcat/tomcat.png" alt="Tomcat Logo" class="tomcat-logo">
                     <div class="card-title">Tomcat</div>
                     <div class="card-tagline">The Web Application Server</div>
 
@@ -857,27 +857,27 @@
                     <div class="key-services">
                         <h4>Key Features:</h4>
                         <div class="service-item">
-                            <img src="/assets/icons/apache-tomcat/servlet.png" alt="Servlet Icon">
+                            <img src="/assets/icons/tomcat/servelet.png" alt="Servlet Icon">
                             <p>Servlets: Java-based server-side technology for handling requests.</p>
                         </div>
                         <div class="service-item">
-                            <img src="/assets/icons/apache-tomcat/jsp.png" alt="JSP Icon">
+                            <img src="/assets/icons/tomcat/jsp.png" alt="JSP Icon">
                             <p>JSP: JavaServer Pages for creating dynamic web content.</p>
                         </div>
                         <div class="service-item">
-                            <img src="/assets/icons/apache-tomcat/deployment.png" alt="Deployment Icon">
+                            <img src="/assets/icons/tomcat/deployment.png" alt="Deployment Icon">
                             <p>Deployment: Deploy Java applications in a web server environment.</p>
                         </div>
                         <div class="service-item">
-                            <img src="/assets/icons/apache-tomcat/configuration.png" alt="Configuration Icon">
+                            <img src="/assets/icons/tomcat/configuration.png" alt="Configuration Icon">
                             <p>Configuration: Manage server settings through configuration files.</p>
                         </div>
                         <div class="service-item">
-                            <img src="/assets/icons/apache-tomcat/monitoring.png" alt="Monitoring Icon">
+                            <img src="/assets/icons/tomcat/monitoring.png" alt="Monitoring Icon">
                             <p>Monitoring: Track server performance and health.</p>
                         </div>
                         <div class="service-item">
-                            <img src="/assets/icons/apache-tomcat/security.png" alt="Security Icon">
+                            <img src="/assets/icons/tomcat/security.png" alt="Security Icon">
                             <p>Security: Secure Java applications with authentication and encryption.</p>
                         </div>
                     </div>
@@ -942,15 +942,16 @@
     <!-- -------[ CONTACT START ]------- -->
     <section class="contact-section" id="contact">
         <h2 style="mix-blend-mode: difference;">Any Query? I'm here.</h2>
-        <form action="#">
-            <input type="text" name="name" placeholder="Name">
-            <input type="email" name="email" placeholder="Email Address">
-            <input type="text" name="phone" placeholder="Mobile or Skype ID">
+        <form action="SendMessageServlet" method="post">
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="email" name="email" placeholder="Email Address" required>
+            <input type="text" name="phone" placeholder="Mobile or Skype ID" required>
             <input type="text" name="website" placeholder="Website">
-            <textarea name="message" placeholder="Your message here..."></textarea>
+            <textarea name="message" placeholder="Your message here..." required></textarea>
             <button type="submit"><span>Quick Message</span></button>
         </form>
     </section>
+    
 
     <section class="cta-section">
         <h2 style="mix-blend-mode: difference;">Sync Up on IT Strategies?</h2>

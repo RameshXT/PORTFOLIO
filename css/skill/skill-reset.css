@@ -2,14 +2,16 @@
 
 /* -------[ TITLE STYLE START ]------- */
 .tools-section {
-    text-align: center;
     font-family: Arial, sans-serif;
-    padding-top: 30px;
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #ffffff;
-    padding-bottom: 20px;
-    letter-spacing: 0.15rem;
+    text-align: center;
     position: relative;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f4f4f4;
+    color: #575757;
+    letter-spacing: 0.15rem;
+    font-weight: 100;   
 }
 
 .tools-section .subtitle {
@@ -17,15 +19,15 @@
     font-size: 16px;
     margin-bottom: 8px;
     letter-spacing: 0.15rem;
+    /* font-weight: 100; */
 
 }
 
 .tools-section h2 {
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 20px;
     margin-bottom: 10px;
     letter-spacing: 0.15rem;
-
+    font-weight: 400;
 }
 
 .tools-section .underline {
@@ -45,38 +47,6 @@
 .card.visible {
     opacity: 1;
     transform: translateY(0);
-}
-
-/* -------[ TITLE STYLE ]------- */
-.tools-section {
-    text-align: center;
-    font-family: Arial, sans-serif;
-    padding-top: 30px;
-    background-color: #f4f4f4;
-    padding-bottom: 20px;
-    color: #000000;
-    letter-spacing: 0.15rem;
-}
-
-.tools-section .subtitle {
-    color: #B0B0B0;
-    font-size: 16px;
-    margin-bottom: 8px;
-    letter-spacing: 0.15rem;
-}
-
-.tools-section h2 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    letter-spacing: 0.15rem;
-}
-
-.tools-section .underline {
-    width: 90px;
-    height: 2px;
-    background-color: #005FA1;
-    margin: 0 auto;
 }
 
 /* -------[ MAIN CONTAINER ]------- */
@@ -134,8 +104,6 @@
     box-sizing: border-box;
     overflow: auto;
 }
-/* -------[ BASIC AND COMMON STYLE FOR TOOLS SECTIONS END ]------- */
-
 
 /* -------[ RESPONSIVE STYLES START ]------- */
 @media (max-width: 1024px) {

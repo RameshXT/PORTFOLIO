@@ -3,10 +3,10 @@
     /* background: #f0f0f0; */
     padding: 40px 20px;
     text-align: center;
-        background-image: url(/assets/images/wave-up.png);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
+    background-image: url(/assets/images/wave-up.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .contact-section h2 {
@@ -14,6 +14,9 @@
     margin-bottom: 20px;
     color: #B0B0B0;
     mix-blend-mode: difference;
+    /* text-transform: uppercase; */
+    font-weight: 100;
+    letter-spacing: 0.15rem;
 }
 
 .contact-section form {
@@ -32,9 +35,9 @@
     margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 1em;
     box-sizing: border-box;
     transition: border-color 0.3s, box-shadow 0.3s;
+    font-weight: 100;
 }
 
 .contact-section textarea {
@@ -109,6 +112,8 @@
 .cta-section h2 {
     font-size: 2.5em;
     margin-bottom: 30px;
+    font-weight: 100;
+    letter-spacing: 0.15rem;
 }
 
 .cta-section .button-container {
