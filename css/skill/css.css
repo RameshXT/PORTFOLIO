@@ -1,0 +1,129 @@
+/* -------[ CSS CARD STYLES START ]------- */
+.card-css .card-front {
+    background-color: #1C88C7; /* CSS Blue */
+    color: #FFFFFF; /* White */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 90px;
+}
+
+.card-css .css-logo {
+    width: 120px;
+    height: auto;
+}
+
+.card-css .card-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 15px;
+    color: #FFFFFF; /* White */
+}
+
+.card-css .card-tagline {
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: #E34F26; /* Light Gray */
+}
+
+.card-css .learning-progress {
+    margin-top: auto;
+    width: 100%;
+    text-align: center;
+}
+
+.card-css .learning-progress-label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #FFFFFF; /* White */
+}
+
+.card-css .star-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-css .star {
+    font-size: 20px;
+    color: #E34F26; /* Light Gray */
+    margin-right: 3px;
+}
+
+.card-css .star.empty {
+    color: #ffffff; /* White */
+}
+
+.card-css .star.half {
+    position: relative;
+    color: #E34F26; /* White */
+}
+
+.card-css .star.half::before {
+    content: "★";
+    position: absolute;
+    left: 0;
+    color: #E34F26; /* Light Gray */
+    width: 50%;
+    overflow: hidden;
+}
+
+/* -------[ CSS BACK SIDE START ]------- */
+.card-css .card-back {
+    background-color: #ffffff; /* Dark Gray */
+    color: #000000; /* White */
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow: auto;
+    text-align: left;
+    max-height: 100%;
+}
+
+.card-css .card-description {
+    margin-bottom: 10px;
+    color: #000000; /* White */
+}
+
+.card-css .key-services {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.card-css .key-services h4 {
+    grid-column: span 2;
+    margin-bottom: 10px;
+    color: #2965F1; /* CSS Blue */
+    font-size: 16px;
+}
+
+.card-css .service-item {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #000000; /* White */
+}
+
+.card-css .service-item img {
+    width: 20px;
+    margin-right: 8px;
+}
+
+.card-css .use-cases {
+    margin-bottom: 10px;
+    color: #000000; /* White */
+}
+
+.card-css .resources a {
+    color: #2965F1; /* CSS Blue */
+    text-decoration: none;
+    font-weight: bold;
+}
+/* -------[ CSS CARD STYLES END ]------- */

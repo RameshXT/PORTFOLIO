@@ -1,0 +1,129 @@
+/* -------[ JAVA CARD STYLES START ]------- */
+.card-java .card-front {
+    background-color: #3a75b0; /* Java Blue */
+    color: #FFFFFF; /* White */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 90px;
+}
+
+.card-java .java-logo {
+    width: 107px;
+    height: auto;
+}
+
+.card-java .card-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 15px;
+    color: #FFFFFF; /* White */
+}
+
+.card-java .card-tagline {
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: #e76f00; /* Java Orange */
+}
+
+.card-java .learning-progress {
+    margin-top: auto;
+    width: 100%;
+    text-align: center;
+}
+
+.card-java .learning-progress-label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #FFFFFF; /* White */
+}
+
+.card-java .star-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-java .star {
+    font-size: 20px;
+    color: #FF6F00; /* Java Orange */
+    margin-right: 3px;
+}
+
+.card-java .star.empty {
+    color: #FFFFFF; /* White */
+}
+
+.card-java .star.half {
+    position: relative;
+    color: #FFFFFF; /* White */
+}
+
+.card-java .star.half::before {
+    content: "★";
+    position: absolute;
+    left: 0;
+    color: #e76f00; /* Java Orange */
+    width: 50%;
+    overflow: hidden;
+}
+
+/* -------[ JAVA BACK SIDE START ]------- */
+.card-java .card-back {
+    background-color: #7a736e; /* Dark Gray */
+    color: #FFFFFF; /* White */
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow: auto;
+    text-align: left;
+    max-height: 100%;
+}
+
+.card-java .card-description {
+    margin-bottom: 10px;
+    color: #FFFFFF; /* White */
+}
+
+.card-java .key-services {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.card-java .key-services h4 {
+    grid-column: span 2;
+    margin-bottom: 10px;
+    color: #e76f00; /* Java Orange */
+    font-size: 16px;
+}
+
+.card-java .service-item {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #FFFFFF; /* White */
+}
+
+.card-java .service-item img {
+    width: 20px;
+    margin-right: 8px;
+}
+
+.card-java .use-cases {
+    margin-bottom: 10px;
+    color: #FFFFFF; /* White */
+}
+
+.card-java .resources a {
+    color: #e76f00; /* Java Orange */
+    text-decoration: none;
+    font-weight: bold;
+}
+/* -------[ JAVA CARD STYLES END ]------- */
