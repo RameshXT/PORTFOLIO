@@ -1,4 +1,15 @@
+/* Initial hidden state */
+.hidden {
+    opacity: 0;
+    transform: translateY(40px); /* Start 40px lower */
+    transition: opacity 2s ease-in-out, transform 2s ease-in-out; /* Smooth transition */
+}
 
+/* Visible state */
+.visible {
+    opacity: 1;
+    transform: translateY(0); /* Move to original position */
+}
 .contact-section {
     /* background: #f0f0f0; */
     padding: 40px 20px;

@@ -111,21 +111,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function handleScroll() {
         const heroPosition = heroContent.getBoundingClientRect().top;
-        const screenPosition = window.innerHeight / 1.2;
+        const heroHeight = heroContent.offsetHeight;
         const screenBottom = window.innerHeight;
 
-        if (heroPosition < screenPosition && heroPosition > -screenBottom) {
+        // Check if the heroContent is at least 20% visible
+        if (heroPosition + heroHeight * 0.2 < screenBottom && heroPosition + heroHeight > 0) {
             heroContent.classList.add('visible');
             hiddenContent.classList.add('visible');
-        } else {
+        } 
+        // Remove visibility if completely out of view
+        else if (heroPosition + heroHeight <= 0 || heroPosition >= screenBottom) {
             heroContent.classList.remove('visible');
             hiddenContent.classList.remove('visible');
         }
     }
 
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Initial check
+    handleScroll(); // Initial check in case content is already in view on page load
 });
+
 
 /* -------[ SCROLL VISIBILITY STYLES ]------- */
 
@@ -271,9 +275,10 @@ document.addEventListener('DOMContentLoaded', function() {
             const cardHeight = card.offsetHeight;
 
             // -------[ CHECK IF THE CARD IS AT LEAST 20% VISIBLE ]-------
-            if (cardTop + cardHeight * 0.2 < windowHeight && cardTop > -cardHeight * 0.2) {
+            if (cardTop + cardHeight * 0.2 < windowHeight && cardTop + cardHeight > 0) {
                 card.classList.add('visible');
-            } else {
+            } else if (cardTop + cardHeight <= 0 || cardTop >= windowHeight) {
+                // If the card is completely out of view (above or below the viewport)
                 card.classList.remove('visible');
             }
         });
@@ -285,7 +290,42 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-/* -------[  ]------- */
+
+/* -------[ CONTACT SCROLL ]------- */
+document.addEventListener('DOMContentLoaded', function () {
+    const contactSection = document.querySelector('.contact-section');
+    const ctaSection = document.querySelector('.cta-section');
+    const elementsToAnimate = document.querySelectorAll('.contact-section input, .contact-section textarea, .contact-section button, .cta-section .button-container button, .cta-section .button-container a');
+
+    const scrollThreshold = 0.6; // 60% scroll threshold
+
+    function handleScroll() {
+        const scrollPosition = window.scrollY + window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+
+        // Check if the user has scrolled past 60% of the page
+        if (scrollPosition > documentHeight * scrollThreshold) {
+            contactSection.classList.add('visible');
+            ctaSection.classList.add('visible');
+
+            // Gradually reveal each element smoothly from the bottom
+            elementsToAnimate.forEach((element, index) => {
+                setTimeout(() => {
+                    element.classList.add('visible');
+                }, index * 300); // 300ms delay for each element
+            });
+        } else {
+            contactSection.classList.remove('visible');
+            ctaSection.classList.remove('visible');
+            elementsToAnimate.forEach(element => element.classList.remove('visible'));
+        }
+    }
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial check in case sections are already in view on page load
+});
+
+
 
 
 /* -------[  ]------- */

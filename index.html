@@ -1240,29 +1240,31 @@
 
 
 
-    <!-- -------[ CONTACT START ]------- -->
-    <section class="contact-section" id="contact">
-        <h2 style="mix-blend-mode: difference;">Any Query? I'm here.</h2>
-        <form action="SendMessageServlet" method="post">
-            <input type="text" name="name" placeholder="Name" required>
-            <input type="email" name="email" placeholder="Email Address" required>
-            <input type="text" name="phone" placeholder="Mobile or Skype ID" required>
-            <input type="text" name="website" placeholder="Website">
-            <textarea name="message" placeholder="Your message here..." required></textarea>
-            <button type="submit"><span>Quick Message</span></button>
-        </form>
-    </section>
-    
+<!-- -------[ CONTACT START ]------- -->
+<section class="contact-section" id="contact"> <!-- section 1-->
+    <h2 style="mix-blend-mode: difference;">Any Query? I'm here.</h2>
+    <form action="SendMessageServlet" method="post">
+        <input type="text" name="name" placeholder="Name" class="hidden" required>
+        <input type="email" name="email" placeholder="Email Address" class="hidden" required>
+        <input type="text" name="phone" placeholder="Mobile or Skype ID" class="hidden" required>
+        <input type="text" name="website" placeholder="Website" class="hidden">
+        <textarea name="message" placeholder="Your message here..." class="hidden" required></textarea>
+        <button type="submit" class="hidden"><span>Quick Message</span></button>
+    </form>
+</section>
 
-    <section class="cta-section">
-        <h2 style="mix-blend-mode: difference;">Sync Up on IT Strategies?</h2>
-        <div class="button-container">
-            <button><span>PEEK RESUME</span></button>
-            <a class="button" href="/assets/file/RameshKannaG-DevOps.Resume.pdf" download><span>GET RESUME</span></a>
-            <button><span>HIRE ME NOW</span></button>
-        </div>
-    </section>
-    <!-- -------[ CONTACT END ]------- -->
+<section class="cta-section"> <!-- section 2-->
+    <h2 style="mix-blend-mode: difference;">Sync Up on IT Strategies?</h2>
+    <div class="button-container">
+        <button class="hidden"><span>PEEK RESUME</span></button>
+        <a class="button hidden" href="/assets/file/RameshKannaG-DevOps.Resume.pdf" download><span>GET RESUME</span></a>
+        <button class="hidden"><span>HIRE ME NOW</span></button>
+    </div>
+</section>
+<!-- -------[ CONTACT END ]------- -->
+
+
+
 
 
 
