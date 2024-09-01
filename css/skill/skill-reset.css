@@ -19,8 +19,6 @@
     font-size: 16px;
     margin-bottom: 8px;
     letter-spacing: 0.15rem;
-    /* font-weight: 100; */
-
 }
 
 .tools-section h2 {
@@ -105,48 +103,31 @@
     overflow: auto;
 }
 
-/* -------[ RESPONSIVE STYLES START ]------- */
-@media (max-width: 1024px) {
-    .card {
-        width: calc(50% - 10px);
-    }
-}
+/* -------[ MEDIA QUERIES FOR RESPONSIVENESS ]------- */
 
-@media (max-width: 768px) {
+/* Mobile screens (less than 768px) */
+@media (max-width: 767px) {
     .card {
-        width: calc(100% - 10px);
+        width: 100%; /* 1 card per row */
     }
-    .card-side {
-        padding: 10px;
-    }
-    .tools-section h2 {
-        font-size: 20px;
-    }
-    .tools-section .subtitle {
-        font-size: 14px;
-    }
-    .card-git .logo-git,
-    .card-github .logo-github {
-        width: 100px;
-    }
-}
 
-@media (max-width: 480px) {
-    .card {
-        height: auto;
+    .tools-section {
+        padding-top: 20px;
+        padding-bottom: 15px;
     }
-    .card-side {
-        padding: 10px;
-    }
+
     .tools-section h2 {
         font-size: 18px;
     }
-    .tools-section .subtitle {
-        font-size: 12px;
-    }
-    .card-git .logo-git,
-    .card-github .logo-github {
-        width: 80px;
+
+    .tools-section .underline {
+        width: 70px;
     }
 }
-/* -------[ RESPONSIVE STYLES END ]------- */
+
+/* All other screens (768px and up) */
+@media (min-width: 768px) {
+    .card {
+        width: calc(50% - 10px); /* 2 cards per row */
+    }
+}

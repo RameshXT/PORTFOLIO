@@ -42,51 +42,73 @@
 /* -------[ GENERAL STYLES ]------- */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap'); /* Importing the Inter font from Google Fonts */
 
+:root {
+    --background-color: #fff;
+    --text-color: #000;
+    --selection-background: #333;
+    --selection-color: #fff;
+    --scrollbar-track-color: #333;
+    --scrollbar-thumb-color: #666;
+    --scrollbar-thumb-hover-color: #888;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
-
 /* -------[ SELECTION STYLE ]------- */
-    ::selection {
-        background: #333; /* Dark gray background for selected text */
-        color: #fff; /* White text color for contrast */
-    }
-
+::selection {
+    background: var(--selection-background);
+    color: var(--selection-color);
+}
 
 /* -------[ SCROLLBAR STYLES ]------- */
-    ::-webkit-scrollbar {
-        width: 12px;
-    }
+::-webkit-scrollbar {
+    width: 12px;
+}
 
-    ::-webkit-scrollbar-button {
-        display: none;
-    }
+::-webkit-scrollbar-button {
+    display: none;
+}
 
-    ::-webkit-scrollbar-track {
-        background: #333; 
-    }
+::-webkit-scrollbar-track {
+    background: var(--scrollbar-track-color);
+}
 
-    ::-webkit-scrollbar-thumb {
-        background: #666; 
-        border-radius: 6px;
-    }
+::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb-color);
+    border-radius: 6px;
+}
 
-    ::-webkit-scrollbar-thumb:hover {
-        background: #888;
-    }
+::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-thumb-hover-color);
+}
 
-    * {
-        scrollbar-width: thin;
-        scrollbar-color: #666 #333;
-    }
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb-color) var(--scrollbar-track-color);
+}
 
-    body {
-        -ms-overflow-style: none;
+body {
+    -ms-overflow-style: none;
+}
+
+/* -------[ DARK MODE STYLES ]------- */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #121212;
+        --text-color: #e0e0e0;
+        --selection-background: #575757;
+        --selection-color: #fff;
+        --scrollbar-track-color: #222;
+        --scrollbar-thumb-color: #444;
+        --scrollbar-thumb-hover-color: #666;
     }
+}
 
 /* -------[  ]------- */
 
