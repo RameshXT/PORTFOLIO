@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hire Me</title>
+
+    <!-- ?-------[ FAVICON LINK ]------- -->
+    <link rel="icon" href="/assets/favicon/favicon.png">
+    <link rel="stylesheet" href="/hireme/hireme.css">
+
+</head>
+<body>
+
+<!-- !-------[ HEADER START ]------- -->
+<div class="header-bg">
+    <header>
+        <div class="logo">
+            <!-- [ LOGO IMAGE ] -->
+            <a href="/index.html">
+                <img src="/assets/icons/portfolio-logo/logo.png" alt="Logo">
+            </a>
+        </div>
+        <!-- [ TOGGLE MENU ] -->
+        <div class="toggle menu-toggle">
+            <span class="line-toggle"></span>
+            <span class="line-toggle"></span>
+            <span class="line-toggle"></span>
+        </div>
+        <nav>
+            <!-- [ NAV BAR LIST ] -->
+            <ul>
+                <li><a href="#home">HOME</a></li>
+            </ul>
+        </nav>
+    </header>
+</div><br><br>
+<!-- !-------[ HEADER END ]------- -->
+
+<h2>Hire Me</h2>
+
+<!-- Your Form Starts Here -->
+<form id="hireMeForm" method="POST" action="form-handler.php">
+    <label for="roleRequirements">Role Requirements:</label>
+    <textarea id="roleRequirements" name="roleRequirements" rows="5" placeholder="What specific skills and experiences are essential for this role?" required></textarea>
+
+    <label for="companyCulture">Company Culture:</label>
+    <textarea id="companyCulture" name="companyCulture" rows="5" placeholder="Can you describe the company culture and the team I'll be working with?" required></textarea>
+
+    <label for="growthOpportunities">Growth Opportunities:</label>
+    <textarea id="growthOpportunities" name="growthOpportunities" rows="5" placeholder="What opportunities for professional development and career growth does the company offer?" required></textarea>
+
+    <label for="keyProjects">Key Projects:</label>
+    <textarea id="keyProjects" name="keyProjects" rows="5" placeholder="What are some important projects or initiatives the team is currently working on?" required></textarea>
+
+    <label for="nextSteps">Next Steps:</label>
+    <textarea id="nextSteps" name="nextSteps" rows="5" placeholder="What are the next steps in the hiring process?" required></textarea>
+
+    <div class="submit-container">
+        <a href="#" class="submit-button"><span>Submit</span></a>
+    </div>
+</form>
+<!-- Your Form Ends Here -->
+</body>
+</html>
