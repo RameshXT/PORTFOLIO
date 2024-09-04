@@ -59,14 +59,14 @@
     overflow: hidden;
     
 
-    /* background: linear-gradient(135deg, #000000 90.6%, #ffffff 8%); */
     background-image: url(/assets/images/curve-up.png);
-    /* background: 
-    linear-gradient(rgba(0, 0, 0, 0.100), rgba(0, 0, 0, 0.100)),
-    url("/assets/images/curve-up.png"); */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    /* background: linear-gradient(135deg, #000000 90.6%, #ffffff 8%); */
+    /* background: 
+    linear-gradient(rgba(0, 0, 0, 0.100), rgba(0, 0, 0, 0.100)),
+    url("/assets/images/curve-up.png"); */
 }
 
 /* -------[ CONTENT WRAPPER STYLE ]------- */
