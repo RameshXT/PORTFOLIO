@@ -52,6 +52,7 @@ textarea {
     text-align: center; /* Center align the button */
     margin-top: 20px;
 }
+
 .submit-button {
     padding: 15px 30px;
     background: #000000;
@@ -122,7 +123,6 @@ header {
     mix-blend-mode: difference; /* Black and white blend effect */
     letter-spacing: 0.15rem;
     font-weight: 100;
-    
 }
 
 /* -------[ LOGO STYLES ]------- */
@@ -143,8 +143,7 @@ header .logo img {
 
 header nav {
     display: flex;
-    align-items: flex-start;
-    margin-left: auto;
+    align-items: center;
 }
 
 header nav ul {
@@ -196,82 +195,14 @@ header nav ul li a.active {
         flex-direction: row;
         padding: 10px;
         justify-content: space-between;
-        align-items: flex-end;
-    }
-
-    header .menu-toggle {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        width: 30px;
-        height: 20px;
-        cursor: pointer;
-        margin-left: auto;
-        margin-right: 10px;
-        z-index: 11;
-        mix-blend-mode: difference; /* Black and white blend effect */
-    }
-
-    header .menu-toggle span {
-        display: block;
-        width: 100%;
-        height: 3px;
-        background: #ffffff; /* White color */
-        transition: all 0.7s ease;
-        mix-blend-mode: difference; /* Black and white blend effect */
-    }
-
-    header nav {
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 50%;
-        height: 100%;
-        backdrop-filter: blur(4px);
-        box-shadow: 0 8px 16px rgba(87, 87, 87, 0.2); /* Adjusted shadow color */
-        z-index: 10;
-        transform: translateX(100%);
-        opacity: 0;
-        visibility: hidden;
-        transition: transform 0.9s ease, opacity 0.9s ease, visibility 0.9s ease;
-    }
-
-    header nav.active {
-        transform: translateX(0);
-        opacity: 1;
-        visibility: visible;
-        backdrop-filter: blur(110px);
-    }
-
-    header nav ul {
-        flex-direction: column;
-        gap: 35px;
-        padding: 40px;
-        padding-top: 65px;
-        margin: 0;
-    }
-
-    header nav ul li {
-        margin: 0;
+        align-items: center;
     }
 
     header .logo img {
         height: 30px;
     }
-}
 
-/* -------[ MOBILE MENU TOGGLE STYLE ]------- */
-
-.menu-toggle.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-    background: #ffffff; /* White color for the active line */
-}
-
-.menu-toggle.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.menu-toggle.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-    background: #575757; /* Dark gray color for the active line */
+    header nav ul {
+        gap: 15px;
+    }
 }
