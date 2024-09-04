@@ -1,0 +1,113 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #B0B0B0; /* Light Gray */
+    color: #575757; /* Dark Gray */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+.resume-card {
+    background-color: #FFFFFF; /* White */
+    width: 100%;
+    max-width: 800px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.card-header {
+    background-color: #005FA1; /* Blue */
+    color: #FFFFFF; /* White */
+    padding: 20px;
+    text-align: center;
+}
+
+.card-header h1 {
+    font-size: 2.5em;
+}
+
+.card-header h2 {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.card-header p {
+    font-size: 1em;
+}
+
+.card-header a {
+    color: #FFFFFF; /* White */
+    text-decoration: underline;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+h3 {
+    color: #005FA1; /* Blue */
+    margin-bottom: 10px;
+    font-size: 1.4em;
+    border-bottom: 2px solid #005FA1; /* Blue */
+    padding-bottom: 5px;
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table, th, td {
+    border: 1px solid #B0B0B0; /* Light Gray */
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #005FA1; /* Blue */
+    color: #FFFFFF; /* White */
+}
+
+.project {
+    margin-bottom: 20px;
+}
+
+.card-footer {
+    background-color: #F4F4F4; /* Very Light Gray */
+    text-align: center;
+    padding: 15px;
+}
+
+.card-footer a {
+    color: #005FA1; /* Blue */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.card-footer a:hover {
+    text-decoration: underline;
+}
