@@ -45,12 +45,6 @@
 */
 
 /* -------[ HEADER STYLES ]------- */
-.header-bg {
-    background-image: url(/assets/images/curve1.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
 header {
     display: flex;
     align-items: center;
