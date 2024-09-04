@@ -1,290 +1,119 @@
-/* -------[ HEADER STYLES ]------- */
-.main-header {
-    background-image: url(/assets/images/curve1.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-header {
-    display: flex;
-    align-items: center;
-    padding: 20px;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Original shadow */
-    z-index: 1000;
-    box-sizing: border-box;
-    justify-content: space-between;
-    font-size: 13px;
-    mix-blend-mode: difference; /* Black and white blend effect */
-    letter-spacing: 0.15rem;
-    font-weight: 100;
-}
-
-/* -------[ LOGO STYLES ]------- */
-header .site-logo {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    mix-blend-mode: difference; /* Black and white blend effect */
-}
-
-header .site-logo img {
-    height: 35px;
-    mix-blend-mode: difference; /* Black and white blend effect */
-}
-
-/* -------[ NAVIGATION STYLES ]------- */
-header nav {
-    display: flex;
-    align-items: flex-start;
-    margin-left: auto;
-}
-
-header nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 20px;
-}
-
-header nav ul li {
-    margin: 0;
-}
-
-header nav ul li a {
-    text-decoration: none;
-    color: #ffffff; /* White color */
-    padding: 10px 20px;
-    transition: color 0.4s, background-color 0.4s;
-    mix-blend-mode: difference; /* Black and white blend effect */
-}
-
-header nav ul li a:hover,
-header nav ul li a.active {
-    background: #ffffff; /* White background on hover */
-    color: #000000; /* Black text on hover */
-    border-radius: 5px;
-    mix-blend-mode: normal; /* Reset blend mode on hover */
-}
-
-/*
-======================================
-    [ RESPONSIVE STYLES ]
-======================================
-*/
-
-/* -------[ RESPONSIVE STYLES ]------- */
-@media (max-width: 1024px) {
-    header {
-        padding: 15px;
-    }
-    
-    header .site-logo img {
-        height: 35px;
-    }
-    
-    header nav ul {
-        gap: 15px;
-    }
-}
-
-/* -------[ MOBILE ]------- */
-@media (max-width: 768px) {
-    header {
-        flex-direction: row;
-        padding: 10px;
-        justify-content: space-between;
-        align-items: flex-end;
-    }
-
-    header .menu-toggle {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        width: 30px;
-        height: 20px;
-        cursor: pointer;
-        margin-left: auto;
-        margin-right: 10px;
-        z-index: 11;
-        mix-blend-mode: difference; /* Black and white blend effect */
-    }
-
-    header .menu-toggle span {
-        display: block;
-        width: 100%;
-        height: 3px;
-        background: #ffffff; /* White color */
-        transition: all 0.7s ease;
-        mix-blend-mode: difference; /* Black and white blend effect */
-    }
-
-    header nav {
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 50%;
-        height: 100%;
-        backdrop-filter: blur(4px);
-        box-shadow: 0 8px 16px rgba(87, 87, 87, 0.2); /* Adjusted shadow color */
-        z-index: 10;
-        transform: translateX(100%);
-        opacity: 0;
-        visibility: hidden;
-        transition: transform 0.9s ease, opacity 0.9s ease, visibility 0.9s ease;
-    }
-
-    header nav.active {
-        transform: translateX(0);
-        opacity: 1;
-        visibility: visible;
-        backdrop-filter: blur(110px);
-    }
-
-    header nav ul {
-        flex-direction: column;
-        gap: 35px;
-        padding: 40px;
-        padding-top: 65px;
-        margin: 0;
-    }
-
-    header nav ul li {
-        margin: 0;
-    }
-
-    header .site-logo img {
-        height: 30px;
-    }
-}
-
-
-
-/* -------[ MOBILE MENU TOGGLE STYLE ]------- */
-.menu-toggle.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-    background: #ffffff; /* White color for the active line */
-}
-
-.menu-toggle.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.menu-toggle.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-    background: #575757; /* Dark gray color for the active line */
-}
-
-
-
-
-
-
-/* resume */
-
+/* -------[ RESUME STYLES ]------- */
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    padding-top: 30px;
+    /* background-image: url(/resume/image/curve-up.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; */
+   
 }
 
 .resume {
     max-width: 900px;
     margin: 20px auto;
-    padding: 30px;
-    background: #FFFFFF; /* White background */
+    padding: 25px; /* Adjusted padding */
     border-radius: 8px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
 .card {
-    padding: 20px;
+    padding: 15px; /* Adjusted padding */
     background: #FFFFFF;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.header {
+.card-header {
     display: flex;
     flex-direction: column;
-    margin-bottom: 20px;
 }
 
-.header .top-left {
+.header-top {
+    margin-bottom: 8px; /* Adjusted margin */
+}
+
+.title {
+    font-size: 14px; /* Smaller font size */
+    color: #575757;
+    margin-bottom: 6px; /* Adjusted margin */
+}
+
+.header-bottom {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
-.header .top-left .title {
-    font-size: 16px;
-    color: #575757; /* Dark Gray text */
-    margin-right: 20px;
-}
-
-.header .top-left .name {
-    font-size: 22px; /* Adjusted font size for name */
+.name {
+    font-size: 18px; /* Smaller font size */
     font-weight: 600;
-    color: #000000; /* Black text */
-    margin: 0;
-    letter-spacing: 0.5px;
+    color: #000000;
+    margin-bottom: 0; /* Adjusted margin */
+    letter-spacing: 0.15rem;
 }
 
-.header .bottom-right {
-    display: flex;
-    justify-content: flex-end;
-    font-size: 14px; /* Slightly smaller font size */
-    color: #575757; /* Dark Gray text */
+.contact-info {
+    font-size: 14px; /* Adjusted font size */
 }
 
-.header .bottom-right .contact-info a {
-    color: #005FA1; /* Blue links */
+.contact-info a {
+    color: #005FA1;
     text-decoration: none;
     font-weight: 500;
-    margin-left: 10px; /* Spacing between items */
+    margin-left: 8px; /* Adjusted margin */
 }
 
-.header .bottom-right .contact-info a:hover {
+.contact-info a:hover {
     text-decoration: underline;
 }
 
 section {
-    margin-bottom: 30px;
+    margin-bottom: 25px; /* Adjusted spacing */
 }
 
 h2 {
-    font-size: 24px;
-    color: #000000; /* Black text */
-    border-bottom: 2px solid #005FA1; /* Blue border */
-    padding-bottom: 8px;
-    margin-bottom: 20px;
-    font-weight: 600;
+    font-size: 20px; /* Smaller font size */
+    color: #000000;
+    border-bottom: 2px solid #005FA1;
+    padding-bottom: 8px; /* Adjusted padding */
+    margin-bottom: 15px; /* Adjusted margin */
+    font-weight: 400;
     letter-spacing: 0.5px;
 }
 
+h3 {
+    display: block;
+    font-size: 20px;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: 300;
+}
+
 ul {
-    list-style: disc; /* Bullet points */
-    padding-left: 20px;
+    list-style: disc;
+    padding-left: 20px; /* Adjusted padding */
 }
 
 ul li {
-    margin-bottom: 10px;
-    line-height: 1.6;
+    margin-bottom: 8px; /* Adjusted spacing */
+    line-height:
+
+ 1.6;
     font-size: 14px; /* Smaller font size */
-    color: #000000; /* Black text */
+    color: #000000;
 }
 
 .project-summary {
-    list-style: disc; /* Bullet points for project summary */
-    padding-left: 20px;
+    list-style: disc;
+    padding-left: 20px; /* Adjusted padding */
 }
 
 .project-link {
-    color: #005FA1; /* Blue links */
+    color: #005FA1;
     text-decoration: none;
     font-weight: 500;
 }
@@ -294,50 +123,64 @@ ul li {
 }
 
 .github-icon {
-    width: 24px; /* Smaller icon size */
-    height: 24px;
-    margin-left: 8px;
+    width: 20px; /* Smaller size */
+    height: 20px; /* Smaller size */
+    margin-left: 6px; /* Adjusted margin */
     cursor: pointer;
     transition: opacity 0.3s ease;
 }
 
-.github-icon:hover {
+.github-icon:hover {    
     opacity: 0.7;
 }
 
+/* -------[ TOOL GRID STYLES ]------- */
 .tool-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    gap: 10px;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns layout */
+    gap: 10px; /* Adjusted gap */
+    padding: 10px; /* Adjusted padding */
 }
 
 .tool-grid div {
-    background: #F0F0F0;
-    padding: 10px;
+    background: #b0b0b050; /* Light Gray */
+    padding: 10px; /* Adjusted padding */
     text-align: center;
     border-radius: 4px;
-    font-size: 14px; /* Smaller font size */
-    color: #000000; /* Black text */
+    font-size: 14px; /* Adjusted font size */
+    color: #000000; /* Black */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    cursor: pointer; /* Change cursor to pointer */
 }
 
+/* Hover effect to scale the tool item */
+.tool-grid div:hover {
+    background-color: #a0a0a072; /* Slightly darker light gray */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.156);
+    transform: scale(1.03); /* Slightly increase size */
+}
+
+/* -------[ ACADEMIC TABLE STYLES ]------- */
 .academic table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 10px;
+    margin-top: 10px; /* Adjusted margin */
+    text-align: center; /* Center align text in table */
 }
 
 .academic th, .academic td {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
+    border: 1px solid #B0B0B0; /* Light Gray for borders */
+    text-align: center; /* Center align text in table cells */
+    padding: 6px; /* Adjusted padding */
 }
 
 .academic th {
-    background-color: #f2f2f2;
-    color: #000000; /* Black text */
+    background-color: #F4F4F4; /* Light Gray background for header */
+    color: #000000;
+    font-size: 16px; /* Smaller font size */
 }
 
 .academic td {
-    color: #575757; /* Dark Gray text */
+    color: #575757; /* Dark Gray */
+    font-size: 14px; /* Smaller font size */
 }
-
