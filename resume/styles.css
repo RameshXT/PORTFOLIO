@@ -1,5 +1,122 @@
-/* -------[ RESUME STYLES ]------- */
+/* -------[ HEADER STYLES ]------- */
 body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(/assets/images/curve-up.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    box-sizing: border-box;
+    justify-content: space-between;
+    font-size: 13px;
+    mix-blend-mode: difference;
+    letter-spacing: 0.15rem;
+    font-weight: 100;
+}
+
+/* -------[ LOGO STYLES ]------- */
+
+header .logo {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    mix-blend-mode: difference;
+}
+
+header .logo img {
+    height: 35px;
+    mix-blend-mode: difference;
+}
+
+/* -------[ NAVIGATION STYLES ]------- */
+
+header nav {
+    display: flex;
+    align-items: center;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+header nav ul li {
+    margin: 0;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 10px 20px;
+    transition: color 0.4s, background-color 0.4s;
+    mix-blend-mode: difference;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active {
+    background: #ffffff;
+    color: #000000;
+    border-radius: 5px;
+    mix-blend-mode: normal;
+}
+
+/* -------[ RESPONSIVE STYLES ]------- */
+
+@media (max-width: 1024px) {
+    header {
+        padding: 15px;
+    }
+
+    header .logo img {
+        height: 35px;
+    }
+
+    header nav ul {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: row;
+        padding: 10px;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    header .logo img {
+        height: 30px;
+    }
+
+    header nav ul {
+        gap: 15px;
+    }
+
+    form {
+        margin: 20px;
+        padding: 20px;
+        max-width: 100%;
+    }
+}
+
+/* -------[ RESUME STYLES ]------- */
+.container {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -8,7 +125,6 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center; */
-   
 }
 
 .resume {
@@ -100,9 +216,7 @@ ul {
 
 ul li {
     margin-bottom: 8px; /* Adjusted spacing */
-    line-height:
-
- 1.6;
+    line-height: 1.6;
     font-size: 14px; /* Smaller font size */
     color: #000000;
 }
