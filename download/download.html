@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Cards</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+            overflow: hidden; /* Prevent scrolling */
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr); /* Default to 1 card per row */
+            gap: 2em;
+            padding: 2em;
+            max-width: 1200px;
+            width: 100%; /* Ensure container uses full available width */
+            box-sizing: border-box; /* Include padding in width calculation */
+        }
+
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2em;
+            text-align: center;
+            min-height: 200px; /* Minimum height to ensure content fits */
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            color: #fff; /* Default text color */
+            box-sizing: border-box; /* Include padding and border in width calculation */
+        }
+
+        .card img {
+            width: 80px; /* Set width of logos */
+            height: auto; /* Maintain aspect ratio */
+            margin-bottom: 1em;
+        }
+
+        .card h3 {
+            margin-bottom: 1em;
+            font-size: 20px;
+            color: #fff; /* Ensure text color is visible on card background */
+        }
+
+        .card .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            color: #fff;
+            border: 2px solid transparent; /* Use transparent border to ensure the border-radius works properly */
+            border-radius: 5px;
+            font-size: 0.9em;
+            cursor: pointer;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            transition: background-color 0.5s, color 0.5s, transform 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 150px;
+        }
+
+        .card .btn:after {
+            content: '»';
+            position: absolute;
+            opacity: 0;
+            top: 50%;
+            right: -20px;
+            transform: translateY(-50%);
+            transition: opacity 0.5s, right 0.5s;
+        }
+
+        .card .btn:hover {
+            color: #fff;
+        }
+
+        .card .btn:hover:after {
+            opacity: 1;
+            right: 10px;
+        }
+
+        .card .btn span {
+            display: inline-block;
+            transition: transform 0.5s;
+        }
+
+        .card .btn:hover span {
+            transform: translateX(-10px);
+        }
+
+        .card:hover {
+            transform: scale(1.05); /* Slightly enlarge card on hover */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+        }
+
+        /* Specific card colors */
+        .card-source-code {
+            background-color: #24292e; /* GITHUB */
+        }
+
+        .card-pdf {
+            background-color: #C60808; /* Example color for PDF */
+        }
+
+        .card-word {
+            background-color: #0078d4; /* Example color for Word Document */
+        }
+
+        .card-image {
+            background-color: #004125; /* Example color for Image */
+        }
+
+        /* Specific button colors */
+        .btn-source-code {
+            background-color: #24292e; /* Match button with card color */
+            border-color: #24292e; /* Ensure border color matches */
+        }
+
+        .btn-source-code:hover {
+            background-color: #000; /* Darker shade on hover */
+            border-color: #000;
+        }
+
+        .btn-pdf {
+            background-color: #C60808;
+            border-color: #C60808;
+        }
+
+        .btn-pdf:hover {
+            background-color: #a10606; /* Darker shade on hover */
+            border-color: #a10606;
+        }
+
+        .btn-word {
+            background-color: #0078d4;
+            border-color: #0078d4;
+        }
+
+        .btn-word:hover {
+            background-color: #005a9e; /* Darker shade on hover */
+            border-color: #005a9e;
+        }
+
+        .btn-image {
+            background-color: #004125;
+            border-color: #004125;
+        }
+
+        .btn-image:hover {
+            background-color: #002d1e; /* Darker shade on hover */
+            border-color: #002d1e;
+        }
+
+        /* Media query for larger screens */
+        @media (min-width: 768px) {
+            .container {
+                grid-template-columns: repeat(2, 1fr); /* Two cards per row */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="card card-source-code">
+        <img src="/assets/icons/download-icons/github.png" alt="Source Code Logo">
+        <h3>Source Code</h3>
+        <a href="path/to/source-code.zip" class="btn btn-source-code" download><span>Download</span></a>
+    </div>
+    <div class="card card-pdf">
+        <img src="/assets/icons/download-icons/pdf.png" alt="PDF Logo">
+        <h3>PDF</h3>
+        <a href="path/to/document.pdf" class="btn btn-pdf" download><span>Download</span></a>
+    </div>
+    <div class="card card-word">
+        <img src="/assets/icons/download-icons/word.png" alt="Word Document Logo">
+        <h3>Word Document</h3>
+        <a href="path/to/document.docx" class="btn btn-word" download><span>Download</span></a>
+    </div>
+    <div class="card card-image">
+        <img src="/assets/icons/download-icons/image.png" alt="Image Logo">
+        <h3>Image</h3>
+        <a href="path/to/image.jpg" class="btn btn-image" download><span>Download</span></a>
+    </div>
+</div>
+
+</body>
+</html>

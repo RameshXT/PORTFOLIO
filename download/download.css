@@ -1,0 +1,48 @@
+/* Existing card styles */
+.card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 20px;
+    position: relative;
+    width: 300px; /* Adjust width as needed */
+    text-align: center;
+}
+
+/* Styles for the download button within the card */
+.dl-button {
+    --duration: 4000;
+    --success: #16BF78;
+    --grey-light: #99A3BA;
+    --grey: #6C7486;
+    --grey-dark: #3F4656;
+    --light: #CDD9ED;
+    --shadow: rgba(18, 22, 33, .6);
+    --shadow-dark: rgba(18, 22, 33, .85);
+    display: block;
+    text-decoration: none;
+    perspective: 500px;
+    margin: 10px auto;
+    width: 250px;
+    height: 250px; /* Fixed height for uniformity */
+    position: relative;
+}
+
+.dl-button > div {
+    position: relative;
+    background: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    padding: 16px 24px;
+    box-shadow: 0 4px 12px var(--shadow);
+    transition: box-shadow .3s ease, transform .3s ease;
+}
+
+.dl-button:hover > div {
+    box-shadow: 0 8px 20px var(--shadow-dark);
+    transform: scale(1.05);
+}
+
+/* Continue with existing styles for icon, label, progress, etc. */
