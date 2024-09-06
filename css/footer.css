@@ -1,22 +1,86 @@
+/* -------[ FOOTER SECTION ]------- */
 footer {
     position: relative;
     text-align: center;
     padding: 20px;
     background: #000000;
     color: #B0B0B0;
-    overflow: hidden; /* Ensures the boxes stay within the footer */
+    overflow: hidden;
     font-size: 11px;
-    border-top: 3px solid #ffffff; /* Green top border */
+    border-top: 3px solid #ffffff;
 }
 
+.footer-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+    margin: 0 0 20px;
+    z-index: 1;
+    position: relative;
+}
+
+.footer-links li {
+    margin: 0;
+}
+
+.footer-links li a {
+    text-decoration: none;
+    color: #B0B0B0;
+    letter-spacing: 2px;
+    font-size: 12px;
+}
+
+footer p {
+    margin: 0;
+    z-index: 1;
+    position: relative;
+}
+
+.footer-links li a:hover {
+    color: #ffffff;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 33px;
+    margin-bottom: 20px;
+    z-index: 1;
+    position: relative;
+}
+
+.social-icons a {
+    text-decoration: none;
+    position: relative;
+    width: 26px;
+    height: 26px;
+}
+
+.social-icons img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.social-icons img {
+    filter: grayscale(100%) brightness(0.7) contrast(1);
+}
+
+.social-icons a:hover img {
+    filter: grayscale(0%) brightness(1) contrast(1);
+}
+
+/* -------[ ANIMATION BOX ]------- */
 #boxWrap {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 0; /* Ensure the boxes are behind the text and icons */
-    pointer-events: none; /* Prevent boxes from blocking interaction with the footer links and icons */
+    z-index: 0;
+    pointer-events: none;
 }
 
 .box {
@@ -88,65 +152,3 @@ footer {
 .box:nth-child(18) { width: 55px; height: 55px; bottom: 0; left: 70%; animation-duration: 16s; animation-delay: 10s; }
 .box:nth-child(19) { width: 20px; height: 20px; bottom: 0; left: 50%; animation-duration: 18s; animation-delay: 4s; }
 .box:nth-child(20) { width: 30px; height: 30px; bottom: 0; left: 80%; animation-duration: 12s; animation-delay: 6s; }
-
-.footer-links {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 0;
-    margin: 0 0 20px;
-    z-index: 1; /* Ensure the text is above the boxes */
-    position: relative;
-}
-
-.footer-links li {
-    margin: 0;
-}
-
-.footer-links li a {
-    text-decoration: none;
-    color: #B0B0B0;
-    letter-spacing: 2px;
-    font-size: 12px;
-}
-
-footer p {
-    margin: 0;
-    z-index: 1; /* Ensure the text is above the boxes */
-    position: relative;
-}
-
-.footer-links li a:hover {
-    color: #ffffff;
-}
-
-.social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 33px;
-    margin-bottom: 20px;
-    z-index: 1; /* Ensure the icons are above the boxes */
-    position: relative;
-}
-
-.social-icons a {
-    text-decoration: none;
-    position: relative;
-    width: 26px;
-    height: 26px;
-}
-
-.social-icons img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-.social-icons img {
-    filter: grayscale(100%) brightness(0.7) contrast(1);
-}
-
-.social-icons a:hover img {
-    filter: grayscale(0%) brightness(1) contrast(1);
-}
