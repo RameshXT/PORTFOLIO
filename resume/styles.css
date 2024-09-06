@@ -353,3 +353,37 @@ body {
         --scrollbar-thumb-hover-color: #666;
     }
 }
+
+/* -------[ STYLE FOR THE STICKY DOWNLOAD BUTTON ]------- */
+.sticky-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #272727;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+}
+
+/* -------[ STYLE FOR THE BUTTON WHEN HOVERED OVER ]------- */
+.sticky-button:hover {
+    background-color: #000000;
+    transform: scale(1.1);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* -------[ STYLE FOR THE DOWNLOAD ICON ]------- */
+.download-icon {
+    width: 24px;
+    height: 24px;
+    fill: white;
+}

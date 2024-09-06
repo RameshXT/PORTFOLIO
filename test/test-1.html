@@ -3,98 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ramesh Kanna G | Resume</title>
-    <link rel="stylesheet" href="/test/test.css">
+    <title>Sticky Download Icon</title>
+    <style>
+        /* -------[ STYLE FOR THE STICKY DOWNLOAD BUTTON ]------- */
+        .sticky-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+        }
+
+        /* -------[ STYLE FOR THE BUTTON WHEN HOVERED OVER ]------- */
+        .sticky-button:hover {
+            background-color: #333;
+            transform: scale(1.1);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        /* -------[ STYLE FOR THE DOWNLOAD ICON ]------- */
+        .download-icon {
+            width: 24px;
+            height: 24px;
+            fill: white;
+        }
+    </style>
 </head>
 <body>
-    <div class="resume-card">
-        <div class="card-header">
-            <h1>RAMESH KANNA G</h1>
-            <h2>AWS DevOps Engineer | Fresher</h2>
-            <p>📞 9442403868 | 📧 <a href="mailto:rameshkanna841@gmail.com">rameshkanna841@gmail.com</a> | <a href="https://LinkedIn.com/RameshKanna" target="_blank">LinkedIn</a></p>
-        </div>
 
-        <div class="card-content">
-            <section class="objective">
-                <h3>Objective</h3>
-                <p>As a BSc graduate with a strong passion for DevOps, I am eager to apply my knowledge in areas such as automation, infrastructure as code, and continuous integration to improve software delivery efficiency and foster a collaborative and innovative development environment.</p>
-            </section>
+    <!-- -------[ STICKY DOWNLOAD BUTTON START ]------- -->
+    <a href="your-file.zip" class="sticky-button">
+        <svg class="download-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M12 16l4-4h-3V4h-2v8H8l4 4zM5 18v2h14v-2H5z"/>
+        </svg>
+    </a>
+    <!-- -------[ STICKY DOWNLOAD BUTTON END ]------- -->
 
-            <section class="skills">
-                <h3>Tools & Technologies</h3>
-                <ul>
-                    <li><strong>Cloud:</strong> AWS</li>
-                    <li><strong>Infrastructure as Code:</strong> Terraform</li>
-                    <li><strong>Operating System:</strong> Linux</li>
-                    <li><strong>CI/CD:</strong> Jenkins</li>
-                    <li><strong>Scripting:</strong> Bash/Shell</li>
-                    <li><strong>Containerization:</strong> Docker</li>
-                    <li><strong>Version Control:</strong> GitHub</li>
-                    <li><strong>Web Servers:</strong> NGINX, Tomcat</li>
-                </ul>
-            </section>
-
-            <section class="technical">
-                <h3>Technical Proficiencies</h3>
-                <ul>
-                    <li><strong>Operating System:</strong> Proficient in Linux, managing file systems, root access, user permissions, and using package managers.</li>
-                    <li><strong>Version Control:</strong> Skilled in using Git for version control, enabling collaborative software development and tracking changes in source code.</li>
-                    <li><strong>Cloud:</strong> Experienced with AWS, including designing and deploying applications with components like EC2, IAM, S3, VPC, Lambda, EventBridge, CloudWatch, SNS, with a focus on high availability, fault tolerance, and auto-scaling.</li>
-                    <li><strong>DevOps & CI/CD:</strong> Adept at using Jenkins for automation in building, testing, and deploying code, and Docker for containerizing applications to ensure consistency across environments.</li>
-                    <li><strong>NGINX:</strong> Experienced with NGINX as a high-performance web server and reverse proxy, used for load balancing, SSL termination, and serving static content.</li>
-                    <li><strong>Tomcat:</strong> Proficient in deploying Java-based web applications on Tomcat, managing servlets, JSPs, and WAR file deployments.</li>
-                    <li><strong>Scripting:</strong> Competent in Shell/Bash scripting for automation tasks in a Linux environment.</li>
-                </ul>
-            </section>
-
-            <section class="projects">
-                <h3>Projects</h3>
-                <div class="project">
-                    <h4>Automated Web Deployment Framework</h4>
-                    <p><a href="https://github.com/automate-deployment" target="_blank">GitHub Repository</a></p>
-                    <p>Deployed a HTML web application using an automated workflow. Implemented Jenkins pipelines to monitor GitHub repository changes and trigger deployment processes. Containerized applications using Docker, ensuring environment consistency. Deployed on AWS infrastructure, enabling scalability and reliability. Achieved significant reduction in deployment time and manual errors, enhancing overall efficiency.</p>
-                </div>
-                <div class="project">
-                    <h4>Dynamic Web App Deployment</h4>
-                    <p><a href="https://github.com/dynamic-web-app-deployment" target="_blank">GitHub Repository</a></p>
-                    <p>Developed a dynamic web page with backend services using Java Servlets and JSON communication. Built the project using Maven, resulting in a .war file for deployment on Tomcat. Automated deployment using GitHub web hooks, streamlining updates and deployments.</p>
-                </div>
-            </section>
-
-            <section class="education">
-                <h3>Education</h3>
-                <table>
-                    <tr>
-                        <th>Year</th>
-                        <th>Examination/Course</th>
-                        <th>Institution</th>
-                        <th>CGPA/Percentage</th>
-                    </tr>
-                    <tr>
-                        <td>2022</td>
-                        <td>BSc Visual Communication</td>
-                        <td>Annai College of Arts and Science, Kumbakonam</td>
-                        <td>7.79</td>
-                    </tr>
-                    <tr>
-                        <td>2019</td>
-                        <td>12th Grade</td>
-                        <td>Government Boys Higher Secondary School, Nannilam</td>
-                        <td>41.67%</td>
-                    </tr>
-                    <tr>
-                        <td>2017</td>
-                        <td>10th Grade</td>
-                        <td>Government Boys Higher Secondary School, Nannilam</td>
-                        <td>60.60%</td>
-                    </tr>
-                </table>
-            </section>
-        </div>
-
-        <div class="card-footer">
-            <p>Explore more of my work on <a href="https://github.com">GitHub</a>. References available upon request.</p>
-        </div>
-    </div>
 </body>
 </html>
