@@ -139,7 +139,8 @@
     cursor: pointer;
     position: relative;
     overflow: hidden;
-    transition: background-color 0.5s, color 0.5s, transform 0.5s;
+    transition: background-color 0.5s, color 0.5s, transform 0.5s, border 0.5s;
+    border: 2px solid #ffffff;
 }
 
 .hero .cta-btn:after {
@@ -155,6 +156,7 @@
 .hero .cta-btn:hover {
     background-color: #000;
     color: #fff;
+    border: 2px solid #fff;
 }
 
 .hero .cta-btn:hover:after {
@@ -170,7 +172,6 @@
 .hero .cta-btn:hover span {
     transform: translateX(-10px);
 }
-
 
 /* -------[ SCROLL VISIBILITY STYLES ]------- */
 .hero-content {

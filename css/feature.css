@@ -200,6 +200,7 @@
     position: relative;
     overflow: hidden;
     transition: background-color 0.5s, color 0.5s, transform 0.3s;
+    border: 2px solid #ffffff;
 }
 
 .learn-more:after {
@@ -215,6 +216,7 @@
 .learn-more:hover {
     background-color: #000;
     color: #fff;
+    border: 2px solid #ffffff;
 }
 
 .learn-more:hover:after {
