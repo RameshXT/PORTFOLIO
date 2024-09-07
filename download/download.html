@@ -42,36 +42,47 @@
 
     <!-- -------[ DOWNLOAD CARD START ]------- -->
     <div class="container">
-
         <!-- [ SOURCE CODE ] -->
         <div class="card card-source-code">
             <img src="/assets/icons/download-icons/github.png" alt="Source Code Logo">
             <h3>Source Code</h3>
-            <a href="path/to/source-code.zip" class="btn btn-source-code" download><span>Download</span></a>
+            <a href="path/to/source-code.zip" class="btn btn-source-code" download id="sourceCodeBtn"><span>Download</span></a>
         </div>
-
+    
         <!-- [ PDF CODE ] -->
         <div class="card card-pdf">
             <img src="/assets/icons/download-icons/pdf.png" alt="PDF Logo">
             <h3>PDF Document</h3>
-            <a href="path/to/document.pdf" class="btn btn-pdf" download><span>Download</span></a>
+            <a href="path/to/document.pdf" class="btn btn-pdf" download id="pdfBtn"><span>Download</span></a>
         </div>
-
+    
         <!-- [ WORD CODE ] -->
         <div class="card card-word">
             <img src="/assets/icons/download-icons/word.png" alt="Word Document Logo">
             <h3>Word Document</h3>
-            <a href="path/to/document.docx" class="btn btn-word" download><span>Download</span></a>
+            <a href="path/to/document.docx" class="btn btn-word" download id="wordBtn"><span>Download</span></a>
         </div>
-
+    
         <!-- [ IMAGE CODE ] -->
         <div class="card card-image">
             <img src="/assets/icons/download-icons/image.png" alt="Image Logo">
             <h3>Image</h3>
-            <a href="/assets/screenshots/PortFolio-1.png" class="btn btn-image" download><span>Download</span></a>
+            <a href="/assets/screenshots/PortFolio-1.png" class="btn btn-image" download id="imageBtn"><span>Download</span></a>
         </div>
-
     </div>
+    
+    <!-- Popup Notification with ChatGPT-like Checkmark -->
+    <div id="popupNotification" class="popup-notification">
+      <div class="check-icon">
+        <!-- ChatGPT-like Premium Checkmark SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M20.293 5.293a1 1 0 00-1.414 0L9 14.586 5.707 11.293a1 1 0 00-1.414 1.414l4.5 4.5a1 1 0 001.414 0l9-9a1 1 0 000-1.414z"/>
+        </svg>
+      </div>
+      <span id="popupMessage">Download Complete!</span>
+    </div>
+    
+    
     <!-- -------[ DOWNLOAD CARD END ]------- -->
 
     <!-- -------[ FOOTER START ]------- -->
@@ -101,11 +112,6 @@
     <!-- -------[ FOOTER END ]------- -->
 
     <!-- -------[ JS CODE ]------- -->
-    <script>
-        window.addEventListener('load', () => {
-            document.body.classList.add('loaded');
-        });
-    </script>
-
+<script src="/download/download.js"></script>
 </body>
 </html>

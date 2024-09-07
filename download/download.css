@@ -368,3 +368,60 @@ html {
     scroll-behavior: smooth;
 }
 /* -------[ SMOOTH SCROLLING STYLES END ]------- */
+
+
+
+
+
+
+
+
+
+
+/* Popup Notification Styles */
+.popup-notification {
+    position: fixed;
+    top: -100px; /* Initially hidden */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4caf50; /* Green background for success */
+    color: white;
+    padding: 16px 24px;
+    border-radius: 8px; /* Rounded corners */
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Space between icon and text */
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    z-index: 9999;
+  }
+
+  .popup-notification.show {
+    top: 20px; /* Centered from top */
+    opacity: 1;
+  }
+
+  .popup-notification .check-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .popup-notification .check-icon svg {
+    width: 18px;
+    height: 18px;
+    fill: #4caf50; /* Green checkmark */
+  }
+
+  /* Small media query for better responsiveness */
+  @media (max-width: 600px) {
+    .popup-notification {
+      padding: 12px 20px;
+      font-size: 14px;
+    }
+  }
