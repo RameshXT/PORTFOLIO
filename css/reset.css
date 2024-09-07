@@ -58,8 +58,13 @@ body {
     padding: 0;
     background-color: var(--background-color);
     color: var(--text-color);
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
 }
 
+body.loaded {
+    opacity: 1;
+}
 /* -------[ SELECTION STYLE ]------- */
 ::selection {
     background: var(--selection-background);

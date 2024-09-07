@@ -43,6 +43,11 @@
  */
 
 
+ /* -------[ SMOOTH TRANSITION FOR START UP ]------- */
+window.addEventListener('load', () => {
+    document.body.classList.add('loaded');
+});
+
 /* -------[ MENU TOGGLE ]------- */
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -325,10 +330,13 @@ document.addEventListener('DOMContentLoaded', function () {
     handleScroll(); // Initial check in case sections are already in view on page load
 });
 
-
-
-
 /* -------[  ]------- */
+/* -------[  ]------- */
+/* -------[  ]------- */
+/* -------[  ]------- */
+/* -------[  ]------- */
+
+
 
 
 /*
