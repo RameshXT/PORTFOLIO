@@ -20,6 +20,7 @@
     }
 }
 
+/* -------[ BODY STYLES ]------- */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -31,10 +32,12 @@ body {
     opacity: 0;
     transition: opacity 1.5s ease-in-out;
 }
+
 body.loaded {
     opacity: 1;
 }
 
+/* -------[ HEADER SECTION ]------- */
 h2 {
     text-align: center;
     margin-top: 40px;
@@ -44,6 +47,7 @@ h2 {
     font-weight: 100;
 }
 
+/* -------[ FORM STYLES ]------- */
 form {
     background-color: #ffffff;
     padding: 30px;
@@ -51,15 +55,14 @@ form {
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
     max-width: 600px;
     margin: 40px auto;
-    transition: transform 0.3s ease, 
-                background-color 0.3s ease,
-                border 0.3s ease,
-                box-shadow 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
 }
+
 form:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
 label {
     display: block;
     margin-bottom: 10px;
@@ -83,6 +86,7 @@ textarea {
     height: 80px;
 }
 
+/* -------[ SUBMIT BUTTON STYLES ]------- */
 .submit-container {
     text-align: center;
     margin-top: 20px;
@@ -134,7 +138,6 @@ textarea {
 }
 
 /* -------[ HEADER STYLES ]------- */
-
 .header-bg {
     background-image: url(/assets/images/curve1.png);
     background-size: cover;
@@ -161,7 +164,6 @@ header {
 }
 
 /* -------[ LOGO STYLES ]------- */
-
 header .logo {
     flex: 1;
     display: flex;
@@ -175,7 +177,6 @@ header .logo img {
 }
 
 /* -------[ NAVIGATION STYLES ]------- */
-
 header nav {
     display: flex;
     align-items: center;
@@ -210,7 +211,6 @@ header nav ul li a.active {
 }
 
 /* -------[ RESPONSIVE STYLES ]------- */
-
 @media (max-width: 1024px) {
     header {
         padding: 15px;
@@ -249,7 +249,6 @@ header nav ul li a.active {
 }
 
 /* -------[ FOOTER SECTION START ]------- */
-
 footer {
     position: relative;
     text-align: center;
@@ -293,7 +292,7 @@ footer p {
     color: #ffffff;
 }
 
-/* -------[ SOCIAL ICON ]------- */
+/* -------[ SOCIAL ICON STYLES ]------- */
 .social-icons {
     display: flex;
     justify-content: center;
@@ -326,7 +325,7 @@ footer p {
 
 /* -------[ FOOTER SECTION END ]------- */
 
-/* -------[ STYLE FOR THE STICKY DOWNLOAD BUTTON ]------- */
+/* -------[ STICKY DOWNLOAD BUTTON STYLES ]------- */
 .sticky-button {
     position: fixed;
     bottom: 20px;
@@ -346,14 +345,16 @@ footer p {
     text-decoration: none;
 }
 
-/* -------[ STYLE FOR THE BUTTON WHEN HOVERED OVER ]------- */
-.sticky-button:hover {
+/* -------[ HOVER STYLES FOR STICKY BUTTON ]------- */
+.sticky-button:hover
+
+ {
     background-color: #000000;
     transform: scale(1.1);
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
 }
 
-/* -------[ STYLE FOR THE DOWNLOAD ICON ]------- */
+/* -------[ DOWNLOAD ICON STYLES ]------- */
 .download-icon {
     width: 24px;
     height: 24px;
