@@ -54,5 +54,5 @@ forceDownload('path/to/document.docx', 'Thank you, the Word Document has been do
 
 document.getElementById('imageBtn').addEventListener('click', function(e) {
 e.preventDefault(); // Prevent default behavior
-forceDownload('/assets/screenshots/PortFolio-1.png', 'Thank you, the Image has been downloaded.');
+forceDownload('/assets/screenshots/Image.rar', 'Thank you, the Image has been downloaded.');
 }); 
