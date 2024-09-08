@@ -1,5 +1,5 @@
 /* -------[ GLOBAL STYLES ]------- */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap'); /* Importing the Inter font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 /* -------[ SELECTION STYLE ]------- */
 ::selection {
@@ -359,4 +359,59 @@ footer p {
     width: 24px;
     height: 24px;
     fill: white;
+}
+
+
+
+
+
+
+/* -------[ SELECTION STYLE ]------- */
+::selection {
+    background: var(--selection-background);
+    color: var(--selection-color);
+}
+
+/* -------[ SCROLLBAR STYLES ]------- */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-button {
+    display: none;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--scrollbar-track-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb-color);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-thumb-hover-color);
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb-color) var(--scrollbar-track-color);
+}
+
+body {
+    -ms-overflow-style: none;
+}
+
+/* -------[ DARK MODE STYLES ]------- */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #121212;
+        --text-color: #e0e0e0;
+        --selection-background: #575757;
+        --selection-color: #fff;
+        --scrollbar-track-color: #222;
+        --scrollbar-thumb-color: #444;
+        --scrollbar-thumb-hover-color: #666;
+    }
 }
