@@ -1,3 +1,46 @@
+/*
+======================================
+    [ TEMPLATE ]
+======================================
+
+    CSS File:   skill-reset.css
+    Template:   PortFolio | Ramesh
+    Category:   PortFolio Styles
+    Author:     Ramesh
+    Version:    1.0
+    
+    Design and Developed by: Ramesh
+
+======================================
+    [ END TEMPLATE ]
+======================================
+*/
+
+/*
+======================================
+    [ CSS TABLE OF CONTENTS ]
+======================================
+
+    [ Table of Contents ] [ BASIC AND COMMON STYLE FOR TOOLS SECTIONS ]
+
+    1. Title Style
+    2. Animation Effect
+    3. Main Container
+    4. Layout and Card Styling
+    5. Card Inner and Side
+    6. Media Queries for Responsiveness
+
+======================================
+    [ END CSS TABLE OF CONTENTS ]
+======================================
+*/
+
+/*
+======================================
+    [ BASE STYLES START ]
+======================================
+*/
+
 /* -------[ BASIC AND COMMON STYLE FOR TOOLS SECTIONS START ]------- */
 
 /* -------[ TITLE STYLE START ]------- */
@@ -11,7 +54,7 @@
     background-color: #f4f4f4;
     color: #575757;
     letter-spacing: 0.15rem;
-    font-weight: 100;  
+    font-weight: 100;
 }
 
 .tools-section .subtitle {
@@ -105,10 +148,10 @@
 
 /* -------[ MEDIA QUERIES FOR RESPONSIVENESS ]------- */
 
-/* Mobile screens (less than 768px) */
+/* -------[ MOBILE SCREENS (LESS THAN 768PX) ]------- */
 @media (max-width: 767px) {
     .card {
-        width: 100%; /* 1 card per row */
+        width: 100%;
     }
 
     .tools-section {
@@ -125,9 +168,17 @@
     }
 }
 
-/* All other screens (768px and up) */
+/* -------[ ALL OTHER SCREENS (768PX AND UP) ]------- */
 @media (min-width: 768px) {
     .card {
-        width: calc(50% - 10px); /* 2 cards per row */
+        width: calc(50% - 10px);
     }
 }
+
+/* -------[ BASIC AND COMMON STYLE FOR TOOLS SECTIONS END ]------- */
+
+/*
+======================================
+    [ BASE STYLES END ]
+======================================
+*/

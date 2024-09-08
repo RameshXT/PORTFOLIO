@@ -1,7 +1,55 @@
+/*
+======================================
+    [ TEMPLATE ]
+======================================
+
+    CSS File:   html.css
+    Template:   PortFolio | Ramesh
+    Category:   PortFolio Styles
+    Author:     Ramesh
+    Version:    1.0
+    
+    Design and Developed by: Ramesh
+
+======================================
+    [ END TEMPLATE ]
+======================================
+*/
+
+/*
+======================================
+    [ CSS TABLE OF CONTENTS ]
+======================================
+
+    [ Table of Contents ] [ RESET ]
+
+    [ HTML CARD STYLE ]
+    1. HTML Card Front Side
+    2. HTML Logo Styling
+    3. HTML Card Title and Tagline
+    4. HTML Learning Progress
+    5. Star Ratings
+    6. HTML Card Back Side
+    7. Key Services and Use Cases
+    8. Resource Links         
+
+======================================
+    [ END CSS TABLE OF CONTENTS ]
+======================================
+*/
+
+/*
+======================================
+    [ BASE STYLES START ]
+======================================
+*/
+
 /* -------[ HTML CARD STYLES START ]------- */
+
+/* -------[ FRONT SIDE OF THE HTML CARD ]------- */
 .card-html .card-front {
-    background-color: #EF652A; /* Dark Blue */
-    color: #FFFFFF; /* White */
+    background-color: #EF652A; /* DARK BLUE */
+    color: #FFFFFF; /* WHITE */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,71 +58,81 @@
     padding-top: 90px;
 }
 
+/* -------[ HTML LOGO IMAGE ]------- */
 .card-html .html-logo {
     width: 120px;
     height: auto;
 }
 
+/* -------[ HTML CARD TITLE ]------- */
 .card-html .card-title {
     font-size: 28px;
     font-weight: bold;
     margin-top: 15px;
-    color: #FFFFFF; /* White */
+    color: #FFFFFF; /* WHITE */
 }
 
+/* -------[ HTML CARD TAGLINE ]------- */
 .card-html .card-tagline {
     font-size: 18px;
     margin-top: 10px;
     margin-bottom: 20px;
-    color: #1B73BA; /* Blue */
+    color: #1B73BA; /* BLUE */
 }
 
+/* -------[ HTML LEARNING PROGRESS SECTION ]------- */
 .card-html .learning-progress {
     margin-top: auto;
     width: 100%;
     text-align: center;
 }
 
+/* -------[ LABEL FOR LEARNING PROGRESS ]------- */
 .card-html .learning-progress-label {
     font-size: 14px;
     margin-bottom: 5px;
-    color: #FFFFFF; /* White */
+    color: #FFFFFF; /* WHITE */
 }
 
+/* -------[ CONTAINER FOR STAR RATINGS ]------- */
 .card-html .star-container {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+/* -------[ INDIVIDUAL STAR STYLING ]------- */
 .card-html .star {
     font-size: 20px;
-    color: #0074B7; /* Blue */
+    color: #0074B7; /* BLUE */
     margin-right: 3px;
 }
 
+/* -------[ EMPTY STAR STYLING ]------- */
 .card-html .star.empty {
-    color: #FFFFFF; /* White */
+    color: #FFFFFF; /* WHITE */
 }
 
+/* -------[ HALF-FILLED STAR STYLING ]------- */
 .card-html .star.half {
     position: relative;
-    color: #FFFFFF; /* White */
+    color: #FFFFFF; /* WHITE */
 }
 
+/* -------[ OVERLAY FOR HALF-STAR EFFECT ]------- */
 .card-html .star.half::before {
     content: "★";
     position: absolute;
     left: 0;
-    color: #0074B7; /* Blue */
+    color: #0074B7; /* BLUE */
     width: 50%;
     overflow: hidden;
 }
 
-/* -------[ HTML BACK SIDE START ]------- */
+/* -------[ BACK SIDE OF THE HTML CARD ]------- */
 .card-html .card-back {
-    background-color: #ffffff; /* Light Gray */
-    color: #333333; /* Gray */
+    background-color: #ffffff; /* LIGHT GRAY */
+    color: #333333; /* GRAY */
     transform: rotateY(180deg);
     display: flex;
     flex-direction: column;
@@ -85,11 +143,13 @@
     max-height: 100%;
 }
 
+/* -------[ HTML CARD DESCRIPTION ]------- */
 .card-html .card-description {
     margin-bottom: 10px;
-    color: #333333; /* Gray */
+    color: #333333; /* GRAY */
 }
 
+/* -------[ GRID FOR KEY SERVICES SECTION ]------- */
 .card-html .key-services {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -97,33 +157,45 @@
     margin-bottom: 10px;
 }
 
+/* -------[ HEADER FOR KEY SERVICES SECTION ]------- */
 .card-html .key-services h4 {
     grid-column: span 2;
     margin-bottom: 10px;
-    color: #EF652A; /* Blue */
+    color: #EF652A; /* BLUE */
     font-size: 16px;
 }
 
+/* -------[ INDIVIDUAL SERVICE ITEM ]------- */
 .card-html .service-item {
     display: flex;
     align-items: center;
     font-size: 14px;
-    color: #333333; /* Gray */
+    color: #333333; /* GRAY */
 }
 
+/* -------[ ICON IN SERVICE ITEM ]------- */
 .card-html .service-item img {
     width: 20px;
     margin-right: 8px;
 }
 
+/* -------[ HTML USE CASES SECTION ]------- */
 .card-html .use-cases {
     margin-bottom: 10px;
-    color: #333333; /* Gray */
+    color: #333333; /* GRAY */
 }
 
+/* -------[ LINKS IN HTML RESOURCES SECTION ]------- */
 .card-html .resources a {
-    color: #EF652A; /* Blue */
+    color: #EF652A; /* BLUE */
     text-decoration: none;
     font-weight: bold;
 }
+
 /* -------[ HTML CARD STYLES END ]------- */
+
+/*
+======================================
+    [ BASE STYLES END ]
+======================================
+*/

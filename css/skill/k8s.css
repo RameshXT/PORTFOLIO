@@ -1,7 +1,55 @@
+/*
+======================================
+    [ TEMPLATE ]
+======================================
+
+    CSS File:   k8s.css
+    Template:   PortFolio | Ramesh
+    Category:   PortFolio Styles
+    Author:     Ramesh
+    Version:    1.0
+    
+    Design and Developed by: Ramesh
+
+======================================
+    [ END TEMPLATE ]
+======================================
+*/
+
+/*
+======================================
+    [ CSS TABLE OF CONTENTS ]
+======================================
+
+    [ Table of Contents ] [ RESET ]
+
+    [ KUBERNETES CARD STYLE ]
+    1. Kubernetes Card Front Side
+    2. Kubernetes Logo Styling
+    3. Kubernetes Card Title and Tagline
+    4. Kubernetes Learning Progress
+    5. Star Ratings
+    6. Kubernetes Card Back Side
+    7. Key Services and Use Cases
+    8. Resource Links         
+
+======================================
+    [ END CSS TABLE OF CONTENTS ]
+======================================
+*/
+
+/*
+======================================
+    [ BASE STYLES START ]
+======================================
+*/
+
 /* -------[ KUBERNETES CARD STYLES START ]------- */
+
+/* -------[ FRONT SIDE OF THE KUBERNETES CARD ]------- */
 .card-k8s .card-front {
-    background-color: #3970e4; 
-    color: #ffffff;
+    background-color: #3970e4; /* KUBERNETES BLUE */
+    color: #ffffff; /* WHITE */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,69 +58,81 @@
     padding-top: 90px;
 }
 
+/* -------[ KUBERNETES LOGO IMAGE ]------- */
 .card-k8s .k8s-logo {
     width: 120px;
     height: auto;
 }
 
+/* -------[ KUBERNETES CARD TITLE ]------- */
 .card-k8s .card-title {
     font-size: 28px;
     font-weight: bold;
     margin-top: 15px;
 }
 
+/* -------[ KUBERNETES CARD TAGLINE ]------- */
 .card-k8s .card-tagline {
     font-size: 18px;
     margin-top: 10px;
     margin-bottom: 20px;
-    color: #0c0c0c;
+    color: #0c0c0c; /* DARK GRAY */
 }
 
+/* -------[ KUBERNETES LEARNING PROGRESS SECTION ]------- */
 .card-k8s .learning-progress {
     margin-top: auto;
     width: 100%;
     text-align: center;
 }
 
+/* -------[ LABEL FOR LEARNING PROGRESS ]------- */
 .card-k8s .learning-progress-label {
     font-size: 14px;
     margin-bottom: 5px;
 }
 
+/* -------[ CONTAINER FOR STAR RATINGS ]------- */
 .card-k8s .star-container {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+/* -------[ INDIVIDUAL STAR STYLING ]------- */
 .card-k8s .star {
     font-size: 20px;
-    color: #0c0c0c;
+    color: #0c0c0c; /* DARK GRAY */
     margin-right: 3px;
 }
 
+/* -------[ EMPTY STAR STYLING ]------- */
 .card-k8s .star.empty {
-    color: #ffffff;
+    color: #ffffff; /* WHITE */
 }
 
+/* -------[ HALF-FILLED STAR STYLING ]------- */
 .card-k8s .star.half {
     position: relative;
-    color: #ffffff;
+    color: #ffffff; /* WHITE */
 }
 
+/* -------[ OVERLAY FOR HALF-STAR EFFECT ]------- */
 .card-k8s .star.half::before {
     content: "★";
     position: absolute;
     left: 0;
-    color: #0c0c0c;
+    color: #0c0c0c; /* DARK GRAY */
     width: 50%;
     overflow: hidden;
 }
 
-/* -------[ BACK SIDE STYLES FOR KUBERNETES CARD START ]------- */
+/* -------[ BACK SIDE OF THE KUBERNETES CARD ]------- */
+
+/* -------[ BACK SIDE OF THE KUBERNETES CARD ]------- */
 .card-k8s .card-back {
-    background-color: #9db8e9;
-    color: #0c0c0c;
+    background-color: #9db8e9; /* LIGHT BLUE */
+    color: #0c0c0c; /* DARK GRAY */
     transform: rotateY(180deg);
     display: flex;
     flex-direction: column;
@@ -83,10 +143,12 @@
     max-height: 100%;
 }
 
+/* -------[ KUBERNETES CARD DESCRIPTION ]------- */
 .card-k8s .card-description {
     margin-bottom: 10px;
 }
 
+/* -------[ GRID FOR KEY SERVICES SECTION ]------- */
 .card-k8s .key-services {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -94,32 +156,43 @@
     margin-bottom: 10px;
 }
 
+/* -------[ HEADER FOR KEY SERVICES SECTION ]------- */
 .card-k8s .key-services h4 {
     grid-column: span 2;
     margin-bottom: 10px;
-    color: #0f3074; 
+    color: #0f3074; /* DARK BLUE */
     font-size: 16px;
 }
 
+/* -------[ INDIVIDUAL SERVICE ITEM ]------- */
 .card-k8s .service-item {
     display: flex;
     align-items: center;
     font-size: 14px;
 }
 
+/* -------[ ICON IN SERVICE ITEM ]------- */
 .card-k8s .service-item img {
     width: 20px;
     margin-right: 8px;
 }
 
+/* -------[ KUBERNETES USE CASES SECTION ]------- */
 .card-k8s .use-cases {
     margin-bottom: 10px;
 }
 
+/* -------[ LINKS IN KUBERNETES RESOURCES SECTION ]------- */
 .card-k8s .resources a {
-    color: #0f3074;
+    color: #0f3074; /* DARK BLUE */
     text-decoration: none;
     font-weight: bold;
 }
 
 /* -------[ KUBERNETES CARD STYLES END ]------- */
+
+/*
+======================================
+    [ BASE STYLES END ]
+======================================
+*/

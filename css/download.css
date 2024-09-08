@@ -1,3 +1,44 @@
+/*
+======================================
+    [ TEMPLATE ]
+======================================
+
+    CSS File:   download.css
+    Template:   PortFolio | Ramesh
+    Category:   PortFolio Styles
+    Author:     Ramesh
+    Version:    1.0
+    
+    Design and Developed by: Ramesh
+
+======================================
+    [ END TEMPLATE ]
+======================================
+*/
+
+/*
+======================================
+    [ CSS TABLE OF CONTENTS ]
+======================================
+
+    [ Table of Contents ] [ RESET ]
+
+    [ STICKY DOWNLOAD BUTTON STYLE ]
+    1. Sticky Button
+    2. Button Hover State
+    3. Download Icon Styling
+
+======================================
+    [ END CSS TABLE OF CONTENTS ]
+======================================
+*/
+
+/*
+======================================
+    [ BASE STYLES START ]
+======================================
+*/
+
 /* -------[ STYLE FOR THE STICKY DOWNLOAD BUTTON ]------- */
 .sticky-button {
     position: fixed;
@@ -31,3 +72,9 @@
     height: 24px;
     fill: white;
 }
+
+/*
+======================================
+    [ BASE STYLES END ]
+======================================
+*/

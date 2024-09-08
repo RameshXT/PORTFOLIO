@@ -1,4 +1,52 @@
+/*
+======================================
+    [ TEMPLATE ]
+======================================
+
+    CSS File:   git.css
+    Template:   PortFolio | Ramesh
+    Category:   PortFolio Styles
+    Author:     Ramesh
+    Version:    1.0
+    
+    Design and Developed by: Ramesh
+
+======================================
+    [ END TEMPLATE ]
+======================================
+*/
+
+/*
+======================================
+    [ CSS TABLE OF CONTENTS ]
+======================================
+
+    [ Table of Contents ] [ RESET ]
+
+    [ GIT CARD STYLE ]
+    1. Git Card Front Side
+    2. Git Logo Styling
+    3. Git Card Title and Tagline
+    4. Git Learning Progress
+    5. Star Ratings
+    6. Git Card Back Side
+    7. Key Services and Use Cases
+    8. Resource Links         
+
+======================================
+    [ END CSS TABLE OF CONTENTS ]
+======================================
+*/
+
+/*
+======================================
+    [ BASE STYLES START ]
+======================================
+*/
+
 /* -------[ GIT CARD START ]------- */
+
+/* -------[ FRONT SIDE OF THE GIT CARD ]------- */
 .card-git .card-front {
     background-color: #f14e32;
     color: #fff;
@@ -10,17 +58,20 @@
     padding-top: 90px;
 }
 
+/* -------[ GIT LOGO IMAGE ]------- */
 .card-git .logo-git {
     width: 120px;
     height: auto;
 }
 
+/* -------[ GIT CARD TITLE ]------- */
 .card-git .card-title {
     font-size: 28px;
     font-weight: bold;
     margin-top: 15px;
 }
 
+/* -------[ GIT CARD TAGLINE ]------- */
 .card-git .card-tagline {
     font-size: 18px;
     margin-top: 10px;
@@ -28,38 +79,45 @@
     color: #005FA1;
 }
 
+/* -------[ GIT LEARNING PROGRESS SECTION ]------- */
 .card-git .learning-progress {
     margin-top: auto;
     width: 100%;
     text-align: center;
 }
 
+/* -------[ LABEL FOR LEARNING PROGRESS ]------- */
 .card-git .learning-progress-label {
     font-size: 14px;
     margin-bottom: 5px;
 }
 
+/* -------[ CONTAINER FOR STAR RATINGS ]------- */
 .card-git .star-container {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+/* -------[ INDIVIDUAL STAR STYLING ]------- */
 .card-git .star {
     font-size: 20px;
     color: #005FA1;
     margin-right: 3px;
 }
 
+/* -------[ EMPTY STAR STYLING ]------- */
 .card-git .star.empty {
     color: #ffffff;
 }
 
+/* -------[ HALF-FILLED STAR STYLING ]------- */
 .card-git .star.half {
     position: relative;
     color: #fff;
 }
 
+/* -------[ OVERLAY FOR HALF-STAR EFFECT ]------- */
 .card-git .star.half::before {
     content: "★";
     position: absolute;
@@ -70,6 +128,8 @@
 }
 
 /* -------[ GIT BACK SIDE ]------- */
+
+/* -------[ BACK SIDE OF THE GIT CARD ]------- */
 .card-git .card-back {
     background-color: #fff;
     color: #333;
@@ -83,10 +143,12 @@
     max-height: 100%;
 }
 
+/* -------[ GIT CARD DESCRIPTION ]------- */
 .card-git .card-description {
     margin-bottom: 10px;
 }
 
+/* -------[ GRID FOR KEY SERVICES SECTION ]------- */
 .card-git .key-services {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -94,6 +156,7 @@
     margin-bottom: 10px;
 }
 
+/* -------[ HEADER FOR KEY SERVICES SECTION ]------- */
 .card-git .key-services h4 {
     grid-column: span 2;
     margin-bottom: 10px;
@@ -101,21 +164,25 @@
     font-size: 16px;
 }
 
+/* -------[ INDIVIDUAL SERVICE ITEM ]------- */
 .card-git .service-item {
     display: flex;
     align-items: center;
     font-size: 14px;
 }
 
+/* -------[ ICON IN SERVICE ITEM ]------- */
 .card-git .service-item img {
     width: 20px;
     margin-right: 8px;
 }
 
+/* -------[ GIT USE CASES SECTION ]------- */
 .card-git .use-cases {
     margin-bottom: 10px;
 }
 
+/* -------[ LINKS IN GIT RESOURCES SECTION ]------- */
 .card-git .resources a {
     color: #005FA1;
     text-decoration: none;
@@ -123,3 +190,9 @@
 }
 
 /* -------[ GIT CARD END ]------- */
+
+/*
+======================================
+    [ BASE STYLES END ]
+======================================
+*/

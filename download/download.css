@@ -1,3 +1,75 @@
+/*
+======================================
+    [ TEMPLATE ]
+======================================
+
+    CSS File:   download.css
+    Template:   PortFolio | Ramesh
+    Category:   PortFolio Styles
+    Author:     Ramesh
+    Version:    1.0
+    
+    Design and Developed by: Ramesh
+
+======================================
+    [ END TEMPLATE ]
+======================================
+*/
+
+/*
+======================================
+    [ CSS TABLE OF CONTENTS ]
+======================================
+
+    [ Table of Contents ] [ RESET ]
+
+    [ BODY STYLES ]
+    1. General Styles
+    2. Background and Transition
+
+    [ HEADER SECTION ]
+    1. Header Background
+    2. Header Layout
+    3. Navigation Styles
+
+    [ RESPONSIVE STYLES ]
+    1. Media Queries for Header
+    2. Media Queries for Container
+    3. Media Queries for Form
+
+    [ CONTAINER STYLES ]
+    1. Grid Layout
+    2. Responsive Container
+
+    [ CARD STYLES ]
+    1. General Card Styling
+    2. Card Specific Colors
+    3. Button Specific Colors
+
+    [ FOOTER SECTION ]
+    1. Footer Layout
+    2. Footer Links
+    3. Social Icons
+
+    [ SMOOTH SCROLLING ]
+    1. Scroll Behavior
+
+    [ POPUP NOTIFICATION STYLES ]
+    1. Notification Layout
+    2. Notification Animation
+    3. Notification Responsive
+
+======================================
+    [ END CSS TABLE OF CONTENTS ]
+======================================
+*/
+
+/*
+======================================
+    [ BASE STYLES START ]
+======================================
+*/
+
 /* -------[ BODY STYLES START ]------- */
 body {
     font-family: Arial, sans-serif;
@@ -369,59 +441,57 @@ html {
 }
 /* -------[ SMOOTH SCROLLING STYLES END ]------- */
 
-
-
-
-
-
-
-
-
-
-/* Popup Notification Styles */
+/* -------[ POPUP NOTIFICATION STYLES START ]------- */
 .popup-notification {
     position: fixed;
-    top: -100px; /* Initially hidden */
+    top: -100px; 
     left: 50%;
     transform: translateX(-50%);
-    background-color: #4caf50; /* Green background for success */
+    background-color: #4caf50; 
     color: white;
     padding: 16px 24px;
-    border-radius: 8px; /* Rounded corners */
+    border-radius: 8px; 
     font-size: 16px;
     display: flex;
     align-items: center;
-    gap: 12px; /* Space between icon and text */
+    gap: 12px; 
     opacity: 0;
     transition: all 0.5s ease-in-out;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 9999;
-  }
+}
 
-  .popup-notification.show {
-    top: 20px; /* Centered from top */
+.popup-notification.show {
+    top: 20px;
     opacity: 1;
-  }
+}
 
-  .popup-notification .check-icon {
+.popup-notification .check-icon {
     width: 24px;
     height: 24px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-  }
+}
 
-  .popup-notification .check-icon svg {
+.popup-notification .check-icon svg {
     width: 18px;
     height: 18px;
-    fill: #4caf50; /* Green checkmark */
-  }
+    fill: #4caf50;
+}
 
-  /* Small media query for better responsiveness */
-  @media (max-width: 600px) {
+/* -------[ SMALL MEDIA QUERY FOR BETTER RESPONSIVENESS ]------- */
+@media (max-width: 600px) {
     .popup-notification {
-      padding: 12px 20px;
-      font-size: 14px;
+        padding: 12px 20px;
+        font-size: 14px;
     }
-  }
+}
+/* -------[ POPUP NOTIFICATION STYLES END ]------- */
+
+/*
+======================================
+    [ BASE STYLES END ]
+======================================
+*/

@@ -40,7 +40,7 @@
 */
 
 /* -------[ GENERAL STYLES ]------- */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap'); /* Importing the Inter font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap'); /* IMPORTING THE INTER FONT FROM GOOGLE FONTS */
 
 :root {
     --background-color: #fff;
@@ -65,6 +65,7 @@ body {
 body.loaded {
     opacity: 1;
 }
+
 /* -------[ SELECTION STYLE ]------- */
 ::selection {
     background: var(--selection-background);

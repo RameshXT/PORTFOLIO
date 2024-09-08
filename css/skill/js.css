@@ -1,7 +1,55 @@
+/*
+======================================
+    [ TEMPLATE ]
+======================================
+
+    CSS File:   js.css
+    Template:   PortFolio | Ramesh
+    Category:   PortFolio Styles
+    Author:     Ramesh
+    Version:    1.0
+    
+    Design and Developed by: Ramesh
+
+======================================
+    [ END TEMPLATE ]
+======================================
+*/
+
+/*
+======================================
+    [ CSS TABLE OF CONTENTS ]
+======================================
+
+    [ Table of Contents ] [ RESET ]
+
+    [ JS CARD STYLE ]
+    1. JavaScript Card Front Side
+    2. JavaScript Logo Styling
+    3. JavaScript Card Title and Tagline
+    4. JavaScript Learning Progress
+    5. Star Ratings
+    6. JavaScript Card Back Side
+    7. Key Services and Use Cases
+    8. Resource Links         
+
+======================================
+    [ END CSS TABLE OF CONTENTS ]
+======================================
+*/
+
+/*
+======================================
+    [ BASE STYLES START ]
+======================================
+*/
+
 /* -------[ JS CARD STYLES START ]------- */
+
+/* -------[ FRONT SIDE OF THE JS CARD ]------- */
 .card-js .card-front {
-    background-color: #FFDE25; /* JavaScript Yellow */
-    color: #323330; /* JavaScript Dark Gray */
+    background-color: #FFDE25; /* JAVASCRIPT YELLOW */
+    color: #323330; /* JAVASCRIPT DARK GRAY */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,71 +58,83 @@
     padding-top: 90px;
 }
 
+/* -------[ JS LOGO IMAGE ]------- */
 .card-js .js-logo {
     width: 120px;
     height: auto;
 }
 
+/* -------[ JS CARD TITLE ]------- */
 .card-js .card-title {
     font-size: 28px;
     font-weight: bold;
     margin-top: 15px;
-    color: #ffffff; /* JavaScript Dark Gray */
+    color: #ffffff; /* WHITE */
 }
 
+/* -------[ JS CARD TAGLINE ]------- */
 .card-js .card-tagline {
     font-size: 18px;
     margin-top: 10px;
     margin-bottom: 20px;
-    color: #323330; /* JavaScript Dark Gray */
+    color: #323330; /* JAVASCRIPT DARK GRAY */
 }
 
+/* -------[ JS LEARNING PROGRESS SECTION ]------- */
 .card-js .learning-progress {
     margin-top: auto;
     width: 100%;
     text-align: center;
 }
 
+/* -------[ LABEL FOR LEARNING PROGRESS ]------- */
 .card-js .learning-progress-label {
     font-size: 14px;
     margin-bottom: 5px;
-    color: #ffffff; /* JavaScript Dark Gray */
+    color: #ffffff; /* WHITE */
 }
 
+/* -------[ CONTAINER FOR STAR RATINGS ]------- */
 .card-js .star-container {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+/* -------[ INDIVIDUAL STAR STYLING ]------- */
 .card-js .star {
     font-size: 20px;
-    color: #323330; /* JavaScript Dark Gray */
+    color: #323330; /* JAVASCRIPT DARK GRAY */
     margin-right: 3px;
 }
 
+/* -------[ EMPTY STAR STYLING ]------- */
 .card-js .star.empty {
-    color: #FFFFFF; /* White */
+    color: #FFFFFF; /* WHITE */
 }
 
+/* -------[ HALF-FILLED STAR STYLING ]------- */
 .card-js .star.half {
     position: relative;
-    color: #FFFFFF; /* White */
+    color: #FFFFFF; /* WHITE */
 }
 
+/* -------[ OVERLAY FOR HALF-STAR EFFECT ]------- */
 .card-js .star.half::before {
     content: "★";
     position: absolute;
     left: 0;
-    color: #323330; /* JavaScript Dark Gray */
+    color: #323330; /* JAVASCRIPT DARK GRAY */
     width: 50%;
     overflow: hidden;
 }
 
-/* -------[ JS BACK SIDE START ]------- */
+/* -------[ BACK SIDE OF THE JS CARD ]------- */
+
+/* -------[ BACK SIDE OF THE JS CARD ]------- */
 .card-js .card-back {
-    background-color: #ffffff; /* JavaScript Dark Gray */
-    color: #000000; /* White */
+    background-color: #ffffff; /* WHITE */
+    color: #000000; /* BLACK */
     transform: rotateY(180deg);
     display: flex;
     flex-direction: column;
@@ -85,11 +145,13 @@
     max-height: 100%;
 }
 
+/* -------[ JS CARD DESCRIPTION ]------- */
 .card-js .card-description {
     margin-bottom: 10px;
-    color: #000000; /* White */
+    color: #000000; /* BLACK */
 }
 
+/* -------[ GRID FOR KEY SERVICES SECTION ]------- */
 .card-js .key-services {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -97,33 +159,45 @@
     margin-bottom: 10px;
 }
 
+/* -------[ HEADER FOR KEY SERVICES SECTION ]------- */
 .card-js .key-services h4 {
     grid-column: span 2;
     margin-bottom: 10px;
-    color: #F7DF1E; /* JavaScript Yellow */
+    color: #F7DF1E; /* JAVASCRIPT YELLOW */
     font-size: 16px;
 }
 
+/* -------[ INDIVIDUAL SERVICE ITEM ]------- */
 .card-js .service-item {
     display: flex;
     align-items: center;
     font-size: 14px;
-    color: #000000; /* White */
+    color: #000000; /* BLACK */
 }
 
+/* -------[ ICON IN SERVICE ITEM ]------- */
 .card-js .service-item img {
     width: 20px;
     margin-right: 8px;
 }
 
+/* -------[ JS USE CASES SECTION ]------- */
 .card-js .use-cases {
     margin-bottom: 10px;
-    color: #000000; /* White */
+    color: #000000; /* BLACK */
 }
 
+/* -------[ LINKS IN JS RESOURCES SECTION ]------- */
 .card-js .resources a {
-    color: #F7DF1E; /* JavaScript Yellow */
+    color: #F7DF1E; /* JAVASCRIPT YELLOW */
     text-decoration: none;
     font-weight: bold;
 }
+
 /* -------[ JS CARD STYLES END ]------- */
+
+/*
+======================================
+    [ BASE STYLES END ]
+======================================
+*/

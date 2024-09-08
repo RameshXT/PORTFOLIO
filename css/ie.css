@@ -1,11 +1,58 @@
-/* -------[ Box Model Issues ]------- */
+/*
+======================================
+    [ TEMPLATE ]
+======================================
+
+    CSS File:   styles.css
+    Template:   PortFolio | Ramesh
+    Category:   PortFolio Styles
+    Author:     Ramesh
+    Version:    1.0
+    
+    Design and Developed by: Ramesh
+
+======================================
+    [ END TEMPLATE ]
+======================================
+*/
+
+/*
+======================================
+    [ CSS TABLE OF CONTENTS ]
+======================================
+
+    [ Table of Contents ] [ COMPATIBILITY FIXES ]
+
+    1. Box Model Issues
+    2. Flexbox Issues (IE 10)
+    3. Double Margin on Floated Elements (IE 6)
+    4. PNG Transparency (IE 6)
+    5. Text Alignment Issues
+    6. Clearing Floats
+    7. Positioning Issues (Z-Index)
+    8. Placeholder Text in Forms (IE 9 and Below)
+    9. Button Styling
+    10. SVG Scaling Issues (IE 9)
+
+======================================
+    [ END CSS TABLE OF CONTENTS ]
+======================================
+*/
+
+/*
+======================================
+    [ BASE STYLES START ]
+======================================
+*/
+
+/* -------[ BOX MODEL ISSUES ]------- */
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 
-/* -------[ Flexbox Issues (IE 10) ]------- */
+/* -------[ FLEXBOX ISSUES (IE 10) ]------- */
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
     .flex-container {
         display: -ms-flexbox;
@@ -17,41 +64,41 @@
     }
 }
 
-/* -------[ Double Margin on Floated Elements (IE 6) ]------- */
+/* -------[ DOUBLE MARGIN ON FLOATED ELEMENTS (IE 6) ]------- */
 * html .float-element {
     display: inline;
 }
 
-/* -------[ PNG Transparency (IE 6) ]------- */
+/* -------[ PNG TRANSPARENCY (IE 6) ]------- */
 * html img {
     filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='path/to/image.png', sizingMethod='scale');
     background: none !important;
 }
 
-/* -------[ Text Alignment Issues ]------- */
+/* -------[ TEXT ALIGNMENT ISSUES ]------- */
 .text-block {
     text-align: justify;
 }
 
-/* -------[ Clearing Floats ]------- */
+/* -------[ CLEARING FLOATS ]------- */
 .clearfix:after {
     content: "";
     display: table;
     clear: both;
 }
 
-/* -------[ Positioning Issues (z-index) ]------- */
+/* -------[ POSITIONING ISSUES (Z-INDEX) ]------- */
 .stacked-element {
     position: relative;
     z-index: 10;
 }
 
-/* -------[ Placeholder Text in Forms (IE 9 and below) ]------- */
+/* -------[ PLACEHOLDER TEXT IN FORMS (IE 9 AND BELOW) ]------- */
 input[placeholder], textarea[placeholder] {
     color: #999;
 }
 
-/* -------[ Button Styling ]------- */
+/* -------[ BUTTON STYLING ]------- */
 button, input[type="button"], input[type="submit"] {
     background-color: #007bff;
     color: white;
@@ -60,8 +107,14 @@ button, input[type="button"], input[type="submit"] {
     cursor: pointer;
 }
 
-/* -------[ SVG Scaling Issues (IE 9) ]------- */
+/* -------[ SVG SCALING ISSUES (IE 9) ]------- */
 svg {
     width: 100%;
     height: auto;
 }
+
+/*
+======================================
+    [ BASE STYLES END ]
+======================================
+*/

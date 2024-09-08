@@ -1,4 +1,69 @@
-/* <!-- -------[ HEADER STYLES ]------- --> */
+/*
+======================================
+    [ TEMPLATE ]
+======================================
+
+    CSS File:   styles.css
+    Template:   PortFolio | Ramesh
+    Category:   PortFolio Styles
+    Author:     Ramesh
+    Version:    1.0
+    
+    Design and Developed by: Ramesh
+
+======================================
+    [ END TEMPLATE ]
+======================================
+*/
+
+/*
+======================================
+    [ CSS TABLE OF CONTENTS ]
+======================================
+
+    [ Table of Contents ] [ HEADER STYLES ]
+
+    1. Header
+    2. Logo
+    3. Navigation
+
+    [ RESUME STYLES ]
+    4. Container and Card
+    5. Card Header
+    6. Sections and Headings
+    7. Project Summary
+    8. GitHub Icon
+
+    [ TOOL GRID STYLES ]
+    9. Tool Grid
+
+    [ ACADEMIC TABLE STYLES ]
+    10. Academic Table
+
+    [ SELECTION AND SCROLLBAR STYLES ]
+    11. Selection Style
+    12. Scrollbar Styles
+
+    [ DARK MODE STYLES ]
+    13. Dark Mode
+
+    [ STICKY DOWNLOAD BUTTON ]
+    14. Sticky Button
+    15. Button Hover
+    16. Download Icon
+
+======================================
+    [ END CSS TABLE OF CONTENTS ]
+======================================
+*/
+
+/*
+======================================
+    [ BASE STYLES START ]
+======================================
+*/
+
+/* -------[ HEADER STYLES ]------- */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -12,9 +77,11 @@ body {
     opacity: 0;
     transition: opacity 1.5s ease-in-out;
 }
+
 body.loaded {
     opacity: 1;
 }
+
 header {
     display: flex;
     align-items: center;
@@ -33,7 +100,7 @@ header {
     font-weight: 100;
 }
 
-/* <!-- -------[ LOGO STYLES ]------- --> */
+/* -------[ LOGO STYLES ]------- */
 header .logo {
     flex: 1;
     display: flex;
@@ -46,7 +113,7 @@ header .logo img {
     mix-blend-mode: difference;
 }
 
-/* <!-- -------[ NAVIGATION STYLES ]------- --> */
+/* -------[ NAVIGATION STYLES ]------- */
 header nav {
     display: flex;
     align-items: center;
@@ -80,7 +147,7 @@ header nav ul li a.active {
     mix-blend-mode: normal;
 }
 
-/* <!-- -------[ RESPONSIVE STYLES ]------- --> */
+/* -------[ RESPONSIVE STYLES ]------- */
 @media (max-width: 1024px) {
     header {
         padding: 15px;
@@ -253,7 +320,7 @@ ul li {
     opacity: 0.7;
 }
 
-/* <!-- -------[ TOOL GRID STYLES ]------- --> */
+/* -------[ TOOL GRID STYLES ]------- */
 .tool-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -278,7 +345,7 @@ ul li {
     transform: scale(1.03);
 }
 
-/* <!-- -------[ ACADEMIC TABLE STYLES ]------- --> */
+/* -------[ ACADEMIC TABLE STYLES ]------- */
 .academic table {
     width: 100%;
     border-collapse: collapse;
@@ -302,7 +369,6 @@ ul li {
     color: #575757;
     font-size: 14px;
 }
-
 
 /* -------[ SELECTION STYLE ]------- */
 ::selection {
@@ -387,3 +453,9 @@ body {
     height: 24px;
     fill: white;
 }
+
+/*
+======================================
+    [ BASE STYLES END ]
+======================================
+*/

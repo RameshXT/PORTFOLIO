@@ -1,3 +1,49 @@
+/*
+======================================
+    [ TEMPLATE ]
+======================================
+
+    CSS File:   hireme.css
+    Template:   PortFolio | Ramesh
+    Category:   PortFolio Styles
+    Author:     Ramesh
+    Version:    1.0
+    
+    Design and Developed by: Ramesh
+
+======================================
+    [ END TEMPLATE ]
+======================================
+*/
+
+/*
+======================================
+    [ CSS TABLE OF CONTENTS ]
+======================================
+
+    [ GLOBAL STYLES ]
+    1. Global Styles
+    2. Selection Style
+    3. Dark Mode Styles
+    4. Body Styles
+    5. Header Section
+    6. Form Styles
+    7. Submit Button Styles
+    8. Footer Section
+    9. Sticky Download Button Styles
+    10. Scrollbar Styles
+
+======================================
+    [ END CSS TABLE OF CONTENTS ]
+======================================
+*/
+
+/*
+======================================
+    [ BASE STYLES START ]
+======================================
+*/
+
 /* -------[ GLOBAL STYLES ]------- */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
@@ -5,7 +51,7 @@
 ::selection {
     background: #626262;
     color: #ffffff;
-}   
+}
 
 /* -------[ DARK MODE STYLES ]------- */
 @media (prefers-color-scheme: dark) {
@@ -346,11 +392,11 @@ footer p {
 }
 
 /* -------[ HOVER STYLES FOR STICKY BUTTON ]------- */
-.sticky-button:hover
-
- {
+.sticky-button:hover {
     background-color: #000000;
-    transform: scale(1.1);
+    transform:
+
+ scale(1.1);
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
 }
 
@@ -360,11 +406,6 @@ footer p {
     height: 24px;
     fill: white;
 }
-
-
-
-
-
 
 /* -------[ SELECTION STYLE ]------- */
 ::selection {
@@ -415,3 +456,9 @@ body {
         --scrollbar-thumb-hover-color: #666;
     }
 }
+
+/*
+======================================
+    [ BASE STYLES END ]
+======================================
+*/

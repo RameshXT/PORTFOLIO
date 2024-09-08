@@ -1,17 +1,80 @@
-/* Initial hidden state */
+/*
+======================================
+    [ TEMPLATE ]
+======================================
+
+    CSS File:   contact.css
+    Template:   PortFolio | Ramesh
+    Category:   PortFolio Styles
+    Author:     Ramesh
+    Version:    1.0
+    
+    Design and Developed by: Ramesh
+
+======================================
+    [ END TEMPLATE ]
+======================================
+*/
+
+/*
+======================================
+    [ CSS TABLE OF CONTENTS ]
+======================================
+
+    [ Animation Styles ]
+    1. Hidden and Visible States
+
+    [ Contact Section Styles ]
+    1. Contact Section
+    2. Contact Section Heading
+    3. Form Styling
+    4. Input and Textarea Styling
+    5. Button Styling
+    6. Button After Effect
+    7. Button Hover Styles
+
+    [ CTA Section Styles ]
+    1. CTA Section
+    2. CTA Section Heading
+    3. Button Container
+    4. CTA Button Styling
+    5. Button After Effect
+    6. Button Hover Styles
+
+    [ Responsive Styles ]
+    1. Mobile Styles (max-width: 575.98px)
+    2. Tablet Styles (576px - 767.98px)
+    3. Small Desktop Styles (768px - 991.98px)
+    4. Medium Desktop Styles (992px - 1199.98px)
+    5. Large Desktop Styles (1200px and above)
+
+======================================
+    [ END CSS TABLE OF CONTENTS ]
+======================================
+*/
+
+/*
+======================================
+    [ BASE STYLES START ]
+======================================
+*/
+
+/* -------[ ANIMATION STYLES START ]------- */
+
 .hidden {
     opacity: 0;
-    transform: translateY(40px); /* Start 40px lower */
-    transition: opacity 2s ease-in-out, transform 2s ease-in-out; /* Smooth transition */
+    transform: translateY(40px);
+    transition: opacity 2s ease-in-out, transform 2s ease-in-out;
 }
 
-/* Visible state */
 .visible {
     opacity: 1;
-    transform: translateY(0); /* Move to original position */
+    transform: translateY(0);
 }
+
+/* -------[ CONTACT SECTION STYLES START ]------- */
+
 .contact-section {
-    /* background: #f0f0f0; */
     padding: 40px 20px;
     text-align: center;
     background-image: url(/assets/images/wave-up.png);
@@ -20,16 +83,17 @@
     background-size: cover;
 }
 
+/* -------[ CONTACT SECTION HEADING STYLES ]------- */
 .contact-section h2 {
     font-size: 2em;
     margin-bottom: 20px;
-    color: #B0B0B0;
-    mix-blend-mode: difference;
-    /* text-transform: uppercase; */
+    color: #B0B0B0; /* GRAY TEXT */
+    mix-blend-mode: difference; /* INVERT COLORS FOR CONTRAST */
     font-weight: 100;
     letter-spacing: 0.15rem;
 }
 
+/* -------[ FORM STYLES IN CONTACT SECTION ]------- */
 .contact-section form {
     display: flex;
     flex-direction: column;
@@ -38,36 +102,40 @@
     margin: 0 auto;
 }
 
+/* -------[ INPUT AND TEXTAREA STYLES ]------- */
 .contact-section input,
 .contact-section textarea {
     width: 100%;
     max-width: 500px;
     padding: 15px;
     margin: 10px 0;
-    border: 1px solid #ccc;
+    border: 1px solid #ccc; /* LIGHT GRAY BORDER */
     border-radius: 5px;
     box-sizing: border-box;
     transition: border-color 0.3s, box-shadow 0.3s;
     font-weight: 100;
 }
 
+/* -------[ TEXTAREA SPECIFIC STYLES ]------- */
 .contact-section textarea {
     resize: none;
-    mix-blend-mode: difference;
+    mix-blend-mode: difference; /* INVERT COLORS FOR CONTRAST */
 }
 
+/* -------[ FOCUS STYLES FOR INPUT AND TEXTAREA ]------- */
 .contact-section input:focus,
 .contact-section textarea:focus {
-    border-color: #B0B0B0;
-    box-shadow: 0 0 5px #575757;
+    border-color: #B0B0B0; /* GRAY BORDER ON FOCUS */
+    box-shadow: 0 0 5px #575757; /* DARK GRAY SHADOW ON FOCUS */
     outline: none;
 }
 
+/* -------[ BUTTON STYLES IN CONTACT SECTION ]------- */
 .contact-section button {
     padding: 15px 30px;
-    background: #fff;
-    color: #000;
-    border: 2px solid #000;
+    background: #fff; /* WHITE BACKGROUND */
+    color: #000; /* BLACK TEXT */
+    border: 2px solid #000; /* BLACK BORDER */
     border-radius: 5px;
     font-size: 1em;
     cursor: pointer;
@@ -75,11 +143,12 @@
     position: relative;
     overflow: hidden;
     transition: background-color 0.5s, color 0.5s, transform 0.3s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* LIGHT SHADOW */
     margin-top: 10px;
     max-width: 200px;
 }
 
+/* -------[ BUTTON AFTER EFFECT FOR CONTACT SECTION ]------- */
 .contact-section button:after {
     content: '»';
     position: absolute;
@@ -90,16 +159,19 @@
     transition: opacity 0.5s, right 0.5s;
 }
 
+/* -------[ BUTTON HOVER STYLES ]------- */
 .contact-section button:hover {
-    background-color: #000;
-    color: #fff;
+    background-color: #000; /* BLACK BACKGROUND ON HOVER */
+    color: #fff; /* WHITE TEXT ON HOVER */
 }
 
+/* -------[ BUTTON AFTER EFFECT ON HOVER ]------- */
 .contact-section button:hover:after {
     opacity: 1;
     right: 10px;
 }
 
+/* -------[ BUTTON SPAN TRANSITION ON HOVER ]------- */
 .contact-section button span {
     display: inline-block;
     transition: transform 0.5s;
@@ -109,17 +181,19 @@
     transform: translateX(-10px);
 }
 
+/* -------[ CTA SECTION STYLES START ]------- */
+
 .cta-section {
-    /* background: radial-gradient(circle, #000000 50%, #ffffff 50%); */
     background-image: url(/assets/images/curve-down.png);
     padding: 40px 20px;
     text-align: center;
-    color: #fff;
+    color: #fff; /* WHITE TEXT */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
+/* -------[ CTA SECTION HEADING STYLES ]------- */
 .cta-section h2 {
     font-size: 2.5em;
     margin-bottom: 30px;
@@ -127,6 +201,7 @@
     letter-spacing: 0.15rem;
 }
 
+/* -------[ BUTTON CONTAINER IN CTA SECTION ]------- */
 .cta-section .button-container {
     display: flex;
     flex-direction: row;
@@ -134,12 +209,13 @@
     gap: 10px;
 }
 
+/* -------[ BUTTON STYLES IN CTA SECTION ]------- */
 .cta-section button,
 .cta-section a.button {
     padding: 15px 30px;
-    background: #fff;
-    color: #000000;
-    border: 2px solid #fff;
+    background: #fff; /* WHITE BACKGROUND */
+    color: #000000; /* BLACK TEXT */
+    border: 2px solid #fff; /* WHITE BORDER */
     border-radius: 5px;
     font-size: 1em;
     cursor: pointer;
@@ -147,10 +223,11 @@
     position: relative;
     overflow: hidden;
     transition: background-color 0.5s, color 0.5s, transform 0.3s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* LIGHT SHADOW */
     max-width: 200px;
 }
 
+/* -------[ BUTTON AFTER EFFECT FOR CTA SECTION ]------- */
 .cta-section button:after,
 .cta-section a.button:after {
     content: '»';
@@ -162,18 +239,21 @@
     transition: opacity 0.5s, right 0.5s;
 }
 
+/* -------[ BUTTON HOVER STYLES IN CTA SECTION ]------- */
 .cta-section button:hover,
 .cta-section a.button:hover {
-    background-color: rgb(0, 0, 0);
-    color: #fff;
+    background-color: rgb(0, 0, 0); /* BLACK BACKGROUND ON HOVER */
+    color: #fff; /* WHITE TEXT ON HOVER */
 }
 
+/* -------[ BUTTON AFTER EFFECT ON HOVER IN CTA SECTION ]------- */
 .cta-section button:hover:after,
 .cta-section a.button:hover:after {
     opacity: 1;
     right: 10px;
 }
 
+/* -------[ BUTTON SPAN TRANSITION ON HOVER IN CTA SECTION ]------- */
 .cta-section button span,
 .cta-section a.button span {
     display: inline-block;
@@ -184,6 +264,8 @@
 .cta-section a.button:hover span {
     transform: translateX(-10px);
 }
+
+/* -------[ RESPONSIVE STYLES START ]------- */
 
 @media (max-width: 575.98px) {
     .contact-section h2 {
@@ -309,3 +391,11 @@
         font-size: 3em;
     }
 }
+
+/* -------[ ANIMATION STYLES END ]------- */
+
+/*
+======================================
+    [ BASE STYLES END ]
+======================================
+*/
