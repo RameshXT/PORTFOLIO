@@ -3,52 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sticky Download Icon</title>
+    <title>Resume Download</title>
+    <!-- Include Font Awesome for check icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* -------[ STYLE FOR THE STICKY DOWNLOAD BUTTON ]------- */
-        .sticky-button {
+        /* Basic reset for body */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Style for the custom notification popup */
+        .popup-notification {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 60px;
-            height: 60px;
-            background-color: black;
+            top: -100px; /* Start off-screen above the view */
+            left: 50%; /* Center horizontally */
+            transform: translateX(-50%); /* Center horizontally */
+            padding: 15px 20px;
+            background: linear-gradient(to right, #000, #fff); /* Black to white gradient */
+            color: black; /* Text color to stand out on gradient */
+            border-radius: 5px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            font-size: 14px;
+            text-align: center;
+            transition: top 0.8s ease-out, opacity 0.8s ease-out; /* Smooth and slow transition */
+            opacity: 0;
+        }
+
+        .popup-notification.show {
+            top: 20px; /* Move to visible area */
+            opacity: 1; /* Fully visible */
+        }
+
+        .popup-notification.hide {
+            top: -100px; /* Move back out of view */
+            opacity: 0; /* Fade out */
+        }
+
+        /* Style for the "GET RESUME" button */
+        #resume-download-btn {
+            background-color: #007bff;
             color: white;
             border: none;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            padding: 10px 20px;
+            font-size: 16px;
             cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-            text-decoration: none;
+            border-radius: 5px;
+            margin: 20px;
         }
 
-        /* -------[ STYLE FOR THE BUTTON WHEN HOVERED OVER ]------- */
-        .sticky-button:hover {
-            background-color: #333;
-            transform: scale(1.1);
-            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
-        }
-
-        /* -------[ STYLE FOR THE DOWNLOAD ICON ]------- */
-        .download-icon {
-            width: 24px;
-            height: 24px;
-            fill: white;
+        #resume-download-btn:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
 
-    <!-- -------[ STICKY DOWNLOAD BUTTON START ]------- -->
-    <a href="your-file.zip" class="sticky-button">
-        <svg class="download-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M12 16l4-4h-3V4h-2v8H8l4 4zM5 18v2h14v-2H5z"/>
-        </svg>
-    </a>
-    <!-- -------[ STICKY DOWNLOAD BUTTON END ]------- -->
+    <!-- Main content of your webpage -->
+    <section>
+        <button id="resume-download-btn"><span>GET RESUME</span></button>
+    </section>
+
+    <!-- Hidden Download Link -->
+    <a href="/assets/file/RameshKannaG-DevOps.Resume.pdf" download="" id="resume-link" style="display: none;"></a>
+
+    <!-- Custom Popup Notification -->
+    <div class="popup-notification" id="thankyou-popup">
+        <span class="icon"><i class="fas fa-check-circle"></i></span>
+        Thank you, the resume has been downloaded.
+    </div>
+
+    <script>
+        // Get elements
+        const resumeDownloadBtn = document.getElementById('resume-download-btn');   
+        const resumeLink = document.getElementById('resume-link');
+        const popupNotification = document.getElementById('thankyou-popup');
+
+        // Function to show the popup
+        function showThankYouPopup() {
+            // Reset the popup visibility
+            popupNotification.classList.remove('hide');
+            popupNotification.classList.add('show');
+
+            // Hide the popup after 2 seconds
+            setTimeout(() => {
+                popupNotification.classList.remove('show');
+                popupNotification.classList.add('hide');
+            }, 2000); // Display popup for 2 seconds
+        }
+
+        // Function to handle resume download and popup display
+        resumeDownloadBtn.addEventListener('click', (event) => {
+            event.preventDefault(); // Prevent default button behavior
+
+            // Trigger the hidden link click to download the resume
+            resumeLink.click();
+
+            // Show popup
+            showThankYouPopup();
+        });
+
+        // Ensure to reset the popup if already visible
+        popupNotification.addEventListener('transitionend', (event) => {
+            if (popupNotification.classList.contains('hide')) {
+                popupNotification.classList.remove('hide'); // Reset position for the next show
+            }
+        });
+    </script>
 
 </body>
 </html>
