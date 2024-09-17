@@ -43,7 +43,7 @@
  */
 
 
- /* -------[ SMOOTH TRANSITION FOR START UP ]------- */
+/* -------[ SMOOTH TRANSITION FOR START UP ]------- */
 window.addEventListener('load', () => {
     document.body.classList.add('loaded');
 });
@@ -327,7 +327,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Initial check in case sections are already in view on page load
+    handleScroll();
 });
 
 // /* -------[ Disable Right-Click (Context Menu) ]------- */               code Preventer
