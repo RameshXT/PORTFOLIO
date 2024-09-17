@@ -330,8 +330,18 @@ document.addEventListener('DOMContentLoaded', function () {
     handleScroll(); // Initial check in case sections are already in view on page load
 });
 
-/* -------[  ]------- */
-/* -------[  ]------- */
+// /* -------[ Disable Right-Click (Context Menu) ]------- */               code Preventer
+// document.addEventListener('contextmenu', function(e) {
+//     e.preventDefault();
+// });
+
+// /* -------[ Disable "Ctrl + C" or "Cmd + C" for Copying ]------- */
+// document.addEventListener('keydown', function(e) {
+//     if ((e.ctrlKey || e.metaKey) && e.key === 'c') {
+//         e.preventDefault();
+//     }
+// });
+
 /* -------[  ]------- */
 /* -------[  ]------- */
 /* -------[  ]------- */
