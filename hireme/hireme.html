@@ -41,10 +41,14 @@
     <!-- -------[ HEADER SECTION END ]------- -->
 
     <!-- -------[ MAIN CONTENT SECTION ]------- -->
-    <h2>HIRE ME</h2>
+    <h2>Hire Me</h2>
 
     <!-- -------[ FORM SECTION START ]------- -->
-    <form id="hireMeForm" method="POST" action="form-handler.php">
+    <form id="hireMeForm" action="https://api.web3forms.com/submit" method="POST">
+
+        <!-- Access Key -->
+        <input type="hidden" name="access_key" value="08d50f2f-d19a-4c1d-bc5e-dea22bce4820">
+        
         <!-- [ ROLE REQUIREMENTS TEXTAREA ] -->
         <label for="roleRequirements">Role Requirements:</label>
         <textarea id="roleRequirements" name="roleRequirements" rows="5" placeholder="What specific skills and experiences are essential for this role?" required></textarea>
@@ -107,11 +111,7 @@
     </a>
     <!-- -------[ STICKY DOWNLOAD BUTTON END ]------- -->
 
-    <!-- -------[ JS CODE ]------- -->
-    <script>
-        window.addEventListener('load', () => {
-            document.body.classList.add('loaded');
-        });
-    </script>
+    <!-- -------[ JS LINK ]------- -->
+    <script src="/hireme/hireme.js"></script>
 </body>
 </html>

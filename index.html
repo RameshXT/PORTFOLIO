@@ -1231,7 +1231,11 @@
     <!-- -------[ CONTACT START ]------- -->
     <section class="contact-section" id="contact"> <!-- section 1-->
         <h2 style="mix-blend-mode: difference;">Any Query? I'm here.</h2>
-        <form action="SendMessageServlet" method="post">
+        <form action="https://api.web3forms.com/submit" method="POST">
+
+            <!-- Access Key -->
+            <input type="hidden" name="access_key" value="08d50f2f-d19a-4c1d-bc5e-dea22bce4820">
+
             <input type="text" name="name" placeholder="Name" class="hidden" required>
             <input type="email" name="email" placeholder="Email Address" class="hidden" required>
             <input type="text" name="phone" placeholder="Mobile or Skype ID" class="hidden" required>
