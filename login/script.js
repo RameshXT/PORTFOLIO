@@ -20,3 +20,8 @@ function handleSubmit(event) {
         alert('There was an error: ' + error);
     });
 }
+
+/* -------[ SMOOTH ENTRY ]------- */
+window.addEventListener('load', () => {
+    document.body.classList.add('loaded');
+});
