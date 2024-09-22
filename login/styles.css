@@ -30,6 +30,8 @@
     6. Form Styles
     7. Button Styles
     8. Media Queries
+    9. Selection Style
+    10. Scrollbar Style
 
 ======================================
     [ END CSS TABLE OF CONTENTS ]
@@ -138,7 +140,11 @@ header nav ul li a.active {
 
 /* -------[ CARD STYLES ]------- */
 .card {
-    background: linear-gradient(151deg, white 50%, rgb(255, 255, 255) 50%);
+    /* background: linear-gradient(151deg, white 50%, rgb(255, 255, 255) 50%); */
+    background-image: url(/assets/images/login.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     color: #000;
     border-radius: 10px;
     padding: 50px;
@@ -223,11 +229,15 @@ button:hover span {
     
     header nav {
         margin-left: auto;
+        order: 2;
+        display: flex;
     }
 
     header nav ul {
         flex-direction: row;
         gap: 10px;
+        justify-content: flex-end;
+        margin-left: auto;
     }
 
     header nav ul li {
