@@ -11,7 +11,7 @@ function handleSubmit(event) {
     })
     .then(response => {
         if (response.ok) {
-            window.location.href = '/index.html';
+            window.location.href = '/home/index.html';
         } else {
             alert('There was a problem with your submission.');
         }
