@@ -93,6 +93,16 @@ pipeline
         //     }
         // }
 
+        stage("Deployment on kubernetes cluser")
+        {
+            steps
+            {
+                sh "kubectl apply -f deploy/service.yaml"
+                sh "kubectl port-forward deploy/service.yaml 5050:80"
+                sh "kubectl apply -f deploy/ingress.yaml"
+            }
+        }
+
         stage("Docker login")
         {
             steps
