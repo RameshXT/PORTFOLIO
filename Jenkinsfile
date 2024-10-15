@@ -78,20 +78,20 @@ pipeline
                 }
         }
 
-        stage("Running docker images")
-        {
-            steps
-            {
-                script
-                {
-                    def dockerImageTag = "rameshxt/portfolio-ramesh:${env.BUILD_NUMBER}"
+        // stage("Running docker images")
+        // {
+        //     steps
+        //     {
+        //         script
+        //         {
+        //             def dockerImageTag = "rameshxt/portfolio-ramesh:${env.BUILD_NUMBER}"
                     
-                    sh "sudo docker run -i -t -d --name portfolio-cont -p 5050:80 ${dockerImageTag}"
+        //             sh "sudo docker run -i -t -d --name portfolio-cont -p 5050:80 ${dockerImageTag}"
                     
-                    echo "Docker container 'Portfolio-cont' is running successfully."
-                }
-            }
-        }
+        //             echo "Docker container 'Portfolio-cont' is running successfully."
+        //         }
+        //     }
+        // }
 
         stage("Docker login")
         {
