@@ -73,7 +73,7 @@ pipeline
                     {
                         def dockerImageTag = "rameshxt/portfolio-ramesh:${env.BUILD_NUMBER}"
                         
-                        sh "sudo docker build -t ${dockerImageTag} /var/lib/jenkins/workspace/portfolio-ramesh~"
+                        sh "sudo docker build -t ${dockerImageTag} /var/lib/jenkins/workspace/portfolio-ramesh"
                     }
                 }
         }
