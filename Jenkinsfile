@@ -97,9 +97,9 @@ pipeline
         {
             steps
             {
-                sh "kubectl apply -f deploy/service.yaml"
-                sh "kubectl port-forward deploy/service.yaml 5050:80"
-                sh "kubectl apply -f deploy/ingress.yaml"
+                sh "kubectl apply -f /var/lib/jenkins/workspace/portfolio-ramesh/deploy/service.yaml"
+                sh "kubectl port-forward /var/lib/jenkins/workspace/portfolio-ramesh/deploy/service.yaml 5050:80"
+                sh "kubectl apply -f /var/lib/jenkins/workspace/portfolio-ramesh/deploy/ingress.yaml"
             }
         }
 
