@@ -99,7 +99,7 @@ pipeline
             {
                 withCredentials([string(credentialsId: 'Docker-Id', variable: 'Docker')]) 
                 {
-                    sh "sudo docker login -u rameshxt -p $Docker-Id"
+                    sh '''sudo docker login -u rameshxt -p $Docker'''
                     
                     echo "Docker login successful."
                 }
