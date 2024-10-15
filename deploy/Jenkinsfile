@@ -9,13 +9,13 @@ pipeline
             {
                 script
                 {
-                    def workspaceDir = "/var/lib/jenkins/workspace/portfolio/"
+                    def workspaceDir = "/var/lib/jenkins/workspace/portfolio-ramesh/"
                     
                     if (fileExists(workspaceDir))
                     {
                         sh "sudo rm -rf ${workspaceDir}*"
                     }
-                    else 
+                    else
                     {
                         echo "Workspace directory doesn't exist."
                     }
@@ -73,7 +73,7 @@ pipeline
                     {
                         def dockerImageTag = "rameshxt/portfolio-ramesh:${env.BUILD_NUMBER}"
                         
-                        sh "sudo docker build -t ${dockerImageTag} /var/lib/jenkins/workspace/portfolio/"
+                        sh "sudo docker build -t ${dockerImageTag} /var/lib/jenkins/workspace/portfolio-ramesh/deploy"
                     }
                 }
         }
@@ -86,9 +86,9 @@ pipeline
                 {
                     def dockerImageTag = "rameshxt/portfolio-ramesh:${env.BUILD_NUMBER}"
                     
-                    sh "sudo docker run -i -t -d --name highwaycont -p 80:80 ${dockerImageTag}"
+                    sh "sudo docker run -i -t -d --name portfolio-cont -p 5050:80 ${dockerImageTag}"
                     
-                    echo "Docker container 'Highway' running successfully."
+                    echo "Docker container 'Portfolio-cont' is running successfully."
                 }
             }
         }
@@ -97,7 +97,7 @@ pipeline
         {
             steps
             {
-                withCredentials([string(credentialsId: "DockerId", variable: "Docker")]) 
+                withCredentials([string(credentialsId: "DockerId", variable: "Docker-login")]) 
                 {
                     sh "sudo docker login -u rameshxt -p $Docker"
                     
@@ -105,13 +105,14 @@ pipeline
                 }
             }
         }
+
         stage("Pushing image to dockerHUB")
         {
             steps
             {
                 script
                 {
-                    def dockerImageTag = "rameshxt/automate-highway:${env.BUILD_NUMBER}"
+                    def dockerImageTag = "rameshxt/portfolio-ramesh:${env.BUILD_NUMBER}"
                     
                     sh "sudo docker push ${dockerImageTag}"
                     
