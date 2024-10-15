@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: portfolio-service
+spec:
+  selector:
+    app: portfolio  # Must match the labels in your Deployment
+  ports:
+    - protocol: TCP
+      port: 80       # Exposed port
+      targetPort: 80 # Port where your container is running
+      nodePort: 5050 # The port you want to expose externally
+
+  type: LoadBalancer  # Use LoadBalancer or NodePort to expose the app externally
