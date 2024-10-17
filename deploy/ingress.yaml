@@ -1,16 +1,16 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: portfolio-ingress
+  name: ingress
 spec:
   rules:
-  - host: portfolio.example.com  # Use your domain
+  - host: rameshkanna.devops.tech  # Your domain name
     http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: portfolio-service  # Matches the service name
+            name: service  # Matches your Service name
             port:
               number: 80

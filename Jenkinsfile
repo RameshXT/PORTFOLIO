@@ -71,7 +71,7 @@ pipeline
             {
                     script
                     {
-                        def dockerImageTag = "rameshxt/portfolio-ramesh:${env.BUILD_NUMBER}"
+                        def dockerImageTag = "rameshxt/portfolio-ramesh:V.1.${env.BUILD_NUMBER}"
                         
                         sh "sudo docker build -t ${dockerImageTag} /var/lib/jenkins/workspace/portfolio-ramesh"
                     }
@@ -84,7 +84,7 @@ pipeline
         //     {
         //         script
         //         {
-        //             def dockerImageTag = "rameshxt/portfolio-ramesh:${env.BUILD_NUMBER}"
+        //             def dockerImageTag = "rameshxt/portfolio-ramesh:V.1.${env.BUILD_NUMBER}"
                     
         //             sh "sudo docker run -i -t -d --name portfolio-cont -p 5050:80 ${dockerImageTag}"
                     
@@ -122,7 +122,7 @@ pipeline
             {
                 script
                 {
-                    def dockerImageTag = "rameshxt/portfolio-ramesh:${env.BUILD_NUMBER}"
+                    def dockerImageTag = "rameshxt/portfolio-ramesh:V.1.${env.BUILD_NUMBER}"
                     
                     sh "sudo docker push ${dockerImageTag}"
                     

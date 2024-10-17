@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: portfolio
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: portfolio
@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: portfolio-container
-        image: rameshxt/portfolio-ramesh:26  # Update the image tag here
+        image: rameshxt/portfolio-ramesh:27
         ports:
         - containerPort: 80
