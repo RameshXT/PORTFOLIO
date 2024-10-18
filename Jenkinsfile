@@ -129,6 +129,13 @@ pipeline
                     echo "Docker image ${dockerImageTag} pushed to DockerHub successfully."
                 }
             }
-        }  
+        }
+        stage("Deploying on Kubernetes")
+        {
+            steps
+            {
+                sh "bash /var/lib/jenkins/workspace/portfolio-ramesh/deploy/bash.sh"
+            }
+        }
     }
 }
