@@ -8,6 +8,7 @@ SERVICE_NAME="portfolio-service"
 setup_port_forwarding() {
   echo "Setting up port forwarding on port 30050..."
   nohup kubectl port-forward service/${SERVICE_NAME} 30050:80 --address 0.0.0.0 > port_forward.log 2>&1 &
+  disown  # Detach the process from the shell
 }
 
 # Function to delete existing deployment and service, but not the default service
