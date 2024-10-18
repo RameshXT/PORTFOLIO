@@ -93,15 +93,15 @@ pipeline
         //     }
         // }
 
-        stage("Deployment on kubernetes cluser")
-        {
-            steps
-            {
-                sh "kubectl apply -f /var/lib/jenkins/workspace/portfolio-ramesh/deploy/service.yaml"
-                sh "kubectl port-forward /var/lib/jenkins/workspace/portfolio-ramesh/deploy/service.yaml 5050:80"
-                sh "kubectl apply -f /var/lib/jenkins/workspace/portfolio-ramesh/deploy/ingress.yaml"
-            }
-        }
+        // stage("Deployment on kubernetes cluser")
+        // {
+        //     steps
+        //     {
+        //         sh "kubectl apply -f /var/lib/jenkins/workspace/portfolio-ramesh/deploy/service.yaml"
+        //         sh "kubectl port-forward /var/lib/jenkins/workspace/portfolio-ramesh/deploy/service.yaml 5050:80"
+        //         sh "kubectl apply -f /var/lib/jenkins/workspace/portfolio-ramesh/deploy/ingress.yaml"
+        //     }
+        // }
 
         stage("Docker login")
         {
