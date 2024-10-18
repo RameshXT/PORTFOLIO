@@ -10,9 +10,9 @@ setup_port_forwarding() {
   nohup kubectl port-forward service/${SERVICE_NAME} 30050:80 --address 0.0.0.0 > port_forward.log 2>&1 &
 }
 
-# Function to delete existing deployment, service, and port forwarding
+# Function to delete existing deployment and service, but not the default service
 cleanup() {
-  echo "Deleting existing deployment and service..."
+  echo "Deleting existing deployment and custom service..."
   kubectl delete deployment ${POD_NAME} || true
   kubectl delete service ${SERVICE_NAME} || true
 
