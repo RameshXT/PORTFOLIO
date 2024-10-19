@@ -130,7 +130,7 @@ pipeline
                     echo "Docker image ${dockerImageTag} pushed to Docker Hub successfully."
 
                     // Tag the image as latest
-                    sh "sudo docker tag ${dockerImageLatestTag}"
+                    sh "sudo docker tag ${dockerImageTag} ${dockerImageLatestTag}"
 
                     // Push the latest image
                     sh "sudo docker push ${dockerImageLatestTag}"
