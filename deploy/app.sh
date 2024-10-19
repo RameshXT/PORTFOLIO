@@ -194,6 +194,43 @@ check_jenkins_password_file() {
 # Execute the function to retrieve Jenkins password
 sudo bash -c "$(declare -f check_jenkins_password_file); check_jenkins_password_file"
 
+# -------[ GIVING PERMISSION FOR JENKINS USER /etc/sudoers ]-------
+USER="jenkins"
+
+# Check if the user exists in /etc/passwd
+if grep -q "^$USER:" /etc/passwd; then
+    # Check if the user already has sudo permissions
+    if ! sudo grep -q "^$USER " /etc/sudoers; then
+        # Use visudo to safely edit the sudoers file
+        echo "$USER ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers > /dev/null
+        echo "Added $USER to sudoers with no password requirement."
+    else
+        echo "$USER already has sudo permissions."
+    fi
+else
+    echo "User $USER not found in /etc/passwd."
+fi
+
+# Verify the change
+if sudo grep -q "^$USER " /etc/sudoers; then
+    echo "$USER has been successfully added to sudoers."
+else
+    echo "Failed to add $USER to sudoers."
+fi
+
+# -------[ GIVING COMMAND RUN PERMISSION FOR JENKINS /etc/passwd ]-------
+# Define the file to be modified
+PASSWD_FILE="/etc/passwd"
+
+# Check if the Jenkins user's shell is already /bin/bash
+if grep -q "^jenkins:[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:/bin/bash" "$PASSWD_FILE"; then
+    echo "Jenkins user shell is already set to /bin/bash."
+else
+    # Use sed to replace '/bin/false' with '/bin/bash' for the Jenkins user
+    sudo sed -i 's|^jenkins:[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:/bin/false|jenkins:x:992:992:Jenkins Automation Server:/var/lib/jenkins:/bin/bash|' "$PASSWD_FILE"
+    echo "Replaced /bin/false with /bin/bash for the Jenkins user."
+fi
+
 
 # -------[ DISK SPACE CHECK ]-------
 disk_data=($(df -h --output=source,pcent,target | tail -n +2))
@@ -212,31 +249,3 @@ for ((i = 0; i < ${#disk_data[@]}; i+=3)); do
     echo -e "[${bar//=/▓} ${usage}]\n"
 done
 echo "=============================="
-
-# GIVING PERMISSION FOR JENKINS USER /etc/sudoers
-USER="jenkins"
-
-# Check if the user exists in /etc/passwd
-if grep -q "^$USER:" /etc/passwd; then
-    # Use visudo to safely edit the sudoers file
-    echo "$USER ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers > /dev/null
-    echo "Added $USER to sudoers with no password requirement."
-else
-    echo "User $USER not found in /etc/passwd."
-fi
-
-# Verify the change
-if sudo grep "^$USER " /etc/sudoers; then
-    echo "$USER has been successfully added to sudoers."
-else
-    echo "Failed to add $USER to sudoers."
-fi
-
-# GIVING COMMAND RUN PERMISSION FOR JENKINS /etc/passwd
-# Define the file to be modified
-PASSWD_FILE="/etc/passwd"
-
-# Use sed to replace '/bin/false' with '/bin/bash' for the Jenkins user
-sudo sed -i 's|^jenkins:[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:/bin/false|jenkins:x:992:992:Jenkins Automation Server:/var/lib/jenkins:/bin/bash|' "$PASSWD_FILE"
-
-echo "Replaced /bin/false with /bin/bash for the Jenkins user."
