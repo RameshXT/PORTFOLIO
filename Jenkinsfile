@@ -71,7 +71,7 @@ pipeline
             {
                     script
                     {
-                        def dockerImageTag = "rameshxt/portfolio-ramesh:V.0.0.1:${env.BUILD_NUMBER}"
+                        def dockerImageTag = "rameshxt/portfolio-ramesh:v.0.0.1:${env.BUILD_NUMBER}"
                         
                         sh "sudo docker build -t ${dockerImageTag} /var/lib/jenkins/workspace/portfolio-ramesh"
                     }
@@ -122,7 +122,7 @@ pipeline
             {
                 script
                 {
-                    def dockerImageTag = "rameshxt/portfolio-ramesh:V.0.0.1:${env.BUILD_NUMBER}"
+                    def dockerImageTag = "rameshxt/portfolio-ramesh:v.0.0.1:${env.BUILD_NUMBER}"
                     def dockerImageLatestTag = "rameshxt/portfolio-ramesh:latest"
 
                     // Push the versioned image

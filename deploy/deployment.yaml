@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: portfolio-container
-        image: rameshxt/portfolio-ramesh:27
+        image: rameshxt/portfolio-ramesh:latest
         ports:
         - containerPort: 80
