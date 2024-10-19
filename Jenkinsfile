@@ -67,32 +67,39 @@ pipeline
         // }
 
 
-        stage("Deleting existing images and containers") {
+        stage("Deleting Existing Images and Containers") {
     steps {
         script {
-            // Get the IDs of all containers that are not related to Minikube
-            def containers = sh(script: "sudo docker ps -a -q | grep -v 'k8s_'", returnStdout: true).trim()
+            // Define the image and container to keep
+            def keepImage = "gcr.io/k8s-minikube/kicbase:v0.0.45"
+            def keepContainer = "minikube"
+
+            // Get a list of all container IDs
+            def containers = sh(script: "sudo docker ps -a -q", returnStdout: true).trim()
             
             if (containers) {
-                sh "sudo docker stop $containers"
-                sh "sudo docker rm $containers"
-                echo "Containers successfully deleted!!"
+                // Stop and remove all containers except the specified one
+                sh "sudo docker ps -q | grep -v $keepContainer | xargs -r sudo docker stop"
+                sh "sudo docker ps -a -q | grep -v $keepContainer | xargs -r sudo docker rm"
+                echo "Containers successfully deleted, except '$keepContainer'!"
             } else {
-                echo "No containers are there to delete!!"
+                echo "No containers are there to delete!"
             }
-
-            // Get the IDs of all images that are not related to Minikube
-            def images = sh(script: "sudo docker images -q | grep -v 'k8s.gcr.io'", returnStdout: true).trim()
+            
+            // Get a list of all image IDs
+            def images = sh(script: "sudo docker images -q", returnStdout: true).trim()
             
             if (images) {
-                sh "sudo docker rmi $images"
-                echo "Images successfully deleted!!"
+                // Remove all images except the specified one
+                sh "sudo docker images -q | grep -v $(sudo docker images --filter=reference=$keepImage -q) | xargs -r sudo docker rmi"
+                echo "Images successfully deleted, except '$keepImage'!"
             } else {
-                echo "No images are there to delete!!"
+                echo "No images are there to delete!"
             }
         }
     }
 }
+
 
         stage("Building dockerfile")
         {
@@ -100,7 +107,7 @@ pipeline
             {
                     script
                     {
-                        def dockerImageTag = "rameshxt/portfolio-ramesh:v.0.0.1:${env.BUILD_NUMBER}"
+                        def dockerImageTag = "rameshxt/portfolio-ramesh:v.0.0.1-${env.BUILD_NUMBER}"
                         
                         sh "sudo docker build -t ${dockerImageTag} /var/lib/jenkins/workspace/portfolio-ramesh"
                     }
@@ -151,7 +158,7 @@ pipeline
             {
                 script
                 {
-                    def dockerImageTag = "rameshxt/portfolio-ramesh:v.0.0.1:${env.BUILD_NUMBER}"
+                    def dockerImageTag = "rameshxt/portfolio-ramesh:v.0.0.1-${env.BUILD_NUMBER}"
                     def dockerImageLatestTag = "rameshxt/portfolio-ramesh:latest"
 
                     // Push the versioned image
