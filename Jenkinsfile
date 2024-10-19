@@ -32,39 +32,68 @@ pipeline
                 }
             }
         }
-        stage("Deleting exiting images and container")
-        {
-            steps
-            {
-                script
-                {
-                    def containers = sh(script: "sudo docker ps -a -q", returnStdout: true).trim()
+        // stage("Deleting exiting images and container")
+        // {
+        //     steps
+        //     {
+        //         script
+        //         {
+        //             def containers = sh(script: "sudo docker ps -a -q", returnStdout: true).trim()
                     
-                    if (containers)
-                    {
-                        sh "sudo docker stop $containers"
-                        sh "sudo docker rm $containers"
-                        echo "Containers successfully deleted!!"
-                    }
-                    else
-                    {
-                        echo "No containers are there to delete!!"
-                    }
+        //             if (containers)
+        //             {
+        //                 sh "sudo docker stop $containers"
+        //                 sh "sudo docker rm $containers"
+        //                 echo "Containers successfully deleted!!"
+        //             }
+        //             else
+        //             {
+        //                 echo "No containers are there to delete!!"
+        //             }
                     
-                    def images = sh(script: "sudo docker images -q", returnStdout: true).trim()
+        //             def images = sh(script: "sudo docker images -q", returnStdout: true).trim()
                     
-                    if (images)
-                    {
-                        sh "sudo docker rmi $images"
-                        echo "Images successfully deleted!!"
-                    }
-                    else
-                    {
-                        echo "No images are there to delete!!"
-                    }
-                }
+        //             if (images)
+        //             {
+        //                 sh "sudo docker rmi $images"
+        //                 echo "Images successfully deleted!!"
+        //             }
+        //             else
+        //             {
+        //                 echo "No images are there to delete!!"
+        //             }
+        //         }
+        //     }
+        // }
+
+
+        stage("Deleting existing images and containers") {
+    steps {
+        script {
+            // Get the IDs of all containers that are not related to Minikube
+            def containers = sh(script: "sudo docker ps -a -q | grep -v 'k8s_'", returnStdout: true).trim()
+            
+            if (containers) {
+                sh "sudo docker stop $containers"
+                sh "sudo docker rm $containers"
+                echo "Containers successfully deleted!!"
+            } else {
+                echo "No containers are there to delete!!"
+            }
+
+            // Get the IDs of all images that are not related to Minikube
+            def images = sh(script: "sudo docker images -q | grep -v 'k8s.gcr.io'", returnStdout: true).trim()
+            
+            if (images) {
+                sh "sudo docker rmi $images"
+                echo "Images successfully deleted!!"
+            } else {
+                echo "No images are there to delete!!"
             }
         }
+    }
+}
+
         stage("Building dockerfile")
         {
             steps
