@@ -183,6 +183,7 @@ stage("Docker login") {
             {
                 // sh "bash /var/lib/jenkins/workspace/portfolio-ramesh/deploy/bash.sh"
                 // sh "ansible-playbook /var/lib/jenkins/workspace/portfolio-ramesh/deploy/playbook.yaml"
+                sh "git --version"
             }
         }
     }
