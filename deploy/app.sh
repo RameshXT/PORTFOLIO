@@ -212,3 +212,31 @@ for ((i = 0; i < ${#disk_data[@]}; i+=3)); do
     echo -e "[${bar//=/▓} ${usage}]\n"
 done
 echo "=============================="
+
+# GIVING PERMISSION FOR JENKINS USER /etc/sudoers
+USER="jenkins"
+
+# Check if the user exists in /etc/passwd
+if grep -q "^$USER:" /etc/passwd; then
+    # Use visudo to safely edit the sudoers file
+    echo "$USER ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers > /dev/null
+    echo "Added $USER to sudoers with no password requirement."
+else
+    echo "User $USER not found in /etc/passwd."
+fi
+
+# Verify the change
+if sudo grep "^$USER " /etc/sudoers; then
+    echo "$USER has been successfully added to sudoers."
+else
+    echo "Failed to add $USER to sudoers."
+fi
+
+# GIVING COMMAND RUN PERMISSION FOR JENKINS /etc/passwd
+# Define the file to be modified
+PASSWD_FILE="/etc/passwd"
+
+# Use sed to replace '/bin/false' with '/bin/bash' for the Jenkins user
+sudo sed -i 's|^jenkins:[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:/bin/false|jenkins:x:992:992:Jenkins Automation Server:/var/lib/jenkins:/bin/bash|' "$PASSWD_FILE"
+
+echo "Replaced /bin/false with /bin/bash for the Jenkins user."
