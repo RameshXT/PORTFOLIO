@@ -108,7 +108,7 @@ pipeline
             {
                     script
                     {
-                        def dockerImageTag = "rameshxt/portfolio-ramesh:v.0.0.1-${env.BUILD_NUMBER}"
+                        def dockerImageTag = "rameshxt/portfolio-ramesh:v1.0.0.${env.BUILD_NUMBER}"
                         
                         sh "sudo docker build -t ${dockerImageTag} /var/lib/jenkins/workspace/portfolio-ramesh"
                     }
@@ -160,7 +160,7 @@ stage("Docker login") {
             {
                 script
                 {
-                    def dockerImageTag = "rameshxt/portfolio-ramesh:v.0.0.1-${env.BUILD_NUMBER}"
+                    def dockerImageTag = "rameshxt/portfolio-ramesh:v1.0.0.${env.BUILD_NUMBER}"
                     def dockerImageLatestTag = "rameshxt/portfolio-ramesh:latest"
 
                     // Push the versioned image
@@ -182,7 +182,7 @@ stage("Docker login") {
             steps
             {
                 // sh "bash /var/lib/jenkins/workspace/portfolio-ramesh/deploy/bash.sh"
-                sh "ansible-playbook /var/lib/jenkins/workspace/portfolio-ramesh/deploy/playbook.yaml"
+                // sh "ansible-playbook /var/lib/jenkins/workspace/portfolio-ramesh/deploy/playbook.yaml"
             }
         }
     }
