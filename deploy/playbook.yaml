@@ -1,7 +1,6 @@
 ---
 - name: Manage Kubernetes deployment and service with port forwarding
   hosts: localhost
-  become: true
   tasks:
 
     - name: Check if Minikube is running
@@ -10,7 +9,7 @@
       ignore_errors: true
 
     - name: Start Minikube if not running
-      shell: minikube start
+      shell: minikube start --driver=none  # Changed to use 'none' driver
       when: minikube_running.rc != 0
 
     - name: Clean up existing deployment and service
