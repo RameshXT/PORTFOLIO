@@ -139,14 +139,18 @@ pipeline
         //     }
         // }
 
-        stage("Docker login") {
+stage("Docker login") {
     steps {
         withCredentials([string(credentialsId: 'Doc', variable: 'Docker')]) {
-            sh "sudo docker login -u rameshxt -p $Docker"
+            // Use an environment variable to avoid exposing the secret
+            sh '''
+                sudo docker login -u rameshxt -p "$Docker"
+            '''
             echo "Docker login successful."
         }
     }
 }
+
 
 
         stage("Pushing image to Docker Hub")
