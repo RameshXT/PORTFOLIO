@@ -79,9 +79,9 @@ pipeline
             
             if (containers) {
                 // Stop and remove all containers except the specified one
-                sh "sudo docker ps -q | grep -v $keepContainer | xargs -r sudo docker stop"
-                sh "sudo docker ps -a -q | grep -v $keepContainer | xargs -r sudo docker rm"
-                echo "Containers successfully deleted, except '$keepContainer'!"
+                sh "sudo docker ps -q | grep -v ${keepContainer} | xargs -r sudo docker stop"
+                sh "sudo docker ps -a -q | grep -v ${keepContainer} | xargs -r sudo docker rm"
+                echo "Containers successfully deleted, except '${keepContainer}'!"
             } else {
                 echo "No containers are there to delete!"
             }
@@ -91,8 +91,8 @@ pipeline
             
             if (images) {
                 // Remove all images except the specified one
-                sh "sudo docker images -q | grep -v $(sudo docker images --filter=reference=$keepImage -q) | xargs -r sudo docker rmi"
-                echo "Images successfully deleted, except '$keepImage'!"
+                sh "sudo docker images -q | grep -v \$(sudo docker images --filter=reference=${keepImage} -q) | xargs -r sudo docker rmi"
+                echo "Images successfully deleted, except '${keepImage}'!"
             } else {
                 echo "No images are there to delete!"
             }
