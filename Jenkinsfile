@@ -139,18 +139,15 @@ pipeline
         //     }
         // }
 
-        stage("Docker login")
-        {
-            steps
-            {
-                withCredentials([string(credentialsId: 'Docker-Id', variable: 'Docker')]) 
-                {
-                    sh '''sudo docker login -u rameshxt -p $Docker'''
-                    
-                    echo "Docker login successful."
-                }
-            }
+        stage("Docker login") {
+    steps {
+        withCredentials([string(credentialsId: 'Doc', variable: 'Docker')]) {
+            sh "sudo docker login -u rameshxt -p $Docker"
+            echo "Docker login successful."
         }
+    }
+}
+
 
         stage("Pushing image to Docker Hub")
         {
