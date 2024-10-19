@@ -76,11 +76,11 @@ pipeline
 
             // Get a list of all container IDs
             def containers = sh(script: "sudo docker ps -a -q", returnStdout: true).trim()
-            
+
             if (containers) {
                 // Stop and remove all containers except the specified one
-                sh "sudo docker ps -q | grep -v ${keepContainer} | xargs -r sudo docker stop"
-                sh "sudo docker ps -a -q | grep -v ${keepContainer} | xargs -r sudo docker rm"
+                sh "sudo docker ps -q | grep -v \$(sudo docker ps --filter 'name=${keepContainer}' -q) | xargs -r sudo docker stop"
+                sh "sudo docker ps -a -q | grep -v \$(sudo docker ps --filter 'name=${keepContainer}' -q) | xargs -r sudo docker rm"
                 echo "Containers successfully deleted, except '${keepContainer}'!"
             } else {
                 echo "No containers are there to delete!"
@@ -88,10 +88,10 @@ pipeline
             
             // Get a list of all image IDs
             def images = sh(script: "sudo docker images -q", returnStdout: true).trim()
-            
+
             if (images) {
                 // Remove all images except the specified one
-                sh "sudo docker images -q | grep -v \$(sudo docker images --filter=reference=${keepImage} -q) | xargs -r sudo docker rmi"
+                sh "sudo docker images -q | grep -v \$(sudo docker images --filter=reference=${keepImage} -q) | xargs -r sudo docker rmi --force"
                 echo "Images successfully deleted, except '${keepImage}'!"
             } else {
                 echo "No images are there to delete!"
@@ -99,6 +99,7 @@ pipeline
         }
     }
 }
+
 
 
         stage("Building dockerfile")
