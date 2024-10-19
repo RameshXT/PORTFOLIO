@@ -99,18 +99,6 @@ else
     echo "Error: Minikube failed to start."
 fi
 
-# -------[ VERSION CHECKING FOR APPS ]-------
-git --version
-java --version
-jenkins --version
-docker --version
-minikube status
-
-# -------[ CONFIGURATION FOR JENKINS ]-------
-# Uncomment the following lines to edit visudo for Jenkins user privileges
-# echo "jenkins ALL=(ALL) NOPASSWD: ALL" >> visudo
-# echo "jenkins ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers.d/jenkins
-
 # -------[ ADDING JENKINS USER TO DOCKER GROUP ]-------
 
 # Helper function to check if a command exists

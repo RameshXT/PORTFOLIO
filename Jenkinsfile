@@ -28,11 +28,11 @@ pipeline
             {
                 script
                 {
-                    git branch: 'portfolio', credentialsId: 'GitHub-ID', url: 'https://github.com/RameshXT/PORTFOLIO.git'                
+                    git branch: 'portfolio', credentialsId: 'Github-ID', url: 'https://github.com/RameshXT/PORTFOLIO.git'                
                 }
             }
         }
-        stage("Deleting exiting images and container") 
+        stage("Deleting exiting images and container")
         {
             steps
             {
@@ -71,7 +71,7 @@ pipeline
             {
                     script
                     {
-                        def dockerImageTag = "rameshxt/portfolio-ramesh:V.1.${env.BUILD_NUMBER}"
+                        def dockerImageTag = "rameshxt/portfolio-ramesh:V.0.0.1:${env.BUILD_NUMBER}"
                         
                         sh "sudo docker build -t ${dockerImageTag} /var/lib/jenkins/workspace/portfolio-ramesh"
                     }
@@ -116,25 +116,34 @@ pipeline
             }
         }
 
-        stage("Pushing image to dockerHUB")
+        stage("Pushing image to Docker Hub")
         {
             steps
             {
                 script
                 {
-                    def dockerImageTag = "rameshxt/portfolio-ramesh:V.1.${env.BUILD_NUMBER}"
-                    
+                    def dockerImageTag = "rameshxt/portfolio-ramesh:V.0.0.1:${env.BUILD_NUMBER}"
+                    def dockerImageLatestTag = "rameshxt/portfolio-ramesh:latest"
+
+                    // Push the versioned image
                     sh "sudo docker push ${dockerImageTag}"
-                    
-                    echo "Docker image ${dockerImageTag} pushed to DockerHub successfully."
+                    echo "Docker image ${dockerImageTag} pushed to Docker Hub successfully."
+
+                    // Tag the image as latest
+                    sh "sudo docker tag ${dockerImageLatestTag}"
+
+                    // Push the latest image
+                    sh "sudo docker push ${dockerImageLatestTag}"
+                    echo "Docker image ${dockerImageLatestTag} pushed to Docker Hub successfully."
                 }
             }
         }
+
         stage("Deploying on Kubernetes")
         {
             steps
             {
-                sh "bash /var/lib/jenkins/workspace/portfolio-ramesh/deploy/bash.sh"
+                // sh "bash /var/lib/jenkins/workspace/portfolio-ramesh/deploy/bash.sh"
                 sh "ansible-playbook /var/lib/jenkins/workspace/portfolio-ramesh/deploy/playbook.yaml"
             }
         }
