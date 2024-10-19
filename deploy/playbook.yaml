@@ -1,0 +1,37 @@
+---
+- name: Manage Kubernetes deployment and service with port forwarding
+  hosts: localhost
+  become: true
+  tasks:
+
+    - name: Check if Minikube is running
+      shell: minikube status | grep -q "Running"
+      register: minikube_running
+      ignore_errors: true
+
+    - name: Start Minikube if not running
+      shell: minikube start
+      when: minikube_running.rc != 0
+
+    - name: Clean up existing deployment and service
+      shell: |
+        kubectl delete deployment portfolio || true
+        kubectl delete service portfolio-service || true
+        if pgrep -f "kubectl port-forward"; then
+          pkill -f "kubectl port-forward"
+        fi
+      ignore_errors: true
+
+    - name: Apply Kubernetes deployment and service
+      command: kubectl apply -f {{ item }}
+      with_items:
+        - deployment.yaml
+        - service.yaml
+
+    - name: Wait for pod to be ready
+      command: kubectl wait --for=condition=available --timeout=60s deployment/portfolio
+
+    - name: Set up port forwarding on port 30050
+      shell: |
+        nohup kubectl port-forward service/portfolio-service 30050:80 --address 0.0.0.0 > port_forward.log 2>&1 &
+        disown
