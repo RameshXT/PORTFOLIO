@@ -1,36 +1,44 @@
 ---
-- name: Manage Kubernetes deployment and service with port forwarding
+- name: Deploy to Kubernetes
   hosts: localhost
+  gather_facts: no
+
   tasks:
+    - name: Ensure kubectl is installed
+      command: which kubectl
+      register: kubectl_installed
+      ignore_errors: yes
 
-    - name: Check if Minikube is running
-      shell: minikube status | grep -q "Running"
-      register: minikube_running
-      ignore_errors: true
+    - name: Install kubectl
+      get_url:
+        url: "https://dl.k8s.io/release/{{ kubectl_version }}/bin/linux/amd64/kubectl"
+        dest: /usr/local/bin/kubectl
+        mode: '0755'
+      when: kubectl_installed.rc != 0
 
-    - name: Start Minikube if not running
-      shell: minikube start --driver=none  # Changed to use 'none' driver
-      when: minikube_running.rc != 0
+    - name: Apply Deployment
+      command: kubectl apply -f /home/ec2-user/deploy/deployment.yaml
+      register: deployment_result
+      ignore_errors: yes
 
-    - name: Clean up existing deployment and service
-      shell: |
-        kubectl delete deployment portfolio || true
-        kubectl delete service portfolio-service || true
-        if pgrep -f "kubectl port-forward"; then
-          pkill -f "kubectl port-forward"
-        fi
-      ignore_errors: true
+    - name: Show Deployment result
+      debug:
+        var: deployment_result
 
-    - name: Apply Kubernetes deployment and service
-      command: kubectl apply -f {{ item }}
-      with_items:
-        - deployment.yaml
-        - service.yaml
+    - name: Apply Service
+      command: kubectl apply -f /home/ec2-user/deploy/service.yaml
+      register: service_result
+      ignore_errors: yes
 
-    - name: Wait for pod to be ready
-      command: kubectl wait --for=condition=available --timeout=60s deployment/portfolio
+    - name: Show Service result
+      debug:
+        var: service_result
 
-    - name: Set up port forwarding on port 30050
-      shell: |
-        nohup kubectl port-forward service/portfolio-service 30050:80 --address 0.0.0.0 > port_forward.log 2>&1 &
-        disown
+    - name: Run a bash script
+      command: /home/ec2-user/deploy/portforward.sh
+      register: script_result
+      ignore_errors: yes
+
+    - name: Show script result
+      debug:
+        var: script_result
