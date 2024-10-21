@@ -17,7 +17,7 @@
       when: kubectl_installed.rc != 0
 
     - name: Apply Deployment
-      command: kubectl apply -f /home/ec2-user/deploy/deployment.yaml
+      command: kubectl apply -f /var/lib/jenkins/workspace/portfolio-ramesh/deploy/deployment.yaml
       register: deployment_result
       ignore_errors: yes
 
@@ -26,7 +26,7 @@
         var: deployment_result
 
     - name: Apply Service
-      command: kubectl apply -f /home/ec2-user/deploy/service.yaml
+      command: kubectl apply -f /var/lib/jenkins/workspace/portfolio-ramesh/deploy/service.yaml
       register: service_result
       ignore_errors: yes
 
@@ -35,7 +35,7 @@
         var: service_result
 
     - name: Run a bash script
-      command: /home/ec2-user/deploy/portforward.sh
+      command: /var/lib/jenkins/workspace/portfolio-ramesh/deploy/portforward.sh
       register: script_result
       ignore_errors: yes
 

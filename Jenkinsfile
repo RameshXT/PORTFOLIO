@@ -28,7 +28,7 @@ pipeline
             {
                 script
                 {
-                    git branch: 'portfolio', credentialsId: 'Github-ID', url: 'https://github.com/RameshXT/PORTFOLIO.git'                
+                    git branch: 'portfolio', credentialsId: 'GitHub-ID', url: 'https://github.com/RameshXT/PORTFOLIO.git'                
                 }
             }
         }
@@ -140,19 +140,17 @@ pipeline
         //     }
         // }
 
-stage("Docker login") {
-    steps {
-        withCredentials([string(credentialsId: 'Doc', variable: 'Docker')]) {
-            // Use an environment variable to avoid exposing the secret
-            sh '''
-                sudo docker login -u rameshxt -p "$Docker"
-            '''
-            echo "Docker login successful."
+        stage("Docker login") {
+            steps {
+                withCredentials([string(credentialsId: 'Docker-ID', variable: 'Dcoker')]) {
+                    // Use an environment variable to avoid exposing the secret
+                    sh '''
+                        sudo docker login -u rameshxt -p "$Docker"
+                    '''
+                    echo "Docker login successful."
+                }
+            }
         }
-    }
-}
-
-
 
         stage("Pushing image to Docker Hub")
         {
@@ -183,7 +181,8 @@ stage("Docker login") {
             {
                 // sh "bash /var/lib/jenkins/workspace/portfolio-ramesh/deploy/bash.sh"
                 // sh "ansible-playbook /var/lib/jenkins/workspace/portfolio-ramesh/deploy/playbook.yaml"
-                sh "git --version"
+
+                sh ""
             }
         }
     }

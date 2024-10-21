@@ -237,3 +237,27 @@ for ((i = 0; i < ${#disk_data[@]}; i+=3)); do
     echo -e "[${bar//=/▓} ${usage}]\n"
 done
 echo "=============================="
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+minikube peremission command 
+'sudo usermod -aG docker $USER
+newgrp docker
+'
