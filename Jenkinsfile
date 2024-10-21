@@ -183,8 +183,8 @@ pipeline
                 withCredentials([string(credentialsId: 'Kube-ID', variable: 'Kubeconfig')])
                 {
                     sh '''
-                    $kubectl apply -f /var/lib/jenkins/workspace/portfolio-ramesh/deploy/deployment.yaml
-                    $kubectl~ apply -f /var/lib/jenkins/workspace/portfolio-ramesh/deploy/service.yaml
+                    kubectl apply -f /var/lib/jenkins/workspace/portfolio-ramesh/deploy/deployment.yaml
+                    kubectl apply -f /var/lib/jenkins/workspace/portfolio-ramesh/deploy/service.yaml
                     '''
                 }
             }
