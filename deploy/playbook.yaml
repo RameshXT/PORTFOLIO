@@ -17,7 +17,7 @@
       when: kubectl_installed.rc != 0
 
     - name: Apply Deployment
-      command: kubectl apply -f /var/lib/jenkins/workspace/portfolio-ramesh/deploy/deployment.yaml
+      command: kubectl apply -f /var/lib/jenkins/workspace/portfolio-ramesh/deploy/deployment.yaml --validate=false
       register: deployment_result
       ignore_errors: yes
 
@@ -26,7 +26,7 @@
         var: deployment_result
 
     - name: Apply Service
-      command: kubectl apply -f /var/lib/jenkins/workspace/portfolio-ramesh/deploy/service.yaml
+      command: kubectl apply -f /var/lib/jenkins/workspace/portfolio-ramesh/deploy/service.yaml --validate=false
       register: service_result
       ignore_errors: yes
 
