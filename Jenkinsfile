@@ -183,7 +183,7 @@ pipeline
                 // sh "bash /var/lib/jenkins/workspace/portfolio-ramesh/deploy/bash.sh"
                 // sh "ansible-playbook /var/lib/jenkins/workspace/portfolio-ramesh/deploy/playbook.yaml"
 
-                sh ""
+                sh "ansible-playbook /var/lib/jenkins/workspace/portfolio-ramesh/deploy/playbook.yaml"
             }
         }
     }
