@@ -86,6 +86,7 @@ pipeline
         // {
         //     steps
         //     {
+        //         sh "chmod +x /var/lib/jenkins/workspace/portfolio-ramesh/deploy/imageupdater.sh"
         //         sh "sudo bash /var/lib/jenkins/workspace/portfolio-ramesh/deploy/imageupdater.sh"
         //     }
         // }
@@ -132,6 +133,9 @@ pipeline
                 sh "kubectl apply -f /var/lib/jenkins/workspace/portfolio-ramesh/deploy/service.yaml"
 
                 sh "nohup kubectl port-forward service/portfolio-service 30050:80 --address 0.0.0.0 > /var/log/port-forward.log 2>&1 &"
+                // sh "nohup kubectl port-forward service/portfolio-service 30050:80 --address 0.0.0.0 > /var/lib/jenkins/workspace/portfolio-ramesh/port-forward.log 2>&1 &
+                // "sudo chown jenkins:jenkins /var/log" -- should give this permission to run port forward.
+
             }
         }
     }
