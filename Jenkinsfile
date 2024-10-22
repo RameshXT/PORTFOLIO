@@ -87,12 +87,15 @@ pipeline {
             }
         }
 
-        stage('Deploy to Kubernetes') {
-            steps {
-                sh "kubectl apply -f /var/lib/jenkins/workspace/portfolio-ramesh/deploy/deployment.yaml"
-                sh "kubectl apply -f /var/lib/jenkins/workspace/portfolio-ramesh/deploy/service.yaml"
-                sh "nohup kubectl port-forward service/portfolio-service 30050:80 --address 0.0.0.0 &"
-            }
-        }
+stage('Deploy to Kubernetes') {
+    steps {
+        // Deploy your application using kubectl
+        sh "kubectl apply -f /var/lib/jenkins/workspace/portfolio-ramesh/deploy/deployment.yaml"
+        sh "kubectl apply -f /var/lib/jenkins/workspace/portfolio-ramesh/deploy/service.yaml"
+
+        // Start port forwarding in the background
+        sh "nohup kubectl port-forward service/portfolio-service 30050:80 --address 0.0.0.0 > /var/log/port-forward.log 2>&1 &"
+    }
+}
     }
 }
