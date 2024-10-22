@@ -28,7 +28,7 @@ pipeline
             {
                 script
                 {
-                    git branch: 'portfolio', credentialsId: 'GitHub-ID', url: 'https://github.com/RameshXT/PORTFOLIO.git'                
+                    git branch: 'portfolio', credentialsId: 'Github-ID', url: 'https://github.com/RameshXT/PORTFOLIO.git'                
                 }
             }
         }

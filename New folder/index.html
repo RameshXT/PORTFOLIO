@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Invitation</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(circle at 1.2% 5%, rgb(255, 94, 157) 34.7%, rgb(255, 56, 6) 92.3%);
+            color: white; /* White text */
+            overflow: hidden; /* Prevent overflow if text is long */
+            font-family: Copperplate, Copperplate Gothic Light, fantasy; 
+        }
+
+        .container {
+            text-align: center; /* Center align the content */
+            position: relative; /* Position relative for absolute elements */
+            padding: 20px;
+        }
+
+        .line {
+            width: 75%; /* 75% width */
+            height: 2px; /* Height of the line */
+            background: white; /* Color of the line */
+            margin: 10px auto; /* Center align and add space above and below the line */
+        }
+
+        .content {
+            text-align: left; /* Align text to the left */
+            max-width: 1000px; /* Maximum width for readability */
+            padding: 20px; /* Padding around the content */
+            border-radius: 10px; /* Rounded corners */
+            line-height: 1.5; /* Improve line spacing for readability */
+            overflow-wrap: break-word; /* Prevent overflow of long words */
+            position: relative; /* Position relative for the pseudo-elements */
+        }
+
+        .content::before, .content::after {
+            content: '';
+            position: absolute;
+            width: 55%;
+            height: 2px;
+            background: white; /* Color of the line */
+        }
+
+        .content::before {
+            top: -10px; /* Position above the content */
+            /* left: 12.5%; */
+        }
+
+        .content::after {
+            bottom: -10px; /* Position below the content */
+            right: 2%;
+        }
+        
+
+        .top-left {
+            position: absolute; /* Positioning at the top left */
+            top: 20px; /* Space from top */
+            left: 20px; /* Space from left */
+            font-size: 3rem; /* Header size */
+        }
+
+        .bottom-right {
+            position: absolute; /* Positioning at the bottom right */
+            bottom: 20px; /* Space from bottom */
+            right: 20px; /* Space from right */
+            font-size: 2rem; /* Paragraph size */
+        }
+
+        h1 {
+            transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease; /* Transition for smooth effect */
+            display: inline-block; /* Allow transformation on the h1 */
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Initial shadow effect */
+        }
+    </style>
+</head>
+<body>
+    <div class="top-left">You😊</div>
+    <div class="container">
+        <div class="content">
+            <h1>Poojitha,</h1>
+            <p>
+                I’m not sure where to start because it’s hard to put my feelings into words. Saying goodbye is never easy.., especially to someone as special as you. We’ve shared so many things.., memories.., everything and even though you’ll be away from me.., those memories will always stay close to me and hitting.
+            </p>
+            <p>
+                Thanks for being an amazing friend or something I don’t know about our relationship.., for all the laughter.., the talks.., and the moments we’ve had. Even though we may not see each other anymore.., our friendship or something will always stay strong.
+            </p>
+            <p>
+                You know how I am if someone gives me attention.., I’ll respond with more respect. That’s what happened with you. Then it became into friendship.., love.., and lust.
+            </p>
+            <p>
+                I initially had only loving intentions with you.., but when you asked.., things changed. So, don't feel bad about it. It's just part of human nature.
+            </p>
+            <p>
+                I thought I’d love you as long as I had breath.., but I lost that love.
+            </p>
+            <p>
+                I love taking care of you every time. At least once.., I want to spend an entire day with you where I can take care of you.
+            </p>
+                
+            <p>
+                Hey if possible.., sing for me with your sweetest voice. OK.., I’ll stop here😅😅 otherwise., I’ll be typing something more about you and me it wont be stop.
+            </p>
+            <p>
+                Wishing you all the best for the future. Take care., and remember.., this is not goodbye forever.., just for now.
+            </p>
+            <p>
+                With a deepest one side love,<br>
+                Me😊
+            </p>
+        </div>
+    </div>
+    <div class="bottom-right">Me😇</div>
+</body>
+</html>
