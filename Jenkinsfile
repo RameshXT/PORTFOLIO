@@ -176,16 +176,14 @@ pipeline
             }
         }
 
+    stages {
         stage('Deploy to Kubernetes') {
             steps {
                 // Deploy your application using kubectl
-                // withCredentials([file(credentialsId: 'minikube-kubeconfig', variable: 'KUBECONFIG')])
-                // withCredentials([string(credentialsId: 'Kube-ID', variable: 'Kubeconfig')])
-                {
-                    sh "kubectl apply -f /var/lib/jenkins/workspace/portfolio-ramesh/deploy/deployment.yaml"
-                    sh "kubectl apply -f /var/lib/jenkins/workspace/portfolio-ramesh/deploy/service.yaml"
-                }
+                sh "kubectl apply -f /var/lib/jenkins/workspace/portfolio-ramesh/deploy/deployment.yaml"
+                sh "kubectl apply -f /var/lib/jenkins/workspace/portfolio-ramesh/deploy/service.yaml"
             }
         }
+    }
     }
 }
