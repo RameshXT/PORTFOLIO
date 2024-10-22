@@ -82,13 +82,13 @@ pipeline
             }
         }
 
-        stage("Update the image version in the deployment")
-        {
-            steps
-            {
-                sh "sudo bash /var/lib/jenkins/workspace/portfolio-ramesh/deploy/imageupdater.sh"
-            }
-        }
+        // stage("Update the image version in the deployment")
+        // {
+        //     steps
+        //     {
+        //         sh "sudo bash /var/lib/jenkins/workspace/portfolio-ramesh/deploy/imageupdater.sh"
+        //     }
+        // }
 
 
         stage("Docker login")
