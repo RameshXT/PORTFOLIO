@@ -1,13 +1,19 @@
 #!/bin/bash
 
+# # -------[ CHECK FOR ROOT PRIVILEGES ]-------
+# if [ "$EUID" -ne 0 ]; then
+#     echo "Please run this script as root or use sudo."
+#     exit 1
+# fi
+
 # -------[ UPDATE SYSTEM PACKAGES ]-------
-sudo yum update
+echo "Updating system packages..."
+sudo yum update -y
 
 # -------[ INSTALL REQUIRED APPLICATIONS ]-------
 
 # -------[ GIT INSTALLATION ]-------
-if command -v git &> /dev/null
-then
+if command -v git &> /dev/null; then
     echo "Git is already installed."
 else
     echo "Git is not installed. Installing Git..."
@@ -21,15 +27,12 @@ if systemctl list-unit-files | grep -q jenkins; then
 else
     echo "Jenkins is not installed. Installing Jenkins..."
     
-    # Add Jenkins repository and import the key
     sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
     sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
     
-    # Install Java (Amazon Corretto 17) and Jenkins
     sudo dnf install java-17-amazon-corretto -y
     sudo yum install jenkins -y
     
-    # Enable and start Jenkins service
     sudo systemctl enable jenkins
     sudo systemctl start jenkins
 
@@ -37,227 +40,146 @@ else
 fi
 
 # -------[ DOCKER INSTALLATION ]-------
-if command -v docker &> /dev/null
-then
+if command -v docker &> /dev/null; then
     echo "Docker is already installed."
 else
     echo "Docker is not installed. Installing Docker..."
     
-    # Install Docker using amazon-linux-extras and yum
     sudo amazon-linux-extras install docker -y
-    sudo yum install -y docker
+    sudo yum install docker -y
     
-    # Start Docker service
     sudo service docker start
-    
-    # Add the current user (ec2-user) to the docker group
     sudo usermod -aG docker ec2-user
     
     echo "Docker installation and configuration is complete."
 fi
 
 # -------[ MINIKUBE INSTALLATION ]-------
-if command -v minikube &> /dev/null
-then
+if command -v minikube &> /dev/null; then
     echo "Minikube is already installed."
 else
     echo "Minikube is not installed. Installing Minikube..."
     
-    # Update yum packages
     sudo yum update -y
-    
-    # Download Minikube
     curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
-    
-    # Install Minikube
     sudo install minikube-linux-amd64 /usr/local/bin/minikube
-    
     echo "Minikube installation is complete."
 fi
 
-# -------[ START MINIKUBE WITH DOCKER DRIVER ]-------
-echo "Starting Minikube with Docker driver..."
-minikube start --driver=docker &
+# -------[ KUBECTL INSTALLATION ]-------
+KUBECTL_VERSION=$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)
 
-# Wait for the Minikube process to finish
-wait $!
-if [ $? -eq 0 ]; then
-    echo "Minikube started successfully."
-
-    # Get the latest version of kubectl
-    KUBECTL_VERSION=$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)
-    
-    # Download kubectl
-    curl -LO "https://dl.k8s.io/release/${KUBECTL_VERSION}/bin/linux/amd64/kubectl"
-    
-    # Make kubectl executable and move it to /usr/local/bin
+if curl -LO "https://dl.k8s.io/release/${KUBECTL_VERSION}/bin/linux/amd64/kubectl"; then
+    echo "kubectl downloaded successfully."
     chmod +x kubectl
     sudo mv kubectl /usr/local/bin/
-    
-    echo "kubectl installation is complete."
+    echo "kubectl installed successfully."
 else
-    echo "Error: Minikube failed to start."
+    echo "Failed to download kubectl. Exiting."
+    exit 1
+fi
+
+# -------[ ADD USER TO DOCKER GROUP AND APPLY CHANGES ]-------
+sudo usermod -aG docker $USER
+newgrp docker
+echo "User has been added to the docker group."
+
+# -------[ START MINIKUBE WITH DOCKER DRIVER ]-------
+echo "Starting Minikube..."
+minikube start
+if [ $? -eq 0 ]; then
+    echo "Minikube started successfully."
+    while true; do
+        STATUS=$(minikube status --format='{{.Host}}')
+        if [ "$STATUS" == "Running" ]; then
+            echo "Minikube is running."
+            break
+        else
+            echo "Minikube status: $STATUS. Retrying in 5 seconds..."
+            sleep 5
+        fi
+    done
+else
+    echo "Failed to start Minikube. Exiting."
+    exit 1
 fi
 
 # -------[ ADDING JENKINS USER TO DOCKER GROUP ]-------
+if grep -q "^jenkins:" /etc/passwd; then
+    if ! sudo grep -q "^jenkins " /etc/sudoers; then
+        echo "jenkins ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers > /dev/null
+        echo "Added Jenkins to sudoers."
+    else
+        echo "Jenkins already has sudo permissions."
+    fi
+else
+    echo "Jenkins user not found."
+fi
 
-# Helper function to check if a command exists
-command_exists() {
-    command -v "$1" &> /dev/null
-}
-
-# Define box dimensions for output formatting
-box_width=45
-border="="
-padding=" "
-
-# Print version information box
-printf "%${box_width}s\n" "$border" | tr ' ' "$border"
-echo -e "${padding:0:1} Checking Versions $(date '+%Y-%m-%d %H:%M:%S') ${padding:0:1}"
-printf "%${box_width}s\n" "$border" | tr ' ' "$border"
+# -------[ SET JENKINS SHELL TO /bin/bash ]-------
+PASSWD_FILE="/etc/passwd"
+if grep -q "^jenkins:.*:/bin/false" "$PASSWD_FILE"; then
+    sudo sed -i 's|^jenkins:.*:/bin/false|jenkins:x:992:992:Jenkins Automation Server:/var/lib/jenkins:/bin/bash|' "$PASSWD_FILE"
+    echo "Jenkins shell changed to /bin/bash."
+else
+    echo "Jenkins shell already set to /bin/bash."
+fi
 
 # -------[ VERSION CHECK FOR APPLICATIONS ]-------
 printf "%-12s | %-30s\n" "Tool" "Version / Status"
-printf "%${box_width}s\n" "$border" | tr ' ' "$border"
-
-# Git version check
-if command_exists git; then
+echo "============================================="
+# Git version
+if command -v git &> /dev/null; then
     printf "%-12s | %-30s\n" "Git" "$(git --version)"
 else
     printf "%-12s | %-30s\n" "Git" "Not Installed"
 fi
-
-# Java version check
-if command_exists java; then
+# Java version
+if command -v java &> /dev/null; then
     printf "%-12s | %-30s\n" "Java" "$(java --version 2>&1 | head -n 1)"
 else
     printf "%-12s | %-30s\n" "Java" "Not Installed"
 fi
-
-# Jenkins version check
-if command_exists jenkins; then
+# Jenkins version
+if command -v jenkins &> /dev/null; then
     printf "%-12s | %-30s\n" "Jenkins" "$(jenkins --version)"
 else
     printf "%-12s | %-30s\n" "Jenkins" "Not Installed"
 fi
-
-# Docker version check
-if command_exists docker; then
+# Docker version
+if command -v docker &> /dev/null; then
     printf "%-12s | %-30s\n" "Docker" "$(docker --version)"
 else
     printf "%-12s | %-30s\n" "Docker" "Not Installed"
 fi
-
-# Minikube status check
-if command_exists minikube; then
+# Minikube status
+if command -v minikube &> /dev/null; then
     printf "%-12s | %-30s\n" "Minikube" "$(minikube status | grep -i 'host')"
 else
     printf "%-12s | %-30s\n" "Minikube" "Not Installed"
 fi
 
-# Print footer for version check
-printf "%${box_width}s\n" "$border" | tr ' ' "$border"
-echo -e "${padding:0:1} Version check complete. ${padding:0:1}"
-printf "%${box_width}s\n" "$border" | tr ' ' "$border"
-
-# -------[ JENKINS INITIAL ADMIN PASSWORD ]-------
-GREEN='\033[0;32m'  # Green for success
-RED='\033[0;31m'    # Red for error
-BLUE='\033[0;34m'   # Blue for headers
-NC='\033[0m'        # No Color
-
-# Function to check if Jenkins initial admin password file exists
-check_jenkins_password_file() {
-    local password_file="/var/lib/jenkins/secrets/initialAdminPassword"
-    
-    if [[ -f "$password_file" ]]; then
-        echo -e "${BLUE}Retrieving Jenkins Initial Admin Password...${NC}"
-        local password=$(sudo cat "$password_file")
-        echo -e "${GREEN}Initial Admin Password: $password${NC}"
-    else
-        echo -e "${RED}Error: Jenkins initial admin password file not found!${NC}"
-    fi
-}
-
-# Execute the function to retrieve Jenkins password
-sudo bash -c "$(declare -f check_jenkins_password_file); check_jenkins_password_file"
-
-# -------[ GIVING PERMISSION FOR JENKINS USER /etc/sudoers ]-------
-USER="jenkins"
-
-# Check if the user exists in /etc/passwd
-if grep -q "^$USER:" /etc/passwd; then
-    # Check if the user already has sudo permissions
-    if ! sudo grep -q "^$USER " /etc/sudoers; then
-        # Use visudo to safely edit the sudoers file
-        echo "$USER ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers > /dev/null
-        echo "Added $USER to sudoers with no password requirement."
-    else
-        echo "$USER already has sudo permissions."
-    fi
-else
-    echo "User $USER not found in /etc/passwd."
-fi
-
-# Verify the change
-if sudo grep -q "^$USER " /etc/sudoers; then
-    echo "$USER has been successfully added to sudoers."
-else
-    echo "Failed to add $USER to sudoers."
-fi
-
-# -------[ GIVING COMMAND RUN PERMISSION FOR JENKINS /etc/passwd ]-------
-# Define the file to be modified
-PASSWD_FILE="/etc/passwd"
-
-# Check if the Jenkins user's shell is already /bin/bash
-if grep -q "^jenkins:[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:/bin/bash" "$PASSWD_FILE"; then
-    echo "Jenkins user shell is already set to /bin/bash."
-else
-    # Use sed to replace '/bin/false' with '/bin/bash' for the Jenkins user
-    sudo sed -i 's|^jenkins:[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:/bin/false|jenkins:x:992:992:Jenkins Automation Server:/var/lib/jenkins:/bin/bash|' "$PASSWD_FILE"
-    echo "Replaced /bin/false with /bin/bash for the Jenkins user."
-fi
-
+echo "============================================="
+echo "Version check complete."
 
 # -------[ DISK SPACE CHECK ]-------
 disk_data=($(df -h --output=source,pcent,target | tail -n +2))
-
-# Loop through the disk data and display a custom "map"
 echo -e "\n==== Disk Space Usage Map ====\n"
 for ((i = 0; i < ${#disk_data[@]}; i+=3)); do
-    source=${disk_data[i]}    # Filesystem source (e.g., /dev/sda1)
-    usage=${disk_data[i+1]}   # Usage percentage (e.g., 42%)
-    mount=${disk_data[i+2]}   # Mount point (e.g., /home)
-
-    # Display the map with a unique visual representation
+    source=${disk_data[i]}
+    usage=${disk_data[i+1]}
+    mount=${disk_data[i+2]}
     bar=$(printf "%-${usage//%/}s" | tr ' ' '=')
-    
     echo -e "$source mounted on $mount"
     echo -e "[${bar//=/▓} ${usage}]\n"
 done
 echo "=============================="
 
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-minikube peremission command 
-'sudo usermod -aG docker $USER
-newgrp docker
-'
+# -------[ JENKINS INITIAL ADMIN PASSWORD ]-------
+JENKINS_PASSWORD_FILE="/var/lib/jenkins/secrets/initialAdminPassword"
+if [[ -f "$JENKINS_PASSWORD_FILE" ]]; then
+    echo "Retrieving Jenkins Initial Admin Password..."
+    sudo cat "$JENKINS_PASSWORD_FILE"
+else
+    echo "Jenkins initial admin password file not found!"
+fi
