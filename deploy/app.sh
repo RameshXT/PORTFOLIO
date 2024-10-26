@@ -310,3 +310,14 @@ if sudo test -f "$JENKINS_PASSWORD_FILE"; then
 else
     echo -e "${GREEN}Jenkins initial admin password file not found!${NC}"
 fi
+
+
+
+# minikube start
+# sudo cp -r /home/ec2-user/.kube /var/lib/jenkins/
+# sudo cp -r /home/ec2-user/.minikube /var/lib/jenkins/
+# sudo chown -R jenkins:jenkins /var/lib/jenkins/.kube
+# sudo chown -R jenkins:jenkins /var/lib/jenkins/.minikube
+# sudo nano /var/lib/jenkins/.kube/config  # Update paths in this file
+# sudo -u jenkins kubectl get nodes
+# sudo systemctl restart jenkins  # If needed

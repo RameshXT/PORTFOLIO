@@ -115,32 +115,22 @@ pipeline
                 // "sudo chown jenkins:jenkins /var/log" -- should give this permission to run port forward.
             }
         }
-        stage('Access Service')
+        stage('Access Services')
         {
             steps
             {
                 script
                 {
-                    sh "curl -s -o /dev/null -w '%{http_code}' http://localhost:30050"
+                    // Fetch the public IP of the instance
+                    def publicIP = sh(script: 'curl -s http://169.254.169.254/latest/meta-data/public-ipv4', returnStdout: true).trim()
+                    
+                    // Append the port number
+                    def instanceAddress = "${publicIP}:30050"
+                    
+                    // Print the instance address
+                    echo "Instance Address: ${instanceAddress}"
                 }
             }
         }
-        stage('Access Services') {
-    steps {
-        script {
-            // Fetch the public IP of the instance
-            def publicIp = sh(script: "aws ec2 describe-instances --filters 'Name=instance-id,Values=\$(curl -s http://169.254.169.254/latest/meta-data/instance-id)' --query 'Reservations[0].Instances[0].PublicIpAddress' --output text", returnStdout: true).trim()
-
-            // Construct the URL
-            def serviceUrl = "http://${publicIp}:30050"
-            echo "Website URL: ${serviceUrl}"
-
-            // Use the public IP in the curl command
-            def responseCode = sh(script: "curl -s -o /dev/null -w '%{http_code}' ${serviceUrl}", returnStdout: true).trim()
-            echo "Response code: ${responseCode}"
-        }
-    }
-}
-
     }
 }
