@@ -119,16 +119,15 @@ pipeline
         {
             steps
             {
-                script
-                {
+                script {
                     // Fetch the public IP of the instance
                     def publicIP = sh(script: 'curl -s http://169.254.169.254/latest/meta-data/public-ipv4', returnStdout: true).trim()
                     
-                    // Append the port number
-                    def instanceAddress = "${publicIP}:30050"
+                    // Construct the access message
+                    def accessMessage = "http://${publicIP}:30050 you can access your web now"
                     
-                    // Print the instance address
-                    echo "Instance Address: ${instanceAddress}"
+                    // Print the access message
+                    echo "${accessMessage}"
                 }
             }
         }
