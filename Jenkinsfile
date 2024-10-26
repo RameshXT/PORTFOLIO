@@ -115,7 +115,7 @@ pipeline
                 // "sudo chown jenkins:jenkins /var/log" -- should give this permission to run port forward.
             }
         }
-        stage('Access Services')
+        stage('Access Portfolio')
         {
             steps
             {

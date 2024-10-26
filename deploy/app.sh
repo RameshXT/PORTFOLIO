@@ -29,6 +29,26 @@ else
 fi
 
 
+# -------[ CURL INSTALLATION ]-------
+# Function to install curl
+install_curl() {
+    echo "Installing curl..."
+    sudo yum install -y curl
+}
+
+# Check if curl is installed
+if command -v curl >/dev/null 2>&1; then
+    echo "${GREEN}curl is already installed.${NC}"
+else
+    install_curl
+    if command -v curl >/dev/null 2>&1; then
+        echo "${GREEN}curl has been installed successfully.${NC}"
+    else
+        echo "${GREEN}Failed to install curl.${NC}"
+        exit 1
+    fi
+fi
+
 
 # -------[ GIT INSTALLATION ]-------
 if command -v git &> /dev/null; then
@@ -170,6 +190,38 @@ chmod +x "$FILE_PATH"
 echo -e "${GREEN}File created at $FILE_PATH with executable permissions.${NC}"
 
 
+# -------[ CREATE A FILE FOR PORTFORWARD ]-------
+
+# Define the file path
+FILE_PATH="/home/ec2-user/portforward.sh"
+
+# Define the content to be written
+CONTENT='#!/bin/bash
+
+# Port Forwarding
+echo "Starting port forwarding..."
+kubectl port-forward service/portfolio-service 30050:80 --address 0.0.0.0 > port-forward.log 2>&1 &
+
+# Give it some time to establish the port forwarding
+sleep 5
+
+# Check if the port forwarding command is running
+if pgrep -f "kubectl port-forward" > /dev/null; then
+    echo "Port forwarding established on port 30050"
+else
+    echo "Failed to establish port forwarding. Check port-forward.log for errors."
+fi
+'
+
+# Create the file and write the content
+echo "$CONTENT" > "$FILE_PATH"
+
+# Make the file executable
+chmod +x "$FILE_PATH"
+
+echo -e "${GREEN}File created at $FILE_PATH with executable permissions.${NC}"
+
+
 # -------[ ADDING STARTUP COMMANDS ]-------
 # Temporary file to hold current crontab
 temp_cron=$(mktemp)
@@ -220,8 +272,44 @@ else
 fi
 EOF
 
-# -------[ CONTINUE WITH THE REST OF YOUR SCRIPT BELOW ]-------
+# -------[ KUBE CONFIGURATION WITH JENKINS ]-------
+#!/bin/bash
 
+# Define source and destination directories
+src_kube="/home/ec2-user/.kube"
+src_minikube="/home/ec2-user/.minikube"
+dest_kube="/var/lib/jenkins/.kube"
+dest_minikube="/var/lib/jenkins/.minikube"
+config_file="$dest_kube/config"
+
+# Check if the source directories exist
+if [ -d "$src_kube" ] && [ -d "$src_minikube" ]; then
+    # Copy .kube and .minikube directories to Jenkins' home
+    sudo cp -r "$src_kube" "$dest_kube"
+    sudo cp -r "$src_minikube" "$dest_minikube"
+
+    # Change ownership of the copied directories to the jenkins user
+    sudo chown -R jenkins:jenkins "$dest_kube"
+    sudo chown -R jenkins:jenkins "$dest_minikube"
+
+    # Update paths in the config file if it exists
+    if [ -f "$config_file" ]; then
+        sudo sed -i 's|certificate-authority: /home/ec2-user/.minikube/ca.crt|certificate-authority: /var/lib/jenkins/.minikube/ca.crt|' "$config_file"
+        sudo sed -i 's|client-certificate: /home/ec2-user/.minikube/profiles/minikube/client.crt|client-certificate: /var/lib/jenkins/.minikube/profiles/minikube/client.crt|' "$config_file"
+        sudo sed -i 's|client-key: /home/ec2-user/.minikube/profiles/minikube/client.key|client-key: /var/lib/jenkins/.minikube/profiles/minikube/client.key|' "$config_file"
+    else
+        echo "Config file not found at $config_file. Skipping path updates."
+    fi
+else
+    echo "Source directories do not exist. Please check the paths."
+    if [ ! -d "$src_kube" ]; then
+        echo "Missing: $src_kube"
+    fi
+    if [ ! -d "$src_minikube" ]; then
+        echo "Missing: $src_minikube"
+    fi
+fi
+echo "${GREEN}kube files has beed configured${NC}"
 
 
 # -------[ VERSION CHECK FOR APPLICATIONS ]-------
@@ -232,6 +320,21 @@ if command -v git &> /dev/null; then
     printf "%-12s | %-30s\n" "Git" "$(git --version)"
 else
     printf "%-12s | %-30s\n" "Git" "Not Installed"
+fi
+
+# Crond
+if systemctl list-unit-files | grep -q crond; then
+    status=$(systemctl status crond | grep 'Active:' | awk '{print $2, $3, $4}')
+    printf "%-12s | %-30s\n" "Crond" "$status"
+else
+    printf "%-12s | %-30s\n" "Crond" "Not Installed"
+fi
+
+# curl
+if command -v curl > /dev/null; then
+    printf "%-12s | %-30s\n" "Curl" "Installed"
+else
+    printf "%-12s | %-30s\n" "Curl" "Not Installed"
 fi
 
 # Jenkins version
@@ -310,14 +413,3 @@ if sudo test -f "$JENKINS_PASSWORD_FILE"; then
 else
     echo -e "${GREEN}Jenkins initial admin password file not found!${NC}"
 fi
-
-
-
-# minikube start
-# sudo cp -r /home/ec2-user/.kube /var/lib/jenkins/
-# sudo cp -r /home/ec2-user/.minikube /var/lib/jenkins/
-# sudo chown -R jenkins:jenkins /var/lib/jenkins/.kube
-# sudo chown -R jenkins:jenkins /var/lib/jenkins/.minikube
-# sudo nano /var/lib/jenkins/.kube/config  # Update paths in this file
-# sudo -u jenkins kubectl get nodes
-# sudo systemctl restart jenkins  # If needed

@@ -1,16 +1,5 @@
 #!/bin/bash
 
-# Check if kubectl is installed and configured
-echo "Checking kubectl version..."
-kubectl version --short
-
-# Check the current context
-echo "Current context: $(kubectl config current-context)"
-
-# Check if the portfolio-service is running
-echo "Checking services..."
-kubectl get services
-
 # Port Forwarding
 echo "Starting port forwarding..."
 kubectl port-forward service/portfolio-service 30050:80 --address 0.0.0.0 > port-forward.log 2>&1 &
