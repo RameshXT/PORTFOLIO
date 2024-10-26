@@ -120,9 +120,9 @@ pipeline
             steps
             {
                 script {
-                    // Fetch the public IP of the instance
-                    def publicIP = sh(script: 'curl -s http://169.254.169.254/latest/meta-data/public-ipv4', returnStdout: true).trim()
-                    
+                    // Fetch the public IP address using ifconfig.me
+                    def publicIP = sh(script: 'curl -s ifconfig.me', returnStdout: true).trim()
+
                     // Construct the access message
                     def accessMessage = "http://${publicIP}:30050 you can access your web now"
                     
