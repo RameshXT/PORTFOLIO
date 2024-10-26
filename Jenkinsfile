@@ -119,14 +119,11 @@ pipeline
         {
             steps
             {
-                script {
-                    // Fetch the public IP address using ifconfig.me
+                script
+                {
                     def publicIP = sh(script: 'curl -s ifconfig.me', returnStdout: true).trim()
-
-                    // Construct the access message
-                    def accessMessage = "http://${publicIP}:30050 you can access your web now"
+                    def accessMessage = "Congratulations!🎉 Your portfolio is running at the following link: http://${publicIP}:30050 🚀"
                     
-                    // Print the access message
                     echo "${accessMessage}"
                 }
             }
