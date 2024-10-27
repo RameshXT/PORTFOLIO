@@ -3,14 +3,35 @@ pipeline
     agent any
     stages
     {
-        stage("Clone")
+        stage("CLEANING THE WORKSPACE")
+        {
+            steps
+            {
+                script
+                {
+                    def workspaceDir = "/var/lib/jenkins/workspace/portfolio-ramesh/"
+                    
+                    if (fileExists(workspaceDir))
+                    {
+                        sh "sudo rm -rf ${workspaceDir}*"
+                    }
+                    else
+                    {
+                        echo "Workspace directory doesn't exist."
+                    }
+                }
+            }
+        }
+
+        stage("GIT CHECKOUT")
         {
             steps
             {
                 git branch: 'portfolio', credentialsId: 'GitHub-ID', url: 'https://github.com/RameshXT/PORTFOLIO.git'
             }
         }
-        stage("Deleting Existing Images and Containers")
+
+        stage("DELETING EXISTING IMAGES AND CONTAINERS")
         {
             steps
             {
@@ -19,8 +40,8 @@ pipeline
                     def keepImage = "gcr.io/k8s-minikube/kicbase:v0.0.45"
                     def keepContainer = "minikube"
 
+                    // CHECK AND DELETE ALL CONTAINERS EXCEPT 'minikube'
                     def containers = sh(script: "sudo docker ps -a -q", returnStdout: true).trim()
-
                     if (containers)
                     {
                         sh "sudo docker ps -q | grep -v \$(sudo docker ps --filter 'name=${keepContainer}' -q) | xargs -r sudo docker stop"
@@ -32,20 +53,22 @@ pipeline
                         echo "No containers are there to delete!"
                     }
 
+                    // CHECK AND DELETE ALL IMAGES EXCEPT 'kicbase'
                     def images = sh(script: "sudo docker images -q", returnStdout: true).trim()
-
                     if (images)
                     {
                         sh "sudo docker images -q | grep -v \$(sudo docker images --filter=reference=${keepImage} -q) | xargs -r sudo docker rmi --force"
                         echo "Images successfully deleted, except '${keepImage}'!"
-                    } else
+                    }
+                    else
                     {
                         echo "No images are there to delete!"
                     }
                 }
             }
         }
-        stage("Building dockerfile")
+
+        stage("BUILDING DOCKER IMAGE")
         {
             steps
             {
@@ -56,67 +79,58 @@ pipeline
                 }
             }
         }
-        stage("Docker login")
+
+        stage("DOCKER LOGIN")
         {
             steps
             {
-                withCredentials([string(credentialsId: 'Docker-ID', variable: 'Docker')]) 
+                withCredentials([string(credentialsId: 'Docker-ID', variable: 'Docker')])
                 {
-                    sh '''
-                        sudo docker login -u rameshxt -p $Docker
-                    '''
-                    echo "Docker loged in successfully."
+                    sh """
+                        sudo docker login -u rameshxt -p "${Docker}"
+                    """
+                    echo "Docker logged in successfully."
                 }
             }
         }
-        stage("Pushing image to Docker Hub")
+
+        stage('PUSHING IMAGE TO DOCKER HUB')
         {
             steps
             {
                 script
                 {
                     def dockerImageTag = "rameshxt/portfolio-ramesh:v1.0.0.${env.BUILD_NUMBER}"
-                    // def dockerImageLatestTag = "rameshxt/portfolio-ramesh:latest"
-
                     sh "sudo docker push ${dockerImageTag}"
                     echo "Docker image ${dockerImageTag} pushed to Docker Hub successfully."
-
-                    // sh "sudo docker tag ${dockerImageTag} ${dockerImageLatestTag}"
-                    // sh "sudo docker push ${dockerImageLatestTag}"
-                    // echo "Docker image ${dockerImageLatestTag} pushed to Docker Hub successfully."
                 }
             }
         }
-        stage('Image updater')
+
+        stage('IMAGE VERSION UPDATER')
         {
-            steps 
+            steps
             {
-                script 
+                script
                 {
                     echo "Current Build Number: ${env.BUILD_NUMBER}"
-                    
                     sh "chmod +x /var/lib/jenkins/workspace/portfolio-ramesh/deploy/image-updater.sh"
-                    
                     sh "/var/lib/jenkins/workspace/portfolio-ramesh/deploy/image-updater.sh"
                 }
             }
         }
-        stage('Deploy to Kubernetes')
+
+        stage('DEPLOY TO KUBERNETES')
         {
             steps
             {
                 sh "kubectl apply -f /var/lib/jenkins/workspace/portfolio-ramesh/deploy/kube/deployment.yaml"
-
                 sh "kubectl apply -f /var/lib/jenkins/workspace/portfolio-ramesh/deploy/kube/service.yaml"
-
                 sh "nohup kubectl port-forward service/portfolio-service 30050:80 --address 0.0.0.0 > ~/workspace/port-forward.log 2>&1 &"
-
-                // Uncomment and run the following if you face permissions issues with port-forward:
-                // sh "sudo chown jenkins:jenkins /var/log"
             }
         }
 
-        stage('Access Portfolio')
+        stage('ACCESS PORTFOLIO')
         {
             steps
             {
@@ -124,22 +138,21 @@ pipeline
                 {
                     def publicIP = sh(script: 'curl -s ifconfig.me', returnStdout: true).trim()
                     def accessMessage = "Congratulations!🎉 Your portfolio is running at the following link: http://${publicIP}:30050 🚀"
-                    
                     echo "${accessMessage}"
                 }
             }
         }
     }
+
     post
     {
         success
         {
-            echo '✅ Build completed successfully!'
+            echo '✅ BUILD COMPLETED SUCCESSFULLY!'
         }
-
         failure
         {
-            echo '❌ Build failed!'
+            echo '❌ BUILD FAILED!'
         }
     }
 }
