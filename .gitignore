@@ -4,7 +4,7 @@ New\ folder/
 TF/.terraform/
 
 #Files
-.terraform.lock.hcl
-provider
-terraform.tfstate
-terraform.tfstate.backup
+TF/.terraform.lock.hcl
+TF/provider
+TF/terraform.tfstate
+TF/terraform.tfstate.backup
