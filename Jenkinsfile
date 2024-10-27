@@ -105,9 +105,9 @@ pipeline
         {
             steps
             {
-                sh "kubectl apply -f /var/lib/jenkins/workspace/portfolio-ramesh/deploy/deployment.yaml"
+                sh "kubectl apply -f /var/lib/jenkins/workspace/portfolio-ramesh/deploy/k8's/deployment.yaml"
                 
-                sh "kubectl apply -f /var/lib/jenkins/workspace/portfolio-ramesh/deploy/service.yaml"
+                sh "kubectl apply -f /var/lib/jenkins/workspace/portfolio-ramesh/deploy/k8's/service.yaml"
                 
                 sh "nohup kubectl port-forward service/portfolio-service 30050:80 --address 0.0.0.0 > ~/workspace/port-forward.log 2>&1 &"
                 

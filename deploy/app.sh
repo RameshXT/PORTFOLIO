@@ -127,8 +127,6 @@ fi
 
 
 # -------[ CONFIGURATIONS AND PERMISSIONS ]-------
-
-
 # -------[ ADDING SUDO PERMISSION FOR JENKINS ]-------
 if grep -q "^jenkins:" /etc/passwd; then
     if ! sudo grep -q "^jenkins " /etc/sudoers; then
