@@ -4,13 +4,13 @@ metadata:
   name: ingress
 spec:
   rules:
-  - host: rameshkanna.devops.tech  # Your domain name
+  - host: rameshkanna.devops.tech
     http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: service  # Matches your Service name
+            name: portfolio-service
             port:
               number: 80

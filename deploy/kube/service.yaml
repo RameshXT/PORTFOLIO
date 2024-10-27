@@ -4,10 +4,10 @@ metadata:
   name: portfolio-service
 spec:
   selector:
-    app: portfolio  # Must match the labels in your Deployment
+    app: portfolio
   ports:
     - protocol: TCP
-      port: 80       # Exposed port
-      targetPort: 80 # Port your container is running on
-      nodePort: 30050 # Expose externally (optional if using LoadBalancer)
-  type: NodePort  # Use LoadBalancer or NodePort to expose the app externally
+      port: 80
+      targetPort: 80
+      nodePort: 30050
+  type: NodePort
