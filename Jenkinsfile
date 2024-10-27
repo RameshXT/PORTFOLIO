@@ -134,14 +134,12 @@ pipeline
     {
         success
         {
-            echo '✅ Build completed successfully! Notifying the team of success...'
-            sh 'echo -e "\033[0;32mNotifying team of success...\033[0m"'
+            echo '✅ Build completed successfully!'
         }
 
         failure
         {
-            echo '❌ Build failed! Sending failure notifications...'
-            sh 'echo -e "\033[0;32mSending failure notifications...\033[0m"'
+            echo '❌ Build failed!'
         }
     }
 }
