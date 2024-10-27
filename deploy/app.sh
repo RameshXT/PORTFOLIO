@@ -2,6 +2,8 @@
 
 # -------[ COLOUR ]-------
 GREEN="\e[32m"
+BLUE="\e[34m"
+RED="\e[31m"
 NC="\e[0m"
 
 # -------[ UPDATE SYSTEM PACKAGES ]-------
@@ -25,7 +27,7 @@ if ! command -v crond &> /dev/null; then
 
     echo -e "${GREEN}Cron installed successfully.${NC}"
 else
-    echo -e "${GREEN}Cron is already installed.${NC}"
+    echo -e "${BLUE}Cron is already installed.${NC}"
 fi
 
 
@@ -38,13 +40,13 @@ install_curl() {
 
 # Check if curl is installed
 if command -v curl >/dev/null 2>&1; then
-    echo "${GREEN}curl is already installed.${NC}"
+    echo "${BLUE}curl is already installed.${NC}"
 else
     install_curl
     if command -v curl >/dev/null 2>&1; then
         echo "${GREEN}curl has been installed successfully.${NC}"
     else
-        echo "${GREEN}Failed to install curl.${NC}"
+        echo "${RED}Failed to install curl.${NC}"
         exit 1
     fi
 fi
@@ -52,7 +54,7 @@ fi
 
 # -------[ GIT INSTALLATION ]-------
 if command -v git &> /dev/null; then
-    echo -e "${GREEN}Git is already installed.${NC}"
+    echo -e "${BLUE}Git is already installed.${NC}"
 else
     echo -e "${GREEN}Git is not installed. Installing Git...${NC}"
     sudo yum install git -y
@@ -63,7 +65,7 @@ fi
 
 # -------[ JENKINS INSTALLATION ]-------
 if systemctl list-unit-files | grep -q jenkins; then
-    echo -e "${GREEN}Jenkins is already installed.${NC}"
+    echo -e "${BLUE}Jenkins is already installed.${NC}"
 else
     echo -e "${GREEN}Jenkins is not installed. Installing Jenkins...${NC}"
     
@@ -83,7 +85,7 @@ fi
 
 # -------[ DOCKER INSTALLATION ]-------
 if command -v docker &> /dev/null; then
-    echo -e "${GREEN}Docker is already installed.${NC}"
+    echo -e "${BLUE}Docker is already installed.${NC}"
 else
     echo -e "${GREEN}Docker is not installed. Installing Docker...${NC}"
     
@@ -100,7 +102,7 @@ fi
 
 # -------[ KUBECTL INSTALLATION ]-------
 if command -v kubectl &> /dev/null; then
-    echo -e "${GREEN}kubectl is already installed.${NC}"
+    echo -e "${BLUE}kubectl is already installed.${NC}"
 else
     echo -e "${GREEN}kubectl is not installed. Installing kubectl...${NC}"
     
@@ -115,7 +117,7 @@ fi
 
 # -------[ MINIKUBE INSTALLATION ]-------
 if command -v minikube &> /dev/null; then
-    echo -e "${GREEN}Minikube is already installed.${NC}"
+    echo -e "${BLUE}Minikube is already installed.${NC}"
 else
     echo -e "${GREEN}Minikube is not installed. Installing Minikube...${NC}"
     
@@ -133,10 +135,10 @@ if grep -q "^jenkins:" /etc/passwd; then
         echo -e "jenkins ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers > /dev/null
         echo -e "${GREEN}Added Jenkins to sudoers.${NC}"
     else
-        echo -e "${GREEN}Jenkins already has sudo permissions.${NC}"
+        echo -e "${BLUE}Jenkins already has sudo permissions.${NC}"
     fi
 else
-    echo -e "${GREEN}Jenkins user not found.${NC}"
+    echo -e "${RED}Jenkins user not found.${NC}"
 fi
 
 
@@ -146,7 +148,7 @@ if grep -q "^jenkins:.*:/bin/false" "$PASSWD_FILE"; then
     sudo sed -i 's|^jenkins:.*:/bin/false|jenkins:x:992:992:Jenkins Automation Server:/var/lib/jenkins:/bin/bash|' "$PASSWD_FILE"
     echo -e "${GREEN}Jenkins shell changed to /bin/bash.${NC}"
 else
-    echo -e "${GREEN}Jenkins shell already set to /bin/bash.${NC}"
+    echo -e "${BLUE}Jenkins shell already set to /bin/bash.${NC}"
 fi
 
 
@@ -250,7 +252,7 @@ if [ "$jobs_added" = true ]; then
     crontab "$temp_cron"
     echo -e "${GREEN}New cron jobs added successfully.${NC}"
 else
-    echo -e "${YELLOW}No new cron jobs were added; they already exist.${NC}"
+    echo -e "${BLUE}No new cron jobs were added; they already exist.${NC}"
 fi
 
 # Remove the temporary file
@@ -268,7 +270,7 @@ minikube start
 if [ $? -eq 0 ]; then
     echo -e "${GREEN}Minikube started successfully.${NC}"
 else
-    echo -e "${GREEN}Failed to start Minikube. Exiting.${NC}"
+    echo -e "${RED}Failed to start Minikube. Exiting.${NC}"
     exit 1
 fi
 EOF
@@ -380,11 +382,11 @@ for ((i = 0; i < ${#disk_data[@]}; i+=3)); do
     source=${disk_data[i]}
     usage=${disk_data[i+1]}
     mount=${disk_data[i+2]}
-    bar_length=${usage//%/}  # Extract the percentage as an integer
-    bar=$(printf "%-${bar_length}s" | tr ' ' '=')  # Create a bar of '=' characters
+    bar_length=${usage//%/}
+    bar=$(printf "%-${bar_length}s" | tr ' ' '=')
     
     echo -e "${GREEN}$source mounted on $mount${NC}"
-    echo -e "[${GREEN}${bar//=/▓}${NC} ${usage}]\n"  # Display the bar in green
+    echo -e "[${GREEN}${bar//=/▓}${NC} ${usage}]\n"
 done
 echo -e "${GREEN}==============================${NC}"
 
@@ -407,8 +409,8 @@ if sudo test -f "$JENKINS_PASSWORD_FILE"; then
         # Optionally, remove the temporary file afterward
         rm -f "$TEMP_PASSWORD_FILE"
     else
-        echo -e "${GREEN}Failed to retrieve the password.${NC}"
+        echo -e "${RED}Failed to retrieve the password.${NC}"
     fi
 else
-    echo -e "${GREEN}Jenkins initial admin password file not found!${NC}"
+    echo -e "${RED}Jenkins initial admin password file not found!${NC}"
 fi
