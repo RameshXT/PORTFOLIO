@@ -130,28 +130,18 @@ pipeline
             }
         }
     }
-    post {
-        always {
-            script {
-                def recipient = 'rameshkanna841@gmail.com'
-                def sender = 'rameshxt.1@gmail.com'
-                def subject = "Jenkins Build #${currentBuild.number} - ${currentBuild.currentResult}"
-                def body = """
-                The build has completed with status: ${currentBuild.currentResult}.
-                
-                You can access your web application at: http://<your-web-app-url>:30050
+    post
+    {
+        success
+        {
+            echo '✅ Build completed successfully! Notifying the team of success...'
+            sh 'echo -e "\033[0;32mNotifying team of success...\033[0m"'
+        }
 
-                Check the console output at ${env.BUILD_URL} to view the results.
-                """
-
-                emailext (
-                    subject: subject,
-                    body: body,
-                    recipientProviders: [[$class: 'CulpritsRecipientProvider'], [$class: 'RequesterRecipientProvider']],
-                    to: recipient,
-                    from: sender
-                )
-            }
+        failure
+        {
+            echo '❌ Build failed! Sending failure notifications...'
+            sh 'echo -e "\033[0;32mSending failure notifications...\033[0m"'
         }
     }
 }
