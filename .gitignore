@@ -1,0 +1,10 @@
+# Folders
+.vscode/
+New\ folder/
+TF/.terraform/
+
+#Files
+.terraform.lock.hcl
+provider
+terraform.tfstate
+terraform.tfstate.backup
