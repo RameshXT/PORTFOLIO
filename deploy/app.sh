@@ -271,8 +271,6 @@ fi
 EOF
 
 # -------[ KUBE CONFIGURATION WITH JENKINS ]-------
-#!/bin/bash
-
 # Define source and destination directories
 src_kube="/home/ec2-user/.kube"
 src_minikube="/home/ec2-user/.minikube"
@@ -385,7 +383,6 @@ for ((i = 0; i < ${#disk_data[@]}; i+=3)); do
     echo -e "[${GREEN}${bar//=/▓}${NC} ${usage}]\n"  # Display the bar in green
 done
 echo -e "${GREEN}==============================${NC}"
-
 
 
 # -------[ JENKINS INITIAL ADMIN PASSWORD ]-------
