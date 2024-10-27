@@ -105,16 +105,17 @@ pipeline
         {
             steps
             {
-                sh "kubectl apply -f /var/lib/jenkins/workspace/portfolio-ramesh/deploy/k8's/deployment.yaml"
-                
-                sh "kubectl apply -f /var/lib/jenkins/workspace/portfolio-ramesh/deploy/k8's/service.yaml"
-                
+                sh "kubectl apply -f /var/lib/jenkins/workspace/portfolio-ramesh/deploy/k8\\'s/deployment.yaml"
+
+                sh "kubectl apply -f /var/lib/jenkins/workspace/portfolio-ramesh/deploy/k8\\'s/service.yaml"
+
                 sh "nohup kubectl port-forward service/portfolio-service 30050:80 --address 0.0.0.0 > ~/workspace/port-forward.log 2>&1 &"
-                
-                // sh "nohup kubectl port-forward service/portfolio-service 30050:80 --address 0.0.0.0 > /var/lib/jenkins/workspace/portfolio-ramesh/port-forward.log 2>&1 &
-                // "sudo chown jenkins:jenkins /var/log" -- should give this permission to run port forward.
+
+                // Uncomment and run the following if you face permissions issues with port-forward:
+                // sh "sudo chown jenkins:jenkins /var/log"
             }
         }
+
         stage('Access Portfolio')
         {
             steps

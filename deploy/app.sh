@@ -258,6 +258,9 @@ rm "$temp_cron"
 
 
 # -------[ START MINIKUBE WITH DOCKER GROUP ]-------
+echo -e "${GREEN}Adding ec2-user to docker group...${NC}"
+sudo usermod -aG docker ec2-user
+
 echo -e "${GREEN}Switching to docker group and starting Minikube...${NC}"
 
 newgrp docker <<EOF
@@ -269,6 +272,7 @@ else
     exit 1
 fi
 EOF
+
 
 # -------[ KUBE CONFIGURATION WITH JENKINS ]-------
 # Define source and destination directories
