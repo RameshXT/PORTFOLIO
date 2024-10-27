@@ -45,8 +45,7 @@ I'm **Ramesh Kanna**, a DevOps engineer passionate about building scalable infra
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/yourusername/your-repository.git
-   cd your-repository
+   git clone https://github.com/RameshXT/PORTFOLIO.git
    ```
 2. **Run Locally**:
    - Ensure Docker and Minikube are installed.
