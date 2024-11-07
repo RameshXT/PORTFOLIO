@@ -8,18 +8,20 @@ NC="\e[0m"
 
 # -------[ UPDATE SYSTEM PACKAGES ]-------
 echo -e "${GREEN}Updating system packages...${NC}"
-sudo apt update && sudo apt upgrade -y
+sudo apt update -y
+
 
 # -------[ INSTALL REQUIRED APPLICATIONS ]-------
 
-# -------[ CRON INSTALLATION ]-------
-# Check if cron is installed
+# -------[ CROND INSTALLATION ]-------
+# Check if crond is installed
 if ! command -v cron &> /dev/null; then
     echo -e "${GREEN}Cron is not installed. Installing now...${NC}"
-    
+
     # Update the package list and install cron
-    sudo apt install -y cron
-    
+    sudo apt update -y
+    sudo apt install cron -y
+
     # Enable and start the cron service
     sudo systemctl enable cron
     sudo systemctl start cron
@@ -29,6 +31,7 @@ if ! command -v cron &> /dev/null; then
 else
     echo -e "${BLUE}Cron is already installed.${NC}"
 fi
+
 
 # -------[ CURL INSTALLATION ]-------
 # Function to install curl
@@ -50,35 +53,68 @@ else
     fi
 fi
 
+
 # -------[ GIT INSTALLATION ]-------
 if command -v git &> /dev/null; then
     echo -e "${BLUE}Git is already installed.${NC}"
 else
     echo -e "${GREEN}Git is not installed. Installing Git...${NC}"
-    sudo apt install -y git
+    sudo apt update -y
+    sudo apt install git -y
     sleep 2
     echo -e "${GREEN}Git is installed.${NC}"
 fi
 
-# -------[ JENKINS INSTALLATION ]-------
-if systemctl list-unit-files | grep -q jenkins; then
-    echo -e "${BLUE}Jenkins is already installed.${NC}"
-else
-    echo -e "${GREEN}Jenkins is not installed. Installing Jenkins...${NC}"
-    
-    sudo apt install -y wget
-    wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
-    sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
-    
-    sudo apt update
-    sudo apt install -y openjdk-17-jdk jenkins
-    
-    sudo systemctl enable jenkins
-    sudo systemctl start jenkins
-    sleep 10  # Wait for Jenkins service to start
 
-    echo -e "${GREEN}Jenkins is installed.${NC}"
+#!/bin/bash
+
+# -------[ JENKINS INSTALLATION ]-------
+
+# Check if Jenkins is already installed
+if systemctl list-unit-files | grep -q jenkins; then
+    echo -e "Jenkins is already installed."
+else
+    echo -e "Jenkins is not installed. Installing Jenkins..."
+
+    # Install Java (Jenkins requires Java 11 or newer)
+    echo -e "Installing Java 17..."
+    sudo apt update -y
+    sudo apt install openjdk-17-jdk -y
+
+    # Check if Java was installed successfully
+    if java -version &>/dev/null; then
+        echo -e "Java 17 has been installed successfully."
+    else
+        echo -e "Java installation failed. Please check the error above."
+        exit 1
+    fi
+
+    # Add the Jenkins repository key and the repository
+    echo -e "Adding Jenkins repository..."
+    curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | sudo tee /usr/share/keyrings/jenkins-keyring.asc > /dev/null
+    echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] https://pkg.jenkins.io/debian-stable binary/ | sudo tee /etc/apt/sources.list.d/jenkins.list > /dev/null
+
+    # Install Jenkins
+    echo -e "Installing Jenkins..."
+    sudo apt update -y
+    sudo apt-get install jenkins -y
+
+    # Start Jenkins service
+    sudo systemctl start jenkins
+
+    # Enable Jenkins service to start on boot
+    sudo systemctl enable jenkins
+
+    # Verify Jenkins installation
+    if systemctl is-active --quiet jenkins; then
+        echo -e "Jenkins has been installed and is running."
+    else
+        echo -e "Jenkins installation failed. Please check the error above."
+        exit 1
+    fi
 fi
+
+
 
 # -------[ DOCKER INSTALLATION ]-------
 if command -v docker &> /dev/null; then
@@ -86,24 +122,29 @@ if command -v docker &> /dev/null; then
 else
     echo -e "${GREEN}Docker is not installed. Installing Docker...${NC}"
     
-    sudo apt update
-    sudo apt install -y docker.io
+    # Update the package list and install prerequisites
+    sudo apt update -y
+    sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
     
+    # Add Docker’s official GPG key and repository
+    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+    echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+    # Install Docker
+    sudo apt update -y
+    sudo apt install docker-ce docker-ce-cli containerd.io -y
+    
+    # Start Docker service
     sudo systemctl start docker
     sudo systemctl enable docker
     sleep 5  # Wait for Docker service to start
+
+    # Add the current user to the Docker group
     sudo usermod -aG docker $USER
     
     echo -e "${GREEN}Docker installation and configuration is complete.${NC}"
 fi
 
-#!/bin/bash
-
-# -------[ COLOUR ]-------
-GREEN="\e[32m"
-BLUE="\e[34m"
-RED="\e[31m"
-NC="\e[0m"
 
 # -------[ KUBECTL INSTALLATION ]-------
 if command -v kubectl &> /dev/null; then
@@ -111,13 +152,19 @@ if command -v kubectl &> /dev/null; then
 else
     echo -e "${GREEN}kubectl is not installed. Installing kubectl...${NC}"
     
+    # Download kubectl
     curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl"
 
+    # Make kubectl executable and move it to the correct location
     chmod +x ./kubectl
     sudo mv ./kubectl /usr/local/bin/kubectl
+
     echo -e "${GREEN}kubectl installed successfully.${NC}"
+    
+    # Verify the installation
     kubectl version --client
 fi
+
 
 # -------[ MINIKUBE INSTALLATION ]-------
 if command -v minikube &> /dev/null; then
@@ -125,11 +172,16 @@ if command -v minikube &> /dev/null; then
 else
     echo -e "${GREEN}Minikube is not installed. Installing Minikube...${NC}"
     
+    # Download Minikube
     curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+
+    # Make Minikube executable and move it to the correct location
     chmod +x minikube-linux-amd64
     sudo mv minikube-linux-amd64 /usr/local/bin/minikube
+
     echo -e "${GREEN}Minikube installation is complete.${NC}"
 fi
+
 
 # -------[ CONFIGURATIONS AND PERMISSIONS ]-------
 # -------[ ADDING SUDO PERMISSION FOR JENKINS ]-------
@@ -144,6 +196,7 @@ else
     echo -e "${RED}Jenkins user not found.${NC}"
 fi
 
+
 # -------[ SET JENKINS SHELL TO /bin/bash ]-------
 PASSWD_FILE="/etc/passwd"
 if grep -q "^jenkins:.*:/bin/false" "$PASSWD_FILE"; then
@@ -153,7 +206,9 @@ else
     echo -e "${BLUE}Jenkins shell already set to /bin/bash.${NC}"
 fi
 
+
 # -------[ CREATE A FILE FOR JENKINS IP CHANGE ]-------
+
 # Define the file path
 FILE_PATH="/home/ubuntu/jenkins-ip.sh"
 
@@ -177,7 +232,7 @@ if [ -f "$JENKINS_CONFIG" ]; then
 
     echo -e "${GREEN}Jenkins has been restarted.${NC}"
 else
-    echo -e "${GREEN}Jenkins configuration file not found: $JENKINS_CONFIG${NC}"
+    echo -e "${RED}Jenkins configuration file not found: $JENKINS_CONFIG${NC}"
 fi'
 
 # Create the file and write the content
@@ -188,7 +243,9 @@ chmod +x "$FILE_PATH"
 
 echo -e "${GREEN}File created at $FILE_PATH with executable permissions.${NC}"
 
+
 # -------[ CREATE A FILE FOR PORTFORWARD ]-------
+
 # Define the file path
 FILE_PATH="/home/ubuntu/portforward.sh"
 
@@ -228,7 +285,9 @@ chmod +x "$FILE_PATH"
 
 echo -e "${GREEN}File created at $FILE_PATH with executable permissions.${NC}"
 
+
 # -------[ ADDING STARTUP COMMANDS ]-------
+
 # Temporary file to hold current crontab
 temp_cron=$(mktemp)
 
@@ -266,8 +325,9 @@ rm "$temp_cron"
 
 
 # -------[ START MINIKUBE WITH DOCKER GROUP ]-------
-echo -e "${GREEN}Adding ubuntu user to docker group...${NC}"
-sudo usermod -aG docker ubuntu
+
+echo -e "${GREEN}Adding ec2-user to docker group...${NC}"
+sudo usermod -aG docker ec2-user
 
 echo -e "${GREEN}Switching to docker group and starting Minikube...${NC}"
 
@@ -283,9 +343,10 @@ EOF
 
 
 # -------[ KUBE CONFIGURATION WITH JENKINS ]-------
+
 # Define source and destination directories
-src_kube="/home/ubuntu/.kube"
-src_minikube="/home/ubuntu/.minikube"
+src_kube="/home/ec2-user/.kube"
+src_minikube="/home/ec2-user/.minikube"
 dest_kube="/var/lib/jenkins/.kube"
 dest_minikube="/var/lib/jenkins/.minikube"
 config_file="$dest_kube/config"
@@ -302,9 +363,9 @@ if [ -d "$src_kube" ] && [ -d "$src_minikube" ]; then
 
     # Update paths in the config file if it exists
     if [ -f "$config_file" ]; then
-        sudo sed -i 's|certificate-authority: /home/ubuntu/.minikube/ca.crt|certificate-authority: /var/lib/jenkins/.minikube/ca.crt|' "$config_file"
-        sudo sed -i 's|client-certificate: /home/ubuntu/.minikube/profiles/minikube/client.crt|client-certificate: /var/lib/jenkins/.minikube/profiles/minikube/client.crt|' "$config_file"
-        sudo sed -i 's|client-key: /home/ubuntu/.minikube/profiles/minikube/client.key|client-key: /var/lib/jenkins/.minikube/profiles/minikube/client.key|' "$config_file"
+        sudo sed -i 's|certificate-authority: /home/ec2-user/.minikube/ca.crt|certificate-authority: /var/lib/jenkins/.minikube/ca.crt|' "$config_file"
+        sudo sed -i 's|client-certificate: /home/ec2-user/.minikube/profiles/minikube/client.crt|client-certificate: /var/lib/jenkins/.minikube/profiles/minikube/client.crt|' "$config_file"
+        sudo sed -i 's|client-key: /home/ec2-user/.minikube/profiles/minikube/client.key|client-key: /var/lib/jenkins/.minikube/profiles/minikube/client.key|' "$config_file"
     else
         echo "Config file not found at $config_file. Skipping path updates."
     fi
@@ -317,7 +378,9 @@ else
         echo "Missing: $src_minikube"
     fi
 fi
-echo "${GREEN}Kube files have been configured.${NC}"
+
+echo "${GREEN}kube files have been configured${NC}"
+
 
 # -------[ VERSION CHECK FOR APPLICATIONS ]-------
 printf "%-12s | %-30s\n" "Tool" "Version / Status"
@@ -330,15 +393,15 @@ else
     printf "%-12s | %-30s\n" "Git" "Not Installed"
 fi
 
-# Crond status
-if systemctl list-unit-files | grep -q cron; then
-    status=$(systemctl is-active cron)
-    printf "%-12s | %-30s\n" "Cron" "$status"
+# Crond
+if systemctl list-unit-files | grep -q crond; then
+    status=$(systemctl status crond | grep 'Active:' | awk '{print $2, $3, $4}')
+    printf "%-12s | %-30s\n" "Crond" "$status"
 else
-    printf "%-12s | %-30s\n" "Cron" "Not Installed"
+    printf "%-12s | %-30s\n" "Crond" "Not Installed"
 fi
 
-# Curl
+# curl
 if command -v curl > /dev/null; then
     printf "%-12s | %-30s\n" "Curl" "Installed"
 else
@@ -347,7 +410,7 @@ fi
 
 # Jenkins version
 if systemctl list-unit-files | grep -q jenkins; then
-    printf "%-12s | %-30s\n" "Jenkins" "$(systemctl is-active jenkins)"
+    printf "%-12s | %-30s\n" "Jenkins" "$(systemctl status jenkins | grep 'Active:' | awk '{print $2}')"
 else
     printf "%-12s | %-30s\n" "Jenkins" "Not Installed"
 fi
@@ -362,7 +425,9 @@ fi
 # kubectl version
 if command -v kubectl &> /dev/null; then
     kubectl_version=$(kubectl version --client 2>/dev/null | grep 'Client Version' | awk '{print $3}' | tr -d 'v')
-    kubectl_version=${kubectl_version:-"Unknown Version"}
+    if [ -z "$kubectl_version" ]; then
+        kubectl_version="Not Installed"
+    fi
     printf "%-12s | %-30s\n" "kubectl" "$kubectl_version"
 else
     printf "%-12s | %-30s\n" "kubectl" "Not Installed"
@@ -375,6 +440,7 @@ if command -v minikube &> /dev/null; then
 else
     printf "%-12s | %-30s\n" "Minikube" "Not Installed"
 fi
+
 echo -e "${GREEN}=============================================${NC}"
 echo -e "${GREEN}Setup complete!${NC}"
 
@@ -399,7 +465,7 @@ echo -e "${GREEN}==============================${NC}"
 JENKINS_PASSWORD_FILE="/var/lib/jenkins/secrets/initialAdminPassword"
 TEMP_PASSWORD_FILE="/tmp/jenkins_password.txt"
 
-# Check if the password file exists and fetch it using sudo
+# Check if the Jenkins initial admin password file exists
 if sudo test -f "$JENKINS_PASSWORD_FILE"; then
     echo -e "${GREEN}Retrieving Jenkins Initial Admin Password...${NC}"
     
@@ -409,7 +475,8 @@ if sudo test -f "$JENKINS_PASSWORD_FILE"; then
     # Check if the temporary file was created successfully
     if [[ -f "$TEMP_PASSWORD_FILE" ]]; then
         echo -e "${GREEN}Password retrieved successfully:${NC}"
-        cat "$TEMP_PASSWORD_FILE"
+        cat "$TEMP_PASSWORD_FILE"  # Display the retrieved password
+        
         # Optionally, remove the temporary file afterward
         rm -f "$TEMP_PASSWORD_FILE"
     else
