@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- -------[ PROJECT TITLE ]-------@RameshXT -->
-    <title>PortFolio | Ramesh</title>
+    <title>Document | Portfolio</title>
 
     <!-- ?-------[ FAVICON LINK ]------- -->
     <link rel="icon" href="/assets/favicon/favicon.png">
@@ -76,25 +76,112 @@
             <p>Tested across devices and browsers, fixing issues for consistency.</p>
         </div> -->
 
-        <!-- [ DEPLOYMENT START ] -->
-        <div class="workflow-step" data-step="5">
-            <h2>Deployment</h2>
-            
-            <p><strong>Developed Design Mockups:</strong></P>
-            <p>&#x2022; In the deployment phase, I took the following steps:</p>
-            <div class="code-section">
-                <p>bash</p>
-                <code>git clone https://github.com/myportfolio.git</code>
-                <button class="copy-btn" onclick="copyCode()">Copy code</button>
-            </div>
-            
-            <div class="image-section">
-                <p>Image Placeholder: Screenshot of the deployed site.</p>
-                <img src="" alt="">
-            </div>
-            
+<!-- [ DEPLOYMENT START ] -->
+<div class="workflow-step" data-step="5">
+    <h2>Deployment</h2>
+    
+    <p><strong>Launch instance</strong></p>
+    <p>&#x2022; To launch an instance using terraform.</p>
+
+    <!-- [ TERRAFORM ] -->
+    <p>&#x2022; This file specifies the AWS provider and region. create a file called <strong>provider.tf</strong></p>
+    <div class="code-section">
+        <p>terraform</p>
+        <pre><code>provider "aws" {
+region = "us-east-1"
+}</code></pre>
+        <button class="copy-btn" onclick="copyCode(this)">Copy code</button>
+    </div><br><br>
+
+    <p>&#x2022;  This file defines an <strong>EC2</strong> instance with the specified configuration, including the instance type, AMI, security group, and root block device. create a file called <strong>ec2.tf</strong></p>
+    <div class="code-section">
+        <p></p>
+        <pre><code># SG
+data "aws_security_group" "existing" {
+  filter {
+    name   = "group-name"
+    values = ["Primary-SG"]
+  }
+}
+
+# EC2
+resource "aws_instance" "my_ec2" {
+  ami           = "ami-06b21ccaeff8cd686"
+  instance_type = "t3.medium"
+
+  vpc_security_group_ids = [data.aws_security_group.existing.id]
+  key_name        = "Primary-KEY"
+
+  root_block_device {
+    volume_type = "gp3"
+    volume_size = 30
+  }
+
+  tags = {
+    Name = "PortFolio"
+  }
+}</code></pre>
+        <button class="copy-btn" onclick="copyCode(this)">Copy code</button>
+    </div><br><br>
+
+        <p>&#x2022; To apply this configuration, navigate to the directory with these files and run</p>
+        <div class="code-section">
+            <p></p>
+            <pre><code>terraform init</code></pre>
+            <button class="copy-btn" onclick="copyCode(this)">Copy code</button>
         </div>
-        <!-- [ DEPLOYMENT END ] -->
+        <div class="code-section">
+            <p></p>
+            <pre><code>terraform plan</code></pre>
+            <button class="copy-btn" onclick="copyCode(this)">Copy code</button>
+        </div>
+
+        <p>&#x2022; Run apply command and give value "yes"</p>
+        <div class="code-section">
+            <p></p>
+            <pre><code>terraform apply</code></pre>
+            <button class="copy-btn" onclick="copyCode(this)">Copy code</button>
+        </div><br><br>
+
+        <p>&#x2022; Output:</p>
+        <div class="image-section">
+            <!-- <p>Image Placeholder: Screenshot of the deployed site.</p> -->
+            <!-- <img src="/srs/portfolio/assets/terraform/apply.png" alt=""> -->
+        </div><br><br>
+
+            <!-- [ Placeholder ] -->
+    <p>&#x2022; terraform plan </p>
+    <div class="code-section">
+        <p></p>
+        <pre><code></code></pre>
+        <button class="copy-btn" onclick="copyCode(this)">Copy code</button>
+    </div><br><br>
+
+        <!-- [ Placeholder ] -->
+        <p>&#x2022; </p>
+        <div class="code-section">
+            <p></p>
+            <pre><code></code></pre>
+            <button class="copy-btn" onclick="copyCode(this)">Copy code</button>
+        </div><br><br>
+
+            <!-- [ Placeholder ] -->
+    <p>&#x2022; </p>
+    <div class="code-section">
+        <p></p>
+        <pre><code></code></pre>
+        <button class="copy-btn" onclick="copyCode(this)">Copy code</button>
+    </div><br><br>
+    
+    <div class="image-section">
+        <p>Image Placeholder: Screenshot of the deployed site.</p>
+        <img src="" alt="">
+    </div>
+    
+</div>
+<!-- [ DEPLOYMENT END ] -->
+
+
 
     </section>
 </div>

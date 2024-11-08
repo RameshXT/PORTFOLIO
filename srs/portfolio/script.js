@@ -21,10 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // JavaScript for the Copy Button functionality
-function copyCode() {
-    const codeText = document.querySelector(".code-section code").textContent; // Get code text
-    const button = document.querySelector(".copy-btn");
-
+function copyCode(button) {
+    const codeText = button.previousElementSibling.querySelector("code").textContent; // Get code text from the specific code block
     // Copy the code text to the clipboard
     navigator.clipboard.writeText(codeText).then(() => {
         // Change the button text to 'Copied!' when successful
