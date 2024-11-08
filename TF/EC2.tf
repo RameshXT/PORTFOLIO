@@ -14,6 +14,11 @@ resource "aws_instance" "my_ec2" {
   vpc_security_group_ids = [data.aws_security_group.existing.id]
   key_name        = "Primary-KEY"
 
+  root_block_device {
+    volume_type = "gp3"
+    volume_size = 30
+  }
+
   tags = {
     Name = "PortFolio"
   }
