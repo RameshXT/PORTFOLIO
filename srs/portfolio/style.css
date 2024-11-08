@@ -1,0 +1,197 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures padding and borders are included in element’s total width/height */
+}
+
+/* Background with Dark Blue Glow Gradient */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #000428, #004e92); /* Creates a dark blue gradient background */
+    color: #fff; /* Sets text color to white for contrast */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centers content vertically and horizontally */
+    min-height: 100vh;
+    padding: 20px;
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+/* Container Styling */
+#container {
+    width: 100%;
+    max-width: 900px; /* Limits container width */
+    text-align: center;
+    margin: auto;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #ffffff; /* White color for title text */
+}
+
+p.intro {
+    font-size: 1.2rem;
+    color: #cccccc; /* Light gray for subtext */
+    margin-bottom: 2rem;
+}
+
+/* Workflow Section */
+#workflow {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Adds spacing between steps */
+}
+
+.workflow-step {
+    background: rgba(255, 255, 255, 0.1); /* Light transparent background */
+    padding: 1.5rem;
+    border-radius: 8px;
+    opacity: 0; /* Hidden by default */
+    transform: translateY(20px); /* Positioned slightly below original spot */
+    transition: opacity 0.6s ease, transform 0.6s ease; /* Smooth reveal effect */
+    border-left: 4px solid transparent;
+    text-align: left;
+}
+
+.workflow-step.active {
+    opacity: 1;
+    transform: translateY(0); /* Moves element to its original position */
+    border-left-color: #4e92df; /* Adds a blue accent line */
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.workflow-step h2 {
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.workflow-step p {
+    color: #cccccc;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
+
+/* Code Section Styling */
+.code-section {
+    position: relative;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-top: 1rem;
+    color: #58e600; /* Green color for code text */
+    font-family: monospace;
+    display: inline-block;
+    width: 100%;
+    overflow: hidden; /* Prevents content overflow */
+}
+
+/* Copy Button Styling */
+.copy-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid #4e92df;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    z-index: 10; /* Ensures button remains on top */
+}
+
+.copy-btn:hover {
+    background-color: #4e92df; /* Changes color on hover */
+}
+
+/* Image Section Styling */
+.image-section {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #cccccc;
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+/* Tool Images Section */
+.tool-images {
+    display: flex;
+    justify-content: center; /* Centers the images horizontally */
+    gap: 30px; /* Adds space between images */
+    margin-top: 20px;
+    width: 100%;
+}
+
+.tool-image {
+    width: 50px; /* Icon size */
+    height: auto;
+    display: block;
+}
+
+/* Responsive Design Adjustments */
+@media (min-width: 768px) {
+    #container {
+        width: 80%; /* Increases container width on larger screens */
+    }
+}
+
+@media (max-width: 767px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    p.intro {
+        font-size: 1rem;
+    }
+
+    .workflow-step h2 {
+        font-size: 1.3rem;
+    }
+
+    .workflow-step p {
+        font-size: 0.9rem;
+    }
+
+    .code-section {
+        font-size: 0.85rem;
+    }
+
+    .copy-btn {
+        font-size: 0.7rem;
+    }
+
+    .image-section {
+        font-size: 0.9rem;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .workflow-step {
+        padding: 1rem;
+    }
+
+    .workflow-step h2 {
+        font-size: 1.2rem;
+    }
+
+    p.intro,
+    .workflow-step p {
+        font-size: 0.85rem;
+    }
+}
