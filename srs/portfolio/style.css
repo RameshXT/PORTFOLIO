@@ -8,7 +8,9 @@
 /* Background with Dark Blue Glow Gradient */
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #000428, #004e92); /* Creates a dark blue gradient background */
+    background: linear-gradient(135deg, #000428, #004e92);
+    /* background: linear-gradient(90deg, #000428, #004e92); */
+
     color: #fff; /* Sets text color to white for contrast */
     display: flex;
     align-items: center;
@@ -60,7 +62,7 @@ p.intro {
     opacity: 1;
     transform: translateY(0); /* Moves element to its original position */
     border-left-color: #4e92df; /* Adds a blue accent line */
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.058);
 }
 
 .workflow-step h2 {
@@ -80,7 +82,7 @@ p.intro {
 /* Code Section Styling */
 .code-section {
     position: relative;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.175);
     border-radius: 8px;
     padding: 1rem;
     margin-top: 1rem;
