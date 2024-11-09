@@ -89,7 +89,7 @@ pipeline
         {
             steps
             {
-                withCredentials([string(credentialsId: 'Docker-Id', variable: 'Docker')])
+                withCredentials([string(credentialsId: 'Docker-ID', variable: 'Docker')])
                 {
                     sh """
                         sudo docker login -u rameshxt -p "${Docker}"
