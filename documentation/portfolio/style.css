@@ -127,7 +127,6 @@ p.intro {
     backdrop-filter: blur(10px); /* Blur effect */
 }
 
-
 /* Tool Images Section */
 .tool-images {
     display: flex;
@@ -136,6 +135,14 @@ p.intro {
     margin-top: 20px;
     width: 100%;
 }
+
+.image-section img {
+    max-width: 100%;  /* Limits image to container width */
+    max-height: 100%; /* Limits image to container height */
+    object-fit: contain; /* Ensures image fits without cropping */
+    border-radius: inherit; /* Inherits border-radius from .image-section */
+}
+
 
 .tool-image {
     width: 50px; /* Icon size */

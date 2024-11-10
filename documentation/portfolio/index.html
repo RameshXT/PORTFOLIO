@@ -15,7 +15,7 @@
     <link rel="icon" href="/assets/favicon/favicon.png">
 
     <!-- ?-------[ CSS LINKS ]------- -->
-    <link rel="stylesheet" href="/srs/portfolio/style.css">
+    <link rel="stylesheet" href="/documentation/portfolio/style.css">
     
 </head>
 <body>
@@ -34,7 +34,7 @@
 
         <!-- [ PLAN & RESEARCH ] -->
         <div class="workflow-step" data-step="1">
-            <h2>Planning & Research</h2>
+            <h2>Planning & Research📅</h2>
             <p>As a fresher, I approached this project with the goal of showcasing my potential and foundational skills. My planning phase included:</p>
             <p><strong>Setting Clear Goals:</strong> Defined the purpose of the portfolio — to highlight my academic projects, technical skills, and enthusiasm for the field.</p>
             <p><strong>Researching Other Portfolios:</strong> Explored portfolios created by other entry-level professionals to understand industry standards and find design inspiration.</p>
@@ -43,7 +43,7 @@
 
         <!-- [ DESIGN ] -->
         <div class="workflow-step" data-step="2">
-            <h2>Design & Wireframing</h2>
+            <h2>Design & Wireframing🎨</h2>
             <p>In this phase, I focused on translating my ideas into a visual structure. To achieve a clean and organized layout, I:</p>
             <p><strong>Sketched Wireframes:</strong> I began by creating rough paper sketches to plan the structure of the portfolio. These sketches helped define the placement of key sections, the navigation flow, and the overall layout of the design. This initial stage allowed me to visualize the user experience and make adjustments before moving on to digital wireframing.</p>
             <!-- <p><strong>Developed Design Mockups:</strong> Used design tools to create mockups, experimenting with colors, typography, and spacing to ensure a visually appealing and professional look.</p>
@@ -52,7 +52,7 @@
 
         <!-- [ DEVELOPMENT ] -->
         <div class="workflow-step" data-step="3">
-            <h2>Development</h2>
+            <h2>Development💻</h2>
             <p>Built the frontend with HTML, CSS, and JavaScript for structure and interaction.</p>
             
             <!-- Tool Images -->
@@ -146,11 +146,17 @@ resource "aws_instance" "my_ec2" {
         <p>&#x2022; Output:</p>
         <div class="image-section">
             <!-- <p>Image Placeholder: Screenshot of the deployed site.</p> -->
-            <!-- <img src="/srs/portfolio/assets/terraform/apply.png" alt=""> -->
+            <img src="/documentation/portfolio/assets/terraform/apply.png" alt="">
         </div><br><br>
 
             <!-- [ Placeholder ] -->
-    <p>&#x2022; Connect to Your Instance </p>
+<div class="image-section">
+    <!-- <p>Image Placeholder: Screenshot of the deployed site.</p> -->
+    <img src="/documentation/portfolio/assets/terraform/ec2.png" alt="">
+</div><br><br>
+
+<p>&#x2022; Connect to Your Instance </p>
+
     <div class="code-section">
         <p>bash</p>
         <pre><code>ssh ec2-user@instance-ip-address</instance-ip-address></code></pre>
@@ -614,14 +620,14 @@ bash setup.sh</code></pre>
             <p>&#x2022; Output:</p>
             <div class="image-section">
                 <!-- <p>Image Placeholder: Screenshot of the deployed site.</p> -->
-                <!-- <img src="/srs/portfolio/assets/terraform/apply.png" alt=""> -->
+                <img src="/documentation/portfolio/assets/terraform/install.png" alt="">
             </div><br><br>
 
 
             <strong>Dockerfile</strong>
             <p>The Dockerfile is used to create a Docker image for your application.</p>
             <div class="code-section">
-                <p>Docker</p>
+                <p>Dockerfile</p>
                 <pre><code>FROM ubuntu:20.04
 
 ARG DEBIAN_FRONTEND=noninteractive
@@ -642,7 +648,7 @@ CMD ["apachectl", "-D", "FOREGROUND"]</code></pre>
             <strong>deployment.yaml</strong>
             <p>This Kubernetes manifest file is used to create a Deployment for your application in a Kubernetes cluster.</p>
             <div class="code-section">
-                <p>k8s</p>
+                <p>yaml</p>
                 <pre><code>apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -668,7 +674,7 @@ spec:
             <strong>service.yaml</strong>
             <p>This file exposes your application as a service within the Kubernetes cluster.</p>
             <div class="code-section">
-                <p>k8s</p>
+                <p>yaml</p>
                 <pre><code>apiVersion: v1
 kind: Service
 metadata:
@@ -688,7 +694,7 @@ spec:
             <strong>Jenkinsfile</strong>
             <p>The Jenkinsfile defines your CI/CD pipeline, handling steps like building the Docker image, pushing it to Docker Hub, and deploying it to Kubernetes.</p>
             <div class="code-section">
-                <p>Jenkins</p>
+                <p>groovy</p>
                 <pre><code>pipeline
 {
     agent any
@@ -915,11 +921,11 @@ spec:
 <p>3. Monitor Build Progress:</p>
 <p>&#x2022; After triggering the build, you can view the progress in <strong>Build History</strong>. Click on the build number <strong>(e.g., #1)</strong> to open the build details.</p>
 <p>&#x2022; Choose <strong>Console Output</strong> to see detailed logs of each step in the pipeline, including plugin installation, Docker commands, and any other actions specified in your Jenkinsfile.</p>
-<p>Once the build completes successfully:</p>
 
+<p>&#x2022; Once the build completes successfully:</p>
 <div class="image-section">
     <!-- <p>Image Placeholder: Screenshot of the deployed site.</p> -->
-    <!-- <img src="/srs/portfolio/assets/terraform/apply.png" alt=""> -->
+    <img src="/documentation/portfolio/assets/terraform/build.png" alt="">
 </div><br><br>
 
 
@@ -944,88 +950,31 @@ spec:
 
     <p>This completes the process, and you should now see output confirming that the port forwarding has successfully enabled access to the application running on port 5050.</p>
 
-    <p>&#x2022; Output:</p>
+    <p>&#x2022; Once the build completes successfully:</p>
     <div class="image-section">
         <!-- <p>Image Placeholder: Screenshot of the deployed site.</p> -->
-        <!-- <img src="/srs/portfolio/assets/terraform/apply.png" alt=""> -->
+        <img src="/documentation/portfolio/assets/terraform/port.png" alt="">
     </div><br><br>
 
-
-                <!-- [ Placeholder ] -->
-                <p></p>
-                <div class="code-section">
-                    <p>bash</p>
-                    <pre><code></code></pre>
-                    <button class="copy-btn" onclick="copyCode(this)">Copy code</button>
-                </div><br><br>
+    <p>After port forwarding, we are able to access our web page using the specified port from outside the world.</p>
 
 
-
-                            <!-- [ Placeholder ] -->
-    <p>Paste the following into the setup.sh file:</p>
-    <div class="code-section">
-        <p>bash</p>
-        <pre><code></code></pre>
-        <button class="copy-btn" onclick="copyCode(this)">Copy code</button>
+    <div class="image-section">
+        <!-- <p>Image Placeholder: Screenshot of the deployed site.</p> -->
+        <img src="/documentation/portfolio/assets/terraform/webpage.png" alt="">
     </div><br><br>
 
+    <p>We trust the documentation will provide valuable insights. Should you spot any errors, feel free to <strong>send an email</strong> – your <strong>feedback</strong> will be highly appreciated. <em>Thank you for your support!</em></p>
 
+    <br><br><hr style="border: 2px solid #4e92df; width: 80%; margin: auto;">
 
-
-                <!-- [ Placeholder ] -->
-                <p>Paste the following into the setup.sh file:</p>
-                <div class="code-section">
-                    <p>bash</p>
-                    <pre><code></code></pre>
-                    <button class="copy-btn" onclick="copyCode(this)">Copy code</button>
-                </div><br><br>
-
-
-
-
-                            <!-- [ Placeholder ] -->
-    <p>Paste the following into the setup.sh file:</p>
-    <div class="code-section">
-        <p>bash</p>
-        <pre><code></code></pre>
-        <button class="copy-btn" onclick="copyCode(this)">Copy code</button>
-    </div><br><br>
-    
-
-
-
-
-                <!-- [ Placeholder ] -->
-                <p>Paste the following into the setup.sh file:</p>
-                <div class="code-section">
-                    <p>bash</p>
-                    <pre><code></code></pre>
-                    <button class="copy-btn" onclick="copyCode(this)">Copy code</button>
-                </div><br><br>
-                
-
-
-
-
-                            <!-- [ Placeholder ] -->
-    <p>Paste the following into the setup.sh file:</p>
-    <div class="code-section">
-        <p>bash</p>
-        <pre><code></code></pre>
-        <button class="copy-btn" onclick="copyCode(this)">Copy code</button>
-    </div><br><br>
-    
-
-    
 </div>
 <!-- [ DEPLOYMENT END ] -->
-
-
 
     </section>
 </div>
     <!-- !-------[ HEADER END ]------- -->
 
-<script src="/srs/portfolio/script.js"></script>
+<script src="/documentation/portfolio/script.js"></script>
 </body>
 </html>
