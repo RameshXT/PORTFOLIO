@@ -90,7 +90,9 @@ p.intro {
     font-family: monospace;
     display: inline-block;
     width: 100%;
-    overflow: hidden; /* Prevents content overflow */
+    overflow-x: auto; /* Enables horizontal scrolling */
+    overflow-y: hidden; /* Hides vertical scrolling */
+    white-space: nowrap; /* Prevents line wrapping */
 }
 
 /* Copy Button Styling */
@@ -205,4 +207,54 @@ p.intro {
     .workflow-step p {
         font-size: 0.85rem;
     }
+}
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    height: 16px; /* Horizontal scrollbar width */
+    width: 16px; /* Vertical scrollbar width */
+}
+
+::-webkit-scrollbar-track {
+    background: transparent; /* Transparent background for the track */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #004e92; /* Solid color for the scrollbar thumb */
+    border-radius: 8px; /* Rounded corners for the thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #003366; /* Darker thumb color when hovered */
+}
+
+/* Firefox styling */
+* {
+    scrollbar-width: thin; /* Thin scrollbar in Firefox */
+    scrollbar-color: #004e92 transparent; /* Solid thumb color with transparent track */
+}
+
+.tool-images {
+    display: flex;
+    gap: 20px; /* Adjust the space between the logos */
+    flex-wrap: wrap; /* Allow images to wrap to the next line if needed */
+    justify-content: center; /* Center the logos */
+}
+
+.tool-link {
+    display: inline-block;
+    background-color: #f1f1f1; /* Set background color for the link */
+    padding: 10px; /* Add padding around the logo */
+    border-radius: 8px; /* Optional: Add rounded corners to the background */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition on hover */
+}
+
+.tool-link:hover {
+    background-color: #e0e0e0; /* Change background on hover */
+    transform: scale(1.1); /* Make the logo 10% larger on hover */
+}
+
+.tool-image {
+    width: 50px; /* Set a fixed width for the logos */
+    height: 50px; /* Set a fixed height for the logos */
+    object-fit: contain; /* Ensure images are contained within the given dimensions */
 }

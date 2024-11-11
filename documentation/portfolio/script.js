@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (rect.top < window.innerHeight * 0.8 && rect.bottom > 0) {
                 setTimeout(() => {
                     step.classList.add("active"); // Add the "active" class to reveal the step
-                }, index * 200); // Stagger the reveal for each step
+                }, index * 50); // Stagger the reveal for each step
             }
         });
     };
@@ -23,12 +23,15 @@ document.addEventListener("DOMContentLoaded", () => {
 // JavaScript for the Copy Button functionality
 function copyCode(button) {
     const codeText = button.previousElementSibling.querySelector("code").textContent; // Get code text from the specific code block
+    
     // Copy the code text to the clipboard
     navigator.clipboard.writeText(codeText).then(() => {
-        // Change the button text to 'Copied!' when successful
-        button.textContent = 'Copied!';
+        // Change button content to show a check icon and "Copied!" text
+        button.innerHTML = '<i class="fas fa-check"></i> Copied!';
+        
         setTimeout(() => {
-            button.textContent = 'Copy code'; // Reset button text after 2 seconds
+            // Reset button content to "Copy code" with a copy icon
+            button.innerHTML = '<i class="fas fa-copy"></i> Copy code';
         }, 2000);
     });
 }
