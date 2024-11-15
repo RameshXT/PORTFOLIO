@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
 
 :root {
-  --first-color: hsl(82, 60%, 28%);
-  --title-color: hsl(0, 0%, 15%);
-  --text-color: hsl(0, 0%, 35%);
+  --first-color: hsl(117, 100%, 50%);
+  --title-color: hsl(0, 0%, 75%);
+  --text-color: hsl(0, 0%, 100%);
   --body-color: hsl(0, 0%, 95%);
-  --container-color: hsl(0, 0%, 100%);
+  --container-color: hsl(0, 0%, 0%);
   --body-font: "Poppins", sans-serif;
   --h2-font-size: 1.25rem;
   --small-font-size: .813rem;
@@ -22,6 +22,29 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+body.loaded {
+  opacity: 1;
+}
+
+.project-section {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  position: relative;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+  color: #acacac;
+  letter-spacing: 0.15rem;
+  font-weight: 100;
+}
+
+.project-section .underline {
+  width: 350px;
+  height: 2px;
+  background-color: #005FA1;
+  margin: 0 auto;
 }
 
 img {
