@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black and White Project Cards with Glow Effect</title>
+    <style>
+        /* Body Styling */
+        .body-w {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            /* background: linear-gradient(26.8deg, white 50%, black 0%); */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        /* Section Styling */
+        .projects-section {
+            width: 100%;
+            max-width: 1200px;
+            padding: 40px;
+            background-color: #fff;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            min-width: 300px;
+            flex-grow: 1;
+
+        }
+
+        /* Title Styling */
+        .title-heading {
+            color: #333;
+            font-size: 2em;
+            margin-bottom: 30px;
+            word-wrap: break-word;
+            margin-top: 20px;
+            text-align: center;
+            width: 100%;
+        }
+
+        /* Projects container update */
+        .projects-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            width: 100%;
+            padding: 0 10px;
+            box-sizing: border-box;
+            flex-grow: 1;
+        }
+
+        /* Card Styling */
+        .project-card {
+            width: 48%;
+            height: 300px;
+            perspective: 1000px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            transition: box-shadow 0.5s ease-in-out;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-inner-wrapper {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s ease;
+        }
+
+        .project-card:hover .card-inner-wrapper {
+            transform: rotateY(180deg);
+        }
+
+        .front-side,
+        .back-side {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            backface-visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .front-side {
+            background-color: black;
+            color: white;
+            flex-direction: column;
+            justify-content: flex-end;
+            text-align: center;
+        }
+
+        .project-image {
+            max-width: 70%;
+            height: auto;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+
+        .project-title {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .back-side {
+            background-color: white;
+            color: black;
+            transform: rotateY(180deg);
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .description-heading {
+            margin: 10px 0;
+            font-size: 20px;
+        }
+
+        .description-text {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .cta-btn {
+            padding: 15px 30px;
+            background: #ffffff;
+            color: #000000;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            display: inline-block;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: background-color 0.5s, color 0.5s, transform 0.5s, border 0.5s;
+            border: 2px solid #ffffff;
+        }
+
+        .cta-btn:after {
+            content: '»';
+            position: absolute;
+            opacity: 0;
+            top: 50%;
+            right: -30px;
+            transform: translateY(-50%);
+            transition: opacity 0.5s, right 0.5s;
+        }
+
+        .cta-btn:hover {
+            background-color: #000;
+            color: #fff;
+            border: 2px solid #fff;
+        }
+
+        .cta-btn:hover:after {
+            opacity: 1;
+            right: 10px;
+        }
+
+        .cta-btn-text {
+            display: inline-block;
+            transition: transform 0.5s;
+        }
+
+        .cta-btn:hover .cta-btn-text {
+            transform: translateX(-10px);
+        }
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    /* Medium screens (Tablets) */
+    .projects-container {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .project-card {
+        width: 48%;
+    }
+
+    .project-image {
+        max-width: 80%;
+    }
+
+    .title-heading {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Small screens (Portrait Tablets and Below) */
+    .projects-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-card {
+        width: 90%;
+        margin: 10px 0;
+    }
+
+    .project-image {
+        max-width: 80%;
+    }
+
+    .title-heading {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+        padding-top: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    /* Mobile devices */
+    .project-card {
+        width: 100%;
+    }
+
+    .projects-section {
+        padding: 20px;
+    }
+
+    .project-image {
+        max-width: 90%;
+    }
+
+    .title-heading {
+        font-size: 1.3em;
+    }
+}
+
+        /* Keyframes for a radial sweep glow */
+        @keyframes radial-sweep {
+            0% {
+                box-shadow: 0 0 10px rgba(0, 123, 255, 0.5), 0 0 30px rgba(0, 123, 255, 0.3), 0 0 50px rgba(0, 123, 255, 0.2);
+            }
+
+            50% {
+                box-shadow: 0 0 20px rgba(0, 123, 255, 0.6), 0 0 40px rgba(0, 123, 255, 0.4), 0 0 60px rgba(0, 123, 255, 0.3);
+            }
+
+            100% {
+                box-shadow: 0 0 10px rgba(0, 123, 255, 0.5), 0 0 30px rgba(0, 123, 255, 0.3), 0 0 50px rgba(0, 123, 255, 0.2);
+            }
+        }
+
+        /* Apply radial sweep glow effect on hover */
+        .project-card:hover {
+            animation: radial-sweep 2s infinite ease-in-out;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="body-w">
+    <h2 class="title-heading" id="main-title">My Projects</h2>
+    <section class="projects-section">
+        <div class="projects-container">
+            <!-- Project 1 -->
+            <div class="project-card" data-project-id="1">
+                <div class="card-inner-wrapper">
+                    <div class="front-side">
+                        <img src="/assets/icons/tools-icons/devops/devops.png" alt="Project 1 Image" class="project-image">
+                        <h3 class="project-title">Project 1</h3>
+                    </div>
+                    <div class="back-side">
+                        <h4 class="description-heading">Project 1 Description</h4>
+                        <p class="description-text">A short description of the project goes here.</p>
+                        <a href="documentation_page_1.html" class="cta-btn">
+                            <span class="cta-btn-text">View Documentation</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card" data-project-id="2">
+                <div class="card-inner-wrapper">
+                    <div class="front-side">
+                        <img src="path_to_image_2.jpg" alt="Project 2 Image" class="project-image">
+                        <h3 class="project-title">Project 2</h3>
+                    </div>
+                    <div class="back-side">
+                        <h4 class="description-heading">Project 2 Description</h4>
+                        <p class="description-text">A short description of the project goes here.</p>
+                        <a href="documentation_page_2.html" class="cta-btn">
+                            <span class="cta-btn-text">View Documentation</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Project 1 -->
+            <div class="project-card" data-project-id="1">
+                <div class="card-inner-wrapper">
+                    <div class="front-side">
+                        <img src="/assets/icons/tools-icons/devops/devops.png" alt="Project 1 Image" class="project-image">
+                        <h3 class="project-title">Project 1</h3>
+                    </div>
+                    <div class="back-side">
+                        <h4 class="description-heading">Project 1 Description</h4>
+                        <p class="description-text">A short description of the project goes here.</p>
+                        <a href="documentation_page_1.html" class="cta-btn">
+                            <span class="cta-btn-text">View Documentation</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card" data-project-id="2">
+                <div class="card-inner-wrapper">
+                    <div class="front-side">
+                        <img src="path_to_image_2.jpg" alt="Project 2 Image" class="project-image">
+                        <h3 class="project-title">Project 2</h3>
+                    </div>
+                    <div class="back-side">
+                        <h4 class="description-heading">Project 2 Description</h4>
+                        <p class="description-text">A short description of the project goes here.</p>
+                        <a href="documentation_page_2.html" class="cta-btn">
+                            <span class="cta-btn-text">View Documentation</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 1 -->
+            <div class="project-card" data-project-id="1">
+                <div class="card-inner-wrapper">
+                    <div class="front-side">
+                        <img src="/assets/icons/tools-icons/devops/devops.png" alt="Project 1 Image" class="project-image">
+                        <h3 class="project-title">Project 1</h3>
+                    </div>
+                    <div class="back-side">
+                        <h4 class="description-heading">Project 1 Description</h4>
+                        <p class="description-text">A short description of the project goes here.</p>
+                        <a href="documentation_page_1.html" class="cta-btn">
+                            <span class="cta-btn-text">View Documentation</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card" data-project-id="2">
+                <div class="card-inner-wrapper">
+                    <div class="front-side">
+                        <img src="path_to_image_2.jpg" alt="Project 2 Image" class="project-image">
+                        <h3 class="project-title">Project 2</h3>
+                    </div>
+                    <div class="back-side">
+                        <h4 class="description-heading">Project 2 Description</h4>
+                        <p class="description-text">A short description of the project goes here.</p>
+                        <a href="documentation_page_2.html" class="cta-btn">
+                            <span class="cta-btn-text">View Documentation</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more projects as necessary -->
+        </div>
+    </section>
+</div>
+</body>
+
+</html>
