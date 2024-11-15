@@ -1,3 +1,8 @@
+// SMOOTH START UP
+window.addEventListener('load', () => {
+    document.body.classList.add('loaded');
+});
+
 // JavaScript to reveal workflow steps one-by-one as the user scrolls down
 document.addEventListener("DOMContentLoaded", () => {
     const steps = document.querySelectorAll(".workflow-step");
