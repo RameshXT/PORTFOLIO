@@ -1,0 +1,56 @@
+/* Loading Screen Container */
+#loading-screen {
+    text-align: center;
+}
+
+/* Loading Circle Styles */
+.loading-circle {
+    border: 8px solid #f3f3f3; /* Light gray background */
+    border-top: 8px solid gold; /* Gold color for the top border */
+    border-radius: 50%;
+    width: 100px; /* Adjusted size for mobile responsiveness */
+    height: 100px; /* Adjusted size for mobile responsiveness */
+    animation: spin 1.5s linear infinite;
+    margin: 0 auto;
+}
+
+/* Loading Text Styles */
+.loading-text {
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+/* Spin Animation */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Hide content initially */
+#content {
+    display: none;
+}
+
+body.loaded #loading-screen {
+    display: none;
+}
+
+body.loaded #content {
+    display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .loading-circle {
+        width: 80px; /* Smaller size for mobile */
+        height: 80px; /* Smaller size for mobile */
+    }
+
+    .loading-text {
+        font-size: 16px; /* Smaller text on mobile */
+    }
+}
