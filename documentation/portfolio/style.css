@@ -18,8 +18,13 @@ body {
     min-height: 100vh;
     padding: 20px;
     overflow-x: hidden; /* Prevents horizontal scrolling */
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
 }
 
+body.loaded {
+    opacity: 1;
+}
 /* Container Styling */
 #container {
     width: 100%;
