@@ -42,6 +42,9 @@
  ======================================
  */
 
+ window.addEventListener('load', () => {
+    document.body.classList.add('loaded');
+});
 
 /* -------[ SMOOTH TRANSITION FOR START UP ]------- */
 window.addEventListener('load', () => {
