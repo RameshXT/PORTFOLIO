@@ -23,11 +23,18 @@
             /* background: linear-gradient(109.6deg, rgb(6, 2, 2) 32.4%, rgb(137, 30, 47) 98.8%); */
             /* background: linear-gradient(248.6deg, rgb(254, 99, 132) 0%, rgb(49, 52, 56) 99.8%); */
             background: radial-gradient(circle, rgb(58, 85, 148)0%, rgb(17, 23, 58)90%);            
-            
             color: white;
             text-align: center;
             overflow: hidden;
+
+            /* SMOOTH ENTRY */
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
         }
+        body.loaded {
+            opacity: 1;
+        }
+
 
         h1 {
             font-size: 2.5rem;
@@ -78,6 +85,7 @@
     <h1 id="interactive-title">Thank You for Visiting! <br>I'm Working on it..</h1>
 
     <script>
+        /* -------[ CURSOR ANIMATION ]------- */
         const title = document.getElementById("interactive-title");
 
         document.addEventListener("mousemove", (event) => {
@@ -97,6 +105,12 @@
 
             title.style.transform = `translate(${moveX}px, ${moveY}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
         });
+
+        /* -------[ SMOOTH ENTRY ]------- */
+        window.addEventListener('load', () => {
+            document.body.classList.add('loaded');
+        });
+
     </script>
 </body>
 </html>
