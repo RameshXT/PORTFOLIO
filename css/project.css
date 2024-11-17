@@ -18,13 +18,19 @@
   }
 }
 
+* {                           /* ----> causing conflict to tools cards */
+  box-sizing: border-box;             
+  padding: 0;
+  margin: 0;
+}
+
+
 .project-section {
   font-family: Arial, sans-serif;
   text-align: center;
   position: relative;
   padding-top: 30px;
   padding-bottom: 20px;
-  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
   color: #acacac;
   letter-spacing: 0.15rem;
   font-weight: 100;
