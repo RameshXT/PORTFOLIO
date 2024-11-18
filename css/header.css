@@ -69,7 +69,6 @@ header .logo {
     display: flex;
     align-items: center;
     mix-blend-mode: difference; /* Black and white blend effect */
-    padding-left: 40px;
 }
 
 header .logo img {
