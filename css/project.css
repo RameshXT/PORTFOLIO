@@ -211,18 +211,17 @@
   right: 20px;
 }
 
-button:hover {
+.perv, .next:hover {
   transform: translateY(-50%) scale(1.2);
   color: #fff;
   background-color: #2C3E50;
 }
 
-button:focus {
+.perv, .next:focus {
   outline: none;
 }
 
-button:active {
-  background-color: #007BFF;
+.perv, .next:active {
   color: white;
 }
 
