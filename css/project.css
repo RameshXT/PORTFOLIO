@@ -1,7 +1,7 @@
 #project {
   text-align: center;
   padding: 30px 20px;
-  background: #f4f7fc;
+  background: #ffffff;
   border-radius: 10px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
   position: relative;
@@ -9,30 +9,30 @@
 }
 
 .project-subtitle {
-  font-size: 1.3rem;
-  color: #333;
-  font-weight: 500;
+  font-size: 16px;
+  color: #B0B0B0; /* LIGHT GRAY TEXT */
+  font-weight: 100;
+  letter-spacing: 0.15rem;
   text-transform: uppercase;
-  margin-bottom: 10px;
   font-family: 'Arial', sans-serif;
 }
 
 .project-title {
-  font-size: 1.8rem;
+  font-size: 20px;
   font-weight: bold;
-  color: #333;
+  letter-spacing: 0.15rem;
+  font-weight: 400;
+  color: #575757; /* DARK GRAY TEXT */
   margin: 5px 0;
   font-family: 'Roboto', sans-serif;
-  letter-spacing: 2px;
   animation: fadeInUp 0.8s ease-out;
 }
 
 .project-underline {
   width: 120px;
-  height: 3px;
-  background-color: #007BFF;
+  height: 2px;
+  background-color: #005FA1;
   margin: 5px auto;
-  border-radius: 2px;
   animation: slideIn 0.4s ease-out;
 }
 
@@ -75,7 +75,7 @@
   text-align: center;
   padding: 40px 20px;
   margin: 40px auto;
-  background-color: #f9f9f9;
+  background-color: #ffffff;
   width: 80%;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -142,7 +142,7 @@
 }
 
 .project-slide:hover {
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.134);
   filter: brightness(1.1);
   opacity: 1;
   background-color: #f8faff;
@@ -156,7 +156,7 @@
   font-size: 1.5rem;
   margin-bottom: 15px;
   font-weight: 600;
-  color: #333;
+  color: #575757; /* DARK GRAY TEXT */
   transition: color 0.3s ease;
 }
 
@@ -169,7 +169,6 @@
 }
 
 .project-slide a.view-project {
-  color: #007BFF;
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s ease, transform 0.3s ease;
@@ -178,12 +177,11 @@
 }
 
 .project-slide a.view-project:hover {
-  color: #0056b3;
   transform: scale(1.1);
 }
 
 .prev, .next {
-  color: #2C3E50;
+  color: #575757; /* DARK GRAY TEXT */
   background: none;
   padding: 8px 16px;
   cursor: pointer;
@@ -212,17 +210,17 @@
   right: 20px;
 }
 
-.perv, .next:hover {
+.prev:hover, .next:hover {
   transform: translateY(-50%) scale(1.2);
   color: #fff;
   background-color: #2C3E50;
 }
 
-.perv, .next:focus {
+.prev:focus, .next:focus {
   outline: none;
 }
 
-.perv, .next:active {
+.prev:active, .next:active {
   color: white;
 }
 
