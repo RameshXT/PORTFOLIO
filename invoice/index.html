@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Invoice</title>
+    <style>
+        @media print {
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            .invoice-container {
+                margin: 0;
+                box-shadow: none;
+            }
+        }
+
+        body {
+            font-family: 'Helvetica', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #555;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        .invoice-container {
+            width: 210mm;
+            height: 297mm;
+            background: #ffffff;
+            padding: 30mm;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* Header Section */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+        }
+
+        .header .logo img {
+            margin-top: -50px;
+            max-width: 80px; /* Reduced logo size */
+        }
+
+        .header .invoice-title {
+            text-align: right;
+            font-size: 26px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .header .invoice-title p {
+            font-size: 16px;
+            color: #777;
+        }
+
+        /* Address Section */
+        .address {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .address div {
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .address h3 {
+            margin-bottom: 6px;
+            color: #333;
+            font-weight: bold; /* Added bold font for clarity */
+        }
+
+        /* Invoice Table */
+        .invoice-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .invoice-table th, .invoice-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 2px solid #f4f4f4;
+        }
+
+        .invoice-table th {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+
+        .invoice-table td {
+            color: #555;
+        }
+
+        .invoice-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Total Section */
+        .total-section {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .total-section span {
+            margin-left: 10px;
+            color: tomato;
+        }
+
+        /* QR Codes Section */
+        .qr-codes {
+            display: flex;
+            justify-content: flex-end; /* Aligned to the right */
+            margin-top: 20px;
+        }
+
+        .qr-code-container {
+            width: 40%;
+            background: url('background-placeholder.jpg') center center/cover no-repeat;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+            text-align: center;
+            position: relative;
+        }
+
+        .qr-code-container img {
+            width: 80%;
+            max-width: 130px;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        .qr-code-container h3 {
+            font-size: 16px;
+            color: #333;
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        /* Footer Section */
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            color: #888;
+            margin-top: 40px;
+            border-top: 1px solid #e0e0e0;
+            padding-top: 20px;
+        }
+
+        .footer a {
+            color: #FF6F61;
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="invoice-container">
+        <!-- Header Section -->
+        <div class="header">
+            <div class="logo">
+                <img src="/invoice/asserts/logo.png" alt="Logo">
+            </div>
+            <div class="invoice-title">
+                <h1>Invoice</h1>
+                <p>Invoice 0002</p>
+                <p>Date: 02/12/2024</p>
+            </div>
+        </div>
+
+        <!-- Address Section -->
+        <div class="address">
+            <div class="from">
+                <h3>From:</h3>
+                <p>Ramesh Kanna G</p>
+                <p>Birthday Wishes Inc.</p>
+                <p>Bangalore, IN</p>
+                <p>Email: rameshkanna841@gmail.com</p>
+            </div>
+            <div class="to">
+                <h3>To:</h3>
+                <p>Rahavan</p>
+                <p>TamilNadu, IN</p>
+                <p>Mobile: 93423 74907</p>
+                <p>Email: rahavan321@gmail.com</p>
+            </div>
+        </div>
+
+        <!-- Invoice Table -->
+        <table class="invoice-table">
+            <thead>
+                <tr>
+                    <th>Unit</th>
+                    <th>Description</th>
+                    <th>Quantity</th>
+                    <th>Unit Price</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>WebSite</td>
+                    <td>1</td>
+                    <td>₹0</td>
+                    <td>₹0</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>AWS Service</td>
+                    <td>1</td>
+                    <td>$15</td>
+                    <td>$15</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Total Section -->
+        <div class="total-section">
+            <span>Total:</span>
+            <span>$15</span>
+        </div> <br>
+
+        <!-- QR Codes Section (Only Payment QR) -->
+        <div class="qr-codes">
+            <div class="qr-code-container">
+                <img src="/invoice/asserts/Pay.jpg" alt="Payment QR Code"><br>
+                <h3>Payment</h3>
+            </div>
+        </div>
+
+        <!-- Footer Section -->
+        <div class="footer">
+            <p>Thank you for your business!</p>
+            </div>
+    </div>
+</body>
+</html>
