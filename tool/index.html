@@ -102,7 +102,7 @@ body {
 .progress-bar {
   width: 100%;
   height: 10px;
-  background-color: #222;
+  background-color: #ffffff;
   border-radius: 20px;
   position: relative;
   box-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.2);
@@ -121,8 +121,8 @@ body {
 .progress-bar::after,
 .progress-bar span {
   content: "";
-  width: 14px;
-  height: 14px;
+  width: 10px;
+  height: 10px;
   background-color: white;
   border: 3px solid rgb(0, 0, 0);
   border-radius: 50%;
@@ -177,7 +177,7 @@ body {
 }
 
 .tool-container.card-git .progress {
-  width: 75%;
+  width: 60%;
   background-color: #005FA1;
 }
 
@@ -187,7 +187,7 @@ body {
 }
 
 .tool-container.card-github .progress {
-  width: 80%;
+  width: 60%;
   background-color: #2dba4e;
 }
 
@@ -197,7 +197,7 @@ body {
 }
 
 .tool-container.card-docker .progress {
-  width: 70%;
+  width: 50%;
   background-color: #384d54;
 }
 
@@ -217,7 +217,7 @@ body {
 }
 
 .tool-container.card-k8s .progress {
-  width: 70%;
+  width: 20%;
   background-color: #0c0c0c;
 }
 
@@ -227,7 +227,7 @@ body {
 }
 
 .tool-container.card-terraform .progress {
-  width: 65%;
+  width: 40%;
   background-color: #7b42bc;
 }
 
@@ -237,7 +237,7 @@ body {
 }
 
 .tool-container.card-aws .progress {
-  width: 75%;
+  width: 85%;
   background-color: #ff9900;
 }
 
@@ -247,7 +247,7 @@ body {
 }
 
 .tool-container.card-linux .progress {
-  width: 80%;
+  width: 70%;
   background-color: #ffcc33;
 }
 
@@ -257,7 +257,7 @@ body {
 }
 
 .tool-container.card-nginx .progress {
-  width: 70%;
+  width: 40%;
   background-color: #009639;
 }
 
@@ -267,7 +267,7 @@ body {
 }
 
 .tool-container.card-tomcat .progress {
-  width: 65%;
+  width: 30%;
   background-color: #F8DC75;
 }
 
@@ -277,7 +277,7 @@ body {
 }
 
 .tool-container.card-html .progress {
-  width: 85%;
+  width: 50%;
   background-color: #1B73BA;
 }
 
@@ -287,7 +287,7 @@ body {
 }
 
 .tool-container.card-css .progress {
-  width: 80%;
+  width: 50%;
   background-color: #E34F26;
 }
 
@@ -297,7 +297,7 @@ body {
 }
 
 .tool-container.card-js .progress {
-  width: 70%;
+  width: 20%;
   background-color: #323330;
 }
 
@@ -309,14 +309,18 @@ body {
   <div class="tools-container">
     <!-- Git -->
 <div class="tool-container card-git">
-  <a href="https://git-scm.com/doc" target="_blank" rel="noopener"></a>
-  <img src="/assets/icons/tools-icons/git/git.png" alt="Git Logo" class="logo">
-  </a>
+    <a href="https://git-scm.com/doc" target="_blank" rel="noopener">
+        <img src="/assets/icons/tools-icons/git/git.png" alt="Git Logo" class="logo">
+      </a>      
   <div class="card-title">Git</div>
   <div class="card-tagline">Version Control System</div>
 
   <div class="star-container">
-    <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star empty">★</span><span class="star empty">★</span>
+    <span class="star">★</span>
+    <span class="star">★</span>
+    <span class="star">★</span>
+    <span class="star empty">★</span>
+    <span class="star empty">★</span>
   </div>
 
   <div class="progress-container">
@@ -338,7 +342,11 @@ body {
   <div class="card-tagline">The Code Hosting Platform</div>
 
   <div class="star-container">
-    <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star empty">★</span><span class="star empty">★</span>
+    <span class="star">★</span>
+    <span class="star">★</span>
+    <span class="star">★</span>
+    <span class="star empty">★</span>
+    <span class="star empty">★</span>
   </div>
 
   <div class="progress-container">
@@ -360,7 +368,11 @@ body {
   <div class="card-tagline">Containerization Platform</div>
 
   <div class="star-container">
-    <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star empty">★</span><span class="star empty">★</span>
+    <span class="star">★</span>
+    <span class="star">★</span>
+    <span class="star">★</span>
+    <span class="star empty">★</span>
+    <span class="star empty">★</span>
   </div>
 
   <div class="progress-container">
@@ -382,8 +394,12 @@ body {
   <div class="card-tagline">Automation Server</div>
 
   <div class="star-container">
-    <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star empty">★</span><span class="star empty">★</span>
-  </div>
+    <span class="star">★</span>
+    <span class="star">★</span>
+    <span class="star">★</span>
+    <span class="star">★</span>
+    <span class="star empty">★</span>
+</div>
 
   <div class="progress-container">
     <div class="progress-bar">
@@ -410,8 +426,12 @@ body {
   <div class="card-tagline">Container Orchestration</div>
 
   <div class="star-container">
-    <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star empty">★</span><span class="star empty">★</span>
-  </div>
+    <span class="star">★</span>
+    <span class="star empty">★</span>
+    <span class="star empty">★</span>
+    <span class="star empty">★</span>
+    <span class="star empty">★</span>
+</div>
 
   <div class="progress-container">
     <div class="progress-bar">
@@ -432,8 +452,12 @@ body {
   <div class="card-tagline">Infrastructure as Code</div>
 
   <div class="star-container">
-    <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star empty">★</span><span class="star empty">★</span>
-  </div>
+    <span class="star">★</span>
+    <span class="star">★</span>
+    <span class="star empty">★</span>
+    <span class="star empty">★</span>
+    <span class="star empty">★</span>
+</div>
 
   <div class="progress-container">
     <div class="progress-bar">
@@ -454,8 +478,12 @@ body {
   <div class="card-tagline">Cloud Computing Platform</div>
 
   <div class="star-container">
-    <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star empty">★</span><span class="star empty">★</span>
-  </div>
+    <span class="star">★</span>
+    <span class="star">★</span>
+    <span class="star">★</span>
+    <span class="star">★</span>
+    <span class="star empty">★</span>
+</div>
 
   <div class="progress-container">
     <div class="progress-bar">
@@ -476,8 +504,12 @@ body {
   <div class="card-tagline">Operating System</div>
 
   <div class="star-container">
-    <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star empty">★</span><span class="star empty">★</span>
-  </div>
+    <span class="star">★</span>
+    <span class="star">★</span>
+    <span class="star">★</span>
+    <span class="star">★</span>
+    <span class="star empty">★</span>
+</div>
 
   <div class="progress-container">
     <div class="progress-bar">
@@ -500,8 +532,8 @@ body {
 
   <div class="star-container">
     <span class="star">★</span>
-    <span class="star">★</span>
-    <span class="star">★</span>
+    <span class="star empty">★</span>
+    <span class="star empty">★</span>
     <span class="star empty">★</span>
     <span class="star empty">★</span>
   </div>
@@ -525,8 +557,12 @@ body {
   <div class="card-tagline">Java Servlet Container</div>
 
   <div class="star-container">
-    <span class="star">★</span><span class="star">★</span><span class="star empty">★</span><span class="star empty">★</span><span class="star empty">★</span>
-  </div>
+    <span class="star">★</span>
+    <span class="star empty">★</span>
+    <span class="star empty">★</span>
+    <span class="star empty">★</span>
+    <span class="star empty">★</span>
+</div>
 
   <div class="progress-container">
     <div class="progress-bar">
@@ -549,8 +585,12 @@ body {
   <div class="card-tagline">Markup Language</div>
 
   <div class="star-container">
-    <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star empty">★</span>
-  </div>
+    <span class="star">★</span>
+    <span class="star">★</span>
+    <span class="star">★</span>
+    <span class="star empty">★</span>
+    <span class="star empty">★</span>
+</div>
 
   <div class="progress-container">
     <div class="progress-bar">
@@ -571,8 +611,12 @@ body {
   <div class="card-tagline">Stylesheet Language</div>
 
   <div class="star-container">
-    <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star empty">★</span>
-  </div>
+    <span class="star">★</span>
+    <span class="star">★</span>
+    <span class="star">★</span>
+    <span class="star empty">★</span>
+    <span class="star empty">★</span>
+</div>
 
   <div class="progress-container">
     <div class="progress-bar">
@@ -594,8 +638,12 @@ body {
   <div class="card-tagline">Programming Language</div>
 
   <div class="star-container">
-    <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star empty">★</span><span class="star empty">★</span>
-  </div>
+    <span class="star">★</span>
+    <span class="star empty">★</span>
+    <span class="star empty">★</span>
+    <span class="star empty">★</span>
+    <span class="star empty">★</span>
+</div>
 
   <div class="progress-container">
     <div class="progress-bar">
