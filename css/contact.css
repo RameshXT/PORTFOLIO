@@ -264,6 +264,12 @@
 .cta-section a.button:hover span {
     transform: translateX(-10px);
 }
+.query-heading {
+    mix-blend-mode: difference;
+}
+.sync-heading {
+    mix-blend-mode: difference;
+}
 
 /* -------[ RESPONSIVE STYLES START ]------- */
 
