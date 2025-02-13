@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            width: 95%;
+            max-width: 1600px;
+            height: 90vh;
+            background: black;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.15);
+        }
+
+        .text {
+            flex: 1;
+            padding: 20px;
+            line-height: 1.2;
+        }
+        .text h1 {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+        .text span {
+            color: #83acd3;
+        }
+        .profile-img {
+            width: 50%;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+        .profile-img img {
+            width: 100%;
+            height: auto;
+            border-radius: 60px;
+            transition: transform 1s ease-in-out;
+        }
+        .profile-img img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Explore Button */
+        .explore-btn {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #ffffff, #dddddd);
+            border-radius: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            /* box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.3); */
+            z-index: 2;
+            border: none;
+            outline: none;
+        }
+        .explore-btn:hover {
+            background: #ffffff;
+            transform: translateX(-50%) rotate(-90deg) scale(1.1);
+        }
+
+        /* Text Animation */
+        .explore-text {
+            position: absolute;
+            bottom: 39px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 28px;
+            font-weight: bold;
+            color: rgb(255, 255, 255);
+            opacity: 0;
+            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+            z-index: 1;
+        }
+        .explore-btn:hover + .explore-text {
+            opacity: 1;
+            transform: translateX(45px);
+        }
+
+        .hire-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: white;
+            color: black;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s ease-in-out;
+        }
+        .hire-btn:hover {
+            background: #dddddd;
+            transform: scale(1.1);
+        }
+        .footer {
+            width: 100%;
+            position: absolute;
+            bottom: 15px;
+            display: flex;
+            justify-content: center;
+        }
+        .divider {
+            width: 30%;
+            height: 4px;
+            background: black;
+            border-radius: 10px;
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                width: 0;
+            }
+            to {
+                opacity: 1;
+                width: 30%;
+            }
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+            }
+            .profile-img {
+                width: 100%;
+            }
+            .text h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="text">
+            <h1>I'M <span>DevOps Engineer</span><br> DESIGNER TO AUTOMATE</h1>
+            <br><br><p>Web and Brand Design - Ramesh Kanna G</p>
+        </div>
+        <div class="profile-img">
+            <img src="/1/istockphoto-156972570-612x612.jpg" alt="Designer Profile" loading="lazy">
+            <button class="explore-btn">↓</button>
+            <span class="explore-text">Explore</span>
+        </div>
+        <button class="hire-btn">Hire Me</button>
+    </div>
+    <div class="footer">
+        <div class="divider"></div>
+    </div>
+</body>
+</html>
