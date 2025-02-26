@@ -120,6 +120,7 @@
 .contact-section textarea {
     resize: none;
     mix-blend-mode: difference; /* INVERT COLORS FOR CONTRAST */
+    height: 100px;
 }
 
 /* -------[ FOCUS STYLES FOR INPUT AND TEXTAREA ]------- */
