@@ -69,10 +69,8 @@ document.addEventListener('DOMContentLoaded', function() {
 const typedElement = document.getElementById("typing-text");
 
 const textsToType = [
-    "Ramesh Kanna G",
+    "Ramesh",
     "A DevOps Engineer",
-    "A Creative Technologist",
-    "A Newcomer to the IT Industry from a non-IT Background"
 ];
 
 const typingDelay = 100;
