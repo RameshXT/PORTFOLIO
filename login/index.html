@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- -------[ CHARACTER ENCODING ]------- -->
+    <meta charset="UTF-8">
+
+    <!-- -------[ RESPONSIVE ]------- -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- -------[ PROJECT TITLE ]-------@RAMESHXT -->
+    <title>PortFolio | Ramesh</title>
+
+    <!-- ?-------[ FAVICON LINK ]------- -->
+    <link rel="icon" href=" ">
+
+    <!-- ?-------[ CSS LINK ]------- -->
+    <link rel="stylesheet" href="/login/styles.css">
+</head>
+<body>
+
+    <!-- -------[ HEADER SECTION START ]------- -->
+    <div class="header-bg">
+        <header>
+            <!-- [ LOGO CONTAINER ] -->
+            <div class="logo">
+                <!-- [ LINK TO HOME PAGE WITH LOGO ] -->
+                <a href="#">
+                    <img src="/assets/icons/portfolio-logo/logo.png" alt="Logo">
+                </a>
+            </div>
+            
+            <!-- [ NAVIGATION MENU ] -->
+            <nav>
+                <!-- [ NAVIGATION LINKS ] -->
+                <ul>
+                    <li><a href="#">WELCOME TO MY PORTFOLIO</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+    <br><br>
+    <!-- -------[ HEADER SECTION END ]------- -->
+    
+    <!-- -------[ CARD START ]------- -->
+    <div class="card">
+        <h2>Explore, Create, Innovate, Inspire!</h2>
+        
+        <!-- [ FORM START ] -->
+        <form id="myForm" action="https://api.web3forms.com/submit" method="POST" onsubmit="handleSubmit(event)">
+            
+            <!-- [ HIDDEN ACCESS KEY FOR API ] -->
+            <input type="hidden" name="access_key" value="08d50f2f-d19a-4c1d-bc5e-dea22bce4820">
+            
+            <!-- [ NAME INPUT FIELD ] -->
+            <input type="text" name="name" placeholder="Enter your Name" requir ed>
+ 
+            <!-- [ EMAIL INPUT FIELD ] -->
+            <input type="email" name="email" placeholder="Enter your Email" required>
+            
+            <!-- [ SUBMIT BUTTON ] -->
+            <button type="submit"><span>Get Started</span></button>
+        </form>
+        <!-- [ FORM END ] -->
+    </div>
+    <!-- -------[ CARD END ]------- -->
+
+    <!-- -------[ JS LINK ]------- -->
+    <script src="/login/script.js"></script>
+</body>
+</html>
