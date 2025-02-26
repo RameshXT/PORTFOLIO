@@ -74,6 +74,8 @@
     opacity: 0;
     transform: translateY(100px);
     transition: opacity 2s ease-in-out, transform 2s ease-in-out;
+    font-size: 20px;
+    font-weight: 600;
 }
 
 .hero-content.visible {
@@ -227,7 +229,6 @@
         font-size: 14px;
     }
 }
-
 /*
 ======================================
     [ BASE STYLES END ]
