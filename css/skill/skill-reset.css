@@ -129,9 +129,39 @@
     transform-style: preserve-3d;
 }
 
-.card:hover .card-inner {
+/* .card:hover .card-inner {
     transform: rotateY(180deg);
+} */
+.card img {
+    transition: transform 1s ease-in-out;
 }
+
+.card:hover img {
+    transform: scale(1.2);
+}
+
+.card {
+    position: relative;
+    overflow: hidden;
+}
+
+.card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.6) 100%);
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.card:hover::after {
+    opacity: 1;
+}
+
+
 
 /* -------[ CARD SIDE ]------- */
 .card-side {
